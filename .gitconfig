@@ -1,0 +1,71 @@
+[user]
+	email = michellstut@gmail.com
+	name = Michell Stuttgart
+
+[github]
+	user = mstuttgart
+
+[grep]
+	lineNumber = true
+
+[help]
+	autocorrect = 1
+
+[fetch]
+	prune = true
+
+[alias]
+	last = log -1 HEAD
+	amend = commit --amend --reuse-message=HEAD
+	br = branch
+        ba = branch -a
+        bv = branch --verbose --remotes
+	co = commit
+	ck = checkout
+        cb = checkout -b
+	contrib = shortlog --summary --numbered
+	df = diff --word-diff
+	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	ll = log --pretty=oneline --graph --abbrev-commit
+	lm = log --pretty=format:'* %s (%h)'
+	st = status
+	ts = status -sb
+
+	# list all git alias
+	alias = !git config -l | grep alias
+
+	# current branch
+        me = !git rev-parse --abbrev-ref HEAD
+
+        # publish
+        up = !git push origin -u $(git me)
+	upf = !git push -f origin -u $(git me)
+
+        # unpublish
+        down = !git push origin --delete $(git me)
+
+[core]
+	editor = nvim
+
+[color "branch"]
+
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[blame]
+	coloring = highlightRecent
+
+[color "diff"]
+
+	meta = yellow bold
+	frag = magenta bold # line info
+	old = red # deletions
+	new = green # additions
+
+[color "status"]
+
+	added = yellow
+	changed = green
+	untracked = cyan
+
