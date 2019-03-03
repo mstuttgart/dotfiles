@@ -1,0 +1,6 @@
+# Add git branch feature in bash
+export PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[00m\]\$ '
+
+# Add tracked file modified and untracked file symbols
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
