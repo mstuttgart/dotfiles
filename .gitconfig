@@ -20,11 +20,12 @@
 	br = branch
         ba = branch -a
         bv = branch --verbose --remotes
-	co = commit
+	cm = commit
 	ck = checkout
-        cb = checkout -b
+        ckb = checkout -b
 	contrib = shortlog --summary --numbered
 	df = diff --word-diff
+        ft = git fetch --all --prune
 	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	ll = log --pretty=oneline --graph --abbrev-commit
 	lm = log --pretty=format:'* %s (%h)'
@@ -35,17 +36,20 @@
 	alias = !git config -l | grep alias
 
 	# current branch
-        me = !git rev-parse --abbrev-ref HEAD
+        here = !git rev-parse --abbrev-ref HEAD
 
         # publish
-        up = !git push origin -u $(git me)
-	upf = !git push -f origin -u $(git me)
+        up = !git push origin -u $(git here)
+	upf = !git push -f origin -u $(git here)
+
+	# update
+	down = !git pull origin -u $(git here)
 
         # unpublish
-        down = !git push origin --delete $(git me)
+        purge = !git push origin --delete $(git here)
 
 [core]
-	editor = nvim
+	editor = nano
 
 [color "branch"]
 
