@@ -116,9 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Add git branch feature in bash
-export PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[00m\]\$ '
+# Prompt customizations. Add visual bash settings
+# on separated file
 
-# Add tracked file modified and untracked file symbols
-export GIT_PS1_SHOWDIRTYSTATE=true
-export GIT_PS1_SHOWUNTRACKEDFILES=true
+if [ -f ~/.bash_prompt ]; then
+    . ~/.bash_prompt
+fi
