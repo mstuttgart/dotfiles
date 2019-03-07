@@ -31,7 +31,14 @@ call plug#begin(g:plugged_home)
   " Comment code
   Plug 'scrooloose/nerdcommenter'
 
-call plug#end()
+  " Snippets plugins
+  Plug 'SirVer/ultisnips'
+
+  " Markdown support
+  Plug 'godlygeek/tabular'
+  Plug 'plasticboy/vim-markdown'
+
+  call plug#end()
 
 "------------ General Settings ----------------
 
@@ -164,7 +171,7 @@ let g:NERDTreeWinSize = 50
 
 "------------ Airline Settings ----------------
 
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'gruvbox' 
 let g:airline_left_sep  = ''
 let g:airline_right_sep = ''
 
@@ -172,6 +179,13 @@ let g:airline#extensions#virtualenv#enabled = 1
 let g:airline#extensions#ale#enabled = 1
 let g:airline#extensions#ale#error_symbol = 'E:'
 let g:airline#extensions#ale#warning_symbol = 'W:'
+
+
+"-------------- UltiSnips Setting --------------
+
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
 
 "------------ Specifi files settings Settings ----------------
 
