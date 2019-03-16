@@ -1,0 +1,116 @@
+#!/bin/bash
+
+export Off=$'\e[0m'
+export White=$'\e[1;37m'
+export BlueBG=$'\e[1;44m'
+export Yellow=$'\e[1;33m'
+
+echo ""
+echo "${Yellow}Create symlink to settings files${Off}"
+echo "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo ""
+
+# Change to home folder
+cd ~
+
+# Create bash aliases to use aliases
+ln -sfv ~/.dotfiles/.bash_aliases ~/.bash_aliases
+
+# Create bash prompt to customize bash
+ln -sfv ~/.dotfiles/.bash_prompt ~/.bash_prompt
+
+# Override .bashrc with my settings
+ln -sfv ~/.dotfiles/.bashrc ~/.bashrc
+
+# Override gitconfig file
+ln -sfv ~/.dotfiles/.gitconfig ~/.gitconfigW
+
+# Create bin path
+mkdir -p ~/.local/bin
+
+echo ""
+echo "${Yellow}Install Build Essentials ${Off}"
+echo "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo ""
+
+sudo apt install build-essential make cmake -y
+sudo apt install dh-make make -y
+sudo apt install curl -y
+sudo apt install g++ -y
+sudo apt install libsqlite3-dev -y
+sudo apt install wget -y
+
+echo ""
+echo "${Yellow}Install Python and Pip ${Off}"
+echo "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo ""
+
+# Install Python dependencies
+sudo apt install python3-dev -y
+sudo apt install python3-pip -y
+
+
+echo -e ""
+echo -e "${Yellow}Install Git tools"
+echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo -e ""
+
+sudo apt install git -y
+sudo apt install git-core -y
+sudo apt install tig -y
+
+echo -e ""
+echo -e "${Yellow} Install File Compression Libs ${Off}"
+echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo -e ""
+
+sudo apt install p7zip p7zip-full p7zip-rar unrar rar unace-nonfree -y
+
+echo -e ""
+echo -e "${Yellow} Install Ubuntu Restricted Extras ${Off}"
+echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo -e ""
+
+sudo apt install ubuntu-restricted-extras -y
+
+echo -e ""
+echo -e "${Yellow} Download and Install Google Chrome ${Off}"
+echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo -e ""
+
+echo -e ""
+echo -e "${Yellow} Install VsCode ${Off}"
+echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo -e ""
+
+curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
+sudo install -o root -g root -m 644 microsoft.gpg /etc/apt/trusted.gpg.d/
+sudo sh -c 'echo "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main" > /etc/apt/sources.list.d/vscode.list'
+
+# Configurações adicionais do vscode
+echo "fs.inotify.max_user_watches=524288" >> /etc/sysctl.conf
+sudo sysctl -p
+
+echo -e ""
+echo -e "${Yellow}Install Tree Directory Viewer ${Off}"
+echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
+echo -e ""
+
+sudo apt install tree -y
+
+#--------------------------------------------------
+# Update System
+#--------------------------------------------------
+
+echo -e ""
+echo -e " ${White}${BlueBG}                                                         ${Off}"
+echo -e " ${White}${BlueBG}         -= Update System =-                             ${Off}"
+echo -e " ${White}${BlueBG}                                                         ${Off}"
+echo -e ""
+
+sudo apt update
+sudo apt autoremove -y
+
+echo -e ""
+echo -e "${Yellow} Install done: `date +%d-%m-%y_%H:%M:%S`"
+echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
