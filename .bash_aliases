@@ -1,9 +1,6 @@
 # Odoo alises
 alias odoodir="cd /opt/odoo"
 
-# Applications aliases
-alias exercism="~/.local/bin/exercism"
-
 # Aliases
 alias ..="cd .."
 alias ...="cd ../.."
@@ -12,7 +9,7 @@ alias -- -="cd -"
 
 
 # Shortcuts
-alias pro="cd ~/Projetos"
+alias work="cd ~/Workspace"
 alias dl="cd ~/Downloads"
 
 # System
