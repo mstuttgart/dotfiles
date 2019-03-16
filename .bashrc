@@ -122,3 +122,6 @@ fi
 if [ -f ~/.bash_prompt ]; then
     . ~/.bash_prompt
 fi
+
+# Add new bin path
+PATH=~/.local/bin:$PATH
