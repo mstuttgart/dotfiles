@@ -18,14 +18,14 @@
 	last = log -1 HEAD
 	amend = commit --amend --reuse-message=HEAD
 	br = branch
-        ba = branch -a
-        bv = branch --verbose --remotes
+	ba = branch -a
+	bv = branch --verbose --remotes
 	cm = commit
 	ck = checkout
-        ckb = checkout -b
+	ckb = checkout -b
 	contrib = shortlog --summary --numbered
 	df = diff --word-diff
-        ft = git fetch --all --prune
+	ft = git fetch --all --prune
 	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	ll = log --pretty=oneline --graph --abbrev-commit
 	lm = log --pretty=format:'* %s (%h)'
@@ -36,17 +36,17 @@
 	alias = !git config -l | grep alias
 
 	# current branch
-        here = !git rev-parse --abbrev-ref HEAD
+	here = !git rev-parse --abbrev-ref HEAD
 
-        # publish
-        up = !git push origin -u $(git here)
+	# publish
+	up = !git push origin -u $(git here)
 	upf = !git push -f origin -u $(git here)
 
 	# update
 	down = !git pull origin -u $(git here)
 
-        # unpublish
-        purge = !git push origin --delete $(git here)
+	# unpublish
+	purge = !git push origin --delete $(git here)
 
 [core]
 	editor = nano
