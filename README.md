@@ -32,7 +32,7 @@ This repository serves as my way to help me setup and maintain my Linux.
 ## Install
 
 The `install.sh` script automatize the setup
-of my workstation installing all libs that I use in my development.
+of my workstation installing all libs that I use in my setup.
 
 ```
 ./install.sh
