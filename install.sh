@@ -10,16 +10,16 @@ echo "${Yellow}Create symlink to settings files${Off}"
 echo ""
 
 # Create bash aliases to use aliases
-ln -sfv ~/.dotfiles/.bash_aliases ~/.bash_aliases
+ln -sfv $(pwd)/.bash_aliases ~/.bash_aliases
 
 # Create bash prompt to customize bash
-ln -sfv ~/.dotfiles/.bash_prompt ~/.bash_prompt
+ln -sfv $(pwd)/.bash_prompt ~/.bash_prompt
 
 # Override .bashrc with my settings
-ln -sfv ~/.dotfiles/.bashrc ~/.bashrc
+ln -sfv $(pwd)/.bashrc ~/.bashrc
 
 # Override gitconfig file
-ln -sfv ~/.dotfiles/.gitconfig ~/.gitconfigW
+ln -sfv $(pwd)/.gitconfig ~/.gitconfig
 
 # Create bin path
 mkdir -p ~/.local/bin
@@ -66,6 +66,10 @@ sudo apt install ubuntu-restricted-extras -y
 echo -e ""
 echo -e "${Yellow} Download and Install Google Chrome ${Off}"
 echo -e ""
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
+rm -f google-chrome-stable_current_amd64.deb
 
 echo -e ""
 echo -e "${Yellow} Install VsCode ${Off}"
