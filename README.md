@@ -27,10 +27,12 @@
 
 ## About
 
-This repository serves as my way to help me setup and maintain my Linux. The `install.sh` script automatize the setup
-of my workstation installing all libs that I use in my development.
+This repository serves as my way to help me setup and maintain my Linux. 
 
 ## Install
+
+The `install.sh` script automatize the setup
+of my workstation installing all libs that I use in my development.
 
 ```
 ./install.sh
@@ -40,7 +42,7 @@ of my workstation installing all libs that I use in my development.
 
 Please report issues/bugs and suggestions for improvements to the _issue_:
 
-- Issue Tracker: <https://github.com/mstuttgart/pycep-correios/issues>
+- Issue Tracker: <https://github.com/mstuttgart/dotfiles/issues>
 
 ## Credits
 
