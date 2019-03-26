@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/github/license/mstuttgart/dotfiles.svg?style=flat-square" alt="License">
   </a>
  <a href="https://github.com/mstuttgart/dotfiles/releases">
-   <img alt="GitHub release" src="https://img.shields.io/github/release/mstuttgart/dotfiles.svg?style=flat-square">
+   <img alt="GitHub release" src="https://img.shields.io/github/tag/mstuttgart/dotfiles.svg?style=flat-square">
  </a>
 </p>
 
