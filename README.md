@@ -1,11 +1,8 @@
-<h1 align="center">
+<p align="center">
   <br>
   <a href="https://github.com/mstuttgart/dotfiles">
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojione/178/robot-face_1f916.png"></a>
-  <br>
-  Dotfiles
-  <br>
-</h1>
+</p>
 
 <h4 align="center">My dotfiles collection</h4>
 
@@ -41,7 +38,7 @@ of my workstation installing all libs that I use in my development.
 
 ## Contribute
 
-Para dúvidas, sugestões e relatórios de _bugs_, por gentileza, crie uma _issue_:
+Please report issues/bugs and suggestions for improvements to the _issue_:
 
 - Issue Tracker: <https://github.com/mstuttgart/pycep-correios/issues>
 
