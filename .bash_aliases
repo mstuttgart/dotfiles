@@ -1,16 +1,15 @@
-# Odoo alises
-alias odoodir="cd /opt/odoo"
-
 # Aliases
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias -- -="cd -"
 
-
 # Shortcuts
 alias work="cd ~/Workspace"
 alias dl="cd ~/Downloads"
+
+# Odoo alises
+alias odoodir="cd ~/Workspace/odoo"
 
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
