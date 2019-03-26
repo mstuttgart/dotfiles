@@ -1,0 +1,14 @@
+language: ruby
+
+os:
+  - linux
+
+  
+install:
+
+    sudo apt-get update >/dev/null
+
+script: ./install.sh
+
+notifications:
+  email: false
