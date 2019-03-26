@@ -7,11 +7,7 @@ export Yellow=$'\e[1;33m'
 
 echo ""
 echo "${Yellow}Create symlink to settings files${Off}"
-echo "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo ""
-
-# Change to home folder
-cd ~
 
 # Create bash aliases to use aliases
 ln -sfv ~/.dotfiles/.bash_aliases ~/.bash_aliases
@@ -30,7 +26,6 @@ mkdir -p ~/.local/bin
 
 echo ""
 echo "${Yellow}Install Build Essentials ${Off}"
-echo "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo ""
 
 sudo apt install build-essential make cmake -y
@@ -42,45 +37,38 @@ sudo apt install wget -y
 
 echo ""
 echo "${Yellow}Install Python and Pip ${Off}"
-echo "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo ""
 
 # Install Python dependencies
 sudo apt install python3-dev -y
 sudo apt install python3-pip -y
+sudo apt install python3-venv -y
 
 
 echo -e ""
 echo -e "${Yellow}Install Git tools"
-echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo -e ""
 
-sudo apt install git -y
-sudo apt install git-core -y
-sudo apt install tig -y
+sudo apt install git git-core tig -y
 
 echo -e ""
 echo -e "${Yellow} Install File Compression Libs ${Off}"
-echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo -e ""
 
 sudo apt install p7zip p7zip-full p7zip-rar unrar rar unace-nonfree -y
 
 echo -e ""
 echo -e "${Yellow} Install Ubuntu Restricted Extras ${Off}"
-echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo -e ""
 
 sudo apt install ubuntu-restricted-extras -y
 
 echo -e ""
 echo -e "${Yellow} Download and Install Google Chrome ${Off}"
-echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo -e ""
 
 echo -e ""
 echo -e "${Yellow} Install VsCode ${Off}"
-echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo -e ""
 
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -93,7 +81,6 @@ sudo sysctl -p
 
 echo -e ""
 echo -e "${Yellow}Install Tree Directory Viewer ${Off}"
-echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
 echo -e ""
 
 sudo apt install tree -y
@@ -113,4 +100,3 @@ sudo apt autoremove -y
 
 echo -e ""
 echo -e "${Yellow} Install done: `date +%d-%m-%y_%H:%M:%S`"
-echo -e "${Yellow} =-=-=-=-=-=--=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-= ${Off}"
