@@ -15,5 +15,5 @@ alias odoodir="cd ~/Workspace/odoo"
 alias update="sudo apt update && sudo apt upgrade -y"
 
 # Python aliases
-alias venv="source .env/bin/activate"
-alias cenv="virtualenv -p python3 .env"
+alias venv="source .venv/bin/activate"
+alias cenv="virtualenv -p python3 .venv"
