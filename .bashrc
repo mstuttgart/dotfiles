@@ -57,8 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='\[\033[01;34m\]\w\[\033[01;32m\]\[\033[00m\]\$ '
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -117,6 +116,9 @@ if ! shopt -oq posix; then
   fi
 fi
 
+# Personalize bash promt and show git bracnhs
+PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[00m\]\$ '
+
 # Add new bin path
 PATH=~/.local/bin:$PATH
 
@@ -131,7 +133,7 @@ function env_auto_activate(){
         if [ "$VIRTUAL_ENV" != "$(pwd -P)/.venv" ]; then
             _VENV_NAME=$(basename `pwd`)
             echo activating virtualenv \"$_VENV_NAME\"...
-            source .venv/bin/activate; PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[00m\]\$ '
+            source .venv/bin/activate
             sleep 1
             clear
         fi
