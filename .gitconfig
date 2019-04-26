@@ -43,7 +43,7 @@
 	upf = !git push -f origin -u $(git here)
 
 	# update
-	down = !git pull origin -u $(git here)
+	down = !git pull origin $(git here)
 
 	# unpublish
 	purge = !git push origin --delete $(git here)
