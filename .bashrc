@@ -57,7 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\[\033[01;34m\]\w\[\033[01;32m\]\[\033[00m\]\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -116,12 +117,26 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# Prompt customizations. Add visual bash settings
-# on separated file
-
-if [ -f ~/.bash_prompt ]; then
-    . ~/.bash_prompt
-fi
-
 # Add new bin path
 PATH=~/.local/bin:$PATH
+
+# Add tracked file modified and untracked file symbols
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+
+# Codigo te ativação do virtualenv emprestado de https://github.com/dhelbegor/oh-my-bashrc/blob/master/bashrc
+# env auto activate
+function env_auto_activate(){
+    if [ -e ".venv" ]; then
+        if [ "$VIRTUAL_ENV" != "$(pwd -P)/.venv" ]; then
+            _VENV_NAME=$(basename `pwd`)
+            echo activating virtualenv \"$_VENV_NAME\"...
+            source .venv/bin/activate; PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[00m\]\$ '
+            sleep 1
+            clear
+        fi
+    fi
+}
+
+export PROMPT_COMMAND=env_auto_activate
+
