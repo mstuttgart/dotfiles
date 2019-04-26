@@ -12,9 +12,6 @@ echo ""
 # Create bash aliases to use aliases
 ln -sfv $(pwd)/.bash_aliases ~/.bash_aliases
 
-# Create bash prompt to customize bash
-ln -sfv $(pwd)/.bash_prompt ~/.bash_prompt
-
 # Override .bashrc with my settings
 ln -sfv $(pwd)/.bashrc ~/.bashrc
 
