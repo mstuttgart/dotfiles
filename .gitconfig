@@ -25,7 +25,7 @@
 	ckb = checkout -b
 	contrib = shortlog --summary --numbered
 	df = diff --word-diff
-	ft = git fetch --all --prune
+	ft = fetch --all --prune
 	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	ll = log --pretty=oneline --graph --abbrev-commit
 	lm = log --pretty=format:'* %s (%h)'
