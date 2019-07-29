@@ -18,3 +18,4 @@ alias update="sudo apt update && sudo apt upgrade -y"
 # Python aliases
 alias venv="source .venv/bin/activate"
 alias cenv="virtualenv -p python3 .venv"
+alias denv="deactivate"
