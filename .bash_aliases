@@ -9,7 +9,7 @@ alias work="cd ~/Workspace"
 alias dl="cd ~/Downloads"
 
 # Odoo alises
-alias odoodir="cd ~/Workspace/odoo"
+alias odooproject="cd ~/Workspace/odoo"
 alias odoodeploy="cd ~/Workspace/multierp-deploy-scripts"
 
 # System
