@@ -1,0 +1,23 @@
+{
+    "editor.renderWhitespace": "all",
+    "breadcrumbs.enabled": true,
+    "window.zoomLevel": -1,
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "gitProjectManager.baseProjectsFolders": [
+        "/home/michell/Workspace"
+    ],
+    "window.titleBarStyle": "custom",
+    "sync.gist": "800ae44c0d21543ccef7e933aa768d59",
+    "editor.selectionClipboard": false,
+    "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
+    "workbench.tree.indent": 16,
+    "editor.minimap.enabled": false,
+    "workbench.colorTheme": "Jeng Light",
+    "workbench.iconTheme": "ayu",
+    "[shellscript]": {
+        "editor.defaultFormatter": "shakram02.bash-beautify"
+    },
+}

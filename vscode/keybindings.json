@@ -1,0 +1,19 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+w w",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+shift+alt+n",
+        "command": "workbench.action.terminal.focusNext"
+    },
+    {
+        "key": "ctrl+shift+alt+p",
+        "command": "workbench.action.terminal.focusPrevious"
+    }
+]
