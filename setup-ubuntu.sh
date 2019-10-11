@@ -73,6 +73,18 @@ echo -e ""
 
 sudo apt install tree -y
 
+echo -e ""
+echo -e "${Yellow}Install Neofecth ${Off}"
+echo -e ""
+
+sudo apt install neofetch -y
+
+echo -e ""
+echo -e "${Yellow}Install htop ${Off}"
+echo -e ""
+
+sudo apt install htop -y
+
 #--------------------------------------------------
 # Update System
 #--------------------------------------------------
@@ -88,3 +100,5 @@ sudo apt autoremove -y
 
 echo -e ""
 echo -e "${Yellow} Install done: `date +%d-%m-%y_%H:%M:%S`"
+
+neofetch
