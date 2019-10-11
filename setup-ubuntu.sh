@@ -5,26 +5,6 @@ export White=$'\e[1;37m'
 export BlueBG=$'\e[1;44m'
 export Yellow=$'\e[1;33m'
 
-echo ""
-echo "${Yellow}Create symlink to settings files${Off}"
-echo ""
-
-# Create bash aliases to use aliases
-ln -sfv $(pwd)/.bash_aliases ~/.bash_aliases
-
-# Override .bashrc with my settings
-ln -sfv $(pwd)/.bashrc ~/.bashrc
-
-# Override gitconfig file
-ln -sfv $(pwd)/.gitconfig ~/.gitconfig
-
-# Restaure vscode settings and keybinds
-ln -sfv $(pwd)/vscode/keybindings.json ~/.config/Code/User/keybindings.json
-ln -sfv $(pwd)/vscode/settings.json ~/.config/Code/User/settings.json
-
-# Restaure vscode snippets
-ln -sfv $(pwd)/vscode/snippets ~/.config/Code/User/snippets
-
 # Create bin path
 mkdir -p ~/.local/bin
 
