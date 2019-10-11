@@ -4,7 +4,7 @@
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojione/178/robot-face_1f916.png"></a>
 </p>
 
-<h4 align="center">My dotfiles collection</h4>
+<h4 align="center">My setup</h4>
 
 <p align="center">
   <a href="https://travis-ci.org/mstuttgart/dotfiles">
@@ -27,15 +27,38 @@
 
 ## About
 
-This repository serves as my way to help me setup and maintain my Linux. 
+This repository serves as my way to help me setup and maintain my Linux. Settings applied by this repository are very personal, and definitely not suite everyones needs. I suggest to create or fork your own set of dotfiles based on this repo.
 
 ## Install
 
-The `install.sh` script automatize the setup
-of my workstation installing all libs that I use in my setup.
+Install git.
 
 ```
-./install.sh
+sudo apt install git
+```
+
+Clone this repo. You can clone it in your /home folder.
+
+```
+git clone git@github.com:mstuttgart/dotfiles.git ~/.dotfiles
+```
+
+The `setup-ubuntu.sh` script automatize the setup of my workstation installing all libs that I use in my setup.
+
+```
+source setup-ubuntu.sh
+```
+
+The next step, create symlinks of dotfiles (`.bashrc`, `.gitconfig`, `.bash_aliases.sh`).
+
+```
+source setup-dotfiles.sh
+```
+
+Finally, use the `setup-vscode.sh` to configure vscode settings, shortcuts and extensions.
+
+```
+source setup-vscode.sh
 ```
 
 ## Contribute
