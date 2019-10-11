@@ -19,3 +19,6 @@ alias update="sudo apt update && sudo apt upgrade -y"
 alias venv="source .venv/bin/activate"
 alias cenv="virtualenv -p python3 .venv"
 alias denv="deactivate"
+
+# Create vscode extension list
+alias vscode-extension-list="code --list-extensions >> vscode/extensions.txt"
