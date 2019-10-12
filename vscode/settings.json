@@ -19,5 +19,5 @@
     "[shellscript]": {
         "editor.defaultFormatter": "shakram02.bash-beautify"
     },
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
 }

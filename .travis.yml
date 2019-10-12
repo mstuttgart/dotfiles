@@ -1,14 +1,15 @@
 language: ruby
 
+dist: bionic
+
 os:
   - linux
-
   
 install:
-
     sudo apt-get update >/dev/null
 
-script: ./install.sh
+script: 
+    ./setup.sh
 
 notifications:
   email: false
