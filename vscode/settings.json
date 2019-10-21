@@ -10,14 +10,16 @@
         "/home/michell/Workspace"
     ],
     "window.titleBarStyle": "custom",
-    "sync.gist": "800ae44c0d21543ccef7e933aa768d59",
     "editor.selectionClipboard": false,
     "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
     "workbench.tree.indent": 16,
-    "editor.minimap.enabled": false,
-    "workbench.iconTheme": "helium-icon-theme",
+    "editor.minimap.enabled": true,
     "[shellscript]": {
         "editor.defaultFormatter": "shakram02.bash-beautify"
     },
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.detectLocale": "auto",
+    "terminal.integrated.env.linux": {"LANG": "C.UTF-8"},
+    "workbench.iconTheme": "ayu",
+    "workbench.colorTheme": "Nord",
 }
