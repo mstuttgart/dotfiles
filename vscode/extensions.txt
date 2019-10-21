@@ -15,7 +15,7 @@ ms-python.python
 mstuttgart.odoo-scaffold
 mstuttgart.odoo-snippets
 njpwerner.autodocstring
-pawelgrzybek.gatito-theme
 shakram02.bash-beautify
 teabyii.ayu
+thenikso.github-plus-theme
 yzhang.markdown-all-in-one
