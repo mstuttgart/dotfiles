@@ -9,11 +9,11 @@
         "command": "-workbench.view.explorer"
     },
     {
-        "key": "ctrl+shift+alt+n",
+        "key": "ctrl+shift+right",
         "command": "workbench.action.terminal.focusNext"
     },
     {
-        "key": "ctrl+shift+alt+p",
+        "key": "ctrl+shift+left",
         "command": "workbench.action.terminal.focusPrevious"
     }
 ]
