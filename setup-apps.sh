@@ -18,6 +18,8 @@ apt_apps=(
     "cmus"
     "flameshot"
     "sqlitebrowser"
+    "pgadmin3"
+    "spotify-client"
     "snapd"
 )
 
@@ -40,8 +42,6 @@ new_line
 snap_apps=(
     "core"
     "code --classic"
-    "chromium"
-    "spotify"
     "postman"
 )
 
@@ -55,6 +55,11 @@ for app in "${snap_apps[@]}"; do
     check_return_code $? $app
     
 done
+
+# Install Chrome ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+sudo dpkg -i google-chrome-stable_current_amd64.deb
 
 # Restaure VS Code settings ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 

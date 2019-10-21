@@ -2,9 +2,6 @@
 
 source colors.sh
 
-# Set script to stop if any command fail
-# set -e
-
 source setup-apps.sh
 check_return_code $? "setup-apps.sh"
 
