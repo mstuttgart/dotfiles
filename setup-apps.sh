@@ -24,6 +24,7 @@ apt_apps=(
     "gdebi"
     "vlc"
     "libreoffice"
+    "gparted"
 )
 
 for app in "${apt_apps[@]}"; do
