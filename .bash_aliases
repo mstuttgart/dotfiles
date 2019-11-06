@@ -9,8 +9,8 @@ alias work="cd ~/Workspace"
 alias dl="cd ~/Downloads"
 
 # Odoo alises
-alias odooproject="cd ~/Workspace/odoo"
-alias odoodeploy="cd ~/Workspace/multierp-deploy-scripts"
+alias odoor="cd ~/Workspace/odoo"
+alias odood="cd ~/Workspace/multierp-deploy-scripts"
 
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
