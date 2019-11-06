@@ -1,7 +1,6 @@
 {
     "editor.renderWhitespace": "all",
     "breadcrumbs.enabled": true,
-    "window.zoomLevel": -1,
     "files.autoSave": "afterDelay",
     "files.exclude": {
         "**/__pycache__": true
@@ -13,13 +12,14 @@
     "editor.selectionClipboard": false,
     "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
     "workbench.tree.indent": 16,
-    "editor.minimap.enabled": true,
+    "editor.minimap.enabled": false,
     "[shellscript]": {
         "editor.defaultFormatter": "shakram02.bash-beautify"
     },
     "terminal.integrated.shell.linux": "/bin/bash",
     "terminal.integrated.detectLocale": "auto",
     "terminal.integrated.env.linux": {"LANG": "C.UTF-8"},
-    "workbench.iconTheme": "ayu",
+    "workbench.iconTheme": "helium-icon-theme",
     "workbench.colorTheme": "Nord",
+    "window.zoomLevel": -1,
 }
