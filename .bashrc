@@ -117,7 +117,7 @@ if ! shopt -oq posix; then
 fi
 
 # Personalize bash promt and show git bracnhs
-PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[00m\]\$ '
+PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[01;34m\] > \[\033[00m\]'
 
 # Add new bin path
 PATH=~/.local/bin:$PATH
