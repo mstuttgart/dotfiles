@@ -19,8 +19,11 @@ apt_apps=(
     "flameshot"
     "sqlitebrowser"
     "pgadmin3"
-    "spotify-client"
     "snapd"
+    "software-properties-common"
+    "gdebi"
+    "vlc"
+    "libreoffice"
 )
 
 for app in "${apt_apps[@]}"; do
@@ -41,8 +44,8 @@ new_line
 
 snap_apps=(
     "core"
-    "code --classic"
     "postman"
+    "spotify"
 )
 
 for app in "${snap_apps[@]}"; do
@@ -58,13 +61,24 @@ done
 
 # Install Chrome ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-sudo dpkg -i google-chrome-stable_current_amd64.deb
+# wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+# sudo dpkg -i google-chrome-stable_current_amd64.deb
 
-# Restaure VS Code settings ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+# The $? get result of last command
+check_return_code $? "Google Chrome"
 
-msg "Restaure VS Code Settings"
+# Install VS Code and restore settings ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+msg "Install VS Code and restore settings"
 new_line
+
+wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
+check_return_code $? "Add VSCode key"
+
+sudo apt update
+sudo apt install code
+check_return_code $? "Install VS Code"
 
 msg_install "VS Code extensions"
 cat vscode/extensions.txt | xargs -n 1 code --install-extension
