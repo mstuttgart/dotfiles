@@ -20,6 +20,7 @@
     "terminal.integrated.detectLocale": "auto",
     "terminal.integrated.env.linux": {"LANG": "C.UTF-8"},
     "workbench.iconTheme": "helium-icon-theme",
-    "workbench.colorTheme": "Nord",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "window.zoomLevel": -1,
+    "gitProjectManager.storeRepositoriesBetweenSessions": true,
 }
