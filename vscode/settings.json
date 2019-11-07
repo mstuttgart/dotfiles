@@ -8,6 +8,12 @@
     "gitProjectManager.baseProjectsFolders": [
         "/home/michell/Workspace"
     ],
+    "gitProjectManager.storeRepositoriesBetweenSessions": true,
+    "gitProjectManager.ignoredFolders": [
+        "node_modules",
+        "vendor"
+    ],
+    "gitProjectManager.checkRemoteOrigin": false,
     "window.titleBarStyle": "custom",
     "editor.selectionClipboard": false,
     "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
@@ -20,7 +26,5 @@
     "terminal.integrated.detectLocale": "auto",
     "terminal.integrated.env.linux": {"LANG": "C.UTF-8"},
     "workbench.iconTheme": "helium-icon-theme",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "window.zoomLevel": -1,
-    "gitProjectManager.storeRepositoriesBetweenSessions": true,
+    "workbench.colorTheme": "Nord"
 }
