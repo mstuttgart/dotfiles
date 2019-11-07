@@ -1,89 +1,89 @@
 [user]
-	email = michellstut@gmail.com
-	name = Michell Stuttgart
+    email = michellstut@gmail.com
+    name = Michell Stuttgart
 
 [github]
-	user = mstuttgart
+    user = mstuttgart
 
 [grep]
-	lineNumber = true
+    lineNumber = true
 
 [help]
-	autocorrect = 1
+    autocorrect = 1
 
 [fetch]
-	prune = true
+    prune = true
 
 [alias]
-	last = log -1 HEAD
+    last = log -1 HEAD
 
-	append = commit --amend --reuse-message=HEAD
+    append = commit --amend --reuse-message=HEAD
 
-	bl = branch -l # List all local branches.
-	br = branch -r # List all remote branches.
-	blr = branch -a # Show local and remote branches.
-	bd = branch -d # Politely ask Git to delete a local branch.
-	bdf = branch -D # Sternly ask Git to delete a local branch.
-	bv = branch --verbose --remotes
+    bl = branch -l # List all local branches.
+    br = branch -r # List all remote branches.
+    blr = branch -a # Show local and remote branches.
+    bd = branch -d # Politely ask Git to delete a local branch.
+    bdf = branch -D # Sternly ask Git to delete a local branch.
+    bv = branch --verbose --remotes
 
-	cm = commit
-	rsh = reset HEAD
+    cm = commit
+    rsh = reset HEAD
 
-	ck = checkout
-	ckb = checkout -b
-	contrib = shortlog --summary --numbered
+    ck = checkout
+    ckb = checkout -b
+    contrib = shortlog --summary --numbered
 
-	df = diff --word-diff
-	ft = fetch --all --prune # Fetch all remotes and prune.
+    df = diff --word-diff	
+    ft = fetch --all --prune # Fetch all remotes and prune.
 
-	# Logs alias
-	l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    # Logs alias
+    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
-	# Status alias
-	st = status
-	ts = status -sb
+    # Status alias
+    st = status
+    ts = status -sb
 
-	# list all git alias
-	alias = !git config -l | grep alias
+    # list all git alias
+    alias = !git config -l | grep alias
 
-	# current branch
-	here = !git rev-parse --abbrev-ref HEAD
+    # current branch
+    here = !git rev-parse --abbrev-ref HEAD
 
-	# publish
-	up = !git push origin -u $(git here)
-	upf = !git push -f origin -u $(git here)
+    # publish
+    up = !git push origin -u $(git here)
+    upf = !git push -f origin -u $(git here)
 
-	# update
-	down = !git pull origin $(git here)
+    # update
+    down = !git pull origin $(git here)
 
-	# unpublish
-	purge = !git push origin --delete $(git here)
+    # unpublish
+    purge = !git push origin --delete $(git here)
 
-	# Open .gitconfig in your default editor.
-	conf = config --global -e
+    # Open .gitconfig in your default editor.
+    conf = config --global -e
 
 [core]
-	editor = nano
+    editor = nano
 
 [color "branch"]
 
-	current = yellow reverse
-	local = yellow
-	remote = green
+    current = yellow reverse
+    local = yellow
+    remote = green
 
 [blame]
-	coloring = highlightRecent
+    coloring = highlightRecent
 
 [color "diff"]
 
-	meta = yellow bold
-	frag = magenta bold # line info
-	old = red # deletions
-	new = green # additions
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
 
 [color "status"]
 
-	added = yellow
-	changed = green
-	untracked = cyan
+    added = yellow
+    changed = green
+    untracked = cyan
 
