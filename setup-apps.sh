@@ -25,6 +25,7 @@ apt_apps=(
     "vlc"
     "libreoffice"
     "gparted"
+    "fonts-firacode"
 )
 
 for app in "${apt_apps[@]}"; do
@@ -92,5 +93,8 @@ check_return_code $? "keybindings.json symlink"
 
 ln -sfv $(pwd)/vscode/settings.json ~/.config/Code/User/settings.json
 check_return_code $? "settings.json symlink"
+
+# Install vscode dev fonts
+sudo apt install fonts-firacode -y
 
 msg_ok "Installing Apps done"
