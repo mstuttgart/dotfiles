@@ -4,7 +4,7 @@
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojione/178/robot-face_1f916.png"></a>
 </p>
 
-<h4 align="center">My setup</h4>
+<h4 align="center">My Setup</h4>
 
 <p align="center">
   <a href="https://travis-ci.org/mstuttgart/dotfiles">
@@ -21,7 +21,6 @@
 <p align="center">
   <a href="#about">About</a> |
   <a href="#install">Install</a> |
-  <a href="#contribute">Contribute</a> |
   <a href="#credits">Credits</a>
 </p>
 
@@ -45,12 +44,6 @@ The `setup.sh` script automatize the setup of my workstation installing all libs
 source setup.sh
 ```
 
-## Contribute
-
-Please report issues/bugs and suggestions for improvements to the _issue_:
-
-- Issue Tracker: <https://github.com/mstuttgart/dotfiles/issues>
-
 ## Credits
 
-Copyright (C) 2019 by Michell Stuttgart
+Copyright (C) 2019-2021 by Michell Stuttgart
