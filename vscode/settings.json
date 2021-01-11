@@ -26,5 +26,9 @@
     "terminal.integrated.detectLocale": "auto",
     "terminal.integrated.env.linux": {"LANG": "C.UTF-8"},
     "workbench.iconTheme": "helium-icon-theme",
-    "workbench.colorTheme": "Nord"
+    "workbench.colorTheme": "Solarized Light",
+    "window.zoomLevel": -1,
+    "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": false,
+    "workbench.startupEditor": "newUntitledFile"
 }
