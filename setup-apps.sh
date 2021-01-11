@@ -46,9 +46,6 @@ new_line
 
 snap_apps=(
     "core"
-    "postman"
-    "spotify"
-    "onefetch"
 )
 
 for app in "${snap_apps[@]}"; do
