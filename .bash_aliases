@@ -21,4 +21,4 @@ alias cenv="virtualenv -p python3 .venv"
 alias denv="deactivate"
 
 # Create vscode extension list
-alias vscode-extension-list="code --list-extensions >> vscode/extensions.txt"
+alias vscode-extension-list="code --list-extensions"
