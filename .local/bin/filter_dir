@@ -1,0 +1,7 @@
+#!/bin/bash
+
+MODULE_NAME=$1
+
+git filter-branch --subdirectory-filter ${MODULE_NAME} -f
+
+git filter-branch -f --tree-filter 'mkdir -v '"$MODULE_NAME"'; git mv -k * '"$MODULE_NAME"'' HEAD
