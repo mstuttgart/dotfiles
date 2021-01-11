@@ -54,7 +54,7 @@
     upf = !git push -f origin -u $(git here)
 
     # update
-    down = !git pull origin $(git here)
+    down = !git pull --rebase origin $(git here)
 
     # unpublish
     purge = !git push origin --delete $(git here)
@@ -66,7 +66,6 @@
     editor = nano
 
 [color "branch"]
-
     current = yellow reverse
     local = yellow
     remote = green
@@ -75,14 +74,12 @@
     coloring = highlightRecent
 
 [color "diff"]
-
     meta = yellow bold
     frag = magenta bold # line info
     old = red # deletions
     new = green # additions
 
 [color "status"]
-
     added = yellow
     changed = green
     untracked = cyan
