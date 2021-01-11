@@ -41,7 +41,7 @@ git clone git@github.com:mstuttgart/dotfiles.git ~/.dotfiles
 The `setup.sh` script automatize the setup of my workstation installing all libs that I use in my setup.
 
 ```
-source setup.sh
+./setup.sh --all
 ```
 
 ## Credits

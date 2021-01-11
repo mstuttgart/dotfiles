@@ -9,7 +9,7 @@ install:
     sudo apt-get update >/dev/null
 
 script: 
-    ./setup.sh
+    ./setup.sh --all
 
 notifications:
   email: false
