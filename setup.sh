@@ -13,8 +13,11 @@ setup_dotfiles(){
     mkdir -p ~/.local/bin
     check_return_code $?
     
-    ln -sfv $(pwd)/.local/bin/filter_dir ~/.local/bin
-    check_return_code $? ".filter_dir symlink"
+    ln -sfv $(pwd)/.local/bin/git-prlink ~/.local/bin
+    check_return_code $? ".git-prlink symlink"
+
+    ln -sfv $(pwd)/.local/bin/git-filter-branch-dir ~/.local/bin
+    check_return_code $? ".git-filter-branch-dir symlink"
     
     # .bash_aliases ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
