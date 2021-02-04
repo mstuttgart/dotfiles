@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Clean repository and keep the folder history only
+# USAGE: git-filter-branch-dir
+
 MODULE_NAME=$1
 
 git filter-branch --subdirectory-filter ${MODULE_NAME} -f
