@@ -20,5 +20,9 @@ alias venv="source .venv/bin/activate"
 alias cenv="virtualenv -p python3 .venv"
 alias denv="deactivate"
 
+# Git alias
+git remote -v | awk '/fetch/{print $2}' | sed -Ee 's#(git@|git://)#https://#' -e 's@com:@com/@' -e 's%\.git$%%' | awk '/github/'
+
+
 # Create vscode extension list
 alias vscode-extension-list="code --list-extensions"
