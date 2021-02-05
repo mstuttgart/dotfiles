@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=3.2
+Type=Application
+Name=Godot
+Comment=Multi-platform 2D and 3D game engine
+Icon=godot
+Exec=/home/michell/.local/bin/Godot_v3.2.3-stable_x11.64
+Actions=
+Categories=Development;
+StartupWMClass=Godot

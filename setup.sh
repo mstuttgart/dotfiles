@@ -60,6 +60,15 @@ setup_dotfiles(){
     
     ln -sfv $(pwd)/.gitconfig ~/.gitconfig
     check_return_code $? ".gitconfig symlink"
+
+    # .desktop files ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+        # Configure .desktop files
+    ln -sfv $(pwd)/.local/share/applications/libresprite.desktop ~/.local/share/applications
+    check_return_code $? "libresprite.desktop symlink"
+    
+    ln -sfv $(pwd)/.local/share/applications/godot.desktop ~/.local/share/applications
+    check_return_code $? "godot.desktop symlink"
     
 }
 
@@ -166,7 +175,6 @@ setup_apps(){
         check_return_code $? $app
         
     done
-    
     
 }
 
