@@ -119,6 +119,26 @@ setup_google_chrome(){
     
 }
 
+
+setup_nodejs(){
+
+    # Install nvm to install NodeJs
+    sudo apt install curl -y
+    curl https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash 
+    source ~/.bashrc 
+
+    # Install NodeJs LTS
+    nvm install v14.16.0 
+    
+    # Install Hexo ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+    npm install hexo
+    
+    # The $? get result of last command
+    check_return_code $? "Hexo"
+    
+}
+
+
 setup_apps(){
     
     # Install apt apps ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -273,12 +293,13 @@ usage() {
     echo "$0 [--dotfiles] [--vscode] [--chrome] [--apps] [--dev] [--hosts]" >&2
     echo "" >&2
     echo "Options:" >&2
-    echo "   --dotfiles    Symlink dotfiles in home/ directory" >&2
-    echo "   --vscode      Install VsCode and symlink config" >&2
-    echo "   --gchrome     Install Google Chrome" >&2
-    echo "   --hosts       Create local hosts files and symlink it" >&2
-    echo "   --apps        Install development and general applications" >&2
-    echo "   --dev         Install development libs" >&2
+    echo "   --dotfiles       Symlink dotfiles in home/ directory" >&2
+    echo "   --vscode         Install VsCode and symlink config" >&2
+    echo "   --gchrome        Install Google Chrome" >&2
+    echo "   --nodejs         Install NodeJs" >&2
+    echo "   --hosts          Create local hosts files and symlink it" >&2
+    echo "   --apps           Install development and general applications" >&2
+    echo "   --dev            Install development libs" >&2
 }
 
 
@@ -298,6 +319,9 @@ do
         ;;
         --chrome)
             setup_google_chrome;
+        ;;
+        --nodejs)
+            setup_nodejs;
         ;;
         --apps)
             setup_apps;
