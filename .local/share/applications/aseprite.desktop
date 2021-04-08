@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.1
+Type=Application
+Name=Aseprite
+Comment=Animated sprite editor and pixel art tool
+Icon=aseprite
+Exec=/home/michell/.local/bin/aseprite/aseprite
+Actions=
+Categories=2DGraphics;Graphics;
+StartupWMClass=Aseprite

@@ -63,12 +63,15 @@ setup_dotfiles(){
 
     # .desktop files ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 
-        # Configure .desktop files
-    ln -sfv $(pwd)/.local/share/applications/libresprite.desktop ~/.local/share/applications
-    check_return_code $? "libresprite.desktop symlink"
+    # Configure .desktop files
+    ln -sfv $(pwd)/.local/share/applications/aseprite.desktop ~/.local/share/applications
+    check_return_code $? "aseprite.desktop symlink"
     
     ln -sfv $(pwd)/.local/share/applications/godot.desktop ~/.local/share/applications
     check_return_code $? "godot.desktop symlink"
+
+    ln -sfv $(pwd)/.local/share/applications/postman.desktop ~/.local/share/applications
+    check_return_code $? "postman.desktop symlink"
     
 }
 
