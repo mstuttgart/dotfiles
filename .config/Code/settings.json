@@ -18,17 +18,25 @@
     "editor.selectionClipboard": false,
     "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
     "workbench.tree.indent": 16,
-    "editor.minimap.enabled": false,
     "[shellscript]": {
         "editor.defaultFormatter": "shakram02.bash-beautify"
     },
     "terminal.integrated.shell.linux": "/bin/bash",
     "terminal.integrated.detectLocale": "auto",
     "terminal.integrated.env.linux": {"LANG": "C.UTF-8"},
-    "workbench.iconTheme": "helium-icon-theme",
-    "workbench.colorTheme": "Solarized Light",
-    "window.zoomLevel": -1,
+    "workbench.iconTheme": "ayu",
+    "workbench.colorTheme": "Better Solarized Light",
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": false,
-    "workbench.startupEditor": "newUntitledFile"
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editorAssociations": [
+        {
+            "viewType": "jupyter.notebook.ipynb",
+            "filenamePattern": "*.ipynb"
+        }
+    ],
+    "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/odoo/.venv/bin/python",
+    "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
+    "editor.renderControlCharacters": true,
+    "window.zoomLevel": -1,
 }
