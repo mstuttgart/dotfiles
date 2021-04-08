@@ -12,6 +12,10 @@ alias dl="cd ~/Downloads"
 alias odoop="cd ~/Workspace/odoo"
 alias odood="cd ~/Workspace/multierp-deploy-scripts"
 
+# Hexo alises
+alias hexos="hexo server"
+alias hexod="hexo clean && hexo deploy"
+
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
 
