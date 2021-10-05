@@ -23,20 +23,29 @@
     },
     "terminal.integrated.shell.linux": "/bin/bash",
     "terminal.integrated.detectLocale": "auto",
-    "terminal.integrated.env.linux": {"LANG": "C.UTF-8"},
-    "workbench.iconTheme": "ayu",
-    "workbench.colorTheme": "Better Solarized Light",
+    "terminal.integrated.env.linux": {
+        "LANG": "C.UTF-8"
+    },
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": false,
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
     "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/odoo/.venv/bin/python",
     "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
     "editor.renderControlCharacters": true,
+    "python.languageServer": "Pylance",
     "window.zoomLevel": -1,
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "yaml.customTags": [
+        "!encrypted/pkcs1-oaep scalar",
+        "!vault scalar"
+    ],
+    "redhat.telemetry.enabled": true,
+    "workbench.iconTheme": "ayu",
+    "workbench.colorTheme": "Better Solarized Light",
 }

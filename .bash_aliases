@@ -16,8 +16,12 @@ alias odood="cd ~/Workspace/multierp-deploy-scripts"
 alias hexos="hexo server"
 alias hexod="hexo clean && hexo deploy"
 
+# Update branchs from hotfix
+alias ghotfix="git checkout master && git down && git checkout develop && git rebase master && git down && git up"
+
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
+alias apt-get="sudo apt-get"
 
 # Python aliases
 alias venv="source .venv/bin/activate"
