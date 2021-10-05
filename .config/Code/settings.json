@@ -29,12 +29,9 @@
     "editor.fontFamily": "'Fira Code', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": false,
     "workbench.startupEditor": "newUntitledFile",
-    "workbench.editorAssociations": [
-        {
-            "viewType": "jupyter.notebook.ipynb",
-            "filenamePattern": "*.ipynb"
-        }
-    ],
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter.notebook.ipynb"
+    },
     "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/odoo/.venv/bin/python",
     "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
     "editor.renderControlCharacters": true,
