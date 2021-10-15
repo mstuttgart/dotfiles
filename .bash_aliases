@@ -23,6 +23,9 @@ alias ghotfix="git checkout master && git down && git checkout develop && git re
 alias update="sudo apt update && sudo apt upgrade -y"
 alias apt-get="sudo apt-get"
 
+# Return my public IP 
+alias myip="host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'"
+
 # Python aliases
 alias venv="source .venv/bin/activate"
 alias cenv="virtualenv -p python3 .venv"

@@ -17,7 +17,10 @@ setup_dotfiles(){
     check_return_code $? ".git-prlink symlink"
 
     ln -sfv $(pwd)/.local/bin/git-filter-branch-dir ~/.local/bin
-    check_return_code $? ".git-filter-branch-dir symlink"
+    check_return_code $? ".git-filter-branch-dir symlink"   
+    
+    ln -sfv $(pwd)/.local/bin/gogh ~/.local/bin
+    check_return_code $? ".gogh symlink"
     
     # .bash_aliases ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
@@ -166,6 +169,8 @@ setup_apps(){
         "libreoffice"
         "gparted"
         "fonts-firacode"
+        "dconf-cli"
+        "uuid-runtime"
     )
     
     for app in "${apt_apps[@]}"; do
