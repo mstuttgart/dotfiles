@@ -33,3 +33,9 @@ alias denv="deactivate"
 
 # Create vscode extension list
 alias vscode-extension-list="code --list-extensions"
+
+# Alias to new apps
+alias ls='exa'
+alias cat='bat'
+
+
