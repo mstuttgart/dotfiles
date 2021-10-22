@@ -155,9 +155,8 @@ setup_apps(){
     
     apt_apps=(
         "gpick"
-        "htop"
         "tree"
-        "screenfetch"
+        "neofetch"
         "tig"
         "git"
         "git-core"
@@ -186,6 +185,24 @@ setup_apps(){
         check_return_code $? $app
         
     done
+
+    ## Install deb apps ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+
+    msg "Installing deb packages"
+    new_line
+     
+    msg_install "bat"
+    wget https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
+    sudo dpkg -i bat_0.18.3_amd64.deb
+    check_return_code $?
+    rm -f bat_0.18.3_amd64.deb
+
+    
+    msg_install "btm"
+    wget https://github.com/ClementTsang/bottom/releases/download/0.6.4/bottom_0.6.4_amd64.deb
+    sudo dpkg -i bottom_0.6.4_amd64.deb
+    check_return_code $?
+    rm -f bottom_0.6.4_amd64.deb
     
     # Install snap apps ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
@@ -206,7 +223,7 @@ setup_apps(){
         check_return_code $? $app
         
     done
-    
+
 }
 
 setup_dev_requiements(){
@@ -294,9 +311,12 @@ setup_all(){
 
     new_line
 
+    neofetch
+
 }
 
 usage() {
+    
     echo "Usage:" >&2
     echo "$0 [--dotfiles] [--vscode] [--chrome] [--apps] [--dev] [--hosts]" >&2
     echo "" >&2
