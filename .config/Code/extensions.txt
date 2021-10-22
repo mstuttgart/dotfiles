@@ -1,13 +1,15 @@
+akamud.vscode-theme-onelight
 alefragnani.Bookmarks
 antfu.theme-vitesse
 be5invis.toml
 bungcip.better-toml
+DaltonMenezes.aura-theme
 DotJoshJohnson.xml
 eamodio.gitlens
 EditorConfig.EditorConfig
-esz.theme-a
 felipecaputo.git-project-manager
 formulahendry.auto-close-tag
+gimenete.github-linker
 ginfuru.ginfuru-better-solarized-dark-theme
 jdinhlife.gruvbox
 kamikillerto.vscode-colorize
@@ -18,6 +20,7 @@ ms-python.python
 ms-python.vscode-pylance
 ms-toolsai.jupyter
 ms-toolsai.jupyter-keymap
+ms-toolsai.jupyter-renderers
 ms-vscode-remote.remote-containers
 mstuttgart.odoo-scaffold
 mstuttgart.odoo-snippets
@@ -26,6 +29,6 @@ redhat.vscode-yaml
 sainnhe.everforest
 shakram02.bash-beautify
 teabyii.ayu
-tomaciazek.ansible
+thenikso.github-plus-theme
 xshrim.txt-syntax
 yzhang.markdown-all-in-one

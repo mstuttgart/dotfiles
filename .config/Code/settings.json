@@ -36,7 +36,6 @@
     "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
     "editor.renderControlCharacters": true,
     "python.languageServer": "Pylance",
-    "window.zoomLevel": -1,
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -47,5 +46,5 @@
     ],
     "redhat.telemetry.enabled": true,
     "workbench.iconTheme": "ayu",
-    "workbench.colorTheme": "Better Solarized Light",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
 }
