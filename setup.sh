@@ -21,6 +21,9 @@ setup_dotfiles(){
     
     ln -sfv $(pwd)/.local/bin/gogh ~/.local/bin
     check_return_code $? ".gogh symlink"
+
+    cp -f $(pwd)/.local/bin/exa ~/.local/bin
+    check_return_code $? ".exa copy"
     
     # .bash_aliases ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
     
