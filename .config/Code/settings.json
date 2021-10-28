@@ -35,7 +35,7 @@
     "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/odoo/.venv/bin/python",
     "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
     "editor.renderControlCharacters": true,
-    "python.languageServer": "Pylance",
+    "python.languageServer": "Jedi",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -45,6 +45,6 @@
         "!vault scalar"
     ],
     "redhat.telemetry.enabled": true,
-    "workbench.iconTheme": "ayu",
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.iconTheme": "chalice-icon-theme",
+    "workbench.colorTheme": "White Winter",
 }
