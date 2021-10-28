@@ -17,7 +17,7 @@ alias hexos="hexo server"
 alias hexod="hexo clean && hexo deploy"
 
 # Update branchs from hotfix
-alias ghotfix="git checkout master && git down && git checkout develop && git rebase master && git down && git up"
+alias ghotfix="git checkout main && git down && git checkout develop && git rebase main && git down && git up"
 
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
