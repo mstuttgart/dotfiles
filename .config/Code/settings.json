@@ -46,5 +46,5 @@
     ],
     "redhat.telemetry.enabled": true,
     "workbench.iconTheme": "chalice-icon-theme",
-    "workbench.colorTheme": "White Winter",
+    "workbench.colorTheme": "Ariake Dark",
 }
