@@ -1,8 +1,5 @@
 # Aliases
 alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias -- -="cd -"
 
 # Shortcuts
 alias work="cd ~/Workspace"
@@ -21,7 +18,6 @@ alias ghotfix="git checkout main && git down && git checkout develop && git reba
 
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
-alias apt-get="sudo apt-get"
 
 # Return my public IP 
 alias myip="host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'"
