@@ -19,16 +19,6 @@
 
     append = commit --amend --reuse-message=HEAD
 
-    bl = branch -l # List all local branches.
-    br = branch -r # List all remote branches.
-    blr = branch -a # Show local and remote branches.
-    bd = branch -d # Politely ask Git to delete a local branch.
-    bdf = branch -D # Sternly ask Git to delete a local branch.
-    bv = branch --verbose --remotes
-
-    cm = commit
-    rsh = reset HEAD
-
     ck = checkout
     ckb = checkout -b
     contrib = shortlog --summary --numbered
@@ -37,14 +27,11 @@
     ft = fetch --all --prune # Fetch all remotes and prune.
 
     # Logs alias
-    l = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
     # Status alias
     st = status
     ts = status -sb
-
-    # list all git alias
-    alias = !git config -l | grep alias
 
     # current branch
     here = !git rev-parse --abbrev-ref HEAD
@@ -61,6 +48,9 @@
 
     # Open .gitconfig in your default editor.
     conf = config --global -e
+
+    # list all git alias
+    alias = !git config -l | grep alias
 
 [core]
     editor = nano
