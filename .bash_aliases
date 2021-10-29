@@ -30,6 +30,7 @@ alias myip="host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.co
 alias venv="source .venv/bin/activate"
 alias cenv="virtualenv -p python3 .venv"
 alias denv="deactivate"
+alias pyserver="python3 -m http.server 8000"
 
 # Create vscode extension list
 alias vscode-extension-list="code --list-extensions"
