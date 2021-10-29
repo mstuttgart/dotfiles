@@ -88,16 +88,7 @@ setup_vscode(){
     
     msg "Install VS Code and restore settings"
     new_line
-    
-    if [ ! -f "/etc/apt/sources.list.d/vscode.list" ]; then
-        wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
-        sudo add-apt-repository "deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main"
-        check_return_code $? "Add VSCode key"
-        sudo apt update
-        sudo apt install code
-        check_return_code $? "Install VS Code"
-    fi
-    
+        
     msg_install "VS Code extensions"
     cat $(pwd)/.config/Code/extensions.txt | xargs -n 1 code --install-extension
     check_return_code $? "extensions"
@@ -211,6 +202,7 @@ setup_apps(){
     
     snap_apps=(
         "core"
+        "code --classic"
     )
     
     for app in "${snap_apps[@]}"; do
