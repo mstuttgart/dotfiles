@@ -4,7 +4,11 @@
   file:
     path: '{{ bin_folder }}'
     state: directory
-    mode: 02775
+
+- name: Create folder to store executables and appImage files in "{{ bin_folder }}"
+  file:
+    path: '{{ ansible_env.HOME }}/.config/Code/User'
+    state: directory
 
 - name: Create symbolic link to git-prlink in '{{ bin_folder }}'
   file:
