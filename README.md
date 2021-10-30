@@ -1,20 +1,18 @@
 <p align="center">
-  <br>
   <a href="https://github.com/mstuttgart/dotfiles">
   <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojione/178/robot-face_1f916.png"></a>
+  <h4 align="center">Ansible Setup</h4>
 </p>
-
-<h4 align="center">My Setup</h4>
 
 <p align="center">
   <a href="https://travis-ci.org/mstuttgart/dotfiles">
-    <img src="https://img.shields.io/travis/mstuttgart/dotfiles/master.svg?style=flat-square" alt="Build">
+    <img src="https://img.shields.io/travis/mstuttgart/dotfiles/master.svg?style=for-the-badge&color=FE7D3D" alt="Build">
   </a>
   <a href="https://github.com/mstuttgart/dotfiles/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mstuttgart/dotfiles.svg?style=flat-square" alt="License">
+    <img src="https://img.shields.io/github/license/mstuttgart/dotfiles.svg?style=for-the-badge&color=FE7D3D" alt="License">
   </a>
  <a href="https://github.com/mstuttgart/dotfiles/releases">
-   <img alt="GitHub release" src="https://img.shields.io/github/tag/mstuttgart/dotfiles.svg?style=flat-square">
+   <img alt="GitHub release" src="https://img.shields.io/github/tag/mstuttgart/dotfiles.svg?style=for-the-badge">
  </a>
 </p>
 
@@ -38,10 +36,16 @@ Clone this repo. You can clone it in your /home folder, for example.
 git clone git@github.com:mstuttgart/dotfiles.git ~/.dotfiles
 ```
 
+Install `python3` and `ansible` :
+
+```
+sudo apt install python3-dev ansible
+```
+
 The `setup.sh` script automatize the setup of my workstation installing all libs that I use in my setup.
 
 ```
-./setup.sh --all
+./setup.sh
 ```
 
 ## Credits

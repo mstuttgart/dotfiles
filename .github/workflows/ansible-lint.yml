@@ -1,0 +1,21 @@
+name: Ansible Lint
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-20.04
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Lint Ansible Playbook
+      uses: iranzo/ansible-lint-action@master
+      with:
+        targets: |
+          defaults/main.yml
+          tasks/main.yml
+        override-deps: |
+          ansible==2.9
+          ansible-lint==3.4.20
+        args: ""
