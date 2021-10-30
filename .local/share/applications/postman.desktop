@@ -1,9 +1,0 @@
-[Desktop Entry]
-Version=1.1
-Type=Application
-Name=Postman
-Comment=Postman is a collaboration platform for API development
-Icon=postman
-Exec=/home/michell/.local/bin/Postman/Postman
-Actions=
-Categories=Development;

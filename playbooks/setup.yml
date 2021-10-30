@@ -1,0 +1,4 @@
+- name: Setup Development Enviroment
+  hosts: localhost
+  roles:
+    - ansible-setup
