@@ -77,6 +77,6 @@
 - name: Create .desktop files to Asesprite in '{{ bin_folder }}'
   file:
     src: '{{ role_path }}/files/.local/share/applications/aseprite.desktop'
-    dest: '{{ ansible_env.HOME }}/.local/share/applications/aseprite'
+    dest: '{{ ansible_env.HOME }}/.local/share/applications/aseprite.desktop'
     state: link
     force: yes
