@@ -56,6 +56,15 @@
     state: link
     force: yes
 
+# Hidden folder from home path
+- name: Create symbolic link to .hidden in '{{ ansible_env.HOME }}'
+  file:
+    src: '{{ role_path }}/files/.hidden'
+    dest: '{{ ansible_env.HOME }}/.hidden'
+    state: link
+    force: yes
+
+
 # Configure Desktop files ::::::::::::::::::::::::::
 
 - name: Create .desktop files to Godot in '{{ bin_folder }}'
