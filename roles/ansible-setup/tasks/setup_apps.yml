@@ -263,11 +263,18 @@
 
 # Install nvm
 
-- name: nvm
+- name: Install nvm (Node Version Manager)
   shell: >
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
   args:
     creates: '{{ ansible_env.HOME }}/.nvm/nvm.sh'
+
+- name: Install node and set version
+  shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts'
+  args:
+    creates: "{{ ansible_env.HOME }}/.nvm/versions/node"
+    chdir: "{{ ansible_env.HOME }}"
+    executable: /bin/bash
 
 # Install and configure postgresql
 
