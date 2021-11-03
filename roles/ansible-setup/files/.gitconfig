@@ -23,6 +23,8 @@
     ckb = checkout -b
     contrib = shortlog --summary --numbered
 
+    rbi = rebase -i
+
     df = diff --word-diff	
     ft = fetch --all --prune # Fetch all remotes and prune.
 
