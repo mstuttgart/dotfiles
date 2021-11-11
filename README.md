@@ -36,16 +36,16 @@ Clone this repo. You can clone it in your /home folder, for example.
 git clone git@github.com:mstuttgart/dotfiles.git ~/.dotfiles
 ```
 
-Install `python3` and `ansible` :
+Install `python3` and dependencies :
 
 ```
-sudo apt install python3-dev ansible
+./scripts/setup.sh
 ```
 
-The `setup.sh` script automatize the setup of my workstation installing all libs that I use in my setup.
+The `install.sh` script automatize the setup of my workstation installing all libs that I use in my setup.
 
 ```
-./setup.sh
+./scripts/install.sh
 ```
 
 ## Credits
