@@ -45,7 +45,7 @@
         "!vault scalar"
     ],
     "redhat.telemetry.enabled": true,
-    "workbench.iconTheme": "chalice-icon-theme",
-    "workbench.colorTheme": "Gruvbox Dark Medium",
-    "window.zoomLevel": 1,
+    "workbench.iconTheme": "ayu",
+    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "ansible.ansibleLint.enabled": false,
 }
