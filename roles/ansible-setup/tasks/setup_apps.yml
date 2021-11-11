@@ -249,6 +249,13 @@
 - name: Setup vscode extension
   shell: cat '{{ role_path }}/files/.config/Code/extensions.txt' | xargs -n 1 code --install-extension
 
+- name: Setup sysctl to fix warning to large workspace
+  become: yes
+  sysctl:
+    name: fs.inotify.max_user_watches
+    value: '524288'
+    state: present
+    reload: yes
 
 # Configure Settings Files ::::::::::::::::::::::::::::::::::::::::
 
