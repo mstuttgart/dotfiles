@@ -3,7 +3,6 @@ artlaman.chalice-icon-theme
 be5invis.toml
 bungcip.better-toml
 ceciljacob.code-plus-theme
-DaltonMenezes.aura-theme
 DotJoshJohnson.xml
 eamodio.gitlens
 EditorConfig.EditorConfig
@@ -18,16 +17,15 @@ mechatroner.rainbow-csv
 mrorz.language-gettext
 ms-azuretools.vscode-docker
 ms-python.python
+ms-python.vscode-pylance
 ms-vscode-remote.remote-containers
 mstuttgart.odoo-scaffold
 mstuttgart.odoo-snippets
 njpwerner.autodocstring
 redhat.vscode-yaml
 sainnhe.everforest
-sainnhe.gruvbox-material
 shakram02.bash-beautify
 teabyii.ayu
 tomaciazek.ansible
-wart.ariake-dark
 xshrim.txt-syntax
 yzhang.markdown-all-in-one
