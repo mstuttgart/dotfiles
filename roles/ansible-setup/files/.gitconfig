@@ -21,6 +21,7 @@
 
     ck = checkout
     ckb = checkout -b
+    chp = cherry-pick
     contrib = shortlog --summary --numbered
 
     rbi = rebase -i
