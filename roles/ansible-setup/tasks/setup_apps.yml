@@ -220,6 +220,7 @@
   file:
     path: '{{ ansible_env.HOME }}/.config/Code/User'
     state: directory
+    recurse: yes
 
 - name: Install VsCode snap package
   become: yes
@@ -242,15 +243,23 @@
     force: yes
 
 - name: Import VsCode extensions
-  shell: cat '{{ role_path }}/files/.config/Code/extensions.txt' | xargs -n 1 code --install-extension
+  shell: |
+    set -o pipefail
+    cat '{{ role_path }}/files/.config/Code/extensions.txt' | xargs -n 1 code --install-extension
+  args:
+    executable: /bin/bash
+  tags:
+    - skip_ansible_lint
 
 # Install nvm :::::::::::::::::::::::::::::::::::::::::::::
 
 - name: Install nvm (Node Version Manager)
-  shell: >
+  shell: |
+    set -o pipefail
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
   args:
     creates: '{{ ansible_env.HOME }}/.nvm/nvm.sh'
+    executable: /bin/bash
 
 - name: Install node and set version
   shell: '. {{ ansible_env.HOME }}/.nvm/nvm.sh && nvm install --lts'
@@ -294,6 +303,7 @@
   file:
     path: '{{ bin_folder }}'
     state: directory
+    recurse: yes
 
 - name: Create symbolic link to git-prlink in '{{ bin_folder }}'
   file:
@@ -317,6 +327,7 @@
   copy:
     src: '{{ role_path }}/files/.local/bin/exa'
     dest: '{{ bin_folder }}/exa'
+    mode: 0774
 
 # Add Desktop files ::::::::::::::::::::::::::
 

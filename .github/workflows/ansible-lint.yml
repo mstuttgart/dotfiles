@@ -13,8 +13,7 @@ jobs:
       uses: iranzo/ansible-lint-action@master
       with:
         targets: |
-          defaults/main.yml
-          tasks/main.yml
+          playbooks/setup.yml
         override-deps: |
           ansible==4.8.0
           ansible-lint==5.2.1
