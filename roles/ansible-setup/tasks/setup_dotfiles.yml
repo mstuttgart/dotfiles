@@ -1,38 +1,5 @@
 ---
 
-- name: Create folder to store executables and appImage files in "{{ bin_folder }}"
-  file:
-    path: '{{ bin_folder }}'
-    state: directory
-
-- name: Create folder to store executables and appImage files in "{{ bin_folder }}"
-  file:
-    path: '{{ ansible_env.HOME }}/.config/Code/User'
-    state: directory
-
-- name: Create symbolic link to git-prlink in '{{ bin_folder }}'
-  file:
-    src: '{{ role_path }}/files/.local/bin/git-prlink'
-    dest: '{{ bin_folder }}/git-prlink'
-    state: link
-
-- name: Create symbolic link to git-filter-branch-dir in '{{ bin_folder }}'
-  file:
-    src: '{{ role_path }}/files/.local/bin/git-filter-branch-dir'
-    dest: '{{ bin_folder }}/git-filter-branch-dir'
-    state: link
-
-- name: Create symbolic link to gogh in '{{ bin_folder }}'
-  file:
-    src: '{{ role_path }}/files/.local/bin/gogh'
-    dest: '{{ bin_folder }}/gogh'
-    state: link
-
-- name: Copy exa binary file to '{{ bin_folder }}'
-  copy:
-    src: '{{ role_path }}/files/.local/bin/exa'
-    dest: '{{ bin_folder }}/exa'
-
 # Create link to dotfiles
 
 - name: Create symbolic link to .bash_aliases in '{{ ansible_env.HOME }}'
@@ -61,22 +28,5 @@
   file:
     src: '{{ role_path }}/files/.hidden'
     dest: '{{ ansible_env.HOME }}/.hidden'
-    state: link
-    force: yes
-
-
-# Configure Desktop files ::::::::::::::::::::::::::
-
-- name: Create .desktop files to Godot in '{{ bin_folder }}'
-  file:
-    src: '{{ role_path }}/files/.local/share/applications/godot.desktop'
-    dest: '{{ ansible_env.HOME }}/.local/share/applications/godot.desktop'
-    state: link
-    force: yes
-
-- name: Create .desktop files to Asesprite in '{{ bin_folder }}'
-  file:
-    src: '{{ role_path }}/files/.local/share/applications/aseprite.desktop'
-    dest: '{{ ansible_env.HOME }}/.local/share/applications/aseprite.desktop'
     state: link
     force: yes

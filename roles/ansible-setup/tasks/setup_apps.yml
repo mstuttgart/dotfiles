@@ -92,18 +92,6 @@
     state: present
   become: yes
 
-# Set locale to pt_BR :::::::::::::::::::::::::::::::::::::
-
-- name: Set 'pt_BR' locale in system
-  locale_gen:
-    name: pt_BR.UTF-8
-    state: present
-
-- name: Set 'pt_BR' locale as default
-  command: localectl set-locale LANG=pt_BR.UTF-8
-  tags:
-    - skip_ansible_lint
-
 # wkhtmltopdf :::::::::::::::::::::::::::::::::::::
 
 - name: Check wkhtmltopdf package status
@@ -226,49 +214,37 @@
       - postman
       - bottom
 
+# Install and configure vscode ::::::::::::::::::::::::::
+
+- name: Create folder to store settings of VsCode
+  file:
+    path: '{{ ansible_env.HOME }}/.config/Code/User'
+    state: directory
+
 - name: Install VsCode snap package
   become: yes
   snap:
     name: code
     classic: yes
 
-- name: Setup vscode keybindings'
+- name: Setup VsCode keybindings'
   file:
     src: '{{ role_path }}/files/.config/Code/keybindings.json'
     dest: '{{ ansible_env.HOME }}/.config/Code/User/keybindings.json'
     state: link
     force: yes
 
-- name: Setup vscode settings
+- name: Setup VsCode settings
   file:
     src: '{{ role_path }}/files/.config/Code/settings.json'
     dest: '{{ ansible_env.HOME }}/.config/Code/User/settings.json'
     state: link
     force: yes
 
-- name: Setup vscode extension
+- name: Import VsCode extensions
   shell: cat '{{ role_path }}/files/.config/Code/extensions.txt' | xargs -n 1 code --install-extension
 
-- name: Setup sysctl to fix warning to large workspace
-  become: yes
-  sysctl:
-    name: fs.inotify.max_user_watches
-    value: '524288'
-    state: present
-    reload: yes
-
-# Configure Settings Files ::::::::::::::::::::::::::::::::::::::::
-
-- name: Add Google Search on /etc/hosts file
-  become: yes
-  blockinfile:
-    create: yes
-    dest: /etc/hosts
-    marker: '## {mark} added by ansible (Configure Google Safe Search)'
-    block: |
-      216.239.38.120 www.google.com
-
-# Install nvm
+# Install nvm :::::::::::::::::::::::::::::::::::::::::::::
 
 - name: Install nvm (Node Version Manager)
   shell: >
@@ -283,7 +259,7 @@
     chdir: "{{ ansible_env.HOME }}"
     executable: /bin/bash
 
-# Install and configure postgresql
+# Install and configure postgresql ::::::::::::::::::::::::::::
 
 - name: Install Postgresql
   become: yes
@@ -311,3 +287,49 @@
     name: '{{ postgresql_db_user }}'
     password: '{{ postgresql_db_user_password }}'
     role_attr_flags: NOSUPERUSER,CREATEDB
+
+# Install and configure binary files :::::::::::::::::::::::::::::::::::::::::
+
+- name: Create folder to store executables and appImage files in "{{ bin_folder }}"
+  file:
+    path: '{{ bin_folder }}'
+    state: directory
+
+- name: Create symbolic link to git-prlink in '{{ bin_folder }}'
+  file:
+    src: '{{ role_path }}/files/.local/bin/git-prlink'
+    dest: '{{ bin_folder }}/git-prlink'
+    state: link
+
+- name: Create symbolic link to git-filter-branch-dir in '{{ bin_folder }}'
+  file:
+    src: '{{ role_path }}/files/.local/bin/git-filter-branch-dir'
+    dest: '{{ bin_folder }}/git-filter-branch-dir'
+    state: link
+
+- name: Create symbolic link to gogh in '{{ bin_folder }}'
+  file:
+    src: '{{ role_path }}/files/.local/bin/gogh'
+    dest: '{{ bin_folder }}/gogh'
+    state: link
+
+- name: Copy exa binary file to '{{ bin_folder }}'
+  copy:
+    src: '{{ role_path }}/files/.local/bin/exa'
+    dest: '{{ bin_folder }}/exa'
+
+# Add Desktop files ::::::::::::::::::::::::::
+
+- name: Create .desktop files to Godot in '{{ bin_folder }}'
+  file:
+    src: '{{ role_path }}/files/.local/share/applications/godot.desktop'
+    dest: '{{ ansible_env.HOME }}/.local/share/applications/godot.desktop'
+    state: link
+    force: yes
+
+- name: Create .desktop files to Asesprite in '{{ bin_folder }}'
+  file:
+    src: '{{ role_path }}/files/.local/share/applications/aseprite.desktop'
+    dest: '{{ ansible_env.HOME }}/.local/share/applications/aseprite.desktop'
+    state: link
+    force: yes
