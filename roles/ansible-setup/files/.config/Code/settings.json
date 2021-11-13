@@ -46,6 +46,7 @@
     ],
     "redhat.telemetry.enabled": true,
     "workbench.iconTheme": "ayu",
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Better Solarized Light",
     "ansible.ansibleLint.enabled": false,
+    "editor.fontSize": 13,
 }
