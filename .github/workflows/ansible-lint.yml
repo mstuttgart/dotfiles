@@ -16,6 +16,6 @@ jobs:
           defaults/main.yml
           tasks/main.yml
         override-deps: |
-          ansible==2.9
-          ansible-lint==3.4.20
+          ansible==4.8.0
+          ansible-lint==5.2.1
         args: ""
