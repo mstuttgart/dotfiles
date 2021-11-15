@@ -136,6 +136,11 @@
 - name: Install development requirements packages
   package:
     name:
+        - gedit
+        - gedit-plugin-bracket-completion
+        - gedit-plugin-code-comment
+        - gedit-plugin-draw-spaces
+        - gedit-plugin-color-picker
         - gpick
         - tree
         - neofetch
