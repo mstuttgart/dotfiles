@@ -184,31 +184,6 @@
     path: '/home/{{ ansible_env.USER }}/google_chrome_stable.deb'
     state: absent
 
-# bat ::::::::::::::::::::::::::::::::::::
-
-- name: Check bat package status
-  command: dpkg-query -W bat
-  register: bat_check_deb
-  failed_when: bat_check_deb.rc > 1
-  changed_when: bat_check_deb.rc == 1
-
-- name: Download bat
-  get_url:
-    url: https://github.com/sharkdp/bat/releases/download/v0.18.3/bat_0.18.3_amd64.deb
-    dest: '/home/{{ ansible_env.USER }}/bat.deb'
-  when: bat_check_deb.rc == 1
-
-- name: Install bat - cat(1) clone with wings.
-  become: yes
-  apt:
-    deb: '/home/{{ ansible_env.USER }}/bat.deb'
-  when: bat_check_deb.rc == 1
-
-- name: Delete bat.deb file
-  file:
-    path: '/home/{{ ansible_env.USER }}/bat.deb'
-    state: absent
-
 # Install snap packages ::::::::::::::::::::::::::::::::::
 
 - name: Install snap packages
