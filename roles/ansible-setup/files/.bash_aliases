@@ -16,6 +16,9 @@ alias hexod="hexo clean && hexo deploy"
 # Update branchs from hotfix
 alias ghotfix="git checkout main && git down && git checkout develop && git rebase main && git down && git up"
 
+# Update branchs main after new release
+alias gupdate="git fetch && git down && manager git fetch && manager git checkout main && manager git foreach 'git reset --hard origin/main' && manager git pull develop"
+
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
 
