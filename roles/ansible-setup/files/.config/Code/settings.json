@@ -46,7 +46,10 @@
     ],
     "redhat.telemetry.enabled": true,
     "workbench.iconTheme": "ayu",
-    "workbench.colorTheme": "Better Solarized Light",
     "ansible.ansibleLint.enabled": false,
     "editor.fontSize": 13,
+    "workbench.preferredLightColorTheme": "Better Solarized Light",
+    "workbench.preferredDarkColorTheme": "Ayu Light Bordered",
+    "workbench.colorTheme": "Better Solarized Light",
+    "terminal.integrated.persistentSessionReviveProcess": "never",
 }
