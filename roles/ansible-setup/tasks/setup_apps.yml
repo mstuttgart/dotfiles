@@ -141,6 +141,8 @@
         - gedit-plugin-code-comment
         - gedit-plugin-draw-spaces
         - gedit-plugin-color-picker
+        - redshift
+        - redshift-gtk
         - gpick
         - tree
         - neofetch
