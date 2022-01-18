@@ -48,8 +48,8 @@
     "workbench.iconTheme": "ayu",
     "ansible.ansibleLint.enabled": false,
     "editor.fontSize": 13,
-    "workbench.preferredLightColorTheme": "Better Solarized Light",
+    "workbench.preferredLightColorTheme": "Nord",
     "workbench.preferredDarkColorTheme": "Ayu Light Bordered",
-    "workbench.colorTheme": "Better Solarized Light",
+    "workbench.colorTheme": "Ayu Light Bordered",
     "terminal.integrated.persistentSessionReviveProcess": "never",
 }
