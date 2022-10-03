@@ -6,6 +6,16 @@
     cache_valid_time: 3600
   become: yes
 
+  # Install apps from ppa
+
+- name: Ass brightness-controller ppa
+  apt_repository:
+    validate_certs: no
+    repo: 'ppa:apandada1/brightness-controller'
+    state: present
+    update_cache: yes
+  become: yes
+
 - name: Install development requirements packages
   package:
     name:
@@ -141,8 +151,7 @@
         - gedit-plugin-code-comment
         - gedit-plugin-draw-spaces
         - gedit-plugin-color-picker
-        - redshift
-        - redshift-gtk
+        - brightness-controller
         - gpick
         - tree
         - neofetch
