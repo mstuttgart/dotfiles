@@ -7,14 +7,23 @@ jobs:
 
     runs-on: ubuntu-20.04
 
+    strategy:
+      matrix:
+        python-version: [3.8]
+        ansible-version: [4.8.0]
+
     steps:
     - uses: actions/checkout@v2
-    - name: Lint Ansible Playbook
-      uses: iranzo/ansible-lint-action@master
+    - name: Set up Python ${{ matrix.python-version }}
+      uses: actions/setup-python@v1
       with:
-        targets: |
-          playbooks/setup.yml
-        override-deps: |
-          ansible==4.8.0
-          ansible-lint==5.2.1
-        args: ""
+        python-version: ${{ matrix.python-version }}
+    - name: Install Ansible ${{ matrix.ansible-version }}
+      run: |
+        python -m pip install --upgrade pip
+        pip install ansible-lint ansible==${{ matrix.ansible-version }}
+    - name: Lint playbook
+      run: |
+        ansible-playbook playbooks/setup.yml --syntax-check
+        ansible-lint playbooks/setup.yml
+
