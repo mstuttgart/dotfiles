@@ -17,11 +17,11 @@
     "window.titleBarStyle": "custom",
     "editor.selectionClipboard": false,
     "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
-    "workbench.tree.indent": 16,
+    "workbench.tree.indent": 20,
     "[shellscript]": {
         "editor.defaultFormatter": "shakram02.bash-beautify"
     },
-    "terminal.integrated.shell.linux": "/bin/bash",
+    "terminal.integrated.profiles.linux": "/bin/bash",
     "terminal.integrated.detectLocale": "auto",
     "terminal.integrated.env.linux": {
         "LANG": "C.UTF-8"
@@ -45,11 +45,14 @@
         "!vault scalar"
     ],
     "redhat.telemetry.enabled": true,
-    "workbench.iconTheme": "ayu",
     "ansible.ansibleLint.enabled": false,
-    "editor.fontSize": 13,
     "workbench.preferredLightColorTheme": "Nord",
     "workbench.preferredDarkColorTheme": "Ayu Light Bordered",
-    "workbench.colorTheme": "Ayu Light Bordered",
     "terminal.integrated.persistentSessionReviveProcess": "never",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.codeLensFontFamily": "'Fira Code',",
+    "workbench.colorTheme": "Better Solarized Light",
+    "window.zoomLevel": -1,
+    "workbench.iconTheme": "ayu",
 }
