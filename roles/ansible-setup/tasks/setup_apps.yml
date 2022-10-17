@@ -6,6 +6,19 @@
     cache_valid_time: 3600
   become: yes
 
+- name: Add brightness-controller apt repository
+  apt_repository: 
+    repo: 'deb https://ppa.launchpadcontent.net/apandada1/brightness-controller/ubuntu focal main' 
+    state: present
+    update_cache: yes
+  become: yes
+
+- name: Install brightness-controller
+  apt: 
+    name: brightness-controller
+    state: present
+  become: yes
+
 - name: Install development requirements packages
   package:
     name:
