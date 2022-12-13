@@ -6,19 +6,6 @@
     cache_valid_time: 3600
   become: yes
 
-- name: Add brightness-controller apt repository
-  apt_repository: 
-    repo: 'deb https://ppa.launchpadcontent.net/apandada1/brightness-controller/ubuntu focal main' 
-    state: present
-    update_cache: yes
-  become: yes
-
-- name: Install brightness-controller
-  apt: 
-    name: brightness-controller
-    state: present
-  become: yes
-
 - name: Install development requirements packages
   package:
     name:
@@ -155,6 +142,7 @@
         - gedit-plugin-draw-spaces
         - gedit-plugin-color-picker
         - gpick
+        - gdebi
         - tree
         - neofetch
         - tig
@@ -171,6 +159,33 @@
         - gnome-tweak-tool
     state: present
   become: yes
+
+# Mint Stick :::::::::::::::::::::::::::::::::::::::::::::::::::
+
+# Install linx mint stick (app to format and crett boot usb image)
+
+- name: Check mintstick package status
+  command: dpkg-query -W mintstick
+  register: mintstick_check_deb
+  failed_when: mintstick_check_deb.rc > 1
+  changed_when: mintstick_check_deb.rc == 1
+
+- name: Download MintStick
+  get_url:
+    url: http://packages.linuxmint.com/pool/main/m/mintstick/mintstick_1.5.3_all.deb
+    dest: '/home/{{ ansible_env.USER }}/mintstick.deb'
+  when: mintstick_check_deb.rc == 1
+
+- name: Install Mint Stick
+  become: yes
+  apt:
+    deb: '/home/{{ ansible_env.USER }}/mintstick.deb'
+  when: mintstick_check_deb.rc == 1
+
+- name: Delete mintstick.deb file
+  file:
+    path: '/home/{{ ansible_env.USER }}/mintstick.deb'
+    state: absent
 
 # Google Chrome ::::::::::::::::::::::::::::::::::::
 
@@ -205,7 +220,6 @@
     name: 
       - core
       - postman
-      - bottom
 
 # Install and configure vscode ::::::::::::::::::::::::::
 
