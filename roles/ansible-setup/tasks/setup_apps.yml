@@ -154,6 +154,8 @@
         - vlc
         - libreoffice
         - fonts-firacode
+        - fonts-clear-sans
+        - fonts-inter
         - dconf-cli
         - uuid-runtime
         - gnome-tweak-tool

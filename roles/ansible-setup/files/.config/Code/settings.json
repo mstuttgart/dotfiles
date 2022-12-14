@@ -52,7 +52,8 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.codeLensFontFamily": "'Fira Code',",
-    "workbench.colorTheme": "Everforest Dark",
+    "workbench.colorTheme": "Better Solarized Light",
     "workbench.iconTheme": "ayu",
     "editor.minimap.enabled": false,
+    "editor.accessibilitySupport": "off",
 }
