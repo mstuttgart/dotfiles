@@ -148,7 +148,6 @@
         - tig
         - guake
         - flameshot
-        - pgadmin3
         - gimp
         - snapd
         - vlc
@@ -158,7 +157,7 @@
         - fonts-inter
         - dconf-cli
         - uuid-runtime
-        - gnome-tweak-tool
+        - gnome-tweaks
     state: present
   become: yes
 
@@ -337,19 +336,3 @@
     src: '{{ role_path }}/files/.local/bin/exa'
     dest: '{{ bin_folder }}/exa'
     mode: 0774
-
-# Add Desktop files ::::::::::::::::::::::::::
-
-- name: Create .desktop files to Godot in '{{ bin_folder }}'
-  file:
-    src: '{{ role_path }}/files/.local/share/applications/godot.desktop'
-    dest: '{{ ansible_env.HOME }}/.local/share/applications/godot.desktop'
-    state: link
-    force: yes
-
-- name: Create .desktop files to Asesprite in '{{ bin_folder }}'
-  file:
-    src: '{{ role_path }}/files/.local/share/applications/aseprite.desktop'
-    dest: '{{ ansible_env.HOME }}/.local/share/applications/aseprite.desktop'
-    state: link
-    force: yes
