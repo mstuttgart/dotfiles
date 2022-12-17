@@ -147,6 +147,7 @@
         - neofetch
         - tig
         - guake
+        - filezilla
         - flameshot
         - gimp
         - snapd
@@ -173,7 +174,7 @@
 
 - name: Download MintStick
   get_url:
-    url: http://packages.linuxmint.com/pool/main/m/mintstick/mintstick_1.5.3_all.deb
+    url: http://packages.linuxmint.com/pool/main/m/mintstick/mintstick_1.5.4_all.deb
     dest: '/home/{{ ansible_env.USER }}/mintstick.deb'
   when: mintstick_check_deb.rc == 1
 

@@ -52,7 +52,7 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.codeLensFontFamily": "'Fira Code',",
-    "workbench.colorTheme": "Better Solarized Light",
+    "workbench.colorTheme": "Ayu Light Bordered",
     "workbench.iconTheme": "ayu",
     "editor.minimap.enabled": false,
     "editor.accessibilitySupport": "off",
