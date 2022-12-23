@@ -222,6 +222,7 @@
     name: 
       - core
       - postman
+      - foliate
 
 # Install and configure vscode ::::::::::::::::::::::::::
 
