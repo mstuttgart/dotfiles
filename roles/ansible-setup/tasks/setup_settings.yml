@@ -12,7 +12,7 @@
   tags:
     - skip_ansible_lint
 
-- name: Setup sysctl to fix warning to large workspace isn vscode
+- name: Setup sysctl to fix warning to large workspace in vscode
   become: yes
   sysctl:
     name: fs.inotify.max_user_watches
