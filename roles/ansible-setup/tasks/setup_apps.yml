@@ -140,7 +140,6 @@
         - gedit-plugin-bracket-completion
         - gedit-plugin-code-comment
         - gedit-plugin-draw-spaces
-        - gedit-plugin-color-picker
         - gpick
         - gdebi
         - tree
@@ -223,6 +222,7 @@
       - core
       - postman
       - foliate
+      - btop
 
 # Install and configure vscode ::::::::::::::::::::::::::
 
