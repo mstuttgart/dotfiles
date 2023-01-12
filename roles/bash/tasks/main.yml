@@ -1,0 +1,35 @@
+---
+# tasks file for roles/bash
+
+- name: Install Bash
+  become: yes
+  package:
+    name:
+      - bash
+    state: present
+
+- name: Create symbolic link to .bash_aliases in '{{ ansible_env.HOME }}'
+  file:
+    src: '{{ role_path }}/files/.bash_aliases'
+    dest: '{{ ansible_env.HOME }}/.bash_aliases'
+    state: link
+    force: yes
+
+- name: Create symbolic link to .bashrc in '{{ ansible_env.HOME }}'
+  file:
+    src: '{{ role_path }}/files/.bashrc'
+    dest: '{{ ansible_env.HOME }}/.bashrc'
+    state: link
+    force: yes
+
+- name: Create '{{ bashrc_folder }}' folder
+  file:
+    path: '{{ bashrc_folder }}'
+    state: directory
+    recurse: yes
+
+- name: Create '{{ bin_folder }}' folder
+  file:
+    path: '{{ bin_folder }}'
+    state: directory
+    recurse: yes
