@@ -1,0 +1,5 @@
+---
+# defaults file for roles/mintstick
+
+mintstick_version: '1.5.4_all'
+mintstick_url: 'http://packages.linuxmint.com/pool/main/m/mintstick/mintstick_{{ mintstick_version }}.deb'
