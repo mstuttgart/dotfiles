@@ -1,4 +1,0 @@
----
-- import_tasks: setup_apps.yml
-- import_tasks: setup_settings.yml
-- import_tasks: setup_dotfiles.yml

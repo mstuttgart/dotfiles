@@ -1,7 +1,0 @@
----
-# defaults file for .
-
-bin_folder: '~/.local/bin'
-
-postgresql_db_user: odoo
-postgresql_db_user_password: odoo
