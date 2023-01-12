@@ -1,0 +1,79 @@
+---
+# tasks file for roles/gnome
+
+- name: Install apt packages
+  become: yes
+  apt:
+    name: '{{ item }}'
+    update_cache: yes
+  loop: '{{ packages }}'
+
+- name: Copy gnome extension to '{{ gnome_config_path }}/extensions'
+  copy:
+    src: '{{ role_path }}/files/extensions'
+    dest: '{{ gnome_config_path }}'
+    follow: yes
+
+- name: Enable extensions
+  dconf:
+    key: "/org/gnome/shell/enabled-extensions"
+    value: "{{ gnome_extensions }}"
+
+# Configure caffeine extension
+
+- name: Caffeine - set restore state
+  dconf:
+    key: "/org/gnome/shell/extensions/caffeine/restore-state"
+    value: "true"
+
+- name: Caffeine - disable notification
+  dconf:
+    key: "/org/gnome/shell/extensions/caffeine/show-notifications"
+    value: "false"
+
+- name: Caffeine - user
+  dconf:
+    key: "/org/gnome/shell/extensions/caffeine/user-enabled"
+    value: "true"
+
+# Configure time and date
+
+- name: Set automatic timezone
+  dconf:
+    key: "/org/gnome/desktop/datetime/automatic-timezone"
+    value: "true"
+
+- name: Set clock to show date
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-show-date"
+    value: "true"
+
+- name: Set clock format
+  dconf:
+    key: "/org/gnome/desktop/interface/clock-format"
+    value: "'12h'"
+
+# Configure keyboard
+
+- name: NumKLock on
+  dconf:
+    key: "/org/gnome/desktop/peripherals/keyboard/numlock-state"
+    value: "true"
+
+
+# Ensure themes and icons folder
+
+- name: Ensure '{{ gnome_themes_dir }}' directory exists
+  file:
+    path: '{{ gnome_themes_dir }}'
+    state: directory
+    
+- name: Ensure '{{ gnome_icons_dir }}' directory exists
+  file:
+    path: '{{ gnome_icons_dir }}'
+    state: directory
+    
+- name: Ensure '{{ fonts_dir }}' directory exists
+  file:
+    path: '{{ fonts_dir }}'
+    state: directory
