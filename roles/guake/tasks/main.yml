@@ -17,10 +17,9 @@
 # Restaure settings
 
 - name: Restaure Guake Settings
-  shell: |
-    guake --restore-preferences '{{ role_path }}/files/settings'
-  args:
-    executable: /bin/bash
+  command:
+   guake --restore-preferences '{{ role_path }}/files/settings'
+  changed_when: True
 
 # Add to autostart apps group
 

@@ -25,9 +25,9 @@
     dest: '{{ code_setting_path }}/{{ item }}'
     state: link
     force: yes
-    loop:
-      - keybindings.json
-      - settings.json
+  loop:
+    - keybindings.json
+    - settings.json
 
 - name: Setup VsCode snippets
   file:
@@ -37,9 +37,10 @@
     force: yes
 
 - name: Import VsCode extensions
-  shell: 
+  command:
     code --install-extension {{ item }}
   with_items: '{{ code_plugins }}'
+  changed_when: True
 
 - name: Setup sysctl to fix warning to large workspace in vscode
   become: yes

@@ -4,14 +4,14 @@
 - name: Install apt packages
   become: yes
   apt:
-    name: '{{ item }}'
+    name: "{{ item }}"
     update_cache: yes
-  loop: '{{ packages }}'
+  loop: "{{ packages }}"
 
 - name: Copy gnome extension to '{{ gnome_config_path }}/extensions'
   copy:
-    src: '{{ role_path }}/files/extensions'
-    dest: '{{ gnome_config_path }}'
+    src: "{{ role_path }}/files/extensions"
+    dest: "{{ gnome_config_path }}"
     follow: yes
 
 - name: Enable extensions
@@ -60,20 +60,19 @@
     key: "/org/gnome/desktop/peripherals/keyboard/numlock-state"
     value: "true"
 
-
 # Ensure themes and icons folder
 
 - name: Ensure '{{ gnome_themes_dir }}' directory exists
   file:
-    path: '{{ gnome_themes_dir }}'
+    path: "{{ gnome_themes_dir }}"
     state: directory
-    
+
 - name: Ensure '{{ gnome_icons_dir }}' directory exists
   file:
-    path: '{{ gnome_icons_dir }}'
+    path: "{{ gnome_icons_dir }}"
     state: directory
-    
+
 - name: Ensure '{{ fonts_dir }}' directory exists
   file:
-    path: '{{ fonts_dir }}'
+    path: "{{ fonts_dir }}"
     state: directory
