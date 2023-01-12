@@ -1,0 +1,50 @@
+---
+# tasks file for code
+
+- name: Install snapd package
+  package:
+    name: snapd
+    state: present
+  become: yes
+
+- name: Install VsCode snap package
+  become: yes
+  snap:
+    name: code
+    classic: yes
+
+- name: Create folder to store VsCode settings
+  file:
+    path: '{{ code_setting_path }}/snippets'
+    state: directory
+    recurse: yes
+
+- name: Setup VsCode settings and keybindings
+  file:
+    src: '{{ role_path }}/files/{{ item }}'
+    dest: '{{ code_setting_path }}/{{ item }}'
+    state: link
+    force: yes
+    loop:
+      - keybindings.json
+      - settings.json
+
+- name: Setup VsCode snippets
+  file:
+    src: '{{ role_path }}/files/snippets/python.json'
+    dest: '{{ code_setting_path }}/snippets/python.json'
+    state: link
+    force: yes
+
+- name: Import VsCode extensions
+  shell: 
+    code --install-extension {{ item }}
+  with_items: '{{ code_plugins }}'
+
+- name: Setup sysctl to fix warning to large workspace in vscode
+  become: yes
+  sysctl:
+    name: fs.inotify.max_user_watches
+    value: '524288'
+    state: present
+    reload: yes

@@ -1,0 +1,63 @@
+{
+    "editor.renderWhitespace": "all",
+    "breadcrumbs.enabled": true,
+    "files.autoSave": "afterDelay",
+    "files.exclude": {
+        "**/__pycache__": true
+    },
+    "gitProjectManager.baseProjectsFolders": [
+        "/home/michell/Workspace"
+    ],
+    "gitProjectManager.storeRepositoriesBetweenSessions": true,
+    "gitProjectManager.ignoredFolders": [
+        "node_modules",
+        "vendor"
+    ],
+    "gitProjectManager.checkRemoteOrigin": false,
+    "window.titleBarStyle": "custom",
+    "editor.selectionClipboard": false,
+    "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
+    "workbench.tree.indent": 20,
+    "[shellscript]": {
+        "editor.defaultFormatter": "shakram02.bash-beautify"
+    },
+    "terminal.integrated.profiles.linux": "/bin/bash",
+    "terminal.integrated.detectLocale": "auto",
+    "terminal.integrated.env.linux": {
+        "LANG": "C.UTF-8"
+    },
+    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": false,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.editorAssociations": {
+        "*.ipynb": "jupyter-notebook"
+    },
+    "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/odoo/.venv/bin/python",
+    "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
+    "editor.renderControlCharacters": true,
+    "python.languageServer": "Jedi",
+    "notebook.cellToolbarLocation": {
+        "default": "right",
+        "jupyter-notebook": "left"
+    },
+    "yaml.customTags": [
+        "!encrypted/pkcs1-oaep scalar",
+        "!vault scalar"
+    ],
+    "redhat.telemetry.enabled": true,
+    "ansible.ansibleLint.enabled": false,
+    "workbench.preferredLightColorTheme": "Nord",
+    "workbench.preferredDarkColorTheme": "Ayu Light Bordered",
+    "terminal.integrated.persistentSessionReviveProcess": "never",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "editor.codeLensFontFamily": "'Fira Code',",
+    "workbench.colorTheme": "Everforest Dark",
+    "workbench.iconTheme": "ayu",
+    "editor.minimap.enabled": false,
+    "editor.accessibilitySupport": "off",
+    "terminal.integrated.useWslProfiles": false,
+    "notesbox.location": "~/Documentos/",
+    "Notes.notesLocation": "/home/michell/Workspace/notes/draft",
+    "ansible.validation.lint.enabled": false,
+}
