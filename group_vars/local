@@ -1,0 +1,10 @@
+
+# Default folders
+
+bin_folder: '{{ ansible_env.HOME }}/.local/bin'
+bashrc_folder: '{{ ansible_env.HOME }}/.bashrc.d'
+
+config_dir: '{{ ansible_env.HOME }}/.config'
+autostart_path: '{{ config_dir }}/autostart'
+
+fonts_dir: '{{ ansible_env.HOME }}/.fonts'
