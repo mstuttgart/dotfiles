@@ -1,0 +1,5 @@
+---
+# defaults file for roles/nvm
+
+nvm_config_dir: '{{ ansible_env.HOME }}/.nvm'
+nvm_version: '0.39.0'
