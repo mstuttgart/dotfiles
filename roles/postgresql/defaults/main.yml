@@ -1,0 +1,6 @@
+packages:
+  # Postgresql requirements
+  - libpq-dev
+  - postgresql
+  - postgresql-contrib
+  - python3-psycopg2
