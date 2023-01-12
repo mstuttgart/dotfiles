@@ -1,0 +1,14 @@
+---
+# tasks file for roles/chrome
+
+- name: Check Google Chrome package status
+  command: dpkg-query -W google-chrome-stable
+  register: chrome_stat
+  failed_when: chrome_stat.rc > 1
+  changed_when: chrome_stat.rc == 1
+
+- name: Install Google Chrome from remote
+  become: yes
+  apt:
+    deb: '{{ chrome_url }}'
+  when: chrome_stat.rc == 1
