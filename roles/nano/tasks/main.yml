@@ -1,0 +1,20 @@
+---
+# tasks file for roles/nano
+
+- name: Install nano package
+  become: yes
+  package:
+    name: nano
+    state: present
+
+- name: Ensure '{{ nano_config_dir }}' directory exists
+  file:
+    path: '{{ nano_config_dir }}'
+    state: directory
+
+- name: Create symbolic link to nano settings in '{{ nano_config_dir }}'
+  file:
+    src: '{{ role_path }}/files/nanorc'
+    dest: '{{ nano_config_dir }}/nanorc'
+    force: yes
+    state: link

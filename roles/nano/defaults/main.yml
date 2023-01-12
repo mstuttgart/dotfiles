@@ -1,0 +1,4 @@
+---
+# defaults file for roles/nano/
+
+nano_config_dir: '{{ config_dir }}/nano'
