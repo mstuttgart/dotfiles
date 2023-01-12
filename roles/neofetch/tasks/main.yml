@@ -1,0 +1,27 @@
+---
+# tasks file for roles/neofetch
+
+- name: Install neofetch package
+  become: yes
+  package:
+    name: neofetch
+    state: present
+
+- name: Ensure '{{ neofetch_config_dir }}' directory exists
+  file:
+    path: '{{ neofetch_config_dir }}'
+    state: directory
+
+- name: Create symbolic link to neofetch settings in '{{ neofetch_config_dir }}'
+  file:
+    src: '{{ role_path }}/files/config.conf'
+    dest: '{{ neofetch_config_dir }}/config.conf'
+    force: yes
+    state: link
+
+- name: Copy acsii.txt neofetch settings in '{{ neofetch_config_dir }}'
+  file:
+    src: '{{ role_path }}/files/ascii.txt'
+    dest: '{{ neofetch_config_dir }}/ascii.txt'
+    force: yes
+    state: link
