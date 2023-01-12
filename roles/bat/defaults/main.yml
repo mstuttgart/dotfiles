@@ -1,0 +1,5 @@
+---
+
+# defaults vars for bat
+bat_version: '0.22.1'
+bat_release_url: 'https://github.com/sharkdp/bat/releases/download/v{{ bat_version }}/bat_{{ bat_version }}_amd64.deb'

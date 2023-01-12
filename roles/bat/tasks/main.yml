@@ -1,0 +1,21 @@
+---
+# tasks file for bat
+
+- name: Check bat package status
+  command: dpkg-query -W bat
+  register: bat_stat
+  failed_when: bat_stat.rc > 1
+  changed_when: bat_stat.rc == 1
+
+- name: Install bat from remote
+  become: yes
+  apt:
+    deb: '{{ bat_release_url }}'
+  when: bat_stat.rc == 1
+
+- name: Create symbolic link to bat aliases in '{{ bashrc_folder }}'
+  file:
+    src: '{{ role_path }}/files/aliases.bash'
+    dest: '{{ bashrc_folder }}/bat.bash'
+    state: link
+    force: yes
