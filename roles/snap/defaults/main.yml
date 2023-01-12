@@ -1,0 +1,10 @@
+---
+# defaults file for roles/snap
+
+snaps:
+  - btop
+  - core
+  - foliate
+  - onefetch
+  - postman
+  - spotify

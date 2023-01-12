@@ -1,0 +1,22 @@
+---
+# tasks file for roles/snap
+
+- name: Install snapd package
+  package:
+    name: snapd
+    state: present
+  become: yes
+
+- name: Install snap packages
+  become: yes
+  snap:
+    name: "{{ item }}"
+    classic: yes
+  loop: "{{ snaps }}"
+
+- name: Add .hidden file to hide snap folder
+  file:
+    src: "{{ role_path }}/files/hidden"
+    dest: "{{ ansible_env.HOME }}/.hidden"
+    state: link
+    force: yes
