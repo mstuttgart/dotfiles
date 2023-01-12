@@ -24,6 +24,6 @@ jobs:
         pip install ansible-lint ansible==${{ matrix.ansible-version }}
     - name: Lint playbook
       run: |
-        ansible-playbook playbooks/setup.yml --syntax-check
+        ansible-playbook -i hosts playbooks/setup.yml --syntax-check
         ansible-lint playbooks/setup.yml
 
