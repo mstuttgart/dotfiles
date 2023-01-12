@@ -1,0 +1,16 @@
+{
+    "com.github.jyvern.ulauncher-ssh": {
+        "id": "com.github.jyvern.ulauncher-ssh",
+        "url": "https://github.com/jyvern/ulauncher-ssh",
+        "updated_at": "2022-12-30T14:51:43.638779",
+        "last_commit": "47168e6ea45878787536ae5670612509f5dddced",
+        "last_commit_time": "2021-08-29T16:30:14"
+    },
+    "com.github.msaistaken.ulauncher-translator": {
+        "id": "com.github.msaistaken.ulauncher-translator",
+        "url": "https://github.com/msaistaken/ulauncher-translator",
+        "updated_at": "2022-12-30T14:51:56.456719",
+        "last_commit": "824037cd06fb56162c0d629020bdc4b70ce3d77e",
+        "last_commit_time": "2021-07-25T18:22:55"
+    }
+}

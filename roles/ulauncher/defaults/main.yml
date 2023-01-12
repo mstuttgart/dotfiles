@@ -1,0 +1,8 @@
+---
+# defaults file for roles/ulauncher
+
+ulauncher_version: '5.15.0'
+ulauncher_url: 'https://github.com/Ulauncher/Ulauncher/releases/download/{{ ulauncher_version }}/ulauncher_{{ ulauncher_version }}_all.deb'
+
+ulauncher_config_dir: '{{ config_dir }}/ulauncher'
+ulauncher_theme_dir: '{{ ulauncher_config_dir }}/user-themes'

@@ -1,0 +1,43 @@
+---
+# tasks file for roles/ulauncher
+
+- name: Check ulauncher package status
+  command: dpkg-query -W ulauncher
+  register: ulauncher_stat
+  failed_when: ulauncher_stat.rc > 1
+  changed_when: ulauncher_stat.rc == 1
+
+- name: Install ulauncher from remote
+  become: yes
+  apt:
+    deb: '{{ ulauncher_url }}'
+  when: ulauncher_stat.rc == 1
+
+- name: Create '{{ ulauncher_config_dir }}' folder
+  file:
+    path: '{{ ulauncher_config_dir }}'
+    state: directory
+    recurse: yes
+
+- name: Create '{{ ulauncher_theme_dir }}' folder
+  file:
+    path: '{{ ulauncher_theme_dir }}'
+    state: directory
+    recurse: yes
+
+- name: Create symbolic link to ulauncher settings in '{{ ulauncher_config_dir }}'
+  file:
+    src: '{{ role_path }}/files/{{ item }}'
+    dest: '{{ ulauncher_config_dir }}/{{ item }}'
+    force: yes
+    state: link
+  loop:
+    - extensions.json
+    - settings.json
+    - shortcuts.json
+
+- name: Copy ulauncher themes to '{{ ulauncher_theme_dir }}'
+  copy:
+    src: '{{ role_path }}/files/user-themes'
+    dest: '{{ ulauncher_config_dir }}'
+    follow: yes
