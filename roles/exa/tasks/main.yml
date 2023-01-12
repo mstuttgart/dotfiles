@@ -1,0 +1,21 @@
+---
+# tasks file for exa
+
+- name: Ensure '{{ exa_dest }}' directory exists
+  file:
+    path: '{{ exa_dest }}'
+    state: directory
+
+- name: Download and unarchive exa version {{ exa_version }}
+  unarchive:
+    src: '{{ exa_release_url }}'
+    dest: '{{ exa_dest }}'
+    remote_src: yes
+    include: ['bin/exa']
+
+- name: Create symbolic link to .exa aliases in '{{ bashrc_folder }}'
+  file:
+    src: '{{ role_path }}/files/aliases.bash'
+    dest: '{{ bashrc_folder }}/exa.bash'
+    state: link
+    force: yes
