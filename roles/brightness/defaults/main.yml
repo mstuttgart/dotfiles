@@ -1,0 +1,4 @@
+---
+# defaults file for roles/brightness/
+
+brightness_config_dir: '{{ config_dir }}/brightness_controller'
