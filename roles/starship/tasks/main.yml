@@ -1,0 +1,41 @@
+---
+# tasks file for roles/starship
+
+- name: Ensure '{{ fonts_dir }}/FiraCode' directory exists
+  file:
+    path: '{{ fonts_dir }}/FiraCode'
+    state: directory
+
+- name: Download FiraCode font in '{{ fonts_dir }}'
+  unarchive:
+    src: '{{ font_url }}'
+    dest: '{{ fonts_dir }}/FiraCode'
+    remote_src: true
+
+- name: Install snapd package
+  become: yes
+  package:
+    name: snapd
+    state: present
+
+- name: Install starship snap package
+  become: yes
+  snap:
+    name: starship
+
+- name: Ensure '{{ starship_config_dir }}' directory exists
+  file:
+    path: '{{ starship_config_dir }}'
+    state: directory
+
+- name: Create symlink to starship.toml
+  file:
+    src: '{{ role_path }}/files/starship.toml'
+    dest: '{{ starship_config_dir }}/starship.toml'
+    state: link
+    force: yes
+
+- name: Copy 'starship.bash' to {{ bashrc_folder }}
+  template:
+    src: 'startship.bash.j2'
+    dest: '{{ bashrc_folder }}/starship.bash'

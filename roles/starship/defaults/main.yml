@@ -1,0 +1,7 @@
+---
+# defaults file for roles/starship
+
+starship_config_dir: '{{ config_dir }}/starship'
+
+font_version: '6.2'
+font_url: 'https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip'
