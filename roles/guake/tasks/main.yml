@@ -1,0 +1,37 @@
+---
+# tasks file for roles/guake
+
+- name: Install guake package
+  become: yes
+  package:
+    name: guake
+    state: present
+
+# Copy aliases
+- name: Create symbolic link to guake aliases in '{{ bashrc_folder }}'
+  file:
+    src: '{{ role_path }}/files/aliases.bash'
+    dest: '{{ bashrc_folder }}/guake.bash'
+    state: link
+
+# Restaure settings
+
+- name: Restaure Guake Settings
+  shell: |
+    guake --restore-preferences '{{ role_path }}/files/settings'
+  args:
+    executable: /bin/bash
+
+# Add to autostart apps group
+
+- name: Ensure '{{ autostart_path }}' directory exists
+  file:
+    path: '{{ autostart_path }}'
+    state: directory
+
+- name: Copy guake .desktop file to '{{ autostart_path }}'
+  file:
+    src: '{{ role_path }}/files/guake.desktop'
+    dest: '{{ autostart_path }}/guake.desktop'
+    force: yes
+    state: link
