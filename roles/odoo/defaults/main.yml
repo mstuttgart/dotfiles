@@ -1,0 +1,67 @@
+---
+# defaults file for roles/odoo
+
+package_upgrade: yes
+
+packages:
+  odoo:
+
+    # Odoo requirements
+    - libxml2-dev
+    - libxslt-dev
+    - libevent-dev
+    # PyTrustNFe requirements
+    - pandoc
+    # Microsoft fonts
+    - ttf-mscorefonts-installer
+    # Build requirements
+    - avahi-daemon
+    - check
+    - fakeroot
+    - libbz2-dev
+    - libffi-dev
+    - libncurses5-dev
+    - libncursesw5-dev
+    - libreadline-dev
+    - libsqlite3-dev
+    - libxml-parser-perl
+    - llvm
+    # Pyxmlsec requirements
+    - libxmlsec1
+    - libxmlsec1-dev
+    - openssl
+    - python3-lxml
+    - xmlsec1
+    # Pillow requirements
+    - libfreetype6-dev
+    - libjpeg-dev
+    - libpng-dev
+    - zlib1g-dev
+    # python-ladp requirements
+    - libldap2-dev
+    - libsasl2-dev
+    - libssl-dev
+    # matplotlib requirements
+    - libfreetype6-dev
+    - libjpeg8-dev
+    - libpng-dev
+    - pkg-config
+    # auto-backup requirements
+    - libpq-dev
+    # Node requirements
+    - node-clean-css
+    - node-less
+
+  wkhtmltopdf:
+    
+    # WKHTMLTOPDF requirements
+    - fontconfig
+    - libjpeg-turbo8
+    - libx11-6
+    - libxext6
+    - libxrender1
+    - xfonts-75dpi
+    - xfonts-base
+
+wkhtmltopdf_version: '0.12.6-1'
+wkhtmltopdf_url: 'https://github.com/wkhtmltopdf/packaging/releases/download/{{ wkhtmltopdf_version }}/wkhtmltox_{{ wkhtmltopdf_version }}.focal_amd64.deb'

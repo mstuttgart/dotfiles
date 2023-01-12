@@ -1,0 +1,3 @@
+---
+- import_tasks: wkhtmltopdf.yml
+- import_tasks: odoo.yml
