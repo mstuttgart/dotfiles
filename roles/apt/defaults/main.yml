@@ -1,0 +1,40 @@
+---
+# defaults file for roles/apt
+
+package_upgrade: yes
+
+packages:
+
+  # Programming
+  - build-essential
+  - cmake
+  - curl
+  - g++
+  - libsqlite3-dev
+  - llvm
+  - make
+  - p7zip
+  - p7zip-full
+  - p7zip-rar
+  - pwgen
+  - rar
+  - software-properties-common
+  - ubuntu-restricted-extras
+  - unace-nonfree
+  - unrar
+  - uuid-runtime
+  - wget
+
+  # GUI
+  - filezilla
+  - flameshot
+  - fonts-clear-sans
+  - fonts-firacode
+  - fonts-inter
+  - gdebi
+  - gedit
+  - gedit-plugin-code-comment
+  - gedit-plugin-draw-spaces
+  - gimp
+  - gpick
+  - libreoffice
