@@ -39,18 +39,32 @@ Clone this repo. You can clone it in your /home folder, for example.
 git clone git@github.com:mstuttgart/dotfiles.git ~/.dotfiles
 ```
 
-Install `python3` and dependencies :
+Install `ansible`:
 
 ```
-./scripts/setup.sh
+sudo apt install ansible
 ```
 
-The `install.sh` script automatize the setup of my workstation installing all libs that I use in my setup.
+The `bin/setup.sh` script automatize the setup of my workstation installing all tools that I use in my setup.
 
 ```
-./scripts/install.sh
+./bin/setup.sh
+```
+
+To install separate tools, use the command with role name.
+
+
+```
+./bin/setup.sh rolename
+```
+
+Example:
+
+
+```
+./bin/setup.sh chrome
 ```
 
 ## Credits
 
-Copyright (C) 2019-2021 by Michell Stuttgart
+Copyright (C) 2019-2023 by Michell Stuttgart
