@@ -7,6 +7,7 @@ alias dl="cd ~/Downloads"
 
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
+alias autoremove="sudo apt autoremove -y"
 
 # Return my public IP 
 alias myip="host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'"
@@ -23,6 +24,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 
 # List process
 alias psgrep="ps aux | grep"
+alias kill9="sudo kill -9"
 
 # Create directory recursive
 alias mkdir="mkdir -pv" 
