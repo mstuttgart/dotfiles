@@ -1,9 +1,0 @@
-{
-	"ipdb snippet": {
-		"prefix": "ipdb",
-		"body": [
-			"import ipdb; ipdb.set_trace()  # noqa"
-		],
-		"description": "Add ipdb debug import"
-	}
-}

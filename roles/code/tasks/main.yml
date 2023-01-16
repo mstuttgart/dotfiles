@@ -29,13 +29,6 @@
     - keybindings.json
     - settings.json
 
-- name: Setup VsCode snippets
-  file:
-    src: '{{ role_path }}/files/snippets/python.json'
-    dest: '{{ code_setting_path }}/snippets/python.json'
-    state: link
-    force: yes
-
 - name: Import VsCode extensions
   command:
     code --install-extension {{ item }}
