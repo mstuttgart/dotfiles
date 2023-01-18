@@ -6,16 +6,16 @@
 
 <p align="center">
   <a href="https://travis-ci.org/mstuttgart/dotfiles">
-    <img src="https://img.shields.io/travis/mstuttgart/dotfiles/master.svg?style=for-the-badge&color=AFC9A2" alt="Build">
+    <img src="https://img.shields.io/travis/mstuttgart/dotfiles/master.svg?style=for-the-badge&color=bed5c5" alt="Build">
   </a>
   <a href="https://github.com/mstuttgart/dotfiles">
-    <img src="https://img.shields.io/badge/OS-Linux-informational?style=for-the-badge&logo=linux&logoColor=white&color=AFC9A2" alt="License">
+    <img src="https://img.shields.io/badge/OS-Linux-informational?style=for-the-badge&logo=linux&logoColor=white&color=bed5c5" alt="License">
   </a>
   <a href="https://github.com/mstuttgart/dotfiles">
-    <img src="https://img.shields.io/badge/Tools-Ansible-informational?style=for-the-badge&logo=ansible&logoColor=white&color=AFC9A2" alt="License">
+    <img src="https://img.shields.io/badge/Tools-Ansible-informational?style=for-the-badge&logo=ansible&logoColor=white&color=bed5c5" alt="License">
   </a>
   <a href="https://github.com/mstuttgart/dotfiles/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mstuttgart/dotfiles.svg?style=for-the-badge&color=AFC9A2" alt="License">
+    <img src="https://img.shields.io/github/license/mstuttgart/dotfiles.svg?style=for-the-badge&color=bed5c5" alt="License">
   </a>
 </p>
 
