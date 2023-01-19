@@ -10,5 +10,10 @@
   become: yes
   apt:
     name: '{{ item }}'
-    update_cache: yes
   loop: '{{ packages }}'
+  
+- name: Install deb packages
+  become: yes
+  apt:
+    deb: '{{ item.value }}'
+  loop: '{{ deb_packages  | dict2items }}'

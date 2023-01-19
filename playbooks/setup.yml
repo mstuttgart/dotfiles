@@ -4,15 +4,11 @@
     # Tag each role so that we can select individual roles to run with ansible-playbook --tags
     - {role: apt, tags: ['apt']}
     - {role: bash, tags: ['bash']}
-    - {role: bat, tags: ['bat']}
-    - {role: brightness, tags: ['brightness']}
-    - {role: chrome, tags: ['chrome']}
     - {role: code, tags: ['code']}
     - {role: exa , tags: ['exa ']}
     - {role: git, tags: ['git']}
     - {role: gnome, tags: ['gnome', 'optional']}
     - {role: guake, tags: ['guake']}
-    - {role: mintstick, tags: ['mintstick']}
     - {role: nano, tags: ['nano']}
     - {role: neofetch, tags: ['neofetch']}
     - {role: nvm, tags: ['nvm']}

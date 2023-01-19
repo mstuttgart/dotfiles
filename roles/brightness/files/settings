@@ -1,9 +1,0 @@
-[primary]
-has_secondary = False
-brightness = 99
-red = 99
-green = 83
-blue = 66
-source = eDP-1
-temperature = 2850K 100W Tungsten
-
