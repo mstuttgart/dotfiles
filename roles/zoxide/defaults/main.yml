@@ -1,0 +1,6 @@
+---
+
+# defaults vars for zoxide
+zoxide_version: '0.9.0'
+zoxide_package: 'zoxide_{{ zoxide_version }}_amd64.deb'
+zoxide_release_url: 'https://github.com/ajeetdsouza/zoxide/releases/download/v{{ zoxide_version }}/{{ zoxide_package }}'

@@ -1,0 +1,14 @@
+---
+# tasks file for zoxide
+
+- name: Download and unarchive zoxide version {{ zoxide_version }}
+  become: yes
+  apt:
+    deb: '{{ zoxide_release_url }}'
+
+- name: Create symbolic link to .zoxide aliases in '{{ bashrc_folder }}'
+  file:
+    src: '{{ role_path }}/files/aliases.bash'
+    dest: '{{ bashrc_folder }}/zoxide.bash'
+    state: link
+    force: yes

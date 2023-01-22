@@ -18,3 +18,4 @@
     - {role: snap, tags: ['snap']}
     - {role: starship, tags: ['starship']}
     - {role: ulauncher, tags: ['ulauncher']}
+    - {role: zoxide, tags: ['zoxide']}
