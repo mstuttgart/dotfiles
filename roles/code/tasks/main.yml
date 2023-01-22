@@ -13,11 +13,12 @@
     name: code
     classic: yes
 
-- name: Create folder to store VsCode settings
+- name: Create symbolic link to code aliases in '{{ bashrc_folder }}'
   file:
-    path: '{{ code_setting_path }}/snippets'
-    state: directory
-    recurse: yes
+    src: '{{ role_path }}/files/aliases.bash'
+    dest: '{{ bashrc_folder }}/code.bash'
+    state: link
+    force: yes
 
 - name: Setup VsCode settings and keybindings
   file:
