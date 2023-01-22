@@ -11,7 +11,6 @@
     src: '{{ exa_release_url }}'
     dest: '{{ exa_dest }}'
     remote_src: yes
-    include: ['bin/exa']
 
 - name: Create symbolic link to .exa aliases in '{{ bashrc_folder }}'
   file:

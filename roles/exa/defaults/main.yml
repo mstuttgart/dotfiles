@@ -4,4 +4,4 @@
 exa_version: '0.10.1'
 exa_package: 'exa-linux-x86_64-v{{ exa_version }}.zip'
 exa_release_url: 'https://github.com/ogham/exa/releases/latest/download/{{ exa_package }}'
-exa_dest: '{{ bin_folder }}'
+exa_dest: '{{ bin_folder }}/exadir'

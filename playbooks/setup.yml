@@ -5,7 +5,7 @@
     - {role: apt, tags: ['apt']}
     - {role: bash, tags: ['bash']}
     - {role: code, tags: ['code']}
-    - {role: exa , tags: ['exa ']}
+    - {role: exa , tags: ['exa']}
     - {role: git, tags: ['git']}
     - {role: gnome, tags: ['gnome', 'optional']}
     - {role: guake, tags: ['guake']}
