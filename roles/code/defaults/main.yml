@@ -7,11 +7,10 @@ code_plugins:
 
   - aaron-bond.better-comments
   - alefragnani.Bookmarks
-  - arcticicestudio.nord-visual-studio-code
-  - artlaman.chalice-icon-theme
   - BeardedBear.beardedicons
-  - Catppuccin.catppuccin-vsc
+  - christian-kohler.npm-intellisense
   - cweijan.vscode-postgresql-client2
+  - dbaeumer.vscode-eslint
   - dionmunk.vscode-notes
   - DotJoshJohnson.xml
   - eamodio.gitlens
@@ -19,6 +18,7 @@ code_plugins:
   - felipecaputo.git-project-manager
   - formulahendry.auto-close-tag
   - ginfuru.ginfuru-better-solarized-dark-theme
+  - Gydunhn.javascript-essentials
   - jdinhlife.gruvbox
   - kamikillerto.vscode-colorize
   - mechatroner.rainbow-csv
@@ -36,10 +36,12 @@ code_plugins:
   - mstuttgart.odoo-scaffold
   - mstuttgart.odoo-snippets
   - njpwerner.autodocstring
-  - redhat.ansible
   - redhat.vscode-yaml
   - sainnhe.everforest
   - shakram02.bash-beautify
+  - standard.vscode-standard
   - teabyii.ayu
+  - VisualStudioExptTeam.intellicode-api-usage-examples
+  - VisualStudioExptTeam.vscodeintellicode
   - xshrim.txt-syntax
   - yzhang.markdown-all-in-one
