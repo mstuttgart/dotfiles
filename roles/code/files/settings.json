@@ -10,6 +10,7 @@
     ],
     "gitProjectManager.storeRepositoriesBetweenSessions": true,
     "gitProjectManager.ignoredFolders": [
+        "others",
         "node_modules",
         "vendor"
     ],
@@ -35,7 +36,7 @@
     "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/odoo/.venv/bin/python",
     "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
     "editor.renderControlCharacters": true,
-    "python.languageServer": "Jedi",
+    "python.languageServer": "Pylance",
     "notebook.cellToolbarLocation": {
         "default": "right",
         "jupyter-notebook": "left"
@@ -58,6 +59,9 @@
     "notesbox.location": "~/Documentos/",
     "Notes.notesLocation": "/home/michell/Workspace/notes/draft",
     "ansible.validation.lint.enabled": false,
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Gruvbox Light Hard",
     "workbench.iconTheme": "ayu",
+    "files.associations": {
+        "*.py": "python"
+    },
 }
