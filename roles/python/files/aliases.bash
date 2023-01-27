@@ -7,6 +7,9 @@ alias cenv="python3 -m venv .venv"
 # Deactivate virtualenv
 alias denv="deactivate"
 
+# Install requirements
+alias pipreq="pip install -r requirements.txt"
+
 # Python server to server files
 alias pyserver="python3 -m http.server 8000"
 
