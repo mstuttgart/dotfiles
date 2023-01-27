@@ -31,19 +31,17 @@ packages:
   - fonts-clear-sans
   - fonts-firacode
   - fonts-inter
+  - libreoffice
   - gdebi
   - gedit
   - gedit-plugin-code-comment
   - gedit-plugin-draw-spaces
   - gimp
   - gpick
-  - libreoffice
 
 deb_packages:
 
   bat: 'https://github.com/sharkdp/bat/releases/download/v0.22.1/bat_0.22.1_amd64.deb'
-  brightnessc: 'https://ppa.launchpadcontent.net/apandada1/brightness-controller/ubuntu/pool/main/b/brightness-controller/brightness-controller_2.3.4-2~ubuntu20.04.1_all.deb'
   chrome: 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
   duff: 'https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb'
-  hyperfine: https://github.com/sharkdp/hyperfine/releases/download/v1.15.0/hyperfine_1.15.0_amd64.deb
   mintstick: 'http://packages.linuxmint.com/pool/main/m/mintstick/mintstick_1.5.5_all.deb'
