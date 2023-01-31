@@ -5,14 +5,7 @@ package_upgrade: yes
 
 packages:
 
-  # Programming
-  - build-essential
-  - cmake
-  - curl
-  - g++
-  - libsqlite3-dev
-  - llvm
-  - make
+  # cli
   - p7zip
   - p7zip-full
   - p7zip-rar

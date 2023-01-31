@@ -1,0 +1,13 @@
+---
+# tasks file for roles/base
+
+- name: Upgrade apt
+  become: yes
+  apt: upgrade=yes
+  when: package_upgrade
+
+- name: Install apt packages
+  become: yes
+  apt:
+    name: '{{ item }}'
+  loop: '{{ packages }}'

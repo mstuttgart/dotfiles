@@ -59,7 +59,7 @@
     "notesbox.location": "~/Documentos/",
     "Notes.notesLocation": "/home/michell/Workspace/notes/draft",
     "ansible.validation.lint.enabled": false,
-    "workbench.colorTheme": "Gruvbox Light Hard",
+    "workbench.colorTheme": "Everforest Light",
     "workbench.iconTheme": "ayu",
     "files.associations": {
         "*.py": "python"

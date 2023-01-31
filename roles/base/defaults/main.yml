@@ -1,0 +1,19 @@
+---
+# defaults file for roles/base
+
+package_upgrade: yes
+
+packages:
+
+  # Programming
+  - build-essential
+  - cmake
+  - curl
+  - g++
+  - libsqlite3-dev
+  - llvm
+  - make
+  - rar
+  - uuid-runtime
+  - wget
+
