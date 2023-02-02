@@ -15,7 +15,6 @@ packages:
 
 gnome_extensions: 
   - 'caffeine@patapon.info'
-  - 'clipboard-indicator@tudmotu.com'
   - 'dash-to-dock@micxgx.gmail.com'
   - 'Hide_Activities@shay.shayel.org'
   - 'just-perfection-desktop@just-perfection'
