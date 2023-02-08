@@ -63,6 +63,7 @@
     "files.associations": {
         "*.py": "python"
     },
-    "workbench.colorTheme": "Gruvbox Dark Hard",
+    "workbench.colorTheme": "Gruvbox Dark Medium",
     "editor.formatOnType": true,
+    "git.openRepositoryInParentFolders": "always",
 }

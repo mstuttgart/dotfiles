@@ -1,11 +1,9 @@
----
 # defaults file for roles/odoo
 
-package_upgrade: yes
+package_upgrade: true
 
 packages:
   odoo:
-
     # Odoo requirements
     - libxml2-dev
     - libxslt-dev
@@ -53,7 +51,6 @@ packages:
     - node-less
 
   wkhtmltopdf:
-    
     # WKHTMLTOPDF requirements
     - fontconfig
     - libjpeg-turbo8

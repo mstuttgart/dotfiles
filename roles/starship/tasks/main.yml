@@ -1,41 +1,45 @@
+# code: language=ansible
 ---
 # tasks file for roles/starship
 
-- name: Ensure '{{ fonts_dir }}/FiraCode' directory exists
-  file:
+- name: 'Ensure directory exists: {{ fonts_dir }}'
+  ansible.builtin.file:
     path: '{{ fonts_dir }}/FiraCode'
     state: directory
+    mode: '0755'
 
-- name: Download FiraCode font in '{{ fonts_dir }}'
-  unarchive:
+- name: 'Download FiraCode font in {{ fonts_dir }}'
+  ansible.builtin.unarchive:
     src: '{{ font_url }}'
     dest: '{{ fonts_dir }}/FiraCode'
     remote_src: true
 
 - name: Install snapd package
-  become: yes
-  package:
+  become: true
+  ansible.builtin.package:
     name: snapd
     state: present
 
 - name: Install starship snap package
-  become: yes
-  snap:
+  become: true
+  community.general.snap:
     name: starship
 
-- name: Ensure '{{ starship_config_dir }}' directory exists
-  file:
+- name: 'Ensure directory exists: {{ starship_config_dir }}'
+  ansible.builtin.file:
     path: '{{ starship_config_dir }}'
     state: directory
+    mode: '0755'
 
 - name: Create symlink to starship.toml
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/starship.toml'
     dest: '{{ starship_config_dir }}/starship.toml'
     state: link
-    force: yes
+    force: true
 
-- name: Copy 'starship.bash' to {{ bashrc_folder }}
-  template:
+- name: 'Copy starship.bash to {{ bashrc_folder }}'
+  ansible.builtin.template:
     src: 'startship.bash.j2'
     dest: '{{ bashrc_folder }}/starship.bash'
+    mode: preserve

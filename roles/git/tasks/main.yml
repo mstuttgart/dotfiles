@@ -1,36 +1,38 @@
+# code: language=ansible
 ---
 # tasks file for roles/git
 
 - name: Install Git and Tools
-  package:
+  ansible.builtin.package:
     name:
       - git
       - tig
     state: present
-  become: yes
+  become: true
 
 - name: Link global gitignore file
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/gitignore_global.link'
     dest: '{{ git_config_path }}/.gitignore_global'
     state: link
-    force: yes
+    force: true
 
 - name: Link gitattributes file
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/gitattributes_global.link'
     dest: '{{ git_config_path }}/.gitattributes_global'
     state: link
-    force: yes
+    force: true
 
 - name: Override .gitconfig
-  template:
+  ansible.builtin.template:
     src: 'gitconfig.j2'
     dest: '{{ git_config_path }}/.gitconfig'
+    mode: "0755"
 
 # Copy aliases and functions
 - name: Create symbolic link to git functions in '{{ bashrc_folder }}'
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/git.bash'
     dest: '{{ bashrc_folder }}/git.bash'
     state: link

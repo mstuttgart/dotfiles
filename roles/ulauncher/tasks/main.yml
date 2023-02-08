@@ -1,43 +1,43 @@
----
 # tasks file for roles/ulauncher
 
 - name: Check ulauncher package status
-  command: dpkg-query -W ulauncher
+  ansible.builtin.command: dpkg-query -W ulauncher
   register: ulauncher_stat
   failed_when: ulauncher_stat.rc > 1
   changed_when: ulauncher_stat.rc == 1
 
 - name: Install ulauncher from remote
-  become: yes
-  apt:
+  become: true
+  ansible.builtin.apt:
     deb: '{{ ulauncher_url }}'
   when: ulauncher_stat.rc == 1
 
-- name: Create '{{ ulauncher_config_dir }}' folder
-  file:
+- name: 'Create folder {{ ulauncher_config_dir }}'
+  ansible.builtin.file:
     path: '{{ ulauncher_config_dir }}'
     state: directory
-    recurse: yes
+    recurse: true
 
-- name: Create '{{ ulauncher_theme_dir }}' folder
-  file:
+- name: 'Create folder {{ ulauncher_theme_dir }}'
+  ansible.builtin.file:
     path: '{{ ulauncher_theme_dir }}'
     state: directory
-    recurse: yes
+    recurse: true
 
-- name: Create symbolic link to ulauncher settings in '{{ ulauncher_config_dir }}'
-  file:
+- name: 'Create symbolic link to ulauncher settings in {{ ulauncher_config_dir }}'
+  ansible.builtin.file:
     src: '{{ role_path }}/files/{{ item }}'
     dest: '{{ ulauncher_config_dir }}/{{ item }}'
-    force: yes
+    force: true
     state: link
   loop:
     - extensions.json
     - settings.json
     - shortcuts.json
 
-- name: Copy ulauncher themes to '{{ ulauncher_theme_dir }}'
-  copy:
+- name: 'Copy ulauncher themes to {{ ulauncher_theme_dir }}'
+  ansible.builtin.copy:
     src: '{{ role_path }}/files/user-themes'
     dest: '{{ ulauncher_config_dir }}'
-    follow: yes
+    follow: true
+    mode: preserve

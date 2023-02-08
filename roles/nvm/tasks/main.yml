@@ -1,31 +1,31 @@
+# code: language=ansible
 ---
 # tasks file for roles/nvm
 
 - name: Install development requirements packages
-  become: yes
-  package:
-    name:
-        - curl
+  become: true
+  ansible.builtin.package:
+    name: curl
     state: present
 
 - name: Install nvm (Node Version Manager)
-  shell: |
+  ansible.builtin.shell: |
     set -o pipefail
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v{{ nvm_version }}/install.sh | bash
   args:
-    creates: '{{ nvm_config_dir }}/nvm.sh'
+    creates: "{{ nvm_config_dir }}/nvm.sh"
     executable: /bin/bash
 
 - name: Install node and set version
-  shell: '. {{ nvm_config_dir }}/nvm.sh && nvm install --lts'
+  ansible.builtin.shell: ". {{ nvm_config_dir }}/nvm.sh && nvm install --lts"
   args:
-    creates: '{{ nvm_config_dir }}/versions/node'
-    chdir: '{{ ansible_env.HOME }}'
+    creates: "{{ nvm_config_dir }}/versions/node"
+    chdir: "{{ ansible_env.HOME }}"
     executable: /bin/bash
 
-- name: Create symbolic link to nvm aliases in '{{ bashrc_folder }}'
-  file:
-    src: '{{ role_path }}/files/aliases.bash'
-    dest: '{{ bashrc_folder }}/nvm.bash'
+- name: "Create symbolic link to nvm aliases in {{ bashrc_folder }}"
+  ansible.builtin.file:
+    src: "{{ role_path }}/files/aliases.bash"
+    dest: "{{ bashrc_folder }}/nvm.bash"
     state: link
-    force: yes
+    force: true

@@ -27,4 +27,4 @@ alias psgrep="ps aux | grep"
 alias kill9="sudo kill -9"
 
 # Create directory recursive
-alias mkdir="mkdir -pv" 
+alias mkdir="mkdir -pv"

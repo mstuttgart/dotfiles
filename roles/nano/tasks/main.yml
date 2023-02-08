@@ -1,20 +1,22 @@
+# code: language=ansible
 ---
 # tasks file for roles/nano
 
 - name: Install nano package
-  become: yes
-  package:
+  become: true
+  ansible.builtin.package:
     name: nano
     state: present
 
-- name: Ensure '{{ nano_config_dir }}' directory exists
-  file:
+- name: 'Ensure directory exists: {{ nano_config_dir }}'
+  ansible.builtin.file:
     path: '{{ nano_config_dir }}'
     state: directory
+    mode: "0755"
 
-- name: Create symbolic link to nano settings in '{{ nano_config_dir }}'
-  file:
+- name: 'Create symbolic link to nano settings in {{ nano_config_dir }}'
+  ansible.builtin.file:
     src: '{{ role_path }}/files/nanorc'
     dest: '{{ nano_config_dir }}/nanorc'
-    force: yes
+    force: true
     state: link

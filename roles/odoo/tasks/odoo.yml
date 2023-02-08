@@ -1,16 +1,15 @@
----
 # tasks file for roles/odoo
 
 - name: Install Odoo dependencies
-  become: yes
-  apt:
+  become: true
+  ansible.builtin.apt:
     name: "{{ item }}"
-    update_cache: yes
+    update_cache: true
   loop: "{{ packages.odoo }}"
 
-- name: Create symbolic link to odoo aliases in '{{ bashrc_folder }}'
-  file:
+- name: 'Create symbolic link to odoo aliases in {{ bashrc_folder }}'
+  ansible.builtin.file:
     src: '{{ role_path }}/files/aliases.bash'
     dest: '{{ bashrc_folder }}/odoo.bash'
     state: link
-    force: yes
+    force: true

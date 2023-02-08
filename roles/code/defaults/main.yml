@@ -1,3 +1,4 @@
+# code: language=ansible
 ---
 # defaults vars for code
 code_setting_path: '{{ ansible_env.HOME }}/.config/Code/User'
@@ -23,25 +24,12 @@ code_plugins:
   - kamikillerto.vscode-colorize
   - mechatroner.rainbow-csv
   - mrorz.language-gettext
-  - ms-azuretools.vscode-docker
-  - ms-python.isort
-  - ms-python.python
-  - ms-python.vscode-pylance
-  - ms-toolsai.jupyter
-  - ms-toolsai.jupyter-keymap
-  - ms-toolsai.jupyter-renderers
-  - ms-toolsai.vscode-jupyter-cell-tags
-  - ms-toolsai.vscode-jupyter-slideshow
-  - ms-vscode-remote.remote-containers
   - mstuttgart.odoo-scaffold
   - mstuttgart.odoo-snippets
   - njpwerner.autodocstring
   - redhat.vscode-yaml
   - sainnhe.everforest
   - shakram02.bash-beautify
-  - standard.vscode-standard
   - teabyii.ayu
-  - VisualStudioExptTeam.intellicode-api-usage-examples
-  - VisualStudioExptTeam.vscodeintellicode
   - xshrim.txt-syntax
   - yzhang.markdown-all-in-one

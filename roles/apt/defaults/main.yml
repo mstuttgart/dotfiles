@@ -1,7 +1,8 @@
+# code: language=ansible
 ---
 # defaults file for roles/apt
 
-package_upgrade: yes
+package_upgrade: true
 
 packages:
 
@@ -17,6 +18,7 @@ packages:
   - unrar
   - uuid-runtime
   - wget
+  - net-tools
 
   # GUI
   - filezilla
@@ -35,6 +37,6 @@ packages:
 deb_packages:
 
   bat: 'https://github.com/sharkdp/bat/releases/download/v0.22.1/bat_0.22.1_amd64.deb'
-  chrome: 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
-  duff: 'https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb'
+  google-chrome-stable: 'https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb'
+  duf: 'https://github.com/muesli/duf/releases/download/v0.8.1/duf_0.8.1_linux_amd64.deb'
   mintstick: 'http://packages.linuxmint.com/pool/main/m/mintstick/mintstick_1.5.5_all.deb'

@@ -1,27 +1,29 @@
+# code: language=ansible
 ---
 # tasks file for roles/neofetch
 
 - name: Install neofetch package
-  become: yes
-  package:
+  become: true
+  ansible.builtin.package:
     name: neofetch
     state: present
 
-- name: Ensure '{{ neofetch_config_dir }}' directory exists
-  file:
+- name: 'Ensure directory exists: {{ neofetch_config_dir }}'
+  ansible.builtin.file:
     path: '{{ neofetch_config_dir }}'
     state: directory
+    mode: "0755"
 
-- name: Create symbolic link to neofetch settings in '{{ neofetch_config_dir }}'
-  file:
+- name: 'Create symbolic link to neofetch settings in {{ neofetch_config_dir }}'
+  ansible.builtin.file:
     src: '{{ role_path }}/files/config.conf'
     dest: '{{ neofetch_config_dir }}/config.conf'
-    force: yes
+    force: true
     state: link
 
-- name: Copy acsii.txt neofetch settings in '{{ neofetch_config_dir }}'
-  file:
+- name: 'Copy acsii.txt neofetch settings in {{ neofetch_config_dir }}'
+  ansible.builtin.file:
     src: '{{ role_path }}/files/ascii.txt'
     dest: '{{ neofetch_config_dir }}/ascii.txt'
-    force: yes
+    force: true
     state: link
