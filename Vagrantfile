@@ -12,11 +12,14 @@ Vagrant.configure("2") do |config|
   end
 
   config.vm.provision "shell", inline: <<-SHELL
-    apt-get update
-    apt-get install -y ansible
+    apt update
+    sudo apt install software-properties-common
+    sudo apt-add-repository --yes --update ppa:ansible/ansible
+    apt install -y ansible
   SHELL
 
   config.vm.provision "ansible_local" do |ansible|
+    ansible.galaxy_role_file = 'requirements.yml'
     ansible.compatibility_mode = "2.0"
     ansible.limit = "local"
     ansible.inventory_path = "inventory.ini"
