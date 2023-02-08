@@ -1,3 +1,7 @@
 microsoft.gpg
 .venv
 .vscode/
+
+
+*.log
+.vagrant/

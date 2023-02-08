@@ -9,11 +9,11 @@ set -e
 if [[ $# -eq 0 ]]; then
   # Run all roles
   echo "Updating local dev environment..."
-  ansible-playbook -i hosts playbooks/setup.yml --ask-become-pass --skip-tags "optional"
+  ansible-playbook -i inventory.ini playbooks/setup.yml --ask-become-pass --skip-tags "optional"
 
 else
   echo "Updating local dev environment... (--tags $@)"
-  ansible-playbook -i hosts playbooks/setup.yml --ask-become-pass --tags $@
+  ansible-playbook -i inventory.ini playbooks/setup.yml --ask-become-pass --tags $@
 
 fi
 

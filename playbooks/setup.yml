@@ -1,22 +1,25 @@
+# code: language=ansible
+---
 - name: Setup Development Enviroment
   hosts: local
+
   roles:
-    # Tag each role so that we can select individual roles to run with ansible-playbook --tags
-    - { role: apt, tags: ["apt"] }
-    - { role: base, tags: ["base", "odoo", "python"] }
-    - { role: bash, tags: ["bash"] }
-    - { role: code, tags: ["code"] }
-    - { role: exa, tags: ["exa"] }
-    - { role: git, tags: ["git", "odoo"] }
-    - { role: gnome, tags: ["gnome", "optional"] }
-    - { role: guake, tags: ["guake"] }
-    - { role: nano, tags: ["nano"] }
-    - { role: neofetch, tags: ["neofetch"] }
-    - { role: nvm, tags: ["nvm"] }
-    - { role: odoo, tags: ["odoo", "optional"] }
-    - { role: postgresql, tags: ["postgresql", "optional"] }
-    - { role: python, tags: ["python", "odoo"] }
-    - { role: snap, tags: ["snap"] }
-    - { role: starship, tags: ["starship"] }
-    - { role: ulauncher, tags: ["ulauncher"] }
-    - { role: zoxide, tags: ["zoxide"] }
+    # Tag each role so that we can select individual roles to
+    # run with ansible-playbook --tags
+    - {role: apt, tags: ["apt"]}
+    - {role: base, tags: ["base", "odoo", "python"]}
+    - {role: bash, tags: ["bash"]}
+    - {role: code, tags: ["code"]}
+    - {role: exa, tags: ["exa"]}
+    - {role: git, tags: ["git", "odoo"]}
+    - {role: gnome, tags: ["gnome", "optional"]}
+    - {role: guake, tags: ["guake"]}
+    - {role: nano, tags: ["nano"]}
+    - {role: neofetch, tags: ["neofetch"]}
+    - {role: nvm, tags: ["nvm"]}
+    - {role: odoo, tags: ["odoo", "optional"]}
+    - {role: postgresql, tags: ["postgresql", "optional"]}
+    - {role: snap, tags: ["snap"]}
+    - {role: starship, tags: ["starship"]}
+    - {role: ulauncher, tags: ["ulauncher"]}
+    - {role: zoxide, tags: ["zoxide"]}
