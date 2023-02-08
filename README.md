@@ -1,7 +1,6 @@
 <p align="center">
   <a href="https://github.com/mstuttgart/dotfiles">
-  <img src="https://emojipedia-us.s3.dualstack.us-west-1.amazonaws.com/thumbs/160/emojione/178/robot-face_1f916.png"></a>
-  <h4 align="center">Ansible Setup</h4>
+  <img src="https://user-images.githubusercontent.com/8174740/217489347-e3fb258e-e184-494d-9070-3faa78e7eb91.png"></a>
 </p>
 
 <p align="center">
