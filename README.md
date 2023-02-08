@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://github.com/mstuttgart/dotfiles">
-  <img src="https://user-images.githubusercontent.com/8174740/217489347-e3fb258e-e184-494d-9070-3faa78e7eb91.png"></a>
+  <img src="https://user-images.githubusercontent.com/8174740/217489553-c3c4d9d8-8179-4bac-8edd-63558e405751.png"></a>
 </p>
 
 <p align="center">
