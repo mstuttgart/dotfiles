@@ -59,9 +59,11 @@
     "notesbox.location": "~/Documentos/",
     "Notes.notesLocation": "/home/michell/Workspace/notes/draft",
     "ansible.validation.lint.enabled": false,
-    "workbench.colorTheme": "Everforest Light",
     "workbench.iconTheme": "ayu",
     "files.associations": {
         "*.py": "python"
     },
+    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "editor.formatOnType": true,
+    "git.openRepositoryInParentFolders": "always",
 }

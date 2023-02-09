@@ -1,31 +1,32 @@
+# code: language=ansible
 ---
 # tasks file for roles/postgresql
 
 - name: Check required parameters
-  assert:
+  ansible.builtin.assert:
     that:
       - postgresql_user is defined
       - postgresql_user_password is defined
 
 - name: Install Postgresql
-  become: yes
-  apt:
+  become: true
+  ansible.builtin.apt:
     name: "{{ item }}"
-    update_cache: yes
+    update_cache: true
   loop: "{{ packages }}"
 
 - name: Enable postgresql
-  become: yes
-  systemd:
+  become: true
+  ansible.builtin.systemd:
     name: postgresql
-    enabled: yes
+    enabled: true
     state: started
-    daemon_reload: yes
+    daemon_reload: true
 
 - name: Create user and role '{{ postgresql_db_user }}'
-  become: yes
+  become: true
   become_user: postgres
-  postgresql_user:
+  community.postgresql.postgresql_user:
     state: present
     name: "{{ postgresql_db_user }}"
     password: "{{ postgresql_db_user_password }}"

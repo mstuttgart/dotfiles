@@ -1,45 +1,57 @@
+# code: language=ansible
 ---
 # tasks file for code
 
 - name: Install snapd package
-  package:
+  ansible.builtin.package:
     name: snapd
     state: present
-  become: yes
+  become: true
 
 - name: Install VsCode snap package
-  become: yes
-  snap:
+  become: true
+  community.general.snap:
     name: code
-    classic: yes
+    classic: true
+
+- name: 'Ensure directory exists: {{ bashrc_folder }}'
+  ansible.builtin.file:
+    path: '{{ bashrc_folder }}'
+    state: directory
+    mode: "0755"
+
+- name: 'Ensure directory exists: {{ code_setting_path }}'
+  ansible.builtin.file:
+    path: '{{ code_setting_path }}'
+    state: directory
+    mode: "0755"
 
 - name: Create symbolic link to code aliases in '{{ bashrc_folder }}'
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/aliases.bash'
     dest: '{{ bashrc_folder }}/code.bash'
     state: link
-    force: yes
+    force: true
 
 - name: Setup VsCode settings and keybindings
-  file:
+  ansible.builtin.file:
     src: '{{ role_path }}/files/{{ item }}'
     dest: '{{ code_setting_path }}/{{ item }}'
     state: link
-    force: yes
+    force: true
   loop:
     - keybindings.json
     - settings.json
 
 - name: Import VsCode extensions
-  command:
-    code --install-extension {{ item }}
+  ansible.builtin.command: code --install-extension {{ item }}
   with_items: '{{ code_plugins }}'
-  changed_when: True
+  changed_when: true
 
 - name: Setup sysctl to fix warning to large workspace in vscode
-  become: yes
-  sysctl:
+  become: true
+  ansible.posix.sysctl:
     name: fs.inotify.max_user_watches
     value: '524288'
     state: present
-    reload: yes
+    reload: true

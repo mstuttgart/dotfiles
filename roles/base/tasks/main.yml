@@ -1,13 +1,15 @@
+# code: language=ansible
 ---
 # tasks file for roles/base
 
 - name: Upgrade apt
-  become: yes
-  apt: upgrade=yes
+  become: true
+  ansible.builtin.apt:
+    upgrade: safe
   when: package_upgrade
 
 - name: Install apt packages
-  become: yes
-  apt:
+  become: true
+  ansible.builtin.apt:
     name: '{{ item }}'
   loop: '{{ packages }}'

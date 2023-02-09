@@ -1,7 +1,8 @@
+# code: language=ansible
 ---
 # defaults file for roles/base
 
-package_upgrade: yes
+package_upgrade: true
 
 packages:
 
@@ -16,4 +17,3 @@ packages:
   - rar
   - uuid-runtime
   - wget
-

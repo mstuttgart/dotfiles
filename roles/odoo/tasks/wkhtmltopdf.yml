@@ -1,28 +1,27 @@
----
 # wkhtmltopdf :::::::::::::::::::::::::::::::::::::
 
 - name: Check wkhtmltopdf package status
-  command: dpkg-query -W wkhtmltox
+  ansible.builtin.command: dpkg-query -W wkhtmltox
   register: wkhtmltox_stat
   failed_when: wkhtmltox_stat.rc > 1
   changed_when: wkhtmltox_stat.rc == 1
 
-- name:  Download and install wkhtmltopdf
-  become: yes
-  apt:
+- name: Download and install wkhtmltopdf
+  become: true
+  ansible.builtin.apt:
     deb: '{{ wkhtmltopdf_url }}'
   when: wkhtmltox_stat.rc == 1
 
 - name: Create symbolic link to wkhtmltopdf
-  become: yes
-  file:
+  become: true
+  ansible.builtin.file:
     src: '/usr/local/bin/wkhtmltopdf'
     dest: '/usr/bin/wkhtmltopdf'
     state: link
 
 - name: Create symbolic link to wkhtmltoimage
-  become: yes
-  file:
+  become: true
+  ansible.builtin.file:
     src: '/usr/local/bin/wkhtmltoimage'
     dest: '/usr/bin/wkhtmltoimage'
     state: link

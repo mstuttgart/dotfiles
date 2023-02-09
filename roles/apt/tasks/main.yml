@@ -1,19 +1,19 @@
----
 # tasks file for roles/apt
 
 - name: Upgrade apt
-  become: yes
-  apt: upgrade=yes
+  become: true
+  ansible.builtin.apt:
+    upgrade: safe
   when: package_upgrade
 
 - name: Install apt packages
-  become: yes
-  apt:
+  become: true
+  ansible.builtin.apt:
     name: '{{ item }}'
   loop: '{{ packages }}'
-  
+
 - name: Install deb packages
-  become: yes
-  apt:
+  become: true
+  ansible.builtin.apt:
     deb: '{{ item.value }}'
-  loop: '{{ deb_packages  | dict2items }}'
+  loop: '{{ deb_packages | dict2items }}'

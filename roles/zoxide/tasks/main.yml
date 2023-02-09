@@ -1,14 +1,13 @@
----
 # tasks file for zoxide
 
-- name: Download and unarchive zoxide version {{ zoxide_version }}
-  become: yes
-  apt:
+- name: 'Download and unarchive zoxide version {{ zoxide_version }}'
+  become: true
+  ansible.builtin.apt:
     deb: '{{ zoxide_release_url }}'
 
-- name: Create symbolic link to .zoxide aliases in '{{ bashrc_folder }}'
-  file:
+- name: 'Create symbolic link to .zoxide aliases in {{ bashrc_folder }}'
+  ansible.builtin.file:
     src: '{{ role_path }}/files/aliases.bash'
     dest: '{{ bashrc_folder }}/zoxide.bash'
     state: link
-    force: yes
+    force: true

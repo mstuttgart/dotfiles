@@ -1,20 +1,22 @@
+# code: language=ansible
 ---
 # tasks file for exa
 
-- name: Ensure '{{ exa_dest }}' directory exists
-  file:
+- name: 'Ensure directory exists: {{ exa_dest }}'
+  ansible.builtin.file:
     path: '{{ exa_dest }}'
     state: directory
+    mode: "0755"
 
-- name: Download and unarchive exa version {{ exa_version }}
-  unarchive:
+- name: 'Download and unarchive exa version {{ exa_version }}'
+  ansible.builtin.unarchive:
     src: '{{ exa_release_url }}'
     dest: '{{ exa_dest }}'
-    remote_src: yes
+    remote_src: true
 
-- name: Create symbolic link to .exa aliases in '{{ bashrc_folder }}'
-  file:
+- name: 'Create symbolic link to .exa aliases in {{ bashrc_folder }}'
+  ansible.builtin.file:
     src: '{{ role_path }}/files/aliases.bash'
     dest: '{{ bashrc_folder }}/exa.bash'
     state: link
-    force: yes
+    force: true

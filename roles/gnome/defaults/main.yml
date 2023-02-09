@@ -1,10 +1,11 @@
+# code: language=ansible
 ---
 # defaults file for roles/gnome
 
-gnome_themes_dir: '{{ ansible_env.HOME }}/.themes'
-gnome_icons_dir: '{{ ansible_env.HOME }}/.icons'
+gnome_themes_dir: "{{ ansible_env.HOME }}/.themes"
+gnome_icons_dir: "{{ ansible_env.HOME }}/.icons"
 
-gnome_config_path: '{{ ansible_env.HOME }}/.local/share/gnome-shell'
+gnome_config_path: "{{ ansible_env.HOME }}/.local/share/gnome-shell"
 
 packages:
   - chrome-gnome-shell
@@ -13,10 +14,10 @@ packages:
   - gnome-shell-extensions
   - gnome-tweaks
 
-gnome_extensions: 
-  - 'caffeine@patapon.info'
-  - 'dash-to-dock@micxgx.gmail.com'
-  - 'Hide_Activities@shay.shayel.org'
-  - 'just-perfection-desktop@just-perfection'
-  - 'openweather-extension@jenslody.de'
-  - 'places-menu@gnome-shell-extensions.gcampax.github.com'
+gnome_extensions:
+  - "caffeine@patapon.info"
+  - "dash-to-dock@micxgx.gmail.com"
+  - "Hide_Activities@shay.shayel.org"
+  - "just-perfection-desktop@just-perfection"
+  - "openweather-extension@jenslody.de"
+  - "places-menu@gnome-shell-extensions.gcampax.github.com"

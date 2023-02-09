@@ -1,7 +1,4 @@
-<p align="center">
-  <a href="https://github.com/mstuttgart/dotfiles">
-  <img src="https://user-images.githubusercontent.com/8174740/217489553-c3c4d9d8-8179-4bac-8edd-63558e405751.png"></a>
-</p>
+![dotfiles](https://user-images.githubusercontent.com/8174740/217931237-89c965a2-bb7c-4dd2-a878-14e0296011ab.png)
 
 <p align="center">
   <a href="https://travis-ci.org/mstuttgart/dotfiles">
@@ -26,7 +23,7 @@
 
 ## About
 
-This repository serves as my way to help me setup and maintain my Linux. 
+This repository serves as my way to help me setup and maintain my Ubuntu (version 20.04 LTS). 
 
 **Warning**: Settings applied by this repository are very personal, and definitely not suite everyones needs. I suggest to create or fork your own set of dotfiles based on this repo.
 
@@ -38,10 +35,15 @@ Clone this repo. You can clone it in your /home folder, for example.
 git clone git@github.com:mstuttgart/dotfiles.git ~/.dotfiles
 ```
 
+or download it from link: [download](https://github.com/mstuttgart/dotfiles/archive/refs/heads/main.zip).
+
 Install `ansible`:
 
 ```
-sudo apt install ansible
+sudo apt update
+sudo apt install software-properties-common
+sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install -y ansible
 ```
 
 The `bin/setup.sh` script automatize the setup of my workstation installing all tools that I use in my setup.
