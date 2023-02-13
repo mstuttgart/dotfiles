@@ -26,12 +26,14 @@
     append = commit --amend --reuse-message=HEAD
     amend = commit --amend
 
-    cm = commit -m
-    cma = commit -am
+    adda = add .
+
+    cm = commit
+    cma = commit -a
 
     ck = checkout
     ckb = checkout -b
-    chp = cherry-pick
+    ckt = checkout -t
 
     contrib = shortlog --summary --numbered
 
