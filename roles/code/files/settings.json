@@ -17,7 +17,7 @@
     "gitProjectManager.checkRemoteOrigin": false,
     "window.titleBarStyle": "custom",
     "editor.selectionClipboard": false,
-    "odooScaffold.odooBinPath": "/home/michell/Workspace/odoo/multierp/src/core/odoo-bin",
+    "odooScaffold.odooBinPath": "/home/michell/Workspace/multidadosti-erp/odoo/multierp/src/core/odoo-bin",
     "workbench.tree.indent": 20,
     "[shellscript]": {
         "editor.defaultFormatter": "shakram02.bash-beautify"
@@ -33,8 +33,8 @@
     "workbench.editorAssociations": {
         "*.ipynb": "jupyter-notebook"
     },
-    "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/odoo/.venv/bin/python",
-    "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/odoo/.venv/bin/python",
+    "odooScaffold.pythonVirtualEnvFolder": "/home/michell/Workspace/multidadosti-erp/odoo/.venv/bin/python",
+    "odooScaffold.pythonVirtualEnv": "/home/michell/Workspace/multidadosti-erp/odoo/.venv/bin/python",
     "editor.renderControlCharacters": true,
     "python.languageServer": "Pylance",
     "notebook.cellToolbarLocation": {
@@ -56,14 +56,14 @@
     "editor.minimap.enabled": false,
     "editor.accessibilitySupport": "off",
     "terminal.integrated.useWslProfiles": false,
-    "notesbox.location": "~/Documentos/",
+    "notesbox.location": "~/Documents/",
     "Notes.notesLocation": "/home/michell/Workspace/notes/draft",
     "ansible.validation.lint.enabled": false,
     "workbench.iconTheme": "ayu",
     "files.associations": {
         "*.py": "python"
     },
-    "workbench.colorTheme": "Gruvbox Dark Medium",
+    "workbench.colorTheme": "Gruvbox Light Hard",
     "editor.formatOnType": true,
     "git.openRepositoryInParentFolders": "always",
 }
