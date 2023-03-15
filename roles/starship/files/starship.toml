@@ -1,6 +1,6 @@
 # Increase Starship command scan & duration time-outs
-scan_timeout = 80
-command_timeout = 1000
+scan_timeout = 100
+command_timeout = 3000
 
 [aws]
 symbol = "  "
