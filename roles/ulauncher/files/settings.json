@@ -3,10 +3,10 @@
     "clear-previous-query": true,
     "disable-desktop-filters": false,
     "grab-mouse-pointer": false,
-    "hotkey-show-app": "<Alt>F3",
+    "hotkey-show-app": "<Primary>u",
     "render-on-screen": "mouse-pointer-monitor",
     "show-indicator-icon": false,
     "show-recent-apps": "0",
     "terminal-command": "",
-    "theme-name": "Gruvbox-Dark"
+    "theme-name": "Everforest_Light"
 }
