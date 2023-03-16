@@ -1,11 +1,11 @@
 # Settings
-set guidestripe 72
-set stripecolor yellow
+#set guidestripe 72
+#set stripecolor yellow
 
-set linenumbers
-set smooth
+#set linenumbers
+#set smooth
 set autoindent
 set tabsize 4
 set tabstospaces
-set softwrap
+#set softwrap
 
