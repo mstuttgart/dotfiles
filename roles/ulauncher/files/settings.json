@@ -3,7 +3,7 @@
     "clear-previous-query": true,
     "disable-desktop-filters": false,
     "grab-mouse-pointer": false,
-    "hotkey-show-app": "<Primary>u",
+    "hotkey-show-app": "<Alt>F3",
     "render-on-screen": "mouse-pointer-monitor",
     "show-indicator-icon": false,
     "show-recent-apps": "0",
