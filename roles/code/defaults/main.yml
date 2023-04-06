@@ -6,30 +6,35 @@ code_setting_path: '{{ ansible_env.HOME }}/.config/Code/User'
 # plugins list
 code_plugins:
 
-  - aaron-bond.better-comments
+  - albert.TabOut
   - alefragnani.Bookmarks
-  - BeardedBear.beardedicons
-  - christian-kohler.npm-intellisense
-  - cweijan.vscode-postgresql-client2
-  - dbaeumer.vscode-eslint
+  - arcticicestudio.nord-visual-studio-code
   - dionmunk.vscode-notes
   - DotJoshJohnson.xml
   - eamodio.gitlens
   - EditorConfig.EditorConfig
+  - esbenp.prettier-vscode
   - felipecaputo.git-project-manager
   - formulahendry.auto-close-tag
   - ginfuru.ginfuru-better-solarized-dark-theme
-  - Gydunhn.javascript-essentials
   - jdinhlife.gruvbox
+  - jpotterm.simple-vim
   - kamikillerto.vscode-colorize
   - mechatroner.rainbow-csv
   - mrorz.language-gettext
+  - ms-azuretools.vscode-docker
+  - ms-python.isort
+  - ms-python.python
+  - ms-python.vscode-pylance
+  - ms-vscode-remote.remote-containers
   - mstuttgart.odoo-scaffold
   - mstuttgart.odoo-snippets
   - njpwerner.autodocstring
+  - redhat.ansible
   - redhat.vscode-yaml
   - sainnhe.everforest
-  - shakram02.bash-beautify
+  - standard.vscode-standard
   - teabyii.ayu
+  - thenikso.github-plus-theme
   - xshrim.txt-syntax
   - yzhang.markdown-all-in-one
