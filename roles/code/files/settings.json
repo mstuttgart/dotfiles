@@ -53,17 +53,21 @@
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
     "editor.codeLensFontFamily": "'Fira Code',",
-    "editor.minimap.enabled": false,
     "editor.accessibilitySupport": "off",
     "terminal.integrated.useWslProfiles": false,
     "notesbox.location": "~/Documents/",
-    "Notes.notesLocation": "/home/michell/Workspace/notes/draft",
+    "Notes.notesLocation": "/home/michell/Workspace/mstuttgart/draft",
     "ansible.validation.lint.enabled": false,
     "workbench.iconTheme": "ayu",
     "files.associations": {
         "*.py": "python"
     },
-    "workbench.colorTheme": "Gruvbox Light Hard",
+    "workbench.colorTheme": "Everforest Dark",
     "editor.formatOnType": true,
     "git.openRepositoryInParentFolders": "always",
+    "[javascript]": {
+        "editor.defaultFormatter": "vscode.typescript-language-features"
+    },
+    "window.menuBarVisibility": "compact",
+    "search.experimental.notebookSearch": true,
 }

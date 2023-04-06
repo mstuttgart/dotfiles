@@ -9,10 +9,6 @@
         "command": "-workbench.view.explorer"
     },
     {
-        "key": "ctrl+shift+alt+right",
-        "command": "workbench.action.terminal.focusNext"
-    },
-    {
         "key": "ctrl+shift+c u",
         "command": "editor.action.copyLinesDownAction",
         "when": "editorTextFocus && !editorReadonly"
@@ -201,5 +197,25 @@
     {
         "key": "ctrl+q",
         "command": "-workbench.action.quit"
+    },
+    {
+        "key": "ctrl+shift+unknown",
+        "command": "extension.simpleVim.scrollUpHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-extension.simpleVim.scrollUpHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-extension.simpleVim.scrollDownHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.terminal.clear",
+        "when": "terminalFocus && terminalHasBeenCreated"
     }
 ]
