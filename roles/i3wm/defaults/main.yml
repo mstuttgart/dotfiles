@@ -1,0 +1,10 @@
+---
+# defaults file for i3wm
+
+i3wm_config_dir: '{{ config_dir }}/i3'
+
+packages:
+
+  - i3-gaps
+  - i3lock
+  - dunst
