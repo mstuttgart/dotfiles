@@ -1,0 +1,26 @@
+---
+# tasks file for ranger
+
+- name: Install ranger and tools
+  become: true
+  ansible.builtin.apt:
+    name: '{{ item }}'
+  loop: '{{ packages }}'
+
+- name: 'Ensure directory exist: {{ ranger_config_dir }}'
+  ansible.builtin.file:
+    path: '{{ ranger_config_dir }}'
+    state: directory
+    mode: '0755'
+
+- name: 'Link  config file in {{ ranger_config_dir }}'
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/{{ item }}'
+    dest: '{{ ranger_config_dir }}/{{ item }}'
+    state: link
+    force: true
+  loop:
+    - commands.py
+    - rc.conf
+    - rifle.conf
+    - scope.sh

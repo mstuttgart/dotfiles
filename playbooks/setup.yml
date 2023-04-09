@@ -19,6 +19,7 @@
     - {role: nvm, tags: ["nvm"]}
     - {role: odoo, tags: ["odoo", "optional"]}
     - {role: postgresql, tags: ["postgresql", "optional"]}
+    - {role: ranger, tags: ["ranger"]}
     - {role: snap, tags: ["snap"]}
     - {role: starship, tags: ["starship"]}
     - {role: ulauncher, tags: ["ulauncher"]}

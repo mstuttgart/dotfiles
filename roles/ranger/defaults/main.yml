@@ -1,0 +1,14 @@
+---
+# defaults file for ranger
+
+ranger_config_dir: '{{ config_dir }}/ranger'
+
+packages:
+
+  - ranger             # terminal file explorer with key-bindings
+  - w3m-img            # image preview
+  - ffmpegthumbnailer  # for video thumbanails
+  - highlight          # for synatx highlight of code
+  - unrar              # to preview archives
+  - unzip              # to preview archives as their first image
+  - mediainfo          # for viewing information abount media files
