@@ -8,6 +8,8 @@ alias dl="cd ~/Downloads"
 # System
 alias update="sudo apt update && sudo apt upgrade -y"
 alias autoremove="sudo apt autoremove -y"
+alias apti="sudo apt install"
+alias apts="sudo apt search"
 
 # Return my public IP 
 alias myip="host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'"
