@@ -1,0 +1,19 @@
+# code: language=ansible
+---
+dependency:
+  name: galaxy
+
+driver:
+  name: vagrant
+  provider:
+    name: virtualbox
+
+platforms:
+  - name: focal
+    box: ubuntu/focal64
+
+provisioner:
+  name: ansible
+
+verifier:
+  name: ansible

@@ -1,0 +1,21 @@
+# code: language=ansible
+---
+- name: Converge
+  hosts: all
+
+  pre_tasks:
+
+    - name: Run "apt-get update"
+      become: true
+      ansible.builtin.apt:
+        update_cache: yes
+      changed_when: no
+
+  tasks:
+
+    - name: "Include i3wm"
+      ansible.builtin.include_role:
+        name: "i3wm"
+      vars:
+        config_dir: '{{ ansible_env.HOME }}/.config'
+        bashrc_folder: '{{ ansible_env.HOME }}/.bashrc.d'
