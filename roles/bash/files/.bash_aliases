@@ -9,7 +9,7 @@ alias dl="cd ~/Downloads"
 alias update="sudo apt update && sudo apt upgrade -y"
 alias autoremove="sudo apt autoremove -y"
 alias apti="sudo apt install"
-alias apts="sudo apt search"
+alias apts="apt-cache search"
 
 # Return my public IP 
 alias myip="host myip.opendns.com resolver1.opendns.com | grep \"myip.opendns.com has\" | awk '{print $4}'"
@@ -30,3 +30,7 @@ alias kill9="sudo kill -9"
 
 # Create directory recursive
 alias mkdir="mkdir -pv"
+
+# Update SSH to user xterm-info to use alacritty in ssh sessions
+# https://github.com/alacritty/alacritty/issues/3962
+alias ssh="TERM=xterm-256color $(which ssh)"
