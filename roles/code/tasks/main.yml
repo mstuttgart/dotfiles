@@ -44,14 +44,14 @@
     - settings.json
 
 - name: Import VsCode extensions
-  ansible.builtin.command: code --install-extension {{ item }}
+  ansible.builtin.command: code --install-extension '{{ item }}'
   with_items: '{{ code_plugins }}'
   changed_when: true
 
-- name: Setup sysctl to fix warning to large workspace in vscode
-  become: true
-  ansible.posix.sysctl:
-    name: fs.inotify.max_user_watches
-    value: '524288'
-    state: present
-    reload: true
+#- name: Setup sysctl to fix warning to large workspace in vscode
+  #become: true
+  #ansible.posix.sysctl:
+    #name: fs.inotify.max_user_watches
+    #value: '524288'
+    #state: present
+    #reload: true

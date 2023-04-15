@@ -1,0 +1,48 @@
+---
+# tasks file for i3wm
+
+- name: Install requirements
+  become: true
+  ansible.builtin.apt:
+    name:
+      - apt-transport-https
+      - wget
+      - gpg
+    state: present
+
+- name: Add i3-gaps repo
+  become: true
+  ansible.builtin.apt_repository:
+    repo: ppa:regolith-linux/release
+
+- name: Install i3wm and tools
+  become: true
+  ansible.builtin.apt:
+    name: '{{ item }}'
+  loop: '{{ packages }}'
+
+- name: 'Ensure directory exist: {{ i3wm_config_dir }}'
+  ansible.builtin.file:
+    path: '{{ i3wm_config_dir }}'
+    state: directory
+    mode: '0755'
+
+- name: 'Ensure directory exists: {{ bashrc_folder }}'
+  ansible.builtin.file:
+    path: '{{ bashrc_folder }}'
+    state: directory
+    mode: "0755"
+
+- name: Create symbolic link to code aliases in '{{ bashrc_folder }}'
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/aliases.bash'
+    dest: '{{ bashrc_folder }}/i3.bash'
+    state: link
+    force: true
+
+- name: 'Link  config file in {{ i3wm_config_dir }}'
+  ansible.builtin.file:
+    src: '{{ role_path }}/files/config'
+    dest: '{{ i3wm_config_dir }}/config'
+    state: link
+    force: true

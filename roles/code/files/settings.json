@@ -62,7 +62,7 @@
     "files.associations": {
         "*.py": "python"
     },
-    "workbench.colorTheme": "Everforest Dark",
+    "workbench.colorTheme": "Everforest Light",
     "editor.formatOnType": true,
     "git.openRepositoryInParentFolders": "always",
     "[javascript]": {
@@ -70,4 +70,5 @@
     },
     "window.menuBarVisibility": "compact",
     "search.experimental.notebookSearch": true,
+    "editor.minimap.enabled": false,
 }

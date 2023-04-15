@@ -1,0 +1,153 @@
+# set modifier
+set $super Mod4
+set $alt Mod1
+set $TERM --no-startup-id alacritty
+set $BROWSER --no-startup-id firefox
+
+# set font
+font pango: FiraCode Nerd Font Mono Regular 8
+
+# Use Mouse+$super to drag floating windows to their wanted position
+floating_modifier $super
+
+#autostart
+exec --no-startup-id nitrogen --restore
+exec --no-startup-id xsettingsd &
+exec --no-startup-id compton -b
+
+# Set touchpag preferences to system startup
+exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Tapping Enabled" 1
+exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Natural Scrolling Enabled" 1
+exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Typing Enabled" 1
+
+# basic app keybinds
+bindsym $super+Return exec $TERM
+bindsym $super+r exec $TERM -e ranger; workspace 3; focus
+bindsym $super+w exec $BROWSER; focus
+bindsym $super+Shift+w exec $BROWSER --incognito
+bindsym $super+n exec $TERM -e ncspot; workspace 4; focus
+
+# start dmenu (a program launcher)
+bindsym $super+d exec "rofi -combi-modi window,drun,run,ssh -show combi"
+
+# system shortcuts
+bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
+bindsym $super+F6 exec i3lock -i ~/.wallpaper.png
+
+# Handle backlight.
+bindsym XF86MonBrightnessUp exec xbacklight -inc 20
+bindsym XF86MonBrightnessDown exec xbacklight -dec 20
+
+#change volume
+bindsym XF86AudioRaiseVolume exec amixer -q set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer -q set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+
+# music control
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+#bindsym XF86AudioStop exec playerctl stop
+
+# kill focused window
+bindsym $super+q kill
+bindsym $alt+F4 kill
+
+# change focus
+bindsym $super+h focus left
+bindsym $super+j focus down
+bindsym $super+k focus up
+bindsym $super+l focus right
+
+# move focused window
+bindsym $super+Shift+h move left
+bindsym $super+Shift+j move down
+bindsym $super+Shift+k move up
+bindsym $super+Shift+l move right
+
+# split in horizontal orientation
+bindsym $super+b split h
+
+# split in vertical orientation
+bindsym $super+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $super+f fullscreen toggle
+
+# change container layout split
+bindsym $super+s layout toggle split
+
+# toggle tiling / floating
+bindsym $super+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $super+Shift+space focus mode_toggle
+
+# switch to workspace
+bindsym $alt+Control+Right workspace next
+bindsym $alt+Control+Left workspace prev
+
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+
+# move focused container to workspace
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $super+F5 restart
+
+# reload i3 configuration file
+bindsym $super+F1 reload
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
+        bindsym Return mode "default
+}
+bindsym $super+F2 mode "resize"
+
+# start polybar
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --blocks
+
+# window rules, you can find the window class using xprop
+for_window [class=".*"] border pixel 0
+
+# set gaps
+gaps inner 5
+gaps outer 2
+
+assign [class=firefox] 2
+assign [class=Thunar|Postman] 3
+assign [class=Vlc|Spotify] 4
+assign [class=Skype] 5
+
+# set specific windows to floating mode
+for_window [window_role="pop-up"] floating enable
+for_window [window_role="task_dialog"] floating enable
+for_window [window_role="Organizer"] floating enable
+for_window [window_role="GtkFileChooserDialog"] floating enable
+for_window [class="Pavucontrol"] floating enable
+for_window [class="Lxappearance"] floating enable
+for_window [class="Gnome-calculator"] floating enable
+for_window [class="Gnome-calendar"] floating enable
+for_window [class="(?i)nitrogen"] floating enable
+
+# colour of border, background, text, indicator, and child_border
+client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
+client.background           #2f343f011
