@@ -1,7 +1,7 @@
 # set modifier
 set $super Mod4
 set $alt Mod1
-set $TERM --no-startup-id i3-sensible-terminal
+set $TERM --no-startup-id kitty
 set $BROWSER --no-startup-id firefox
 
 # set font
