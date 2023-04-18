@@ -194,4 +194,4 @@ export PROMPT_COMMAND=env_auto_activate
 #if [ -f /home/michell/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
 #	source /home/michell/.config/synth-shell/better-history.sh
 #fi
-alias DOTFILES='/usr/bin/git --git-dir=/home/michell/.dotfiles/ --work-tree=/home/michell'
+alias dotg='/usr/bin/git --git-dir=/home/michell/.dotfiles/ --work-tree=/home/michell'
