@@ -1,0 +1,106 @@
+[user]
+    name = Michell Stuttgart
+    email = michellstut@gmail.com
+
+[github]
+    user = mstuttgart
+
+[init]
+    defaultBranch = main
+
+[grep]
+    lineNumber = true
+
+[help]
+    autocorrect = 1
+
+[fetch]
+    prune = true
+
+[pull]
+    rebase = true
+
+[alias]
+    last = log -1 HEAD
+
+    append = commit --amend --reuse-message=HEAD
+    amend = commit --amend
+    
+    adda = add .
+
+    cm = commit
+    cma = commit -a
+
+    ck = checkout
+    ckb = checkout -b
+    ckt = checkout -t
+ 
+    chp = cherry-pick
+
+    contrib = shortlog --summary --numbered
+
+    rbi = rebase -i
+
+    df = diff --word-diff
+    ft = fetch --all --prune # Fetch all remotes and prune.
+
+    # Logs alias
+    gl = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+    # Status alias
+    st = status
+    ts = status -sb
+
+    # current branch
+    here = !git rev-parse --abbrev-ref HEAD
+
+    # publish
+    up = !git push origin -u $(git here)
+    upf = !git push -f origin -u $(git here)
+
+    # update
+    down = !git pull --rebase origin $(git here)
+
+    # https://github.com/sloria/dotfiles/blob/master/roles/git/templates/gitconfig.j2
+    # Nukes a branch locally and on the origin remote.
+    nuke = "!f() { git branch -D $1 && git push origin :$1; }; f"
+
+    # Remove local branches that have been removed upstream
+    cleanup = "!git fetch --all -p && git branch -vv | grep \": gone]\" | awk '{ print $1 }' | xargs -n 1 git branch -D"
+
+    # http://gggritso.com/human-git-aliases
+    unstage = reset -q HEAD --
+    uns = unstage
+
+    # Open .gitconfig in your default editor.
+    conf = config --global -e
+
+    # list all git alias
+    alias = !git config -l | grep alias
+
+[core]
+    editor = nvim
+    excludesfile = ~/.gitignore_global
+    attributesfile = ~/.gitattributes_global
+
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+
+[blame]
+    coloring = highlightRecent
+
+[color "diff"]
+    meta = yellow bold
+    frag = magenta bold # line info
+    old = red # deletions
+    new = green # additions
+
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+
+[web]
+    browser = brave
