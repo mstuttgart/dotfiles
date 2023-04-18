@@ -2,7 +2,7 @@
 set $super Mod4
 set $alt Mod1
 set $TERM --no-startup-id kitty
-set $BROWSER --no-startup-id firefox
+set $BROWSER --no-startup-id brave-browser
 
 # set font
 font pango: FiraCode Nerd Font Mono Regular 8
