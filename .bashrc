@@ -151,8 +151,9 @@ eval "$(zoxide init bash)"
 eval "$(pyenv virtualenv-init -)"
 
 # configure starship
-#eval "$(starship init bash)"
 #export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+#eval "$(starship init bash)"
+
 
 # # Codigo te ativação do virtualenv emprestado de https://github.com/dhelbegor/oh-my-bashrc/blob/master/bashrc
 
@@ -172,7 +173,7 @@ function env_auto_activate(){
 export PROMPT_COMMAND=env_auto_activate
 
 #-----------------------------------------------------
-## synth-shell-prompt.sh
+# synth-shell-prompt.sh
 if [ -f /home/michell/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
  source /home/michell/.config/synth-shell/synth-shell-prompt.sh
 fi
