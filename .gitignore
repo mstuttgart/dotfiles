@@ -1,0 +1,8 @@
+microsoft.gpg
+.venv
+.vscode/
+
+
+*.log
+.vagrant/.cfg
+~/.config/nvim/plugin/
