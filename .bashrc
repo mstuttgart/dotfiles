@@ -130,6 +130,12 @@ if [ -d "$HOME/.cargo" ] ; then
     export PATH="$(du "$HOME/.cargo" | cut -f2 | tr '\n' ':')$PATH"
 fi
 
+# set PATH so it includes user's private bin if it exists
+if [ -d "$HOME/.pyenv/bin" ] ; then
+    # Adds `~/.bin` and all subdirectories to $PATH
+    export PATH="$(du "$HOME/.pyenv/bin/" | cut -f2 | tr '\n' ':')$PATH"
+fi
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -141,12 +147,12 @@ export VISUAL='nvim'
 # configure zoxide
 eval "$(zoxide init bash)"
 
-# eval "$(pyenv virtualenv-init -)"
+# configure pyenv
+eval "$(pyenv virtualenv-init -)"
 
-# # configure starship
-eval "$(starship init bash)"
-
-export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
+# configure starship
+#eval "$(starship init bash)"
+#export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 # # Codigo te ativação do virtualenv emprestado de https://github.com/dhelbegor/oh-my-bashrc/blob/master/bashrc
 
@@ -165,33 +171,11 @@ function env_auto_activate(){
 
 export PROMPT_COMMAND=env_auto_activate
 
-##-----------------------------------------------------
-## synth-shell-greeter.sh
-# if [ -f /home/michell/.config/synth-shell/synth-shell-greeter.sh ] && [ -n "$( echo $- | grep i )" ]; then
-# 	source /home/michell/.config/synth-shell/synth-shell-greeter.sh
-# fi
+#-----------------------------------------------------
+## synth-shell-prompt.sh
+if [ -f /home/michell/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
+ source /home/michell/.config/synth-shell/synth-shell-prompt.sh
+fi
 
-##-----------------------------------------------------
-# ## synth-shell-prompt.sh
-# if [ -f /home/michell/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
-# 	source /home/michell/.config/synth-shell/synth-shell-prompt.sh
-# fi
 
-##-----------------------------------------------------
-### better-ls
-#if [ -f /home/michell/.config/synth-shell/better-ls.sh ] && [ -n "$( echo $- | grep i )" ]; then
-#	source /home/michell/.config/synth-shell/better-ls.sh
-#fi
-
-###-----------------------------------------------------
-### alias
-#if [ -f /home/michell/.config/synth-shell/alias.sh ] && [ -n "$( echo $- | grep i )" ]; then
-#	source /home/michell/.config/synth-shell/alias.sh
-#fi
-
-###-----------------------------------------------------
-### better-history
-#if [ -f /home/michell/.config/synth-shell/better-history.sh ] && [ -n "$( echo $- | grep i )" ]; then
-#	source /home/michell/.config/synth-shell/better-history.sh
-#fi
 alias dotg='/usr/bin/git --git-dir=/home/michell/.dotfiles/ --work-tree=/home/michell'
