@@ -57,35 +57,10 @@ opt.hlsearch = true
 
 -- theme settings
 opt.termguicolors = true
--- require('everforest').load()
-
--- vim.cmd[[hi NeoTreeNormal guibg=NONE ctermbg=NONE]]
--- vim.cmd[[hi NeoTreeEndOfBuffer guibg=NONE ctermbg=NONE]]
 
 vim.api.nvim_command([[
 
-" html
-" for html files, 2 spaces
-autocmd Filetype html,css setlocal ts=2 sw=2 expandtab
-
-" yaml
-autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
-
-" .conf
-autocmd FileType *.conf setl ft=conf
-
-augroup vimrc-javascript
-  autocmd!
-  autocmd FileType javascript setl tabstop=4|setl shiftwidth=4|setl expandtab softtabstop=4
-augroup END
-
-" python
-" vim-python
-augroup vimrc-python
-  autocmd!
-  autocmd FileType python setlocal expandtab shiftwidth=4 tabstop=8 colorcolumn=79
-      \ formatoptions+=croq softtabstop=4
-      \ cinwords=if,elif,else,for,while,try,except,finally,def,class,with
-augroup END
+" disable folding code
+autocmd BufWritePost,BufEnter * set nofoldenable
 
 ]])

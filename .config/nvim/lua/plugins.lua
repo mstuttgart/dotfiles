@@ -25,6 +25,17 @@ return require('packer').startup(function()
     config = [[require('config.git-linker')]],
   }
 
+  -- git fugitive in lua. Use git inside vim
+  use {
+    'dinhhuy258/git.nvim',
+    config = function()
+      require('git').setup({
+        -- Default target branch when create a pull request
+        target_branch = "develop",
+      })
+    end
+  }
+
   -- better visual guide
   use {
     "lukas-reineke/indent-blankline.nvim",
@@ -33,10 +44,10 @@ return require('packer').startup(function()
   }
 
   -- nvim-lsp configuration
-  -- use {
-  --   "neovim/nvim-lspconfig",
-  --   config = [[require('config.lsp')]],
-  -- }
+  use {
+    "neovim/nvim-lspconfig",
+    config = [[require('config.lsp')]],
+  }
 
   -- comment code
   -- use 'scrooloose/nerdcommenter'
@@ -49,7 +60,12 @@ return require('packer').startup(function()
   use { "itchyny/vim-highlighturl", event = "VimEnter" }
 
   -- show and trim trailing whitespaces
-  use { "jdhao/whitespace.nvim", event = "VimEnter" }
+  use {
+    "mcauley-penney/tidy.nvim",
+    config = function()
+      require('tidy').setup()
+    end
+  }
 
   -- lua support
   use { "ii14/emmylua-nvim", ft = "lua" }
@@ -66,12 +82,22 @@ return require('packer').startup(function()
   use { 'sbdchd/neoformat', cmd = {'Neoformat'}}
 
   -- auto close chars like '(', '{', '[' and ""
+  -- use {
+  --   'm4xshen/autoclose.nvim',
+  --   config = function()
+  --     require('autoclose').setup()
+  --   end
+  -- }
+
   use {
-    'm4xshen/autoclose.nvim',
+    'windwp/nvim-autopairs',
     config = function()
-      require('autoclose').setup()
+      require('nvim-autopairs').setup()
     end
   }
+
+  -- general language snippets
+  use { "rafamadriz/friendly-snippets" }
 
   -- telescope
   use {
@@ -111,23 +137,24 @@ return require('packer').startup(function()
   }
 
   -- syntax support
- -- use({
-  --   'nvim-treesitter/nvim-treesitter',
-  --   event = 'BufEnter',
-  --   config = [[require('config.treesitter')]],
-  --   run = ':TSUpdate',
-  -- })
+  use({
+     'nvim-treesitter/nvim-treesitter',
+     event = 'BufEnter',
+     config = [[require('config.treesitter')]],
+     run = ':TSUpdate',
+   })
 
-  -- create annotations for multiple linguages
--- use {
- --    'danymat/neogen',
- --    event = 'BufEnter',
- --    requires = "nvim-treesitter/nvim-treesitter",
- --    tag = "*",
-  use {
-    'pixelneo/vim-python-docstring',
-    event = 'BufEnter',
-  }
+   -- create annotations for multiple linguages
+   use {
+       'danymat/neogen',
+       event = 'BufEnter',
+       requires = "nvim-treesitter/nvim-treesitter",
+       tag = "*",
+   }
+  -- use {
+  --   'pixelneo/vim-python-docstring',
+  --   event = 'BufEnter',
+  -- }
 
   -- file explorer
   use {
@@ -136,12 +163,10 @@ return require('packer').startup(function()
     config = [[require('config.nvim-tree')]],
   }
 
-  use {
-    'tpope/vim-surround',
-    event = 'VimEnter',
-  }
-
-
+  -- markdown preview :MarkdownPreviewToggle
+  use({
+      "iamcco/markdown-preview.nvim",
+      run = function() vim.fn["mkdp#util#install"]() end,
+  })
 
 end)
-
