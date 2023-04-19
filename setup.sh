@@ -118,6 +118,13 @@ Apps=(
   "libffi-dev"
   "liblzma-dev"
 
+  # nvim
+  "exuberant-ctags"
+  "ncurses-term"
+  "curl"
+  "ripgrep"
+  "fd-find"
+
   # apps
   "gpick"
   "flameshot"
