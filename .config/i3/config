@@ -23,7 +23,7 @@ exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Ty
 # basic app keybinds
 bindsym $super+Return exec $TERM
 bindsym $super+r exec $TERM -e ranger; workspace 3; focus
-bindsym $super+w exec $BROWSER; focus
+bindsym $super+w exec $BROWSER; workspace 2; focus
 bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+m exec $TERM -e ncspot; workspace 4; focus
 
@@ -126,7 +126,7 @@ bindsym $super+F2 mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 2
+for_window [class=".*"] border pixel 1
 
 # set gaps
 #gaps inner 5
