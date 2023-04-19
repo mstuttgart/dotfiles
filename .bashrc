@@ -147,6 +147,16 @@ export VISUAL='nvim'
 # configure zoxide
 eval "$(zoxide init bash)"
 
+# set PATH so it includes user's private bin if it exists
+export PYENV_ROOT="$HOME/.pyenv"
+
+if [ -d "$PYENV_ROOT/bin" ] ; then
+    PATH="$PYENV_ROOT/bin:$PATH"
+fi
+
+# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
+
 # configure pyenv
 eval "$(pyenv virtualenv-init -)"
 
@@ -172,11 +182,15 @@ function env_auto_activate(){
 
 export PROMPT_COMMAND=env_auto_activate
 
+
+# Personalize bash promt and show git bracnhs
+# PS1='\[\033[01;34m\]\w\[\033[01;32m\]$(declare -F __git_ps1 &>/dev/null && __git_ps1 " (%s)")\[\033[01;34m\] > \[\033[00m\]'
+
 #-----------------------------------------------------
-# synth-shell-prompt.sh
+# # synth-shell-prompt.sh
 if [ -f /home/michell/.config/synth-shell/synth-shell-prompt.sh ] && [ -n "$( echo $- | grep i )" ]; then
  source /home/michell/.config/synth-shell/synth-shell-prompt.sh
 fi
 
 
-alias dotg='/usr/bin/git --git-dir=/home/michell/.dotfiles/ --work-tree=/home/michell'
+alias gtd='/usr/bin/git --git-dir=/home/michell/.dotfiles/ --work-tree=/home/michell'

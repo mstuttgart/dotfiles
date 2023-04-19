@@ -29,14 +29,6 @@ fi
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 
-# set PATH so it includes user's private bin if it exists
-export PYENV_ROOT="$HOME/.pyenv"
 
-if [ -d "$PYENV_ROOT/bin" ] ; then
-    PATH="$PYENV_ROOT/bin:$PATH"
-fi
-
-# command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
 
 
