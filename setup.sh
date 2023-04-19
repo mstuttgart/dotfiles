@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 #
 # Config created by mstuttgart https://www.github.com/mstuttgart/dotfiles
 # Copyright (C) 2023 Michell Stuttgart
@@ -212,8 +212,5 @@ git clone https://github.com/pyenv/pyenv-virtualenv.git  ~/.pyenv/plugins/pyenv-
 msg_checking
 
 new_line
-
-# reload bash
-source $HOME/.bashrc
 
 msg_info "Done!"
