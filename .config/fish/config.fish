@@ -1,7 +1,7 @@
 # fish shell settings
 
 # disable initial message of fish
-set fish_greeting
+set -U fish_greeting
 
 # ----------------------------------------
 # general settings
@@ -32,8 +32,8 @@ alias vim 'nvim'
 
 # exa aliases
 alias ls 'exa --color=auto'
-alias la 'exa -a --color-auto'
-alias ll 'exa -alF --color-auto'
+alias la 'exa -a --color=auto'
+alias ll 'exa -alF --color=auto'
 alias tree 'exa -a --tree --color=auto' # show tree in directory
 
 # colorize grep output (good for log files)
@@ -68,8 +68,8 @@ alias pyserver 'python3 -m http.server 8000'
 # update branchs from hotfix
 alias ghotfix 'git stash && git checkout main && git pull --rebase origin main && git checkout develop && git rebase origin/main && git pull --rebase origin develop && git push origin develop'
 
-# alias to manager dotfiles in $HOME 
-alias gtd '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+# alias to manager dotfiles in $HOME
+alias dot '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # ----------------------------------------
 
@@ -81,3 +81,4 @@ pyenv init - | source
 
 # start starship
 starship init fish | source
+set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
