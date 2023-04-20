@@ -1,13 +1,13 @@
 configuration {
 	display-drun:    " Apps";
 	display-window:  "缾 Windows";
-	show-icons:true;
-	font: "monospace 14";
+	show-icons: true;
+	font: "monospace 11";
 }
 
 * {
 	background-color:            #323d43;
-    bg:                          #283136;
+  bg:                          #283136;
 	text-color:                  #d8caac;
 	selbg:                       #323d43;
 	actbg:                       #3c474d;
@@ -30,12 +30,12 @@ configuration {
 	selected-active-background:  @actbg;
 	active-background:           @background-color;
 
-	line-margin:                 2px;
-	line-padding:                2px;
+	line-margin:                 0px;
+	line-padding:                0px;
 	separator-style:             "none";
 	hide-scrollbar:              "true";
-	margin:                      2px;
-	padding:                     2px;
+	margin:                      5px;
+	padding:                     0px;
 }
 
 window {
@@ -48,8 +48,8 @@ window {
 	orientation: horizontal;
 	children:	 [mainbox];
     border-radius: 2px;
-    border: 1px solid;
-    border-color: @background-color;
+    /* border: 1px solid; */
+    /* border-color: @background-color; */
 }
 
 mainbox {
@@ -59,8 +59,8 @@ mainbox {
  	background-color: @active-background;
     padding: 0px;
 
-    border: 2px solid;
-    border-color: #a7c080;
+    /* border: 2px solid; */
+    /* border-color: #a7c080; */
 	background-color: @active-background;
 }
 
@@ -88,7 +88,7 @@ element {
 
 prompt {
        padding:     0px 0px 0px 0px;
-       font:        "monospace 18";
+       font:        "monospace 12";
 }
 
 entry {
@@ -158,7 +158,7 @@ element-icon selected.normal {
 }
 
 element.selected {
-    border-radius: 2px;
+  border-radius: 2px;
 	border:           0 0 0 5px solid;
 	border-color:	    @winbg;
 }
@@ -175,5 +175,3 @@ element-text normal.normal,
 element-text alternate.normal {
     background-color: @bg;
 }
-
-
