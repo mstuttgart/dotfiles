@@ -7,3 +7,4 @@ microsoft.gpg
 .vagrant/.cfg
 ~/.config/nvim/plugin/
 ~/.config/kitty.colors.conf
+~/.config/fish/fish_variables
