@@ -7,7 +7,7 @@ rofi_poweroff_menu () {
 chosen=$(rofi_poweroff_menu)
 
 if [[ $chosen = "Logout" ]]; then
-    bspc quit
+    i3wm quit
 elif [[ $chosen = "Shutdown" ]]; then
 	systemctl poweroff
 elif [[ $chosen = "Reboot" ]]; then
