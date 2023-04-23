@@ -111,6 +111,7 @@ Windows = " "
 
 [package]
 symbol = " "
+disabled = true
 
 [python]
 symbol = " "
