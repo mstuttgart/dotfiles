@@ -49,8 +49,8 @@ set('n', '<Leader>ef', ':NvimTreeFindFile<CR>', ns)
 set('n',  '<leader>tg', ':TagbarToggle<CR>', ns)
 
 -- inserted annotation
--- set('n', '<Leader>nn', ':lua require("neogen").generate()<CR>', ns)
-set('n', '<Leader>nn', ':Docstring<CR>', ns)
+set('n', '<Leader>nn', ':lua require("neogen").generate()<CR>', ns)
+-- set('n', '<Leader>nn', ':Docstring<CR>', ns)
 
 -- gitlinker new keymaps
 vim.keymap.set({ 'n', 'v' }, "<leader>gl", "", {

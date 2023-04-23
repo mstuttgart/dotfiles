@@ -5,11 +5,11 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- initial screen
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'nvim-tree/nvim-web-devicons' },
-    config = [[require('config.alpha')]],
-  }
+  -- use {
+  --   'goolord/alpha-nvim',
+  --   requires = { 'nvim-tree/nvim-web-devicons' },
+  --   config = [[require('config.alpha')]],
+  -- }
 
   -- show git change (change, delete, add) signs in vim sign column
   use {
@@ -56,9 +56,6 @@ return require('packer').startup(function()
   -- Python indent (follows the PEP8 style)
   use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
 
-  -- Highlight URLs inside vim
-  use { "itchyny/vim-highlighturl", event = "VimEnter" }
-
   -- show and trim trailing whitespaces
   use {
     "mcauley-penney/tidy.nvim",
@@ -82,13 +79,6 @@ return require('packer').startup(function()
   use { 'sbdchd/neoformat', cmd = {'Neoformat'}}
 
   -- auto close chars like '(', '{', '[' and ""
-  -- use {
-  --   'm4xshen/autoclose.nvim',
-  --   config = function()
-  --     require('autoclose').setup()
-  --   end
-  -- }
-
   use {
     'windwp/nvim-autopairs',
     config = function()
@@ -146,10 +136,13 @@ return require('packer').startup(function()
 
    -- create annotations for multiple linguages
    use {
-       'danymat/neogen',
-       event = 'BufEnter',
-       requires = "nvim-treesitter/nvim-treesitter",
-       tag = "*",
+      'danymat/neogen',
+      event = 'BufEnter',
+      config = function()
+        require('neogen').setup()
+      end,
+      requires = { "nvim-treesitter/nvim-treesitter" },
+      tag = "*",
    }
   -- use {
   --   'pixelneo/vim-python-docstring',

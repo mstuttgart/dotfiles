@@ -1,8 +1,6 @@
 -- General Settings --
 
-local g = vim.g
 local opt = vim.opt
-local cmd = vim.cmd
 
 -- set encoding
 opt.encoding = 'utf-8'
@@ -54,6 +52,9 @@ opt.incsearch = true
 
  -- highligth search
 opt.hlsearch = true
+
+-- set shell
+opt.shell = "/usr/bin/fish"
 
 -- theme settings
 opt.termguicolors = true
