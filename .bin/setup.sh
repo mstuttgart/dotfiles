@@ -52,6 +52,7 @@ Apps=(
   "git"
   "tig"
   "gpick"
+  "gimp"
   "libreoffice"
   "openssh-server"
   "neofetch"
