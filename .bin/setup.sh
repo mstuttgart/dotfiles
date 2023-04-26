@@ -89,6 +89,7 @@ Apps=(
   "unrar"
   "unzip"
   "mediainfo"
+  "mvp"
 
   # Programming
   "build-essential"
