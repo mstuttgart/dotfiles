@@ -78,7 +78,7 @@ alias dotp '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push'
 # ----------------------------------------
 
 # configure zoxide
-zoxide init fish | source
+# zoxide init fish | source
 
 # configure pyenv
 pyenv init - | source
