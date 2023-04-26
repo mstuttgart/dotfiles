@@ -3,7 +3,7 @@
 local nvim_lsp = require('lspconfig')
 
 -- python server
-require'lspconfig'.pyright.setup{}
+-- require'lspconfig'.pyright.setup{}
 
 -- yaml server
 -- require'lspconfig'.yamlls.setup{}

@@ -4,13 +4,6 @@ return require('packer').startup(function()
   -- packer
   use 'wbthomason/packer.nvim'
 
-  -- initial screen
-  -- use {
-  --   'goolord/alpha-nvim',
-  --   requires = { 'nvim-tree/nvim-web-devicons' },
-  --   config = [[require('config.alpha')]],
-  -- }
-
   -- show git change (change, delete, add) signs in vim sign column
   use {
     'lewis6991/gitsigns.nvim',
@@ -23,17 +16,6 @@ return require('packer').startup(function()
     requires = 'nvim-lua/plenary.nvim',
     event = 'User InGitRepo',
     config = [[require('config.git-linker')]],
-  }
-
-  -- git fugitive in lua. Use git inside vim
-  use {
-    'dinhhuy258/git.nvim',
-    config = function()
-      require('git').setup({
-        -- Default target branch when create a pull request
-        target_branch = "develop",
-      })
-    end
   }
 
   -- better visual guide
@@ -50,11 +32,7 @@ return require('packer').startup(function()
   }
 
   -- comment code
-  -- use 'scrooloose/nerdcommenter'
   use { "tpope/vim-commentary", event = "VimEnter" }
-
-  -- Python indent (follows the PEP8 style)
-  use { "Vimjas/vim-python-pep8-indent", ft = { "python" } }
 
   -- show and trim trailing whitespaces
   use {
@@ -63,9 +41,6 @@ return require('packer').startup(function()
       require('tidy').setup()
     end
   }
-
-  -- lua support
-  use { "ii14/emmylua-nvim", ft = "lua" }
 
   -- highlight for color code
   use {
@@ -106,16 +81,38 @@ return require('packer').startup(function()
     config = function()
       require('telescope').load_extension('fzf')
     end
-    }
+  }
 
   -- tag bar
   use { 'majutsushi/tagbar' }
 
   -- themes
   use { 'morhetz/gruvbox', opt = true }
-  use { 'nordtheme/vim', opt = true }
+  -- use { 'nordtheme/vim' }
+  use { 'shaunsingh/nord.nvim' }
   use { 'Shatur/neovim-ayu' }
-  use { 'neanias/everforest-nvim'}
+
+  use {
+    'neanias/everforest-nvim',
+    config = function()
+      require("everforest").setup({
+        -- Controls the "hardness" of the background. Options are "soft", "medium" or "hard".
+        -- Default is "medium".
+        background = "medium",
+        -- How much of the background should be transparent. Options are 0, 1 or 2.
+        -- Default is 0.
+        --
+        -- 2 will have more UI components be transparent (e.g. status line
+        -- background).
+        transparent_background_level = 1,
+        -- Whether italics should be used for keywords, builtin types and more.
+        italics = true,
+        -- Disable italic fonts for comments. Comments are in italics by default, set
+        -- this to `true` to make them _not_ italic!
+        disable_italic_comments = false,
+      })
+    end
+  }
 
   -- lualine status bar
   use {
@@ -162,4 +159,12 @@ return require('packer').startup(function()
       run = function() vim.fn["mkdp#util#install"]() end,
   })
 
+  -- terminal
+  use {
+      's1n7ax/nvim-terminal',
+      config = function()
+          vim.o.hidden = true
+          require('nvim-terminal').setup()
+      end,
+  }
 end)
