@@ -62,6 +62,11 @@ Apps=(
   "xclip"
   "poedit"
 
+  # fonts
+  "fonts-clear-sans"
+  "fonts-firacode"
+  "fonts-inter"
+
   # i3
   "i3"
   "i3lock"
@@ -69,8 +74,7 @@ Apps=(
   "nitrogen"
   "compton"
   "rofi"
-  "acpi"
-  "xbacklight"
+  "light"           # brightness control
   "suckless-tools"
   "hsetroot"
   "fonts-noto"
@@ -80,6 +84,8 @@ Apps=(
   "lxappearance"
   "polybar"
   "playerctl"
+  "numlockx"
+  "acpi"         # battery info
 
   # ranger
   "ranger"
@@ -166,6 +172,10 @@ for app in "${Apps[@]}"; do
     # The $? get result of last command
     check_return_code $? $app
 done
+
+# Add user to video group to control brightness
+sudo chmod +s /usr/bin/light
+
 
 # Install neovim
 msg_install "Install NVIM"
