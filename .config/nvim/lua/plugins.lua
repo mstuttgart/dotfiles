@@ -10,14 +10,6 @@ return require('packer').startup(function()
     config = [[require('config.gitsigns')]],
   }
 
-  -- generate links to git web frontend hosts
-  use {
-    'ruifm/gitlinker.nvim',
-    requires = 'nvim-lua/plenary.nvim',
-    event = 'User InGitRepo',
-    config = [[require('config.git-linker')]],
-  }
-
   -- better visual guide
   use {
     "lukas-reineke/indent-blankline.nvim",
@@ -88,7 +80,6 @@ return require('packer').startup(function()
 
   -- themes
   use { 'morhetz/gruvbox', opt = true }
-  -- use { 'nordtheme/vim' }
   use { 'shaunsingh/nord.nvim' }
   use { 'Shatur/neovim-ayu' }
 
@@ -96,12 +87,6 @@ return require('packer').startup(function()
     'neanias/everforest-nvim',
     config = function()
       require("everforest").setup({
-        -- Controls the "hardness" of the background. Options are "soft", "medium" or "hard".
-        -- Default is "medium".
-        background = "medium",
-        -- How much of the background should be transparent. Options are 0, 1 or 2.
-        -- Default is 0.
-        --
         -- 2 will have more UI components be transparent (e.g. status line
         -- background).
         transparent_background_level = 1,
@@ -125,26 +110,22 @@ return require('packer').startup(function()
 
   -- syntax support
   use({
-     'nvim-treesitter/nvim-treesitter',
-     event = 'BufEnter',
-     config = [[require('config.treesitter')]],
-     run = ':TSUpdate',
+    'nvim-treesitter/nvim-treesitter',
+    event = 'BufEnter',
+    config = [[require('config.treesitter')]],
+    run = ':TSUpdate',
    })
 
    -- create annotations for multiple linguages
    use {
-      'danymat/neogen',
-      event = 'BufEnter',
-      config = function()
-        require('neogen').setup()
-      end,
-      requires = { "nvim-treesitter/nvim-treesitter" },
-      tag = "*",
+    'danymat/neogen',
+    event = 'BufEnter',
+    config = function()
+      require('neogen').setup()
+    end,
+    requires = { "nvim-treesitter/nvim-treesitter" },
+    tag = "*",
    }
-  -- use {
-  --   'pixelneo/vim-python-docstring',
-  --   event = 'BufEnter',
-  -- }
 
   -- file explorer
   use {
@@ -155,16 +136,8 @@ return require('packer').startup(function()
 
   -- markdown preview :MarkdownPreviewToggle
   use({
-      "iamcco/markdown-preview.nvim",
-      run = function() vim.fn["mkdp#util#install"]() end,
+    "iamcco/markdown-preview.nvim",
+    run = function() vim.fn["mkdp#util#install"]() end,
   })
 
-  -- terminal
-  use {
-      's1n7ax/nvim-terminal',
-      config = function()
-          vim.o.hidden = true
-          require('nvim-terminal').setup()
-      end,
-  }
 end)

@@ -3,22 +3,22 @@ local set = vim.keymap.set
 local ns = { silent = true, noremap = true }
 
 -- remap ESCAPE key
-set('i', 'kk', '<esc>')
+set('i', '<C-Space>', '<esc>')
 
 -- leader/local leader
 vim.g.mapleader = " "
 
 -- save and exit easier
--- set('i', '<C-s>', '<esc>:wa<CR>', ns)
--- set('n', '<C-s>', ':wa<CR>', ns)
+set('i', '<C-s>', '<esc>:wa<CR>', ns)
+set('n', '<C-s>', ':wa<CR>', ns)
 -- set('i', '<C-q>', '<esc>:wqa!<CR>', ns)
 -- set('n', '<C-q>', ':wqa!<CR>', ns)
 
 -- save and exit easier
 -- set('i', '<leader>w', '<esc>:wa<CR>', ns) (cau lag)
-set('n', '<leader>w', ':wa<CR>', ns)
+-- st('n', '<leader>w', ':wa<CR>', ns)
 -- set('i', '<leader>q', '<esc>:wqa!<CR>', ns)
-set('n', '<leader>q', ':wqa!<CR>', ns)
+-- set('n', '<leader>q', ':wqa!<CR>', ns)
 
 -- show config file
 set('n', '<leader>ev', ':vsplit $MYVIMRC<CR>', ns)
@@ -50,24 +50,3 @@ set('n',  '<leader>tg', ':TagbarToggle<CR>', ns)
 
 -- inserted annotation
 set('n', '<Leader>nn', ':lua require("neogen").generate()<CR>', ns)
--- set('n', '<Leader>nn', ':Docstring<CR>', ns)
-
--- gitlinker new keymaps
-vim.keymap.set({ 'n', 'v' }, "<leader>gl", "", {
-  silent = true,
-  desc = 'Get git permlink',
-  callback = function()
-    local mode = string.lower(vim.fn.mode())
-    gitlinker.get_buf_range_url(mode)
-  end,
-})
-
-vim.keymap.set('n', '<leader>gb', '', {
-  silent = true,
-  desc = 'Browse repo in browser',
-  callback = function()
-    gitlinker.get_repo_url({
-      action_callback = gitlinker.actions.open_in_browser
-    })
-  end
-})

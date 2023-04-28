@@ -8,6 +8,6 @@ require 'keymaps'
 
 -- enable theme
 
--- require('everforest').load()
+require('everforest').load()
 -- require('ayu').colorscheme()
-vim.cmd[[colorscheme nord]]
+-- vim.cmd[[colorscheme nord]]
