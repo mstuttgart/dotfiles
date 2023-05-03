@@ -8,7 +8,7 @@
 
 !README.md
 !~/.bin/setup.sh
-!~/.bin/backup.sh
+!~/.bin/backup.fish
 
 !~/.config/fish
 !~/.config/git
