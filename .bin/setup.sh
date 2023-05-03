@@ -58,9 +58,9 @@ Apps=(
   "neofetch"
   "zoxide"
   "newsboat"
-  "zathura"
   "xclip"
   "poedit"
+  "evince"
 
   # fonts
   "fonts-clear-sans"
