@@ -33,6 +33,11 @@ set('n', '<Down>', '<NOP>', ns)
 set('n', '<Left>', '<NOP>', ns)
 set('n', '<Right>', '<NOP>', ns)
 
+set('i', '<Up>', '<NOP>', ns)
+set('i', '<Down>', '<NOP>', ns)
+set('i', '<Left>', '<NOP>', ns)
+set('i', '<Right>', '<NOP>', ns)
+
 -- navigate buffers and repos
 set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', ns)
 set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', ns)

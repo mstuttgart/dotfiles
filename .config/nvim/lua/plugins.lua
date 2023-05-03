@@ -36,9 +36,9 @@ return require('packer').startup(function()
 
   -- highlight for color code
   use {
-    'brenoprata10/nvim-highlight-colors',
+    'norcalli/nvim-colorizer.lua',
     config = function()
-      require('nvim-highlight-colors').setup()
+      require('colorizer').setup()
     end
   }
 

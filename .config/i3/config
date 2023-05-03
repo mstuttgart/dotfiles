@@ -2,7 +2,7 @@
 set $super Mod4
 set $alt Mod1
 set $TERM --no-startup-id kitty
-set $BROWSER --no-startup-id google-chrome
+set $BROWSER --no-startup-id firefox
 
 # set font
 # font pango: FiraCode Nerd Font Mono Regular 8
@@ -128,11 +128,11 @@ bindsym $super+F2 mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 0
 
 # set gaps
-#gaps inner 5
-#gaps outer 2
+gaps inner 5
+gaps outer 2
 
 assign [class=firefox] 2
 assign [class=Thunar|Postman] 3
@@ -148,7 +148,7 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="GoogleCalendar"] floating enable
-for_window [class="(?i)nitrogen"] floating enable
+# for_window [class="(?i)nitrogen"] floating enable
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8

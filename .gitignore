@@ -8,6 +8,8 @@
 
 !README.md
 !~/.bin/setup.sh
+!~/.bin/backup.sh
+
 !~/.config/fish
 !~/.config/git
 !~/.config/i3
@@ -17,5 +19,3 @@
 !~/.config/polybar
 !~/.config/ranger
 !~/.config/starship
-!~/.config/rofi
-!~/.config/dunst

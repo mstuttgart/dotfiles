@@ -11,13 +11,13 @@ require("nvim-treesitter.configs").setup({
     'yaml',
     'bash',
     'markdown',
-    'comment',
     'vim',
-    'regex',
     'ini',
     'json',
     'po',
     'sql',
+    'toml',
+    'fish',
   },
 
   highlight = {

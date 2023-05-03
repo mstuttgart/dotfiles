@@ -58,10 +58,3 @@ opt.shell = "/usr/bin/fish"
 
 -- theme settings
 opt.termguicolors = true
-
-vim.api.nvim_command([[
-
-" disable folding code
-autocmd BufWritePost,BufEnter * set nofoldenable
-
-]])
