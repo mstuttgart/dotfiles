@@ -1,10 +1,21 @@
-microsoft.gpg
-.venv
-.vscode/
+# ignore all files
+*
 
-
-*.log
-.vagrant/.cfg
+# ignored files and paths
 ~/.config/nvim/plugin/
 ~/.config/kitty.colors.conf
 ~/.config/fish/fish_variables
+
+!README.md
+!~/.bin/setup.sh
+!~/.config/fish
+!~/.config/git
+!~/.config/i3
+!~/.config/kitty
+!~/.config/neofetch
+!~/.config/nvim
+!~/.config/polybar
+!~/.config/ranger
+!~/.config/starship
+!~/.config/rofi
+!~/.config/dunst
