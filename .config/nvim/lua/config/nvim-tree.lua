@@ -9,9 +9,19 @@ require('nvim-tree').setup({
   update_focused_file = {
       enable = true,
     },
+  filters = {
+    dotfiles = false,
+  },
   view = {
     adaptive_size = true,
     side = 'left',
+  },
+  git = {
+    enable = true,
+    ignore = false,
+    show_on_dirs = true,
+    show_on_open_dirs = true,
+    timeout = 400,
   },
   renderer = {
     indent_markers = {

@@ -55,3 +55,6 @@ set('n',  '<leader>tg', ':TagbarToggle<CR>', ns)
 
 -- inserted annotation
 set('n', '<Leader>nn', ':lua require("neogen").generate()<CR>', ns)
+
+-- markdown preview
+set('n',  '<leader>mp', ':MarkdownPreviewToggle<CR>', ns)
