@@ -1,11 +1,9 @@
 # set modifier
 set $super Mod4
-set $alt Mod1
 set $TERM --no-startup-id kitty
 set $BROWSER --no-startup-id firefox
 
 # set font
-# font pango: FiraCode Nerd Font Mono Regular 8
 font pango: JetBrainsMono Nerd Font Mono Regular 8
 
 # Use Mouse+$super to drag floating windows to their wanted position
@@ -29,11 +27,9 @@ bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+m exec $TERM -e ncspot; workspace 4; focus
 
 # start dmenu (a program launcher)
-# bindsym $super+d exec "rofi -combi-modi window,drun,run,ssh -show combi"
 bindsym $super+d exec "$HOME/.config/polybar/scripts/launcher.sh"
 
 # system shortcuts
-# bindsym Print exec scrot 'Cheese_%a-%d%b%y_%H.%M.png' -e 'viewnior ~/$f'
 bindsym Print exec "flameshot gui"
 bindsym $super+F6 exec i3lock -i ~/.wallpaper.png
 
@@ -50,7 +46,6 @@ bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
-#bindsym XF86AudioStop exec playerctl stop
 
 # kill focused window
 bindsym $super+q kill
@@ -148,7 +143,6 @@ for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="GoogleCalendar"] floating enable
-# for_window [class="(?i)nitrogen"] floating enable
 
 # colour of border, background, text, indicator, and child_border
 client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
@@ -156,4 +150,4 @@ client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
 client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background           #2f343f011
+client.background           #2f343f
