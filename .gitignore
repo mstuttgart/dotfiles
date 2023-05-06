@@ -2,20 +2,20 @@
 *
 
 # ignored files and paths
-~/.config/nvim/plugin/
-~/.config/kitty.colors.conf
-~/.config/fish/fish_variables
+# ~/.config/nvim/plugin/
+# ~/.config/kitty.colors.conf
+# ~/.config/fish/fish_variables
 
-!README.md
-!~/.bin/setup.sh
-!~/.bin/backup.fish
+ !README.md
+# !~/.bin/setup.sh
+# !~/.bin/backup.fish
 
-!~/.config/fish
-!~/.config/git
-!~/.config/i3
-!~/.config/kitty
-!~/.config/neofetch
-!~/.config/nvim
-!~/.config/polybar
-!~/.config/ranger
-!~/.config/starship
+# !~/.config/fish
+# !~/.config/git
+# !~/.config/i3
+# !~/.config/kitty
+# !~/.config/neofetch
+# !~/.config/nvim
+# !~/.config/polybar
+# !~/.config/ranger
+# !~/.config/starship
