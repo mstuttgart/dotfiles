@@ -69,20 +69,16 @@ alias pyserver 'python3 -m http.server 8000'
 alias ghotfix 'git stash && git checkout main && git pull --rebase origin main && git checkout develop && git rebase origin/main && git pull --rebase origin develop && git push origin develop'
 
 # alias to manager dotfiles in $HOME
-alias dot  '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias dots '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME status'
-alias dota '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME add'
-alias dotc '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME commit'
-alias dotp '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME push'
+alias dgit  '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 
 # ----------------------------------------
 
 # configure zoxide
-zoxide init fish | source
+# zoxide init fish | source
 
 # configure pyenv
 pyenv init - | source
 
 # start starship
-starship init fish | source
-set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+# starship init fish | source
+# set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
