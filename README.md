@@ -1,4 +1,8 @@
-![dotfiles](https://user-images.githubusercontent.com/8174740/236624304-5fcfdad6-897b-46ce-8c6a-4e81d28878fd.png)
+<p align="center">
+  <a href="https://github.com/mstuttgart/dotfiles/">
+    <img src="https://user-images.githubusercontent.com/8174740/236652567-5927a005-e18b-4037-b92a-8779cdf2c970.png" width="60%">
+  </a>
+</p>
 
 <p align="center">
   <a href="https://github.com/mstuttgart/dotfiles">
