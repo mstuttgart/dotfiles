@@ -16,7 +16,7 @@
 
 This repository serves as my way to help me setup and maintain my Ubuntu (version 22.04 LTS).
 
-**Warning**: Settings applied by this repository are very personal, and definitely not suite everyones needs. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
+> **Warning**: Settings applied by this repository are very personal, and definitely not suite everyones needs. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 Here are some details about my setup:
 
