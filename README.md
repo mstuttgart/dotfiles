@@ -5,15 +5,6 @@
 </p>
 
 <p align="center">
-  <a href="https://github.com/mstuttgart/dotfiles">
-    <img src="https://img.shields.io/badge/OS-Linux-informational?style=for-the-badge&logo=linux&logoColor=white&color=bed5c5" alt="OS">
-  </a>
-  <a href="https://github.com/mstuttgart/dotfiles/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/mstuttgart/dotfiles.svg?style=for-the-badge&color=bed5c5" alt="License">
-  </a>
-</p>
-
-<p align="center">
   <a href="#about">About</a> |
   <a href="#install">Install</a> |
   <a href="#credits">Credits</a>
