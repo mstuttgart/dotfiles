@@ -30,25 +30,33 @@ Here are some details about my setup:
 - **File Manager**                 : [ranger](https://github.com/ranger/ranger)
 - **Wallpaper Manager**            : [nitrogen](https://github.com/l3ib/nitrogen)
 - **Editor**                       : [neovim](https://neovim.io/)
+- **CLI System Information**       : [neofetch](https://github.com/dylanaraps/neofetch)
 
 ## Install
 
-I use the `bare` repo git to store my dotfiles. More about [here](https://www.atlassian.com/git/tutorials/dotfiles).
+My dotfiles is managed by [yadm](https://yadm.io), a dotfiles manager. This makes it simple to set up a new computer and keep updates my config files. I order to set up a new system with these dotfiles, do the following:
 
-Clone this repo:
+### Debian/Ubuntu
 
 ```sh
-# create alias
-alias dgit='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+$ apt install yadm
+```
 
-# clone base repo
-git clone --bare git@github.com:mstuttgart/dotfiles.git $HOME/.dotfiles
+To others systems install instructions, see [here](https://yadm.io/docs/install).
 
-# disable untracked files
-dgit config --local status.showUntrackedFiles no
+### Set up repository
 
-# checkout
-dgit checkout
+Use `yadm` to clone this repo and set up your enviromnent.
+
+```sh
+yadm clone git@github.com:mstuttgart/dotfiles.git
+```
+
+The clone and pull command may result in warnings because of pre-existing dotfiles. Overwrite the existing files with commands below.
+
+```sh
+yadm fetch --all
+yadm reset --hard origin/main
 ```
 
 ## Credits
