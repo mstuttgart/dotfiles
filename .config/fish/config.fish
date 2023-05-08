@@ -31,10 +31,10 @@ set -U fish_user_paths $PYENV_ROOT/bin
 alias vim 'nvim'
 
 # exa aliases
-# alias ls 'exa --color=auto'
-# alias la 'exa -a --color=auto'
-# alias ll 'exa -alF --color=auto'
-# alias tree 'exa -a --tree --color=auto' # show tree in directory
+alias ls 'exa --color=auto'
+alias la 'exa -a --color=auto'
+alias ll 'exa -alf --color=auto'
+alias lt 'exa -a --tree --color=auto' # show tree in directory
 
 # colorize grep output (good for log files)
 alias grep 'grep --color=auto'
@@ -55,7 +55,7 @@ alias apts 'apt-cache search'
 alias mkdir 'mkdir -pv'
 
 # bat alias
-# alias cat 'batcat --theme=ansi'
+alias cat 'batcat --theme=ansi'
 
 # pyenv aliases
 alias aenv 'pyenv activate'
@@ -65,20 +65,5 @@ alias denv 'pyenv deactivate'
 # python server to server files
 alias pyserver 'python3 -m http.server 8000'
 
-# update branchs from hotfix
-alias ghotfix 'git stash && git checkout main && git pull --rebase origin main && git checkout develop && git rebase origin/main && git pull --rebase origin develop && git push origin develop'
-
-# alias to manager dotfiles in $HOME
-alias dgit  '/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-
-# ----------------------------------------
-
-# configure zoxide
-# zoxide init fish | source
-
 # configure pyenv
 pyenv init - | source
-
-# start starship
-# starship init fish | source
-# set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
