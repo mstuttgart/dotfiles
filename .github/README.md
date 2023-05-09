@@ -30,6 +30,42 @@ Here are some details about my setup:
 - **Wallpaper Manager**            : [nitrogen](https://github.com/l3ib/nitrogen)
 - **Editor**                       : [neovim](https://neovim.io/)
 - **CLI System Information**       : [neofetch](https://github.com/dylanaraps/neofetch)
+- **System monitor**               : [btop](https://github.com/aristocratos/btop)
+
+### Neovim Setup
+
+Requires [Neovim](https://neovim.io/) (>= 0.8)
+
+- [wbthomason/packer.nvim](https://github.com/wbthomason/packer.nvim) - A plugin manager for Neovim
+- [lewis6991/gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) - Git integration for buffers
+- [lukas-reineke/indent-blankline.nvim](https://github.com/lukas-reineke/indent-blankline.nvim) - Indent guides for Neovim
+- [neovim/nvim-lspconfig](https://github.com/neovim/nvim-lspconfig) - A collection of configurations for Neovim's built-in LSP
+- [numToStr/Comment.nvim](https://github.com/numToStr/Comment.nvim) - Smart and powerful comment plugin for neovim
+- [mcauley-penney/tidy.nvim](https://github.com/mcauley-penney/tidy.nvim) - A small Neovim plugin to remove trailing whitespace and empty lines at end of file on every save
+- [norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua) - A high-performance color highlighter
+- [sbdchd/neoformat](https://github.com/sbdchd/neoformat) - A (Neo)vim plugin for formatting code
+- [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - Autopairs
+- [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder over lists
+- [stevearc/aerial.nvim](https://github.com/stevearc/aerial.nvim) - Neovim plugin for a code outline window
+- [neanias/everforest-nvim](https://github.com/neanias/everforest-nvim) - A Lua port of the Everforest colour scheme
+- [nvim-lualine/lualine.nvim](https://github.com/nvim-lualine/lualine.nvim) - A blazing fast and easy to configure Neovim statusline written in Lua
+- [nvim-treesitter/nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter) - [Treesitter](https://github.com/tree-sitter/tree-sitter) configurations and abstraction layer for Neovim
+- [nvim-tree/nvim-tree.lua](https://github.com/nvim-tree/nvim-tree.lua)
+- [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - Lua `fork` of vim-web-devicons for neovim
+- [windwp/nvim-autopairs](https://github.com/windwp/nvim-autopairs) - autopairs for neovim written by lua
+- [iamcco/markdown-preview.nvim](https://github.com/iamcco/markdown-preview.nvim) - Markdown live preview
+
+## Shell Setup
+
+- [Fish shell](https://fishshell.com/)
+- [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
+    - [Tide](https://github.com/IlanCosman/tide) - Shell theme. Use version 5: `fisher install ilancosman/tide@v5`
+    - [z](https://github.com/jethrokuan/z) - Directory jumping
+    - [nvm](https://github.com/jorgebucaran/nvm.fish) -  The Node.js version manager you'll adore, crafted just for Fish
+    - [autopair](https://github.com/jorgebucaran/autopair.fish) -  Auto-complete matching pairs in the Fish command line
+- [Exa](https://the.exa.website/) - `ls` replacement
+- [Bat](https://github.com/sharkdp/bat) - A `cat`(1) clone with wings.
+- [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I use JetBrains.
 
 ## Install
 
@@ -61,5 +97,7 @@ yadm reset --hard origin/main
 ```
 
 ## Credits
+
+* My Polybar theme is a custom version of awesome poolybar [forest](https://github.com/zoddDev/Forest/tree/master) theme create by [zoddDev](https://github.com/zoddDev).
 
 Copyright (C) 2019-2023 by Michell Stuttgart
