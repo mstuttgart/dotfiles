@@ -33,10 +33,10 @@ set('n', '<Down>', '<NOP>', ns)
 set('n', '<Left>', '<NOP>', ns)
 set('n', '<Right>', '<NOP>', ns)
 
-set('i', '<Up>', '<NOP>', ns)
-set('i', '<Down>', '<NOP>', ns)
-set('i', '<Left>', '<NOP>', ns)
-set('i', '<Right>', '<NOP>', ns)
+-- set('i', '<Up>', '<NOP>', ns)
+-- set('i', '<Down>', '<NOP>', ns)
+-- set('i', '<Left>', '<NOP>', ns)
+-- set('i', '<Right>', '<NOP>', ns)
 
 -- split editor
 set('n', '<leader>h', '<C-u>split<CR>', ns)
@@ -44,3 +44,6 @@ set('n', '<leader>v', '<C-u>vsplit<CR>', ns)
 
 -- markdown preview
 set('n',  '<leader>mp', ':MarkdownPreviewToggle<CR>', ns)
+
+
+set('n',  '<leader>tg', ':TagbarToggle<CR>', ns)

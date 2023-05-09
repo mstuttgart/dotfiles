@@ -1,7 +1,7 @@
 -- aerial settings
 local status, aerial = pcall(require, 'aerial')
 
-if (not aerial) then return end
+if (not status) then return end
 
 aerial.setup({
   -- optionally use on_attach to set keymaps when aerial has attached to a buffer

@@ -1,7 +1,7 @@
 -- neogen settings
 local status, neogen = pcall(require, 'neogen')
 
-if (not neogen) then return end
+if (not status) then return end
 
 neogen.setup({
   enabled = true,

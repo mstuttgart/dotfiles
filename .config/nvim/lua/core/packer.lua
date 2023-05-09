@@ -74,7 +74,8 @@ return packer.startup(function()
   }
 
   -- tag bar
-  use { 'stevearc/aerial.nvim' }
+  -- use { 'stevearc/aerial.nvim' }
+  use { 'majutsushi/tagbar' }
 
   -- themes
   use { 'Shatur/neovim-ayu' }
@@ -113,6 +114,15 @@ return packer.startup(function()
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
+  })
+
+  -- surround chars
+  use({
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      config = function()
+          require("nvim-surround").setup()
+      end
   })
 
 end)
