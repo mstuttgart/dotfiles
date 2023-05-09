@@ -67,3 +67,7 @@ alias pyserver 'python3 -m http.server 8000'
 
 # configure pyenv
 pyenv init - | source
+
+# start starship
+starship init fish | source
+set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
