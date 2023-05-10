@@ -1,15 +1,37 @@
-local status, packer = pcall(require, 'packer')
-
--- check packer is installed
-if (not status) then
-  print('Packer is not installed')
-  return
+-- plugins setttings
+local ensure_packer = function()
+  local fn = vim.fn
+  local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+  if fn.empty(fn.glob(install_path)) > 0 then
+    fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+    vim.cmd [[packadd packer.nvim]]
+    return true
+  end
+  return false
 end
 
-return packer.startup(function()
+local packer_bootstrap = ensure_packer()
+
+return require('packer').startup(function()
 
   -- packer
   use { 'wbthomason/packer.nvim' }
+
+  -- nvim-lsp configuration
+  -- configure mason to install and manage LSP servers, linters and formatters
+  use {
+      "williamboman/mason.nvim",
+      "williamboman/mason-lspconfig.nvim",
+      "neovim/nvim-lspconfig",
+  }
+
+  -- autocomplete
+  use {
+    'hrsh7th/nvim-cmp',
+    'hrsh7th/cmp-nvim-lsp',
+    'L3MON4D3/LuaSnip',
+    'saadparwaiz1/cmp_luasnip',
+  }
 
   -- show git change (change, delete, add) signs in vim sign column
   use { 'lewis6991/gitsigns.nvim' }
@@ -17,16 +39,14 @@ return packer.startup(function()
   -- better visual guide
   use { 'lukas-reineke/indent-blankline.nvim' }
 
-  -- nvim-lsp configuration
-  use { 'neovim/nvim-lspconfig' }
-
   -- comment code
   use {
-      'numToStr/Comment.nvim',
-      config = function()
-          require('Comment').setup()
-      end
+    'numToStr/Comment.nvim',
+    config = function()
+      require('Comment').setup()
+    end
   }
+
   -- show and trim trailing whitespaces
   use {
     "mcauley-penney/tidy.nvim",
@@ -36,12 +56,7 @@ return packer.startup(function()
   }
 
   -- highlight for color code
-  use {
-    'norcalli/nvim-colorizer.lua',
-    config = function()
-      require('colorizer').setup()
-    end
-  }
+  use { 'norcalli/nvim-colorizer.lua' }
 
   -- format code
   use { 'sbdchd/neoformat', cmd = {'Neoformat'}}
@@ -54,9 +69,6 @@ return packer.startup(function()
     end
   }
 
-  -- general language snippets
-  use { "rafamadriz/friendly-snippets" }
-
   -- telescope
   use {
     'nvim-telescope/telescope.nvim',
@@ -66,15 +78,7 @@ return packer.startup(function()
     end
   }
 
-  -- telescope fzf
-  use {
-    'nvim-telescope/telescope-fzf-native.nvim',
-    run = 'make',
-    requires = { 'nvim-telescope/telescope.nvim'},
-  }
-
   -- tag bar
-  -- use { 'stevearc/aerial.nvim' }
   use { 'majutsushi/tagbar' }
 
   -- themes
@@ -93,7 +97,6 @@ return packer.startup(function()
   -- syntax support
   use({
     'nvim-treesitter/nvim-treesitter',
-    event = 'BufEnter',
     run = ':TSUpdate',
    })
 
@@ -110,7 +113,7 @@ return packer.startup(function()
     requires = { 'nvim-tree/nvim-web-devicons' },
   }
 
-  -- markdown preview :MarkdownPreviewToggle
+    -- markdown preview :MarkdownPreviewToggle
   use({
     "iamcco/markdown-preview.nvim",
     run = function() vim.fn["mkdp#util#install"]() end,
@@ -124,5 +127,11 @@ return packer.startup(function()
           require("nvim-surround").setup()
       end
   })
+
+
+  -- Automatically set up your configuration after cloning packer.nvim
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 
 end)

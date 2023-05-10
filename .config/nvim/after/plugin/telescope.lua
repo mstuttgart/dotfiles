@@ -5,9 +5,8 @@ if (not status) then return end
 
 -- navigate buffers and repos
 vim.keymap.set('n', '<leader>ff', '<cmd>Telescope find_files<CR>', ns)
-vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', ns)
 
-telescope.load_extension('fzf')
+vim.keymap.set('n', '<leader>fg', '<cmd>Telescope live_grep<CR>', ns)
 
 telescope.setup({
   pickers = {

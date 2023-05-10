@@ -7,8 +7,6 @@ if (not status) then return end
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-vim.opt.termguicolors = true
-
 nvimtree.setup({
   disable_netrw = true,
   update_focused_file = {
