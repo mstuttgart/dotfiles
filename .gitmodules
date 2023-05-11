@@ -1,9 +1,0 @@
-[submodule ".config/tmux/plugins/tmp"]
-	path = .config/tmux/plugins/tmp
-	url = git@github.com:tmux-plugins/tpm.git
-[submodule ".local/share/nvim/site/pack/packer/start/packer.nvim"]
-	path = .local/share/nvim/site/pack/packer/start/packer.nvim
-	url = git@github.com:wbthomason/packer.nvim.git
-[submodule ".config/ranger/plugins/ranger_devicons"]
-	path = .config/ranger/plugins/ranger_devicons
-	url = git@github.com:alexanderjeurissen/ranger_devicons.git
