@@ -30,7 +30,6 @@ Here are some details about my setup:
 - **Wallpaper Manager**            : [nitrogen](https://github.com/l3ib/nitrogen)
 - **Editor**                       : [neovim](https://neovim.io/)
 - **CLI System Information**       : [neofetch](https://github.com/dylanaraps/neofetch)
-- **System monitor**               : [btop](https://github.com/aristocratos/btop)
 
 ### Neovim Setup
 
@@ -68,9 +67,11 @@ Requires [Neovim](https://neovim.io/) (>= 0.8)
     - [z](https://github.com/jethrokuan/z) - Directory jumping
     - [nvm](https://github.com/jorgebucaran/nvm.fish) -  The Node.js version manager you'll adore, crafted just for Fish
     - [autopair](https://github.com/jorgebucaran/autopair.fish) -  Auto-complete matching pairs in the Fish command line
-- [Exa](https://the.exa.website/) - `ls` replacement
-- [Bat](https://github.com/sharkdp/bat) - A `cat`(1) clone with wings.
-- [Nerd fonts](https://github.com/ryanoasis/nerd-fonts) - Powerline-patched fonts. I use JetBrains.
+    - [fzf](https://github.com/PatrickF1/fzf.fish) - Fzf plugin for Fish
+- [exa](https://the.exa.website/) - `ls` replacement
+- [bat](https://github.com/sharkdp/bat) - A `cat`(1) clone with wings
+- [btop](https://github.com/aristocratos/btop) - A monitor of resources
+- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) - I use JetBrains and Sauce Code Pro (icons of Polybar)
 
 ## Install
 
@@ -99,6 +100,13 @@ The `clone` and `pull` command may result in warnings because of pre-existing do
 ```sh
 yadm fetch --all
 yadm reset --hard origin/main
+```
+
+Finally, download the submodules (packer.nvim, tpm, ranger dev. icons):
+
+```sh
+yadm submodule init
+yadm submodule update
 ```
 
 ## Credits
