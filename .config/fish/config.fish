@@ -31,10 +31,13 @@ set -U fish_user_paths $PYENV_ROOT/bin
 alias vim 'nvim'
 
 # exa aliases
-alias ls 'exa --color=auto'
-alias la 'exa -a --color=auto'
-alias ll 'exa -alf --color=auto'
-alias lt 'exa -a --tree --color=auto' # show tree in directory
+alias ls 'exa --color=auto --icons'
+alias la 'exa -a --color=auto --icons'
+alias ll 'exa -alf --color=auto --icons'
+alias lt 'exa -a --tree --color=auto --icons' # show tree in directory
+
+# bat aliases
+alias cat 'batcat --theme=everforest'
 
 # colorize grep output (good for log files)
 alias grep 'grep --color=auto'
@@ -53,9 +56,6 @@ alias apts 'apt-cache search'
 
 # create directory recursive
 alias mkdir 'mkdir -pv'
-
-# bat alias
-alias cat 'batcat --theme=ansi'
 
 # pyenv aliases
 alias aenv 'pyenv activate'
