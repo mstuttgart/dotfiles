@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #
 # Config created by mstuttgart https://www.github.com/mstuttgart/dotfiles
 # Copyright (C) 2023 Michell Stuttgart
@@ -29,6 +29,7 @@ function check_return_code () {
 
 config_dir="$HOME/.config"
 fonts_dir="$HOME/.fonts"
+icons_dir="$HOME/.icons"
 local_bin_dir="$HOME/.local/bin"
 
 Apps=(
@@ -61,6 +62,7 @@ Apps=(
   "xclip"
   "poedit"
   "evince"
+  "fzf"
 
   # fonts
   "fonts-clear-sans"
@@ -68,7 +70,7 @@ Apps=(
   "fonts-inter"
 
   # i3
-  "i3"
+  # "i3"
   "i3lock"
   "netctl"
   "nitrogen"
@@ -161,6 +163,7 @@ mkdir -p $fonts_dir
 print "Create $local_bin_dir"
 mkdir -p $local_bin_dir
 
+print
 msg_checking
 new_line
 
@@ -173,56 +176,56 @@ for app in "${Apps[@]}"; do
     check_return_code $? $app
 done
 
-# Add user to video group to control brightness
-sudo chmod +s /usr/bin/light
-
-
-# Install neovim
-msg_install "Install NVIM"
-
-wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
-
-mkdir -p $local_bin_dir
-mv -f nvim.appimage $local_bin_dir/nvim
-chmod +x $local_bin_dir/nvim
-
-msg_checking
-new_line
-
-# Install packer
-msg_install "Install Packer"
-
-git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
-
-msg_checking
-new_line
-
-# Install node version manager (nvm)
-msg_install "Install nvm"
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
-msg_checking
-
-msg_install "Install nodejs"
-nvm install --lts
-msg_checking
-
-new_line
-
-# Install ncspot
-msg_install "Install ncspot"
-wget https://github.com/hrkfdn/ncspot/releases/download/v0.13.1/ncspot-v0.13.1-linux-arm64.tar.gz
-tar xvzf ncspot-v0.13.1-linux-arm64.tar.gz -C $local_bin_dir
-rm -rf ncspot-v0.13.1-linux-arm64.tar.gz
-
-msg_checking
-new_line
-
-# Install pyenv
-msg_install "Install pyenv and pyenv-virtualenv"
-git clone https://github.com/pyenv/pyenv.git ~/.pyenv
-git clone https://github.com/pyenv/pyenv-virtualenv.git  ~/.pyenv/plugins/pyenv-virtualenv
-msg_checking
-
-new_line
+# # Add user to video group to control brightness
+# sudo chmod +s /usr/bin/light
+#
+#
+# # Install neovim
+# msg_install "Install NVIM"
+#
+# wget https://github.com/neovim/neovim/releases/download/v0.9.0/nvim.appimage
+#
+# mkdir -p $local_bin_dir
+# mv -f nvim.appimage $local_bin_dir/nvim
+# chmod +x $local_bin_dir/nvim
+#
+# msg_checking
+# new_line
+#
+# # Install packer
+# msg_install "Install Packer"
+#
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+#
+# msg_checking
+# new_line
+#
+# # Install node version manager (nvm)
+# msg_install "Install nvm"
+# curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+# msg_checking
+#
+# msg_install "Install nodejs"
+# nvm install --lts
+# msg_checking
+#
+# new_line
+#
+# # Install ncspot
+# msg_install "Install ncspot"
+# wget https://github.com/hrkfdn/ncspot/releases/download/v0.13.1/ncspot-v0.13.1-linux-arm64.tar.gz
+# tar xvzf ncspot-v0.13.1-linux-arm64.tar.gz -C $local_bin_dir
+# rm -rf ncspot-v0.13.1-linux-arm64.tar.gz
+#
+# msg_checking
+# new_line
+#
+# # Install pyenv
+# msg_install "Install pyenv and pyenv-virtualenv"
+# git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+# git clone https://github.com/pyenv/pyenv-virtualenv.git  ~/.pyenv/plugins/pyenv-virtualenv
+# msg_checking
+#
+# new_line
 
 msg_info "Done!"
