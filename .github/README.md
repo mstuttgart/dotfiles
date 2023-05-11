@@ -102,13 +102,6 @@ yadm fetch --all
 yadm reset --hard origin/main
 ```
 
-Finally, download the submodules (packer.nvim, tpm, ranger dev. icons):
-
-```sh
-yadm submodule init
-yadm submodule update
-```
-
 ## Credits
 
 Copyright (C) 2019-2023 by Michell Stuttgart
