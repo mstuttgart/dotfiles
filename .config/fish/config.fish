@@ -28,46 +28,47 @@ set -U fish_user_paths $PYENV_ROOT/bin
 # ----------------------------------------
 # aliases
 
-alias vim 'nvim'
-
 # exa aliases
-alias ls 'exa --color=auto --icons'
-alias la 'exa -a --color=auto --icons'
-alias ll 'exa -alf --color=auto --icons'
-alias lt 'exa -a --tree --color=auto --icons' # show tree in directory
+abbr ls 'exa --color=auto --icons'
+abbr la 'exa -a --color=auto --icons'
+abbr ll 'exa -alh --color=auto --icons'
+abbr lt 'exa -a --tree --color=auto --icons' # show tree in directory
 
 # bat aliases
-alias cat 'batcat --theme=everforest'
+abbr cat 'batcat --theme=everforest'
 
 # colorize grep output (good for log files)
-alias grep 'grep --color=auto'
+abbr grep 'grep --color=auto'
 
 # confirm before remove
-alias rm 'rm -i'
+abbr rm 'rm -i'
 
-# ps aux alias
-alias psgrep 'ps aux | grep'
+# ps aux
+abbr psgrep 'ps aux | grep'
 
 # system aliases
-alias aptu 'sudo apt update && sudo apt upgrade -y'
-alias aptr 'sudo apt remove -y'
-alias apti 'sudo apt install'
-alias apts 'apt-cache search'
+abbr aptu 'sudo apt update; sudo apt upgrade -y'
+abbr aptr 'sudo apt remove -y'
+abbr apti 'sudo apt install'
+abbr apts 'apt-cache search'
 
 # create directory recursive
-alias mkdir 'mkdir -pv'
+abbr mkdir 'mkdir -pv'
 
 # pyenv aliases
-alias aenv 'pyenv activate'
-alias cenv 'pyenv virtualenv'
-alias denv 'pyenv deactivate'
+abbr aenv 'pyenv activate'
+abbr cenv 'pyenv virtualenv'
+abbr denv 'pyenv deactivate'
 
 # python server to server files
-alias pyserver 'python3 -m http.server 8000'
+abbr pyserver 'python3 -m http.server 8000'
 
 # configure pyenv
 pyenv init - | source
 
+# condigure pyenv-virtualenv
+status --is-interactive; and pyenv virtualenv-init - | source
+
 # start starship
-starship init fish | source
-set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+# starship init fish | source
+# set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
