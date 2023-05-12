@@ -70,5 +70,8 @@ pyenv init - | source
 status --is-interactive; and pyenv virtualenv-init - | source
 
 # start starship
-# starship init fish | source
-# set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+starship init fish | source
+set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+
+# configure asdf
+source ~/.asdf/asdf.fish
