@@ -1,0 +1,183 @@
+/**
+ * rofi -dump-theme output.
+ * Rofi version: 1.7.0
+ **/
+* {
+    bg:        #323d43;
+    fg:        #d8caac;
+    black0:    #3c474d;
+    black1:    #868d80;
+    red0:      #e68183;
+    red1:      #e68183;
+    green0:    #a7c080;
+    green1:    #a7c080;
+    yellow0:   #d9bb80;
+    yellow1:   #d9bb80;
+    blue0:     #89beba;
+    blue1:     #89beba;
+    magenta0:  #d3a0bc;
+    magenta1:  #d3a0bc;
+    cyan0:     #87c095;
+    cyan1:     #87c095;
+    white0:    #d8caac;
+    white1:    #d8caac;
+
+
+
+    dark-yellow-dark:    rgba ( 215, 153, 33, 100 % );
+    dark-yellow-light:   rgba ( 250, 189, 47, 100 % );
+    dark-gray:           rgba ( 168, 153, 132, 100 % );
+    dark-fg1:            rgba ( 235, 219, 178, 100 % );
+    dark-red-dark:       rgba ( 204, 36, 29, 100 % );
+    dark-fg0:            rgba ( 251, 241, 199, 100 % );
+    dark-bg3:            rgba ( 102, 92, 84, 100 % );
+    dark-red-light:      rgba ( 251, 73, 52, 100 % );
+    dark-bg1:            rgba ( 60, 56, 54, 100 % );
+
+    background:                  var(bg);
+    background-color:            var(background);
+    normal-background:           var(background);
+
+    foreground:                  var(fg);
+    selected-normal-background:  var(green0);
+    selected-normal-foreground:  var(black0);
+    normal-foreground:           var(fg);
+    alternate-normal-foreground: var(fg);
+    alternate-active-foreground: var(yellow0);
+    border-color:                var(black1);
+    active-foreground:           var(bg);
+
+    separatorcolor:              var(bg);
+    scrollbar:                   true;
+    scrollbar-handle:            var(bg);
+
+    selected-active-background:  var(yellow0);
+    alternate-urgent-background: var(urgent-background);
+    selected-urgent-foreground:  var(urgent-foreground);
+    highlight:                   bold italic ;
+    urgent-foreground:           var(bg);
+    alternate-urgent-foreground: var(urgent-foreground);
+    selected-active-foreground:  var(active-foreground);
+    selected-urgent-background:  var(dark-red-light);
+    alternate-active-background: var(active-background);
+    active-background:           var(dark-yellow-dark);
+    alternate-normal-background: var(bg);
+    urgent-background:           var(dark-red-dark);
+}
+window {
+    padding:          2;
+    background-color: var(background);
+    border:           2;
+    width:            600;
+}
+mainbox {
+    padding: 30;
+    border:  0;
+}
+message {
+    padding:      1px ;
+    border-color: var(separatorcolor);
+    border:       2px 0px 0px ;
+}
+textbox {
+    highlight:  var(highlight);
+    text-color: var(foreground);
+}
+listview {
+    padding:      2px 0px 0px ;
+    scrollbar:    var(scrollbar);
+    border-color: var(separatorcolor);
+    spacing:      2px ;
+    border:       2px 0px 0px ;
+}
+element {
+    padding: 6px ;
+    border:  0;
+}
+element normal.normal {
+    background-color: var(normal-background);
+    text-color:       var(normal-foreground);
+}
+element normal.urgent {
+    background-color: var(urgent-background);
+    text-color:       var(urgent-foreground);
+}
+element normal.active {
+    background-color: var(active-background);
+    text-color:       var(active-foreground);
+}
+element selected.normal {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
+element selected.urgent {
+    background-color: var(selected-urgent-background);
+    text-color:       var(selected-urgent-foreground);
+}
+element selected.active {
+    background-color: var(selected-active-background);
+    text-color:       var(selected-active-foreground);
+}
+element alternate.normal {
+    background-color: var(alternate-normal-background);
+    text-color:       var(alternate-normal-foreground);
+}
+element alternate.urgent {
+    background-color: var(alternate-urgent-background);
+    text-color:       var(alternate-urgent-foreground);
+}
+element alternate.active {
+    background-color: var(alternate-active-background);
+    text-color:       var(alternate-active-foreground);
+}
+scrollbar {
+    width:        4px ;
+    padding:      0;
+    handle-width: 8px ;
+    border:       0;
+    handle-color: var(scrollbar-handle);
+}
+mode-switcher {
+    border-color: var(separatorcolor);
+    border:       2px 0px 0px ;
+}
+inputbar {
+    padding:    2px ;
+    spacing:    0;
+    text-color: var(normal-foreground);
+    children:   [ prompt,textbox-prompt-sep,entry,case-indicator ];
+}
+case-indicator {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+entry {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+prompt {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+button {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+button selected {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
+textbox-prompt-sep {
+    margin:     0px 0.3000em 0px 0px ;
+    expand:     false;
+    str:        ":";
+    text-color: var(normal-foreground);
+}
+element-text {
+    background-color: inherit;
+    text-color:       inherit;
+}
+element-icon {
+    background-color: inherit;
+    text-color:       inherit;
+}
