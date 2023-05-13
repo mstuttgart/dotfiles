@@ -63,6 +63,7 @@ Apps=(
   "poedit"
   "evince"
   "fzf"
+  "asdf"
 
   # fonts
   "fonts-clear-sans"
