@@ -63,11 +63,11 @@ Requires [Neovim](https://neovim.io/) (>= 0.8)
 
 - [Fish shell](https://fishshell.com/)
 - [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
-    - [Tide](https://github.com/IlanCosman/tide) - Shell theme. Use version 5: `fisher install ilancosman/tide@v5`
     - [z](https://github.com/jethrokuan/z) - Directory jumping
-    - [nvm](https://github.com/jorgebucaran/nvm.fish) -  The Node.js version manager you'll adore, crafted just for Fish
     - [autopair](https://github.com/jorgebucaran/autopair.fish) -  Auto-complete matching pairs in the Fish command line
     - [fzf](https://github.com/PatrickF1/fzf.fish) - Fzf plugin for Fish
+    - [asdf](https://github.com/rstacruz/fish-asdf) - Fish shell integrations for asdf version manager 
+- [Starship](https://starship.rs/) - Shell theme. The minimal, blazing-fast, and infinitely customizable prompt for any shell! 
 - [exa](https://the.exa.website/) - `ls` replacement
 - [bat](https://github.com/sharkdp/bat) - A `cat`(1) clone with wings
 - [btop](https://github.com/aristocratos/btop) - A monitor of resources
