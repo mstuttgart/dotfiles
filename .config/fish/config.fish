@@ -21,30 +21,23 @@ set -gx EDITOR nvim
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin
 
-# pyenv configs
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -U fish_user_paths $PYENV_ROOT/bin
-
 # ----------------------------------------
 # aliases
 
 # exa aliases
-abbr ls 'exa --color=auto --icons'
-abbr la 'exa -a --color=auto --icons'
-abbr ll 'exa -alh --color=auto --icons'
-abbr lt 'exa -a --tree --color=auto --icons' # show tree in directory
+alias ls 'exa --color=auto --icons'
+alias la 'exa -la --color=auto --icons'
+alias ll 'exa -alh --color=auto --icons'
+alias lt 'exa -a --tree --color=auto --icons' # show tree in directory
 
 # bat aliases
-abbr cat 'batcat --theme=everforest'
+alias cat 'batcat --theme=everforest'
 
 # colorize grep output (good for log files)
-abbr grep 'grep --color=auto'
-
-# confirm before remove
-abbr rm 'rm -i'
+alias grep 'grep --color=auto'
 
 # ps aux
-abbr psgrep 'ps aux | grep'
+abbr pgrep 'ps aux | grep'
 
 # system aliases
 abbr aptu 'sudo apt update; sudo apt upgrade -y'
@@ -56,22 +49,17 @@ abbr apts 'apt-cache search'
 abbr mkdir 'mkdir -pv'
 
 # pyenv aliases
-abbr aenv 'pyenv activate'
-abbr cenv 'pyenv virtualenv'
-abbr denv 'pyenv deactivate'
+abbr aenv 'source .venv/bin/activate.fish'
+abbr cenv 'python -m venv .venv'
+abbr denv 'deactivate'
 
 # python server to server files
 abbr pyserver 'python3 -m http.server 8000'
 
-# configure pyenv
-pyenv init - | source
-
-# condigure pyenv-virtualenv
-status --is-interactive; and pyenv virtualenv-init - | source
+# update pip
+abbr pipu 'pip install pip --upgrade'
+abbr pipr 'pip install -r requirements.txt'
 
 # start starship
 starship init fish | source
 set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
-
-# configure asdf
-source ~/.asdf/asdf.fish
