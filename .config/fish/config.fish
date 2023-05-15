@@ -50,8 +50,11 @@ abbr mkdir 'mkdir -pv'
 
 # pyenv aliases
 abbr aenv 'source .venv/bin/activate.fish'
-abbr cenv 'python -m venv .venv'
+abbr cenv 'python3 -m venv .venv'
 abbr denv 'deactivate'
+
+# using terminfo of kitty in ssh
+abbr ssh 'kitty +kitten ssh'
 
 # python server to server files
 abbr pyserver 'python3 -m http.server 8000'
@@ -63,3 +66,16 @@ abbr pipr 'pip install -r requirements.txt'
 # start starship
 starship init fish | source
 set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
+
+# Blur
+function blur_terminal_background
+  if test $DISPLAY
+    for class in kitty konsole;
+      for ID in (xdotool search --class $class)
+        xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $ID
+      end
+    end
+  end
+end
+
+# blur_terminal_background
