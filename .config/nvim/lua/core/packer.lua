@@ -1,4 +1,4 @@
--- plugins setttings
+  -- plugins setttings
 local ensure_packer = function()
   local fn = vim.fn
   local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -20,9 +20,9 @@ return require('packer').startup(function()
   -- nvim-lsp configuration
   -- configure mason to install and manage LSP servers, linters and formatters
   use {
-      "williamboman/mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-      "neovim/nvim-lspconfig",
+      'williamboman/mason.nvim',
+      'williamboman/mason-lspconfig.nvim',
+      'neovim/nvim-lspconfig',
   }
 
   -- autocomplete
@@ -49,7 +49,7 @@ return require('packer').startup(function()
 
   -- show and trim trailing whitespaces
   use {
-    "mcauley-penney/tidy.nvim",
+    'mcauley-penney/tidy.nvim',
     config = function()
       require('tidy').setup()
     end
@@ -61,7 +61,7 @@ return require('packer').startup(function()
   -- format code
   use { 'sbdchd/neoformat', cmd = {'Neoformat'}}
 
-  -- auto close chars like '(', '{', '[' and ""
+  -- auto close chars like '(', '{', '[' and ''
   use {
     'windwp/nvim-autopairs',
     config = function()
@@ -78,8 +78,12 @@ return require('packer').startup(function()
     end
   }
 
-  -- tag bar
-  use { 'majutsushi/tagbar' }
+  -- telescope fzf support
+  use {
+    'nvim-telescope/telescope-fzf-native.nvim',
+    requires = { 'nvim-telescope/telescope.nvim' },
+    run = 'make',
+  }
 
   -- themes
   use { 'Shatur/neovim-ayu' }
@@ -95,17 +99,17 @@ return require('packer').startup(function()
   }
 
   -- syntax support
-  use({
+  use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-   })
+  }
 
    -- create annotations for multiple linguages
-   use {
+  use {
     'danymat/neogen',
-    requires = { "nvim-treesitter/nvim-treesitter" },
-    tag = "*",
-   }
+    requires = { 'nvim-treesitter/nvim-treesitter' },
+    tag = '*',
+  }
 
   -- file explorer
   use {
@@ -113,21 +117,64 @@ return require('packer').startup(function()
     requires = { 'nvim-tree/nvim-web-devicons' },
   }
 
-    -- markdown preview :MarkdownPreviewToggle
-  use({
-    "iamcco/markdown-preview.nvim",
-    run = function() vim.fn["mkdp#util#install"]() end,
-  })
+  -- markdown preview :MarkdownPreviewToggle
+  use {
+    'iamcco/markdown-preview.nvim',
+    run = function() vim.fn['mkdp#util#install']() end,
+  }
 
   -- surround chars
-  use({
-      "kylechui/nvim-surround",
-      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+  use {
+      'kylechui/nvim-surround',
+      tag = '*', -- Use for stability; omit to use `main` branch for the latest features
       config = function()
-          require("nvim-surround").setup()
+          require('nvim-surround').setup()
       end
+  }
+
+  -- neoscrooll
+  use {
+    'karb94/neoscroll.nvim',
+    config = function()
+      require('neoscroll').setup()
+    end
+  }
+
+  -- tags
+  use({
+    'simrat39/symbols-outline.nvim',
+    config = function()
+      require('symbols-outline').setup({
+        vim.api.nvim_create_autocmd(
+            "BufEnter",
+            {
+              -- change connector color
+              pattern = "*",
+              command = "hi SymbolsOutlineConnector gui=none guifg=vim.g.foreground",
+            }
+        )
+      })
+    end
   })
 
+  -- breadcumbs
+  use {
+    'SmiteshP/nvim-navic',
+    requires = 'neovim/nvim-lspconfig',
+  }
+
+use({
+  "utilyre/barbecue.nvim",
+  tag = "*",
+  requires = {
+    "SmiteshP/nvim-navic",
+    "nvim-tree/nvim-web-devicons", -- optional dependency
+  },
+  after = "nvim-web-devicons", -- keep this if you're using NvChad
+  config = function()
+    require("barbecue").setup()
+  end,
+})
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then

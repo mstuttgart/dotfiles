@@ -27,8 +27,4 @@ set('n', '<Right>', '<NOP>', ns)
 set('n', '<leader>h', '<C-u>split<CR>', ns)
 set('n', '<leader>v', '<C-u>vsplit<CR>', ns)
 
--- markdown preview
-set('n',  '<leader>mp', ':MarkdownPreviewToggle<CR>', ns)
-
-
-set('n',  '<leader>tg', ':TagbarToggle<CR>', ns)
+set('n',  '<leader>tg', ':SymbolsOutline<CR>', ns)

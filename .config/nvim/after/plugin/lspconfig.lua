@@ -32,6 +32,7 @@ lsp.lua_ls.setup {
   on_attach = function(client, bufnr)
     on_attach(client, bufnr)
     enable_format_on_save(client, bufnr)
+    require("nvim-navic").attach(client, bufnr)
   end,
   settings = {
     Lua = {

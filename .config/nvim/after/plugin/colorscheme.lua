@@ -1,7 +1,7 @@
 -- gitsigns settings
-local status, forest = pcall(require, 'everforest')
+local statusfor, forest = pcall(require, 'everforest')
 
-if (not status) then return end
+if (not statusfor) then return end
 
 forest.setup({
   -- 2 will have more UI components be transparent (e.g. status line
