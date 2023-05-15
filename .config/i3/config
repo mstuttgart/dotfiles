@@ -94,6 +94,10 @@ bindsym $super+3 workspace 3
 bindsym $super+4 workspace 4
 bindsym $super+5 workspace 5
 bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
+bindsym $super+9 workspace 9
+bindsym $super+0 workspace 0
 
 # move focused container to workspace
 bindsym $super+Shift+1 move container to workspace 1
@@ -102,6 +106,10 @@ bindsym $super+Shift+3 move container to workspace 3
 bindsym $super+Shift+4 move container to workspace 4
 bindsym $super+Shift+5 move container to workspace 5
 bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
+bindsym $super+Shift+9 move container to workspace 9
+bindsym $super+Shift+0 move container to workspace 0
 
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+F5 restart
@@ -111,12 +119,19 @@ bindsym $super+F1 reload
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
+
+# resize window
         bindsym Left resize shrink width 5 px or 5 ppt
         bindsym Down resize grow height 5 px or 5 ppt
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
-        bindsym Return mode "default
+
+# back to normal: Entre or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
 }
+
+# enter risize mode
 bindsym $super+F2 mode "resize"
 
 # start polybar
