@@ -23,7 +23,7 @@ Here are some details about my setup:
 - **Shell**                        : [fish](https://fishshell.com/) with [tide](https://github.com/IlanCosman/tide) theme plugin!
 - **Terminal**                     : [kitty](https://github.com/kovidgoyal/kitty)
 - **Bar**                        : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
-- **Compositor**                   : [picom](https://github.com/chjj/compton)
+- **Compositor**                   : [compton](https://github.com/chjj/compton)
 - **Notify Daemon**                : [dunst](https://wiki.archlinux.org/index.php/Dunst)
 - **Application Launcher**         : [rofi](https://github.com/davatorium/rofi)
 - **File Manager**                 : [ranger](https://github.com/ranger/ranger)
