@@ -40,12 +40,6 @@ return require('packer').startup(function()
   use { 'lukas-reineke/indent-blankline.nvim' }
 
   -- comment code
-  -- use {
-  --   'numToStr/Comment.nvim',
-  --   config = function()
-  --     require('Comment').setup()
-  --   end
-  -- }
   use {
     'echasnovski/mini.comment',
     branch = 'stable',
@@ -54,19 +48,8 @@ return require('packer').startup(function()
     end
   }
 
-  -- show and trim trailing whitespaces
-  -- use {
-  --   'mcauley-penney/tidy.nvim',
-  --   config = function()
-  --     require('tidy').setup()
-  --   end
-  -- }
-  --
   -- highlight for color code
   use { 'norcalli/nvim-colorizer.lua' }
-
-  -- format code
-  -- use { 'sbdchd/neoformat', cmd = {'Neoformat'}}
 
   -- auto close chars like '(', '{', '[' and ''
   use {
