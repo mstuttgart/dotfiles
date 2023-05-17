@@ -26,5 +26,3 @@ set('n', '<Right>', '<NOP>', ns)
 -- split editor
 set('n', '<leader>h', '<C-u>split<CR>', ns)
 set('n', '<leader>v', '<C-u>vsplit<CR>', ns)
-
-set('n',  '<leader>tg', ':SymbolsOutline<CR>', ns)

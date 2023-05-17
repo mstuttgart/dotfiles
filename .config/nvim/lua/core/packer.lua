@@ -40,26 +40,33 @@ return require('packer').startup(function()
   use { 'lukas-reineke/indent-blankline.nvim' }
 
   -- comment code
+  -- use {
+  --   'numToStr/Comment.nvim',
+  --   config = function()
+  --     require('Comment').setup()
+  --   end
+  -- }
   use {
-    'numToStr/Comment.nvim',
-    config = function()
-      require('Comment').setup()
+    'echasnovski/mini.comment',
+    branch = 'stable',
+    config = function ()
+      require('mini.comment').setup()
     end
   }
 
   -- show and trim trailing whitespaces
-  use {
-    'mcauley-penney/tidy.nvim',
-    config = function()
-      require('tidy').setup()
-    end
-  }
-
+  -- use {
+  --   'mcauley-penney/tidy.nvim',
+  --   config = function()
+  --     require('tidy').setup()
+  --   end
+  -- }
+  --
   -- highlight for color code
   use { 'norcalli/nvim-colorizer.lua' }
 
   -- format code
-  use { 'sbdchd/neoformat', cmd = {'Neoformat'}}
+  -- use { 'sbdchd/neoformat', cmd = {'Neoformat'}}
 
   -- auto close chars like '(', '{', '[' and ''
   use {
@@ -123,15 +130,6 @@ return require('packer').startup(function()
     run = function() vim.fn['mkdp#util#install']() end,
   }
 
-  -- surround chars
-  use {
-      'kylechui/nvim-surround',
-      tag = '*', -- Use for stability; omit to use `main` branch for the latest features
-      config = function()
-          require('nvim-surround').setup()
-      end
-  }
-
   -- neoscrooll
   use {
     'karb94/neoscroll.nvim',
@@ -141,40 +139,47 @@ return require('packer').startup(function()
   }
 
   -- tags
-  use({
-    'simrat39/symbols-outline.nvim',
-    config = function()
-      require('symbols-outline').setup({
-        vim.api.nvim_create_autocmd(
-            "BufEnter",
-            {
-              -- change connector color
-              pattern = "*",
-              command = "hi SymbolsOutlineConnector gui=none guifg=vim.g.foreground",
-            }
-        )
-      })
-    end
-  })
+  use { 'simrat39/symbols-outline.nvim' }
 
-  -- breadcumbs
+  -- navic complement to breadcumbs
   use {
-    'SmiteshP/nvim-navic',
-    requires = 'neovim/nvim-lspconfig',
+    'utilyre/barbecue.nvim',
+    tag = '*',
+    requires = {
+      'SmiteshP/nvim-navic',
+      'nvim-tree/nvim-web-devicons', -- optional dependency
+    },
+    after = 'nvim-web-devicons', -- keep this if you're using NvChad
+    config = function()
+      require('barbecue').setup()
+    end,
   }
 
-use({
-  "utilyre/barbecue.nvim",
-  tag = "*",
-  requires = {
-    "SmiteshP/nvim-navic",
-    "nvim-tree/nvim-web-devicons", -- optional dependency
-  },
-  after = "nvim-web-devicons", -- keep this if you're using NvChad
-  config = function()
-    require("barbecue").setup()
-  end,
-})
+  -- nvim notify plugins
+  use {
+    "rcarriga/nvim-notify",
+    enabled = false,
+    config = function()
+      require("notify").setup {
+        level = 2,
+        minimum_width = 50,
+        render = "default",
+        stages = "fade",
+        timeout = 3000,
+        top_down = true,
+      }
+      vim.notify = require "notify"
+    end,
+  }
+
+  -- close xml and html tags
+  use {
+    'windwp/nvim-ts-autotag',
+    config = function()
+      require('nvim-ts-autotag').setup()
+    end,
+
+  }
 
   -- Automatically set up your configuration after cloning packer.nvim
   if packer_bootstrap then

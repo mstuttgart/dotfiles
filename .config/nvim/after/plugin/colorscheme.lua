@@ -16,3 +16,6 @@ forest.setup({
 
 -- enable theme
 forest.load()
+
+-- enable ayu theme
+-- require('ayu').colorscheme()

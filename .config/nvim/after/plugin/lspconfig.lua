@@ -52,7 +52,12 @@ lsp.lua_ls.setup {
 
 -- python server
 lsp.pyright.setup{
-  capabilities = capabilities
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+    require("nvim-navic").attach(client, bufnr)
+  end,
 }
 
 -- yaml server
@@ -63,6 +68,16 @@ lsp.yamlls.setup{
 -- javascript server
 lsp.eslint.setup{
   capabilities = capabilities
+}
+
+-- xml, html server
+lsp.lemminx.setup{
+  capabilities = capabilities,
+  on_attach = function(client, bufnr)
+    on_attach(client, bufnr)
+    enable_format_on_save(client, bufnr)
+    require("nvim-navic").attach(client, bufnr)
+  end,
 }
 
 -- Use LspAttach autocommand to only map the following keys
@@ -82,4 +97,10 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, opts)
 
   end,
+})
+
+-- remove whitespaces
+vim.api.nvim_create_autocmd({ "BufWritePre" }, {
+  pattern = { "*" },
+  command = [[%s/\s\+$//e]],
 })

@@ -38,7 +38,6 @@ startup.setup({
             { " Recent Files", "Telescope oldfiles", "<leader>of" },
             { " File Browser", "Telescope file_browser", "<leader>fb" },
             { " Colorschemes", "Telescope colorscheme", "<leader>cs" },
-            { " Session Restore", "lua require('telescope').extensions.sessions_picker.sessions_picker()", "<leader>sl" },
         },
         highlight = "String",
         default_color = "",
