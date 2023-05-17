@@ -66,11 +66,12 @@ Requires [Neovim](https://neovim.io/) (>= 0.8)
     - [z](https://github.com/jethrokuan/z) - Directory jumping
     - [autopair](https://github.com/jorgebucaran/autopair.fish) -  Auto-complete matching pairs in the Fish command line
     - [fzf](https://github.com/PatrickF1/fzf.fish) - Fzf plugin for Fish
-    - [asdf](https://github.com/rstacruz/fish-asdf) - Fish shell integrations for asdf version manager 
-- [Starship](https://starship.rs/) - Shell theme. The minimal, blazing-fast, and infinitely customizable prompt for any shell! 
+    - [asdf](https://github.com/rstacruz/fish-asdf) - Fish shell integrations for asdf version manager
+- [Starship](https://starship.rs/) - Shell theme. The minimal, blazing-fast, and infinitely customizable prompt for any shell!
 - [exa](https://the.exa.website/) - `ls` replacement
 - [bat](https://github.com/sharkdp/bat) - A `cat`(1) clone with wings
 - [btop](https://github.com/aristocratos/btop) - A monitor of resources
+- [tig](https://github.com/jonas/tig) -  Text-mode interface for git
 - [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) - I use JetBrains and Sauce Code Pro (icons of Polybar)
 
 ## Install
