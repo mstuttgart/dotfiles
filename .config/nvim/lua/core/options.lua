@@ -58,3 +58,6 @@ opt.shell = "/usr/bin/fish"
 
 -- theme settings
 opt.termguicolors = true
+
+-- improve startup time
+vim.loader.enable()
