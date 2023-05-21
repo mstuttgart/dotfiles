@@ -67,11 +67,13 @@ local plugin = {
         '[W]orkspace [L]ist Folders')
 
       vim.api.nvim_create_autocmd("BufWritePre", {
-        buffer = buffer,
+        buffer = bufnr,
         callback = function()
           vim.lsp.buf.format { async = false }
         end
       })
+
+      require("nvim-navic").attach(client, bufnr)
     end
 
     -- Enable the following language servers
@@ -80,6 +82,7 @@ local plugin = {
       yamlls = {},
       html = {},
       cssls = {},
+      lemminx = {},
       lua_ls = {
         Lua = {
           workspace = { checkThirdParty = false },
