@@ -21,6 +21,10 @@ set -gx EDITOR nvim
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin
 
+# pyenv configs
+set -Ux PYENV_ROOT $HOME/.pyenv
+set -U fish_user_paths $PYENV_ROOT/bin
+
 # ----------------------------------------
 # aliases
 
@@ -50,7 +54,7 @@ abbr mkdir 'mkdir -pv'
 
 # pyenv aliases
 abbr aenv 'source .venv/bin/activate.fish'
-abbr cenv 'python3 -m venv .venv'
+abbr cenv 'virtualenv -p python3 .venv'
 abbr denv 'deactivate'
 
 # using terminfo of kitty in ssh
@@ -67,15 +71,6 @@ abbr pipr 'pip install -r requirements.txt'
 starship init fish | source
 set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
 
-# Blur
-function blur_terminal_background
-  if test $DISPLAY
-    for class in kitty konsole;
-      for ID in (xdotool search --class $class)
-        xprop -f _KDE_NET_WM_BLUR_BEHIND_REGION 32c -set _KDE_NET_WM_BLUR_BEHIND_REGION 0 -id $ID
-      end
-    end
-  end
-end
+# configure pyenv
+pyenv init - | source
 
-# blur_terminal_background
