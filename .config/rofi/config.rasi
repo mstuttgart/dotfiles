@@ -7,4 +7,4 @@ configuration {
     kb-row-down: "Down,Alt+j";
 }
 
-@import "~/.config/rofi/theme.rasi"
+@theme "/home/michell/.config/rofi/themes/rounded-everforest.rasi"

@@ -27,7 +27,7 @@ bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+m exec $TERM -e ncspot; workspace 4; focus
 
 # start dmenu (a program launcher)
-bindsym $super+d exec "$HOME/.config/polybar/scripts/launcher.sh"
+bindsym $super+d exec "rofi -modi drun,run -show drun"
 
 # system shortcuts
 bindsym Print exec "flameshot gui"
@@ -50,9 +50,6 @@ bindsym XF86AudioPlay exec playerctl play-pause
 # kill focused window
 bindsym $super+q kill
 bindsym $super+F4 exec "$HOME/.config/polybar/scripts/rofi-poweroff.sh"
-
-# Show notifications
-bindsym $super+n exec "$HOME/.config/polybar/scripts/rofi_notif_center.sh"
 
 # change focus
 bindsym $super+h focus left
