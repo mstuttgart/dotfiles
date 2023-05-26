@@ -3,12 +3,12 @@
 local set = vim.keymap.set
 
 -- Remap for dealing with word wrap
-set('n', 'k', 'v:count == 0 ? \'gk\' : \'k\'', { expr = true, silent = true })
-set('n', 'j', 'v:count == 0 ? \'gj\' : \'j\'', { expr = true, silent = true })
+set('n', 'k', "v:count == 0 ? 'gk' : 'k'", { expr = true, silent = true })
+set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 
 -- split editor
-set('n', '<leader>h', '<C-u>split<CR>', { desc = 'Split horizontal' })
-set('n', '<leader>v', '<C-u>vsplit<CR>', { desc = 'Split vertical' })
+-- set('n', '<leader>h', '<C-u>split<CR>', { desc = 'Split horizontal' })
+-- set('n', '<leader>v', '<C-u>vsplit<CR>', { desc = 'Split vertical' })
 
 -- taken from lazyVim
 --
@@ -18,10 +18,10 @@ set({ 'i', 'n' }, '<esc>', '<cmd>noh<cr><esc>', { desc = 'Escape and clear hlsea
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
 set(
-  'n',
-  '<leader>ur',
-  '<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>',
-  { desc = 'Redraw / clear hlsearch / diff update' }
+    'n',
+    '<leader>ur',
+    '<Cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C-L><CR>',
+    { desc = 'Redraw / clear hlsearch / diff update' }
 )
 
 -- save file
@@ -39,6 +39,11 @@ set('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
 set('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
 set('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
 
+set('n', '<leader>bl', '<cmd>:bnext<cr>', { desc = 'Move to next buffer' })
+set('n', '<leader>bh', '<cmd>:bprevious<cr>', { desc = 'Move to previuos' })
+set('n', '<leader>bq', '<cmd>:bp <BAR> bd #<cr>', { desc = 'Close current buffer' })
+set('n', '<leader>bL', '<cmd>:ls<cr>', { desc = 'List open buffers' })
+
 -- search word under cursos
 set({ 'n', 'x' }, 'gw', '*N', { desc = 'Search word under cursor' })
 
@@ -47,7 +52,7 @@ set('v', '<', '<gv')
 set('v', '>', '>gv')
 
 -- lazy
-set('n', '<leader>l', '<cmd>:Lazy<cr>', { desc = 'Lazy' })
+set('n', '<leader>L', '<cmd>:Lazy<cr>', { desc = 'Lazy' })
 
 -- Diagnostic keymaps
 set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })

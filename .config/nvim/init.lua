@@ -7,3 +7,4 @@ require('core.bootstrap')
 -- active colorscheme
 -- pcall(vim.cmd.colorscheme, 'catppuccin')
 pcall(vim.cmd.colorscheme, 'everforest')
+-- pcall(vim.cmd.colorscheme, 'onedark')
