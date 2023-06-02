@@ -76,7 +76,7 @@ Requires [Neovim](https://neovim.io/) (>= 0.8)
 - [kyazdani42/nvim-web-devicons](https://github.com/kyazdani42/nvim-web-devicons) - Lua `fork` of vim-web-devicons for neovim
 - [folke/persistence.nvim](https://github.com/folke/persistence.nvim) - Simple session management for Neovim 
 - [nvim-lua/plenary.nvim](https://github.com/nvim-lua/plenary.nvim) - plenary: full; complete; entire; absolute; unqualified. All the lua functions I don't want to write twice.
-- [tiagovla/scope.nvim](https://github.com/tiagovla/scope.nvim) - Revolutionize Your Neovim Tab Workflow
+- [mechatroner/rainbow_csv](https://github.com/mechatroner/rainbow_csv) - Highlight columns in CSV and TSV files and run queries in SQL-like language 
 - [simrat39/symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim) - A tree like view for symbols in Neovim using the Language Server Protocol
 - [nvim-telescope/telescope.nvim](https://github.com/nvim-telescope/telescope.nvim) - A highly extendable fuzzy finder over lists
 - [nvim-telescope/telescope-fzf-native.vim](https://github.com/nvim-telescope/telescope-fzf-native.nvim) -  FZF sorter for telescope written in c
