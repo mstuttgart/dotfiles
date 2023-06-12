@@ -20,7 +20,7 @@ local plugin = {
                 require('mini.bufremove').delete(n, false)
             end,
             diagnostics = 'nvim_lsp',
-            separator_style = 'slant',
+            separator_style = 'thin',
             always_show_bufferline = true,
             diagnostics_indicator = function(count, level, diagnostics_dict, context)
                 local icon = level:match('error') and ' ' or ' '

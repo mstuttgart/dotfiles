@@ -3,7 +3,10 @@
 local plugin = {
     'jose-elias-alvarez/null-ls.nvim',
     event = { 'BufReadPre', 'BufNewFile' },
-    dependencies = { 'mason.nvim' },
+    dependencies = {
+        'williamboman/mason.nvim',
+        'jay-babu/mason-null-ls.nvim',
+    },
     opts = function()
         local nls = require('null-ls')
         return {
