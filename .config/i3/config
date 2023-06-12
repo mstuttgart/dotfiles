@@ -1,7 +1,7 @@
 # set modifier
 set $super Mod4
 set $TERM --no-startup-id kitty
-set $BROWSER --no-startup-id firefox
+set $BROWSER --no-startup-id google-chrome-stable
 
 # set font
 font pango: JetBrainsMono Nerd Font Mono Regular 8
@@ -154,6 +154,7 @@ for_window [window_role="GtkFileChooserDialog"] floating enable
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Gnome-calculator"] floating enable
+for_window [class="Gnome-calendar"] floating enable
 for_window [class="GoogleCalendar"] floating enable
 
 # colour of border, background, text, indicator, and child_border
