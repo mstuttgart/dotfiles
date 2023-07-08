@@ -5,8 +5,10 @@ require('core.autocommands')
 require('core.bootstrap')
 
 -- active colorscheme
--- pcall(vim.cmd.colorscheme, 'catppuccin-latte')
+-- pcall(vim.cmd.colorscheme, 'catppuccin')
 pcall(vim.cmd.colorscheme, 'everforest')
+-- pcall(vim.cmd.colorscheme, 'dawnfox')
+-- pcall(vim.cmd.colorscheme, 'gruvbox')
 -- pcall(vim.cmd.colorscheme, 'NeoSolarized')
 -- pcall(vim.cmd.colorscheme, 'tokyonight-night')
 --

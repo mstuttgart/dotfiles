@@ -26,6 +26,7 @@ local plugin = {
                     prefer_local = 'node_modules/.bin',
                 },
                 nls.builtins.diagnostics.pylint.with {
+                    diagnostic_config = { underline = false, virtual_text = false, signs = true },
                     prefer_local = '.venv/bin',
                 },
                 nls.builtins.diagnostics.fish,
