@@ -13,6 +13,9 @@ floating_modifier $super
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
+# exec_always --no-startup-id gnome-power-manager
+# exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# exec --no-startup-id gnome-flashback
 
 # Set touchpag preferences to system startup
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Tapping Enabled" 1
@@ -132,7 +135,7 @@ mode "resize" {
 bindsym $super+F2 mode "resize"
 
 # start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh --blocks
 
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 0
