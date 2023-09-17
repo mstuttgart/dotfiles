@@ -4,7 +4,10 @@ return {
     -- colorschemes
     { 'Shatur/neovim-ayu', lazy = true },
     { 'navarasu/onedark.nvim', lazy = true },
-    { 'ellisonleao/gruvbox.nvim', lazy = true },
+    {
+        'luisiacc/gruvbox-baby',
+        lazy = true,
+    },
     {
         'EdenEast/nightfox.nvim',
         lazy = true,
@@ -21,7 +24,7 @@ return {
             }
         end,
     },
-    { 'Th3Whit3Wolf/one-nvim' },
+    { 'shaunsingh/nord.nvim' },
     {
         'neanias/everforest-nvim',
         priority = 1000,
