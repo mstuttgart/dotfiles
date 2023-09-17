@@ -55,10 +55,10 @@ abbr mkdir 'mkdir -pv'
 # pyenv aliases
 abbr aenv 'source .venv/bin/activate.fish'
 abbr cenv 'virtualenv -p python3 .venv'
-abbr denv 'deactivate'
+abbr denv deactivate
 
 # using terminfo of kitty in ssh
-abbr ssh 'kitty +kitten ssh'
+abbr ssh 'ssh -t'
 
 # python server to server files
 abbr pyserver 'python3 -m http.server 8000'
@@ -73,4 +73,3 @@ set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
 
 # configure pyenv
 pyenv init - | source
-

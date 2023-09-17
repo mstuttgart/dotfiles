@@ -27,7 +27,7 @@ SETUVAR _fish_abbr_pipr:pip\x20install\x20\x2dr\x20requirements\x2etxt
 SETUVAR _fish_abbr_pipu:pip\x20install\x20pip\x20\x2d\x2dupgrade
 SETUVAR _fish_abbr_psg:ps\x20aux\x20\x7c\x20grep
 SETUVAR _fish_abbr_pyserver:python3\x20\x2dm\x20http\x2eserver\x208000
-SETUVAR _fish_abbr_ssh:kitty\x20\x2bkitten\x20ssh
+SETUVAR _fish_abbr_ssh:ssh\x20\x2dt
 SETUVAR _fish_abbr_za:zoxide\x20add
 SETUVAR _fish_abbr_zq:zoxide\x20query
 SETUVAR _fish_abbr_zqi:zoxide\x20query\x20\x2di
