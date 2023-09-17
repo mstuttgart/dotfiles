@@ -73,5 +73,6 @@
     "terminal.explorerKind": "external",
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.terminal.focusFind"
-    ]
+    ],
+    "update.showReleaseNotes": false
 }
