@@ -1,7 +1,7 @@
 # set modifier
 set $super Mod4
 set $TERM --no-startup-id kitty
-set $BROWSER --no-startup-id google-chrome-stable
+set $BROWSER --no-startup-id firefox
 
 # set font
 font pango: JetBrainsMono Nerd Font Mono Regular 8
