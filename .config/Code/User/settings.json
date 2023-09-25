@@ -27,7 +27,7 @@
     "terminal.integrated.env.linux": {
         "LANG": "C.UTF-8"
     },
-    "editor.fontFamily": "'FiraCode Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": false,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.editorAssociations": {
@@ -52,7 +52,7 @@
     "terminal.integrated.persistentSessionReviveProcess": "never",
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "editor.codeLensFontFamily": "'Fira Code',",
+    "editor.codeLensFontFamily": "'JetBrainsMono Nerd Font Mono',",
     "editor.accessibilitySupport": "off",
     "terminal.integrated.useWslProfiles": false,
     "notesbox.location": "~/Documents/",
@@ -62,7 +62,7 @@
     "files.associations": {
         "*.py": "python"
     },
-    "workbench.colorTheme": "Everforest Dark",
+    "workbench.colorTheme": "Ayu Light Bordered",
     "editor.formatOnType": true,
     "git.openRepositoryInParentFolders": "always",
     "[javascript]": {
