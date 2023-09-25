@@ -1,8 +1,11 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+
+# configure python alias
+export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -75,7 +78,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   fzf
-  virtualenv
+  virtualenvwrapper
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -107,26 +110,26 @@ fi
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export PATH="$HOME/.pyenv/bin:$PATH"
-eval "$(pyenv init -)"
+#export PATH="$HOME/.pyenv/bin:$PATH"
+#eval "$(pyenv init -)"
 
-SPACESHIP_PROMPT_ORDER=(
-  venv          # virtualenv section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  hg            # Mercurial section (hg_branch  + hg_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX=" "
+#SPACESHIP_PROMPT_ORDER=(
+#  venv          # virtualenv section
+#  user          # Username section
+#  dir           # Current directory section
+#  host          # Hostname section
+#  git           # Git section (git_branch + git_status)
+#  hg            # Mercurial section (hg_branch  + hg_status)
+#  exec_time     # Execution time
+#  line_sep      # Line break
+#  jobs          # Background jobs indicator
+#  exit_code     # Exit code section
+#  char          # Prompt character
+#)
+#SPACESHIP_USER_SHOW=always
+#SPACESHIP_PROMPT_ADD_NEWLINE=false
+#SPACESHIP_CHAR_SYMBOL="❯"
+#SPACESHIP_CHAR_SUFFIX=" "
 
 
 # ----------------------------------------
@@ -139,7 +142,7 @@ alias ll="exa -alh --color=auto --icons"
 alias lt="exa -a --tree --color=auto --icons" # show tree in directory
 
 # bat aliases
-alias cat="batcat --theme=everforest"
+#alias cat="batcat --theme=everforest"
 
 # colorize grep output (good for log files)
 alias grep="grep --color=auto"
@@ -158,11 +161,11 @@ alias mkdir="mkdir -pv"
 
 # pyenv aliases
 alias aenv="source .venv/bin/activate"
-alias cenv="virtualenv -p python3 .venv"
+alias cenv="python3 -m venv .venv"
 alias denv="deactivate"
 
 # using terminfo of kitty in ssh
-alias ssh="kitty +kitten ssh"
+#alias ssh="kitty +kitten ssh"
 
 # python server to server files
 alias pyserver="python3 -m http.server 8000"
@@ -170,3 +173,7 @@ alias pyserver="python3 -m http.server 8000"
 # update pip
 alias pipu="pip install pip --upgrade"
 alias pipr="pip install -r requirements.txt"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
