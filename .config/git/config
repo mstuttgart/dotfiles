@@ -79,9 +79,8 @@
     alias = !git config -l | grep alias
 
 [core]
-    editor = nvim
-    excludesfile = ~/.gitignore_global
-    attributesfile = ~/.gitattributes_global
+    editor = nano
+    pager = cat
 
 [color "branch"]
     current = yellow reverse
