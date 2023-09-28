@@ -113,23 +113,24 @@ fi
 #export PATH="$HOME/.pyenv/bin:$PATH"
 #eval "$(pyenv init -)"
 
-#SPACESHIP_PROMPT_ORDER=(
-#  venv          # virtualenv section
-#  user          # Username section
-#  dir           # Current directory section
-#  host          # Hostname section
-#  git           # Git section (git_branch + git_status)
-#  hg            # Mercurial section (hg_branch  + hg_status)
-#  exec_time     # Execution time
-#  line_sep      # Line break
-#  jobs          # Background jobs indicator
-#  exit_code     # Exit code section
-#  char          # Prompt character
-#)
-#SPACESHIP_USER_SHOW=always
-#SPACESHIP_PROMPT_ADD_NEWLINE=false
-#SPACESHIP_CHAR_SYMBOL="❯"
-#SPACESHIP_CHAR_SUFFIX=" "
+SPACESHIP_PROMPT_ORDER=(
+  venv          # virtualenv section
+  user          # Username section
+  dir           # Current directory section
+  host          # Hostname section
+  git           # Git section (git_branch + git_status)
+  hg            # Mercurial section (hg_branch  + hg_status)
+  exec_time     # Execution time
+  line_sep      # Line break
+  jobs          # Background jobs indicator
+  exit_code     # Exit code section
+  char          # Prompt character
+)
+
+SPACESHIP_USER_SHOW=always
+SPACESHIP_PROMPT_ADD_NEWLINE=false
+SPACESHIP_CHAR_SYMBOL="❯"
+SPACESHIP_CHAR_SUFFIX=" "
 
 
 # ----------------------------------------
@@ -165,7 +166,8 @@ alias cenv="python3 -m venv .venv"
 alias denv="deactivate"
 
 # using terminfo of kitty in ssh
-#alias ssh="kitty +kitten ssh"
+#alias ssh=" ssh"
+alias ssh="TERM=xterm-256color ssh"
 
 # python server to server files
 alias pyserver="python3 -m http.server 8000"
