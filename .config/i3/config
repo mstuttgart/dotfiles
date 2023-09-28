@@ -5,7 +5,7 @@ set $BROWSER --no-startup-id firefox
 
 # set font
 font pango: JetBrainsMono Nerd Font Mono Regular 8
-
+#font pango: JetBrains Mono Regular Nerd Font Complete 8
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
@@ -135,7 +135,7 @@ mode "resize" {
 bindsym $super+F2 mode "resize"
 
 # start polybar
-exec_always --no-startup-id $HOME/.config/polybar/launch.sh --blocks
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 0
