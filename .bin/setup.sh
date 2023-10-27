@@ -59,7 +59,7 @@ Apps=(
   "neofetch"
 #  "zoxide"
 #  "newsboat"
-#  "xclip"
+  "xclip"
   "poedit"
 #  "evince"
 #  "fzf"
@@ -73,31 +73,31 @@ Apps=(
   # i3
   # "i3"
 #  "i3lock"
-#  "netctl"
-#  "nitrogen"
-#  "compton"
-#  "rofi"
-#  "light"           # brightness control
-#  "suckless-tools"
-#  "hsetroot"
-#  "fonts-noto"
-#  "fonts-mplus"
-#  "xsettingsd"
-#  "netctl"
-#  "lxappearance"
+  "netctl"
+  "nitrogen"
+  "compton"
+  "rofi"
+  "light"           # brightness control
+  "suckless-tools"
+  "hsetroot"
+  "fonts-noto"
+  "fonts-mplus"
+  "xsettingsd"
+  "netctl"
+  "lxappearance"
 #  "polybar"
 #  "playerctl"
-#  "numlockx"
-#  "acpi"         # battery info
+  "numlockx"
+  "acpi"         # battery info
 
   # ranger
-#  "ranger"
-#  "w3m-img"
-#  "ffmpegthumbnailer"
-#  "highlight"
-#  "unrar"
-#  "unzip"
-#  "mediainfo"
+  "ranger"
+  "w3m-img"
+  "ffmpegthumbnailer"
+  "highlight"
+  "unrar"
+  "unzip"
+  "mediainfo"
 #  "mvp"
 
   # Programming
@@ -137,13 +137,13 @@ Apps=(
   "fd-find"
 
   # apps
-  "gpick"
-  "flameshot"
-  "gdebi"
-  "libreoffice"
-  "openssh-server"
-  "poedit"
-  "filezilla"
+#  "gpick"
+#  "flameshot"
+#  "gdebi"
+#  "libreoffice"
+#  "openssh-server"
+#  "poedit"
+#  "filezilla"
 #  "firefox"
 
   # themes
@@ -156,13 +156,13 @@ Apps=(
 msg_info "Create basic folders"
 
 print "Create $config_dir"
-mkdir -p $config_dir
+#mkdir -p $config_dir
 
 print "Create $fonts_dir"
-mkdir -p $fonts_dir
+#mkdir -p $fonts_dir
 
 print "Create $local_bin_dir"
-mkdir -p $local_bin_dir
+#mkdir -p $local_bin_dir
 
 print
 msg_checking

@@ -75,11 +75,6 @@
         "when": "editorTextFocus && !extension.simpleVim.insertMode"
     },
     {
-        "key": "escape",
-        "command": "-extension.simpleVim.escapeKey",
-        "when": "editorTextFocus"
-    },
-    {
         "key": "h",
         "command": "list.collapse",
         "when": "listFocus && treeElementCanCollapse && !inputFocus || listFocus && treeElementHasParent && !inputFocus"

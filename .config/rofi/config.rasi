@@ -8,3 +8,4 @@ configuration {
 }
 
 @theme "/home/michell/.config/rofi/themes/rounded-everforest.rasi"
+@import "/home/michell/.config/rofi/themes/rounded-yellow-dark.rasi"

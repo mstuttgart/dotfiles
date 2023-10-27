@@ -20,7 +20,7 @@
     "odooScaffold.odooBinPath": "/home/michell/Workspace/multidadosti-erp/odoo/multierp/src/core/odoo-bin",
     "workbench.tree.indent": 20,
     "[shellscript]": {
-        "editor.defaultFormatter": "shakram02.bash-beautify"
+        "editor.defaultFormatter": "foxundermoon.shell-format"
     },
     "terminal.integrated.profiles.linux": "fish",
     "terminal.integrated.detectLocale": "auto",
@@ -56,13 +56,13 @@
     "editor.accessibilitySupport": "off",
     "terminal.integrated.useWslProfiles": false,
     "notesbox.location": "~/Documents/",
-    "Notes.notesLocation": "/home/michell/Workspace/mstuttgart/draft",
+    "Notes.notesLocation": "/home/michell/Workspace/mstuttgart/notes/programming",
     "ansible.validation.lint.enabled": false,
     "workbench.iconTheme": "ayu",
     "files.associations": {
         "*.py": "python"
     },
-    "workbench.colorTheme": "Ayu Light Bordered",
+    "workbench.colorTheme": "Everforest Light",
     "editor.formatOnType": true,
     "git.openRepositoryInParentFolders": "always",
     "[javascript]": {
@@ -74,5 +74,20 @@
     "terminal.integrated.commandsToSkipShell": [
         "workbench.action.terminal.focusFind"
     ],
-    "update.showReleaseNotes": false
+    "update.showReleaseNotes": false,
+    "git.autofetch": true,
+    "python.analysis.extraPaths": [
+        "${workspaceFolder}/**/*"
+    ],
+    "[markdown]": {
+        "editor.defaultFormatter": "yzhang.markdown-all-in-one"
+    },
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.python"
+    },
+    "python.createEnvironment.contentButton": "show",
+    "python.analysis.autoFormatStrings": true,
+    "[yaml]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
