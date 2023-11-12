@@ -40,16 +40,16 @@ local plugin = {
                     },
                 },
                 lualine_x = {
-          -- stylua: ignore
-          {
-            function() return require('noice').api.status.command.get() end,
-            cond = function() return package.loaded['noice'] and require('noice').api.status.command.has() end,
-          },
-          -- stylua: ignore
-          {
-            function() return require('noice').api.status.mode.get() end,
-            cond = function() return package.loaded['noice'] and require('noice').api.status.mode.has() end,
-          },
+                    -- stylua: ignore
+                    {
+                        function() return require('noice').api.status.command.get() end,
+                        cond = function() return package.loaded['noice'] and require('noice').api.status.command.has() end,
+                    },
+                    -- stylua: ignore
+                    {
+                        function() return require('noice').api.status.mode.get() end,
+                        cond = function() return package.loaded['noice'] and require('noice').api.status.mode.has() end,
+                    },
                 },
                 lualine_y = {
                     { 'progress', separator = ' ', padding = { left = 1, right = 0 } },

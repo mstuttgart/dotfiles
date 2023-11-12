@@ -3,27 +3,11 @@
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
-local function open_nvim_tree(data)
-    -- buffer is a directory
-    local directory = vim.fn.isdirectory(data.file) == 1
-
-    if not directory then
-        return
-    end
-
-    -- change to the directory
-    vim.cmd.cd(data.file)
-
-    -- open the tree
-    require('nvim-tree.api').tree.open()
-end
-
 local plugin = {
     'nvim-tree/nvim-tree.lua', -- no more netrw
     opts = {
         sync_root_with_cwd = true,
         respect_buf_cwd = true,
-        -- hijack_cursor = true,
         update_focused_file = {
             enable = true,
             update_root = true,
@@ -92,12 +76,6 @@ local plugin = {
         { '<leader>tr', '<cmd>NvimTreeRefresh<cr>', desc = '[T]ree [R]efresh' },
     },
     init = function()
-        -- autoopen nvim-tree
-        -- vim.schedule(function()
-        --     vim.cmd('wincmd p')
-        -- end)
-        vim.api.nvim_create_autocmd({ 'VimEnter' }, { callback = open_nvim_tree })
-        -- change background color of tree
         vim.cmd('autocmd Colorscheme * highlight NvimTreeNormal guibg=NONE ctermbg=NONE')
         vim.cmd('autocmd Colorscheme * highlight NvimTreeEndOfBuffer guibg=NONE ctermbg=NONE')
     end,

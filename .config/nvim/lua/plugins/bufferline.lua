@@ -8,8 +8,9 @@ local plugin = {
     },
     event = 'VeryLazy',
     keys = {
-        { '<leader>bp', '<Cmd>BufferLineTogglePin<CR>', desc = 'Toggle pin' },
-        { '<leader>bQ', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete all buffers' },
+        { 'bQ', '<Cmd>BufferLineGroupClose ungrouped<CR>', desc = 'Delete all buffers' },
+        { '<Tab>', '<Cmd>BufferLineCycleNext<CR>', desc = 'Next Buffer' },
+        { '<S-Tab>', '<Cmd>BufferLineCyclePrev<CR>', desc = 'Previous Buffers' },
     },
     opts = {
         options = {
@@ -22,10 +23,6 @@ local plugin = {
             diagnostics = 'nvim_lsp',
             separator_style = 'thin',
             always_show_bufferline = true,
-            diagnostics_indicator = function(count, level, diagnostics_dict, context)
-                local icon = level:match('error') and ' ' or ' '
-                return ' ' .. icon .. count
-            end,
             offsets = {
                 {
                     filetype = 'NvimTree',
