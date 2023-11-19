@@ -3,11 +3,33 @@
 
 local plugin = {
     'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
+    version = false, -- last release is way too old and doesn't work on Windows
+    build = ":TSUpdate",
+    event = { "VeryLazy" },
+    cmd = {
+        "TSUpdateSync",
+        "TSUpdate",
+        "TSInstall",
+    },
     config = function()
         require('nvim-treesitter.configs').setup {
             -- Add languages to be installed here that you want installed for treesitter
-            ensure_installed = { 'lua', 'python', 'markdown', 'javascript', 'html', 'css', 'bash', 'yaml' },
+            ensure_installed = {
+                'bash',
+                'css',
+                'html',
+                'javascript',
+                'json',
+                'lua',
+                'markdown_inline',
+                'markdown',
+                'python',
+                'query',
+                'regex',
+                'toml',
+                'xml',
+                'yaml',
+            },
             -- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)
             auto_install = true,
             highlight = { enable = true },
