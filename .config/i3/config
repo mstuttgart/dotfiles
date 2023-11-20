@@ -13,6 +13,10 @@ floating_modifier $super
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -b
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id xfce4-power-manager
+exec_always --no-startup-id ~/.screenlayout/autoxrandr.sh
+
 # exec_always --no-startup-id gnome-power-manager
 # exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 # exec --no-startup-id gnome-flashback
@@ -25,9 +29,9 @@ exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Ty
 # basic app keybinds
 bindsym $super+Return exec $TERM
 bindsym $super+r exec $TERM -e ranger; workspace 3; focus
-bindsym $super+w exec $BROWSER; workspace 2; focus
+bindsym $super+w exec $BROWSER --password-store=gnome; workspace 2; focus
 bindsym $super+Shift+w exec $BROWSER --incognito
-bindsym $super+m exec $TERM -e ncspot; workspace 4; focus
+bindsym $super+t exec teams-for-linux; workspace 4; focus
 
 # start dmenu (a program launcher)
 bindsym $super+d exec "rofi -modi drun,run -show drun"
@@ -144,8 +148,8 @@ for_window [class=".*"] border pixel 0
 gaps inner 5
 gaps outer 2
 
-assign [class=firefox] 2
-assign [class=Thunar|Postman] 3
+assign [class=firefox|google-chrome] 2
+assign [class=Thunar|Postman|Nautilus] 3
 assign [class=Vlc|Spotify] 4
 assign [class=Skype] 5
 
@@ -161,9 +165,16 @@ for_window [class="Gnome-calendar"] floating enable
 for_window [class="GoogleCalendar"] floating enable
 
 # colour of border, background, text, indicator, and child_border
-client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
-client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
-client.background           #2f343f
+# client.focused              #bf616a #2f343f #d8dee8 #bf616a #d8dee8
+# client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f #2f343f
+# client.unfocused            #2f343f #2f343f #d8dee8 #2f343f #2f343f
+# client.urgent               #2f343f #2f343f #d8dee8 #2f343f #2f343f
+# client.placeholder          #2f343f #2f343f #d8dee8 #2f343f #2f343f
+# client.background           #2f343f
+
+client.focused          #A7C080 #A7C080 #2D353B #A7C080   #A7C080
+client.focused_inactive #3D484D #2D353B #859289 #3D484D   #3D484D
+client.unfocused        #3D484D #2D353B #859289 #3D484D   #3D484D
+client.urgent           #E67E80 #E67E80 #2D353B #E67E80   #E67E80
+client.placeholder      #2D353B #2D353B #859289 #2D353B   #2D353B
+client.background       #2D353B
