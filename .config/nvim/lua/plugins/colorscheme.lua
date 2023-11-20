@@ -11,14 +11,9 @@ local plugins = {
     },
     {
         'sainnhe/everforest',
-        lazy = false,
-    },
-    {
-        'maxmx03/solarized.nvim',
-        lazy = true,
+        priority = 1000,
         config = function()
-            vim.o.background = 'dark' -- or 'light'
-            vim.cmd.colorscheme 'solarized'
+            vim.cmd([[colorscheme everforest]])
         end,
     },
 }

@@ -48,12 +48,26 @@ local plugins = {
         })
 
         -- configure language servers
-        require('lspconfig').ansiblels.setup({})
-        require('lspconfig').bashls.setup({})
-        require('lspconfig').cssls.setup({})
-        require('lspconfig').html.setup({})
-        require('lspconfig').lua_ls.setup({})
-        require('lspconfig').pyright.setup({})
+        -- require('lspconfig').ansiblels.setup({})
+        -- require('lspconfig').bashls.setup({})
+        -- require('lspconfig').cssls.setup({})
+        -- require('lspconfig').html.setup({})
+        -- require('lspconfig').lua_ls.setup({})
+        -- require('lspconfig').pyright.setup({})
+
+
+        local capabilities = vim.lsp.protocol.make_client_capabilities()
+        capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
+
+        local lspconfig = require('lspconfig')
+        local get_servers = require('mason-lspconfig').get_installed_servers
+
+        for _, server_name in ipairs(get_servers()) do
+            lspconfig[server_name].setup({
+                capabilities = capabilities,
+            })
+        end
+
     end,
 }
 
