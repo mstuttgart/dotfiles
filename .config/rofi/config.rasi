@@ -1,11 +1,17 @@
-configuration {
-    modi: "window,run,ssh";
-    font: "Hack Nerd Font 9";
+configuration{
+    modi: "run,drun,window";
+    icon-theme: "Oranchelo";
     show-icons: true;
-    drun-display-format: " {name} [<span weight='light' size='small'><i>({generic})</i></span>]";
-    kb-row-up: "Up,Alt+k,Shift+Tab,Shift+ISO_Left_Tab";
-    kb-row-down: "Down,Alt+j";
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window";
+    display-Network: " 󰤨  Network";
+    sidebar-mode: true;
 }
+@theme "squared-everforest.rasi"
 
-@theme "/home/michell/.config/rofi/themes/rounded-everforest.rasi"
-@import "/home/michell/.config/rofi/themes/rounded-yellow-dark.rasi"

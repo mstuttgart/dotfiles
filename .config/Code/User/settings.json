@@ -62,7 +62,7 @@
     "files.associations": {
         "*.py": "python"
     },
-    "workbench.colorTheme": "Everforest Light",
+    "workbench.colorTheme": "Nord",
     "editor.formatOnType": true,
     "git.openRepositoryInParentFolders": "always",
     "[javascript]": {
@@ -89,5 +89,5 @@
     "python.analysis.autoFormatStrings": true,
     "[yaml]": {
         "editor.defaultFormatter": "esbenp.prettier-vscode"
-    }
+    },
 }

@@ -1,13 +1,13 @@
-#!/usr/bin/fish
+#!/usr/bin/bash
 
 # change to home folder
 cd
 
 # Make a git add
-dot add --all
+yadm add .
 
 # Make a backup commit
-dot commit -m "Daily backup: `date`"
+yadm commit -m "Daily backup: `date`"
 
 # make a push
-dot up
+yadm up
