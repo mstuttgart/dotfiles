@@ -58,29 +58,29 @@ local plugins = {
         opts = {
             plugins = { spelling = true },
             defaults = {
-              mode = { "n", "v" },
-              ["g"] = { name = "+goto" },
-              ["gs"] = { name = "+surround" },
-              ["]"] = { name = "+next" },
-              ["["] = { name = "+prev" },
-              ["<leader><tab>"] = { name = "+tabs" },
-              ["<leader>b"] = { name = "+buffer" },
-              ["<leader>c"] = { name = "+code" },
-              ["<leader>f"] = { name = "+file/find" },
-              ["<leader>g"] = { name = "+git" },
-              ["<leader>gh"] = { name = "+hunks" },
-              ["<leader>q"] = { name = "+quit/session" },
-              ["<leader>s"] = { name = "+search" },
-              ["<leader>u"] = { name = "+ui" },
-              ["<leader>w"] = { name = "+windows" },
-              ["<leader>x"] = { name = "+diagnostics/quickfix" },
+                mode = { "n", "v" },
+                ["g"] = { name = "+goto" },
+                ["gs"] = { name = "+surround" },
+                ["]"] = { name = "+next" },
+                ["["] = { name = "+prev" },
+                ["<leader><tab>"] = { name = "+tabs" },
+                ["<leader>b"] = { name = "+buffer" },
+                ["<leader>c"] = { name = "+code" },
+                ["<leader>f"] = { name = "+file/find" },
+                ["<leader>g"] = { name = "+git" },
+                ["<leader>gh"] = { name = "+hunks" },
+                ["<leader>q"] = { name = "+quit/session" },
+                ["<leader>s"] = { name = "+search" },
+                ["<leader>u"] = { name = "+ui" },
+                ["<leader>w"] = { name = "+windows" },
+                ["<leader>x"] = { name = "+diagnostics/quickfix" },
             },
-          },
-          config = function(_, opts)
+        },
+        config = function(_, opts)
             local wk = require("which-key")
             wk.setup(opts)
             wk.register(opts.defaults)
-          end,
+        end,
     },
 
     -- A snazzy bufferline for Neovim
@@ -125,6 +125,9 @@ local plugins = {
     -- A blazing fast and easy to configure neovim statusline plugin
     {
         'nvim-lualine/lualine.nvim',
+        dependencies = {
+            'arkav/lualine-lsp-progress',
+        },
         event = 'VeryLazy',
         opts = function()
             return {
@@ -154,6 +157,9 @@ local plugins = {
                             },
                         },
                         {
+                            'lsp_progress',
+                        },
+                        {
                             'filename',
                             path = 1,
                             symbols = { modified = '  ', readonly = '', unnamed = '' },
@@ -163,24 +169,24 @@ local plugins = {
                         {
                             "diff",
                             symbols = {
-                              added = " ",
-                              modified = " ",
-                              removed = " ",
+                                added = " ",
+                                modified = " ",
+                                removed = " ",
                             },
                             source = function()
-                              local gitsigns = vim.b.gitsigns_status_dict
-                              if gitsigns then
-                                return {
-                                    added = gitsigns.added,
-                                    modified = gitsigns.changed,
-                                    removed = gitsigns.removed,
-                                }
-                              end
+                                local gitsigns = vim.b.gitsigns_status_dict
+                                if gitsigns then
+                                    return {
+                                        added = gitsigns.added,
+                                        modified = gitsigns.changed,
+                                        removed = gitsigns.removed,
+                                    }
+                                end
                             end,
-                          },
+                        },
                     },
                     lualine_y = {
-                        { 'progress', separator = ' ', padding = { left = 1, right = 0 } },
+                        { 'progress', separator = ' ',                  padding = { left = 1, right = 0 } },
                         { 'location', padding = { left = 0, right = 1 } },
                     },
                     lualine_z = {
@@ -189,7 +195,7 @@ local plugins = {
                         end,
                     },
                 },
-                extensions = { 'nvim-tree', 'lazy'},
+                extensions = { 'nvim-tree', 'lazy' },
             }
         end,
     },

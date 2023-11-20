@@ -1,5 +1,12 @@
 -- Install lazy.nvim automatically
 
+local function echo(str)
+    vim.cmd "redraw"
+    vim.api.nvim_echo({ { str, "Bold" } }, true, {})
+end
+
+echo("  Installing lazy.nvim & plugins ...")
+
 local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
     vim.fn.system({
@@ -68,5 +75,5 @@ local opts = {
     debug = false,
 }
 
--- Load the plugins and options
+-- -- Load the plugins and options
 require('lazy').setup('plugins', opts)
