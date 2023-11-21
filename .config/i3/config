@@ -1,6 +1,6 @@
 # set modifier
 set $super Mod4
-set $TERM --no-startup-id kitty
+set $TERM --no-startup-id i3-sensible-terminal
 set $BROWSER --no-startup-id x-www-browser
 
 # set font
@@ -29,7 +29,7 @@ exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Ty
 # basic app keybinds
 bindsym $super+Return exec $TERM
 bindsym $super+r exec $TERM -e ranger; workspace 3; focus
-bindsym $super+w exec $BROWSER --password-store=gnome; workspace 2; focus
+bindsym $super+w exec $BROWSER; workspace 2; focus
 bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+t exec teams-for-linux; workspace 4; focus
 

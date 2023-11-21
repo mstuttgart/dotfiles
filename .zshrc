@@ -87,6 +87,7 @@ plugins=(
   zsh-syntax-highlighting
   zsh-autosuggestions
   fzf
+  virtualenvwrapper
   poetry-env
 )
 
