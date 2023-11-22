@@ -39,7 +39,7 @@ local plugins = {
     "sainnhe/everforest",
     priority = 1000,
     config = function()
-      vim.g.everforest_background = "hard"
+      -- vim.g.everforest_background = "medium"
 
       -- For better performance
       -- vim.g.everforest_better_performance = 1
