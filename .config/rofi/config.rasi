@@ -13,5 +13,5 @@ configuration{
     display-Network: " 󰤨  Network";
     sidebar-mode: true;
 }
-@theme "squared-everforest.rasi"
+@theme "rounded-everforest.rasi"
 
