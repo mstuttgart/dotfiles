@@ -132,12 +132,6 @@ local plugins = {
         "nvim-telescope/telescope-fzf-native.nvim",
         build = "make",
       },
-      -- {
-      --   "nvim-telescope/telescope-live-grep-args.nvim",
-      --   -- This will not install any breaking changes.
-      --   -- For major updates, this must be adjusted manually.
-      --   version = "^1.0.0",
-      -- },
     },
     keys = {
       -- git
@@ -162,7 +156,6 @@ local plugins = {
       }
 
       require("telescope").load_extension "fzf"
-      -- require("telescope").load_extension "live_grep_args"
     end,
     init = function()
       vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "Search Files" })
@@ -170,8 +163,6 @@ local plugins = {
       vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "Search Help" })
       vim.keymap.set("n", "<leader>sg", require("telescope.builtin").live_grep, { desc = "Search by Grep" })
       vim.keymap.set("n", "<leader>ss", require("telescope.builtin").lsp_document_symbols, { desc = "Search Symbols" })
-      -- vim.keymap.set("n", "<leader>sg", require("telescope").extensions.live_grep_args, { desc = "[S]earch by [G]rep" })
-      -- vim.keymap.set("n", "<leader>sg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>", { desc = "[S]earch by [G]rep" })
       vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "Search Diagnostics" })
     end,
   },

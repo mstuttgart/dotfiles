@@ -3,7 +3,10 @@
 local plugins = {
 
   -- library used by other plugins
-  { "nvim-lua/plenary.nvim", lazy = true },
+  {
+    "nvim-lua/plenary.nvim",
+    lazy = true,
+  },
   {
     "rmagatti/auto-session",
     config = function()

@@ -1,6 +1,6 @@
 # set modifier
 set $super Mod4
-set $TERM --no-startup-id i3-sensible-terminal
+set $TERM --no-startup-id alacritty
 set $BROWSER --no-startup-id x-www-browser
 
 # set font

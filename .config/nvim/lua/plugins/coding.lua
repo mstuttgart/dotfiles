@@ -14,24 +14,24 @@ local plugins = {
   },
 
   -- highlight for color code
-  -- {
-  --   "norcalli/nvim-colorizer.lua",
-  --   event = "VeryLazy",
-  --   config = function()
-  --     require("colorizer").setup({ "css", "javascript", "lua", "vim", "toml", "svelte", "typescript", "conf" }, {
-  --       RGB = true, -- #RGB hex codes
-  --       RRGGBB = true, -- #RRGGBB hex codes
-  --       names = false, -- "Name" codes like Blue oe blue
-  --       RRGGBBAA = true, -- #RRGGBBAA hex codes
-  --       rgb_fn = true, -- CSS rgb() and rgba() functions
-  --       hsl_fn = true, -- CSS hsl() and hsla() functions
-  --       css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
-  --       css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
-  --       -- Available modes: foreground, background, virtualtext
-  --       mode = "background", -- Set the display mode.)
-  --     })
-  --   end,
-  -- },
+  {
+    "norcalli/nvim-colorizer.lua",
+    event = "VeryLazy",
+    config = function()
+      require("colorizer").setup({ "css", "javascript", "lua", "vim", "toml", "svelte", "typescript", "conf" }, {
+        RGB = true, -- #RGB hex codes
+        RRGGBB = true, -- #RRGGBB hex codes
+        names = false, -- "Name" codes like Blue oe blue
+        RRGGBBAA = true, -- #RRGGBBAA hex codes
+        rgb_fn = true, -- CSS rgb() and rgba() functions
+        hsl_fn = true, -- CSS hsl() and hsla() functions
+        css = true, -- Enable all CSS features: rgb_fn, hsl_fn, names, RGB, RRGGBB
+        css_fn = true, -- Enable all CSS *functions*: rgb_fn, hsl_fn
+        -- Available modes: foreground, background, virtualtext
+        mode = "background", -- Set the display mode.)
+      })
+    end,
+  },
 
   -- csv highlight
   {
@@ -70,8 +70,19 @@ local plugins = {
     "echasnovski/mini.surround",
     version = "*",
     event = "VeryLazy",
+    opts = {
+      mappings = {
+        add = "gsa",
+        delete = "gsd",
+        find = "gsf",
+        find_left = "gsF",
+        highlight = "gsh",
+        replace = "gsr",
+        update_n_lines = "gsn",
+      },
+    },
     config = function()
-      require("mini.cursorword").setup()
+      require("mini.surround").setup()
     end,
   },
 
@@ -258,34 +269,36 @@ local plugins = {
           end,
         },
         mapping = cmp.mapping.preset.insert {
+          ["<C-n>"] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Insert },
+          ["<C-p>"] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Insert },
           ["<C-k>"] = cmp.mapping.scroll_docs(-4),
           ["<C-j>"] = cmp.mapping.scroll_docs(4),
           ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
           ["<C-e>"] = cmp.mapping.abort(), -- close completion window
           ["<Esc>"] = cmp.mapping.close(),
           ["<CR>"] = cmp.mapping.confirm { select = false },
-          ["<Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_next_item()
-              -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
-              -- that way you will only jump inside the snippet region
-            elseif luasnip.expand_or_jumpable() then
-              luasnip.expand_or_jump()
-            elseif has_words_before() then
-              cmp.complete()
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
-          ["<S-Tab>"] = cmp.mapping(function(fallback)
-            if cmp.visible() then
-              cmp.select_prev_item()
-            elseif luasnip.jumpable(-1) then
-              luasnip.jump(-1)
-            else
-              fallback()
-            end
-          end, { "i", "s" }),
+          -- ["<Tab>"] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_next_item()
+          --     -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+          --     -- that way you will only jump inside the snippet region
+          --   elseif has_words_before() then
+          --     cmp.complete()
+          --   elseif luasnip.expand_or_jumpable() then
+          --     luasnip.expand_or_jump()
+          --   else
+          --     fallback()
+          --   end
+          -- end, { "i", "s" }),
+          -- ["<S-Tab>"] = cmp.mapping(function(fallback)
+          --   if cmp.visible() then
+          --     cmp.select_prev_item()
+          --   elseif luasnip.jumpable(-1) then
+          --     luasnip.jump(-1)
+          --   else
+          --     fallback()
+          --   end
+          -- end, { "i", "s" }),
         },
 
         -- sources for autocompletion
