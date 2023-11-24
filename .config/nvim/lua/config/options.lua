@@ -3,6 +3,10 @@
 
 local opt = vim.opt
 
+-- enable undercurl
+opt.spell = true
+opt.spelllang = { 'en_us' }
+
 -- Enable auto write
 opt.autowrite = true
 
@@ -53,7 +57,7 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- Number of spaces tabs count for 
-opt.tabstop = 4
+opt.tabstop = 2
 
 -- True color support
 opt.termguicolors = true
@@ -70,10 +74,6 @@ opt.wildmode = 'longest:full,full'
 
 -- Disable line wrap
 opt.wrap = false
-
--- add binaries installed by mason.nvim to path
-local is_windows = vim.loop.os_uname().sysname == "Windows_NT"
-vim.env.PATH = vim.env.PATH .. (is_windows and ";" or ":") .. vim.fn.stdpath "data" .. "/mason/bin"
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0

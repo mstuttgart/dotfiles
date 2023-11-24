@@ -14,6 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # configure python alias
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
+export TERM="tmux-256color"
+[[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
