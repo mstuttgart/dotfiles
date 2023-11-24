@@ -53,7 +53,7 @@ opt.splitbelow = true
 opt.splitright = true
 
 -- Number of spaces tabs count for 
-opt.tabstop = 2
+opt.tabstop = 4
 
 -- True color support
 opt.termguicolors = true

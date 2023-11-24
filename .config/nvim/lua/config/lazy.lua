@@ -76,4 +76,4 @@ local opts = {
 }
 
 -- -- Load the plugins and options
-require('lazy').setup('plugins', opts)
+require('lazy').setup({ { import = "plugins" }, { import = "plugins.lsp" } }, opts)
