@@ -7,73 +7,48 @@ local opt = vim.opt
 opt.spell = true
 opt.spelllang = { 'en_us' }
 
--- Enable auto write
-opt.autowrite = true
-
--- Sync with system clipboard
-opt.clipboard = 'unnamedplus'
-opt.completeopt = 'menu,menuone,noselect'
-
--- Confirm to save changes before exiting modified buffer
-opt.confirm = true
-
--- Enable highlighting of the current line
-opt.cursorline = true
-
--- Use spaces instead of tabs
-opt.expandtab = true
-
--- preview incremental substitute
-opt.inccommand = 'nosplit'
-
--- Show some invisible characters (tabs... etc)
-opt.list = true
-
--- Enable mouse mode
-opt.mouse = 'a'
-
--- Print line number
-opt.number = true
-
--- Relative line numbers
-opt.relativenumber = false
-
--- Dont show mode since we have a statusline 
+opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
--- Always show the signcolumn, otherwise it would shift the text each time
-opt.signcolumn = 'yes'
+opt.clipboard = "unnamedplus"
+opt.cursorline = true
 
--- Don't ignore case with capitals
-opt.smartcase = true
-
--- Insert indents automatically
+-- Indenting
+opt.expandtab = true
+opt.shiftwidth = 2
 opt.smartindent = true
-
--- Put new windows below current 
-opt.splitbelow = true
-
--- Put new windows right of current
-opt.splitright = true
-
--- Number of spaces tabs count for 
 opt.tabstop = 2
+opt.softtabstop = 2
 
--- True color support
+opt.fillchars = { eob = " " }
+opt.ignorecase = true
+opt.smartcase = true
+opt.mouse = "a"
+
+-- Numbers
+opt.number = true
+opt.numberwidth = 2
+opt.ruler = false
+
+-- disable nvim intro
+opt.shortmess:append "sI"
+
+opt.signcolumn = "yes"
+opt.splitbelow = true
+opt.splitright = true
 opt.termguicolors = true
-
--- set undo files possible
+opt.timeoutlen = 400
 opt.undofile = true
-opt.undolevels = 10000
 
--- Save swap file and trigger CursorHold
-opt.updatetime = 200
+-- interval for writing swap file to disk, also used by gitsigns
+opt.updatetime = 250
 
--- Command-line completion mode
-opt.wildmode = 'longest:full,full'
+-- go to previous/next line with h,l,left arrow and right arrow
+-- when cursor reaches end/beginning of line
+opt.whichwrap:append "<>[]hl"
 
--- Disable line wrap
-opt.wrap = false
+-- disable some default providers
+for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
+  vim.g["loaded_" .. provider .. "_provider"] = 0
+end
 
--- Fix markdown indentation settings
-vim.g.markdown_recommended_style = 0

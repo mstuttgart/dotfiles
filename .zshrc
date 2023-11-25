@@ -14,8 +14,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # configure python alias
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
-export TERM="tmux-256color"
-[[ -n $TMUX ]] && export TERM="screen-256color"
+export TERM="xterm-256color"
+# [[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -180,6 +180,9 @@ alias denv="deactivate"
 # using terminfo of kitty in ssh
 #alias ssh=" ssh"
 alias ssh="TERM=xterm-256color ssh"
+
+# clear terminal
+alias cl="clear"
 
 # python server to server files
 alias pyserver="python3 -m http.server 8000"

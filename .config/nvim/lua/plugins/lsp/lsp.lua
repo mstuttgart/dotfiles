@@ -20,6 +20,7 @@ local plugins = {
       virtual_text = { spacing = 4, prefix = "●" },
       severity_sort = true,
     })
+
     vim.cmd [[highlight DiagnosticUnderlineError cterm=undercurl gui=undercurl guisp=Red]]
 
     for _, server_name in ipairs(get_servers()) do

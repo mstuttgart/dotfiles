@@ -35,21 +35,18 @@ set('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
 set('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
 set('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
 
--- set('n', '<leader>bl', '<cmd>:bnext<cr>', { desc = 'Move to next buffer' })
--- set('n', '<leader>bh', '<cmd>:bprevious<cr>', { desc = 'Move to previuos' })
--- set('n', '<leader>bq', '<cmd>:bp <BAR> bd #<cr>', { desc = 'Close current buffer' })
--- set('n', '<leader>bL', '<cmd>:ls<cr>', { desc = 'List open buffers' })
+-- navegate in insert <ctrl> hjkl keys
+set('i', '<C-h>', '<Left>', { desc = 'Move left' })
+set('i', '<C-j>', '<Down>', { desc = 'Move down' })
+set('i', '<C-k>', '<Up>', { desc = 'Move up' })
+set('i', '<C-l>', '<Right>', { desc = 'Move right' })
 
 -- Diagnostic keymaps
--- set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
--- set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
--- set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
--- set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
+set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
+set('n', '<leader>dm', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
+set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- split editor
 set('n', '<leader>wh', '<C-u>split<CR>', { desc = 'Split horizontal' })
 set('n', '<leader>wv', '<C-u>vsplit<CR>', { desc = 'Split vertical' })
-
--- set({ 'i', 'v', 'n' }, '<leader>fm', function()
---     vim.lsp.buf.format { async = true }
--- end, { desc = 'LSP formatting' })
