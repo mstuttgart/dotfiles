@@ -1,8 +1,10 @@
 -- A snazzy bufferline for Neovim
+
 local plugin = {
     "akinsho/bufferline.nvim",
     dependencies = {
         { "echasnovski/mini.bufremove", version = "*" },
+        "nvim-tree/nvim-web-devicons",
     },
     event = "VeryLazy",
     keys = {

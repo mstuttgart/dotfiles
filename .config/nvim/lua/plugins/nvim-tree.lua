@@ -19,7 +19,7 @@ local plugins = {
     opts = {
         filters = {
             dotfiles = false,
-            custom = { "^\\.git", "__pycache__" },
+            custom = { "^\\.git$", "__pycache__" },
         },
         disable_netrw = true,
         hijack_netrw = true,

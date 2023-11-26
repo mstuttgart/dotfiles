@@ -883,7 +883,7 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
-colors: *EverforestLight
+colors: *EverforestDark
 
 # Visual Bell
 #

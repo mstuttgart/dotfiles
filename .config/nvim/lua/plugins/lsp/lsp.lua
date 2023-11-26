@@ -21,13 +21,11 @@ local plugins = {
       severity_sort = true,
     })
 
-    vim.cmd [[highlight DiagnosticUnderlineError cterm=undercurl gui=undercurl guisp=Red]]
-
-    for _, server_name in ipairs(get_servers()) do
-      lspconfig[server_name].setup {
-        capabilities = capabilities,
-      }
-    end
+    -- configure javascript and typescript
+    lspconfig["tsserver"].setup {
+      filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+      root_dir = function() return vim.loop.cwd() end
+    }
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup {

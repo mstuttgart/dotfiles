@@ -11,10 +11,12 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
+export WEZTERM_CONFIG_FILE="$XDG_CONFIG_HOME/wezterm/wezterm.lua"
+
 # configure python alias
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
-export TERM="xterm-256color"
+export TERM="wezterm"
 # [[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
@@ -182,7 +184,7 @@ alias denv="deactivate"
 alias ssh="TERM=xterm-256color ssh"
 
 # clear terminal
-alias cl="clear"
+alias cls="clear"
 
 # python server to server files
 alias pyserver="python3 -m http.server 8000"

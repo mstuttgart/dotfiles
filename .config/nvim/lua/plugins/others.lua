@@ -23,7 +23,7 @@ local plugins = {
     version = "*",
     event = "VeryLazy",
     dependencies = {
-      'nvim-treesitter/nvim-treesitter',
+      "nvim-treesitter/nvim-treesitter",
       "nvim-treesitter/nvim-treesitter-textobjects",
     },
     config = function()
@@ -53,9 +53,12 @@ local plugins = {
   },
 
   -- Seamless navigation between tmux panes and vim splits
-  {
-    "christoomey/vim-tmux-navigator",
-  },
+  -- {
+  --   "christoomey/vim-tmux-navigator",
+  -- },
+  -- {
+  --   "mrjones2014/smart-splits.nvim",
+    -- },
 
   -- fuzzy finder
   {
@@ -86,10 +89,9 @@ local plugins = {
   {
     "vigoux/notifier.nvim",
     config = function()
-      require 'notifier'.setup()
-    end
+      require("notifier").setup()
+    end,
   },
-
 }
 
 return plugins

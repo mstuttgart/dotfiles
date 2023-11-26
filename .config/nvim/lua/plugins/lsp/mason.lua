@@ -20,12 +20,13 @@ local plugins = {
     -- auto install LSP
     require("mason-lspconfig").setup {
       ensure_installed = {
-        "pyright",
-        "html",
-        "cssls",
-        "lua_ls",
-        "bashls",
         "ansiblels",
+        "bashls",
+        "cssls",
+        "html",
+        "lua_ls",
+        "pyright",
+        "tsserver"
       },
       -- auto-install configured servers (with lspconfig)
       automatic_installation = true,
@@ -35,8 +36,8 @@ local plugins = {
       ensure_installed = {
         -- linters
         "eslint_d",
-        "shellcheck",
         "pylint",
+        "shellcheck",
 
         -- formatters
         "autopep8",
