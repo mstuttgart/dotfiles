@@ -14,18 +14,24 @@ local plugins = {
 
     local get_servers = require("mason-lspconfig").get_installed_servers
 
-    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-      underline = true,
-      update_in_insert = false,
-      virtual_text = { spacing = 4, prefix = "●" },
-      severity_sort = true,
-    })
+    -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+    --   underline = true,
+    --   update_in_insert = false,
+    --   virtual_text = { spacing = 4, prefix = "●" },
+    --   severity_sort = true,
+    -- })
+
+    for _, server_name in ipairs(get_servers()) do
+      lspconfig[server_name].setup {
+        capabilities = capabilities,
+      }
+    end
 
     -- configure javascript and typescript
-    lspconfig["tsserver"].setup {
-      filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
-      root_dir = function() return vim.loop.cwd() end
-    }
+    -- lspconfig["tsserver"].setup {
+    --   filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+    --   root_dir = function() return vim.loop.cwd() end
+    -- }
 
     -- configure lua server (with special settings)
     lspconfig["lua_ls"].setup {

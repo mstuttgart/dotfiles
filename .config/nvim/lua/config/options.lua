@@ -4,8 +4,8 @@
 local opt = vim.opt
 
 -- enable undercurl
-opt.spell = true
-opt.spelllang = { 'en_us' }
+-- opt.spell = true
+-- opt.spelllang = { 'en_us' }
 
 opt.laststatus = 3 -- global statusline
 opt.showmode = false

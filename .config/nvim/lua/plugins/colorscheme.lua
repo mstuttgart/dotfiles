@@ -18,7 +18,7 @@ local plugins = {
       require("everforest").setup {
         italics = true,
       }
-      -- vim.o.background="light"
+      vim.o.background="light"
       vim.cmd.colorscheme "everforest"
     end,
   },
