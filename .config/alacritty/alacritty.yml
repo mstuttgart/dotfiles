@@ -885,6 +885,9 @@ schemes:
 
 colors: *EverforestLight
 
+# import:
+#  - ~/.config/alacritty/themes/themes/ayu-dark.yaml
+
 # Visual Bell
 #
 # Any time the BEL code is received, Alacritty "rings" the visual bell. Once

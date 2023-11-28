@@ -16,7 +16,7 @@ export WEZTERM_CONFIG_FILE="$XDG_CONFIG_HOME/wezterm/wezterm.lua"
 # configure python alias
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
-export TERM="wezterm"
+export TERM="alacritty"
 # [[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
