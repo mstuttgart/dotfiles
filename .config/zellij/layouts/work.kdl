@@ -1,0 +1,9 @@
+layout {
+    pane split_direction="horizontal"{
+        pane command="aenv" size="60%" {
+           focus true
+        }
+        pane command="aenv" size="40%"
+    }
+}
+
