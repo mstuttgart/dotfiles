@@ -14,12 +14,14 @@ local plugins = {
 
     local get_servers = require("mason-lspconfig").get_installed_servers
 
-    -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    --   underline = true,
-    --   update_in_insert = false,
-    --   virtual_text = { spacing = 4, prefix = "●" },
-    --   severity_sort = true,
-    -- })
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      undercurl = true,
+      update_in_insert = false,
+      virtual_text = { spacing = 4, prefix = "●" },
+      severity_sort = true,
+    })
+
+    vim.cmd [[highlight DiagnosticUnderlineError cterm=undercurl gui=undercurl guisp=Red]]
 
     for _, server_name in ipairs(get_servers()) do
       lspconfig[server_name].setup {
