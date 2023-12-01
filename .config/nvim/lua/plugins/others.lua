@@ -2,10 +2,10 @@
 local plugins = {
 
   -- csv highlight
-  {
-    "mechatroner/rainbow_csv",
-    event = "VeryLazy",
-  },
+  -- {
+  --   "mechatroner/rainbow_csv",
+  --   event = "VeryLazy",
+  -- },
 
   -- word highlight
   {
@@ -53,10 +53,10 @@ local plugins = {
   },
 
   -- fuzzy finder
-  {
-    "junegunn/fzf.vim",
-    "junegunn/fzf",
-  },
+  -- {
+  --   "junegunn/fzf.vim",
+  --   "junegunn/fzf",
+  -- },
 
   -- smooth scroll
   {
@@ -78,12 +78,12 @@ local plugins = {
   },
 
   -- Non-intrusive notification system for neovim
-  {
-    "vigoux/notifier.nvim",
-    config = function()
-      require("notifier").setup()
-    end,
-  },
+  -- {
+  --   "vigoux/notifier.nvim",
+  --   config = function()
+  --     require("notifier").setup()
+  --   end,
+  -- },
 }
 
 return plugins

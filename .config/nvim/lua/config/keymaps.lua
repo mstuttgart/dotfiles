@@ -16,6 +16,10 @@ set({ 'i', 'v', 'n', 's' }, '<C-s>', '<cmd>wa<cr><esc>', { desc = 'Save file' })
 -- search word under cursos
 set({ 'n', 'x' }, 'gw', '*N', { desc = 'Search word under cursor' })
 
+-- Don't copy the replaced text after pasting in visual mode
+    -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
+set({ 'v', 'x' }, 'p', 'p:let @+=@0<CR>:let @"=@0<CR>', { desc = "Dont copy replaced text" })
+
 -- better indenting
 set('v', '<', '<gv')
 set('v', '>', '>gv')
@@ -38,3 +42,6 @@ set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'Open diagnostics lis
 -- split editor
 set('n', '<leader>wh', '<C-u>split<CR>', { desc = 'Split horizontal' })
 set('n', '<leader>wv', '<C-u>vsplit<CR>', { desc = 'Split vertical' })
+
+-- quit
+set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
