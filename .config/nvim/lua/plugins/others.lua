@@ -52,27 +52,6 @@ local plugins = {
     end,
   },
 
-  -- Seamless navigation between tmux panes and vim splits
-  -- {
-  --   "christoomey/vim-tmux-navigator",
-  -- },
-  -- {
-  --   "mrjones2014/smart-splits.nvim",
-  -- },
-  --
-  -- {
-  --   "Lilja/zellij.nvim",
-  --   keys = {
-  --     { "<alt>j", "<Cmd>ZellijNavigate Up<CR>",   desc = "Move Zellij Up Panel" },
-  --     { "<alt>k", "<Cmd>ZellijNavigate Down<CR>", desc = "Move Zellij Down Panel" },
-  --   },
-  --   config = function()
-  --     require("zellij").setup {
-  --       -- vimTmuxNavigatorKeybinds = true, -- Will set keybinds like <C-h> to left
-  --     }
-  --   end,
-  -- },
-
   -- fuzzy finder
   {
     "junegunn/fzf.vim",

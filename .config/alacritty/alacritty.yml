@@ -29,8 +29,8 @@ window:
   # Blank space added around the window in pixels. This padding is scaled
   # by DPI and the specified value is always added at both opposing sides.
   padding:
-    x: 6
-    y: 6
+    x: 2
+    y: 1
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -111,7 +111,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: JetBrainsMono Nerd Font Mono
+    family: JetBrainsMono Nerd Font
     # family: CodeNewRoman Nerd Font
     # family: RobotoMono Nerd Font
     # family: Hack
@@ -883,11 +883,9 @@ schemes:
 # *SolarizedDark
 # *TomorrowNight
 
+# colors: *SolarizedLight
 # colors: *EverforestDark
 colors: *EverforestLight
-
-# import:
-#  - ~/.config/alacritty/themes/themes/ayu-dark.yaml
 
 # Visual Bell
 #

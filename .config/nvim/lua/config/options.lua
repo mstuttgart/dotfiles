@@ -3,10 +3,6 @@
 
 local opt = vim.opt
 
--- enable undercurl
--- opt.spell = true
--- opt.spelllang = { 'en_us' }
-
 opt.laststatus = 3 -- global statusline
 opt.showmode = false
 
@@ -42,10 +38,6 @@ opt.undofile = true
 
 -- interval for writing swap file to disk, also used by gitsigns
 opt.updatetime = 250
-
--- go to previous/next line with h,l,left arrow and right arrow
--- when cursor reaches end/beginning of line
-opt.whichwrap:append "<>[]hl"
 
 -- disable some default providers
 for _, provider in ipairs { "node", "perl", "python3", "ruby" } do

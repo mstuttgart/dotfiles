@@ -7,19 +7,17 @@ end
 
 echo("  Installing lazy.nvim & plugins ...")
 
-local lazypath = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+
 if not vim.loop.fs_stat(lazypath) then
-    vim.fn.system({
-        'git',
-        'clone',
-        '--filter=blob:none',
-        'https://github.com/folke/lazy.nvim.git',
-        '--branch=stable', -- latest stable release
-        lazypath,
-    })
+    -- bootstrap lazy.nvim
+    -- stylua: ignore
+    vim.fn.system({ "git", "clone", "--filter=blob:none", "https://github.com/folke/lazy.nvim.git", "--branch=stable",
+        lazypath })
 end
 
-vim.opt.rtp:prepend(lazypath)
+vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
+
 
 local opts = {
     ui = {
@@ -40,32 +38,32 @@ local opts = {
         rtp = {
             disabled_plugins = {
                 "2html_plugin",
-                "tohtml",
+                "bugreport",
+                "compiler",
+                "ftplugin",
                 "getscript",
                 "getscriptPlugin",
                 "gzip",
                 "logipat",
+                "matchit",
                 "netrw",
+                "netrwFileHandlers",
                 "netrwPlugin",
                 "netrwSettings",
-                "netrwFileHandlers",
-                "matchit",
-                "tar",
-                "tarPlugin",
+                "optwin",
+                "rplugin",
                 "rrhelper",
                 "spellfile_plugin",
+                "synmenu",
+                "syntax",
+                "tar",
+                "tarPlugin",
+                "tohtml",
+                "tutor",
                 "vimball",
                 "vimballPlugin",
                 "zip",
                 "zipPlugin",
-                "tutor",
-                "rplugin",
-                "syntax",
-                "synmenu",
-                "optwin",
-                "compiler",
-                "bugreport",
-                "ftplugin",
             },
         },
     },
@@ -76,4 +74,4 @@ local opts = {
 }
 
 -- -- Load the plugins and options
-require('lazy').setup({ { import = "plugins" }, { import = "plugins.lsp" } }, opts)
+require('lazy').setup("plugins", opts)

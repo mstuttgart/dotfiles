@@ -23,18 +23,6 @@ set('v', '>', '>gv')
 -- lazy
 set('n', '<leader>L', '<cmd>:Lazy<cr>', { desc = 'Lazy' })
 
--- Resize window using <ctrl> arrow keys
--- set('n', '<C-Up>', '<cmd>resize +2<cr>', { desc = 'Increase window height' })
--- set('n', '<C-Down>', '<cmd>resize -2<cr>', { desc = 'Decrease window height' })
--- set('n', '<C-Left>', '<cmd>vertical resize -2<cr>', { desc = 'Decrease window width' })
--- set('n', '<C-Right>', '<cmd>vertical resize +2<cr>', { desc = 'Increase window width' })
-
--- Move to window using the <ctrl> hjkl keys
--- set('n', '<C-h>', '<C-w>h', { desc = 'Go to left window' })
--- set('n', '<C-j>', '<C-w>j', { desc = 'Go to lower window' })
--- set('n', '<C-k>', '<C-w>k', { desc = 'Go to upper window' })
--- set('n', '<C-l>', '<C-w>l', { desc = 'Go to right window' })
-
 -- navegate in insert <ctrl> hjkl keys
 set('i', '<C-h>', '<Left>', { desc = 'Move left' })
 set('i', '<C-j>', '<Down>', { desc = 'Move down' })
