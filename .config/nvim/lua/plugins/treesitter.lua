@@ -17,6 +17,7 @@ local plugin = {
       ensure_installed = {
         "bash",
         "css",
+        "embedded_template",
         "html",
         "javascript",
         "json",
@@ -27,6 +28,8 @@ local plugin = {
         "query",
         "regex",
         "toml",
+        "typescript",
+        "tsx",
         "xml",
         "yaml",
       },

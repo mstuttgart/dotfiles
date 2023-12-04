@@ -5,8 +5,8 @@ local plugin = {
   lazy = false,
   event = { "BufReadPre", "BufNewFile" },
   dependencies = {
-        'nvim-lua/plenary.nvim',
-    'WhoIsSethDaniel/mason-tool-installer.nvim',
+    "nvim-lua/plenary.nvim",
+    "WhoIsSethDaniel/mason-tool-installer.nvim",
   },
   init = function()
     vim.keymap.set("n", "<leader>cf", vim.lsp.buf.format, { desc = "Format File" })
@@ -44,7 +44,7 @@ local plugin = {
         },
       },
     }
-  end
+  end,
 }
 
 return plugin
