@@ -884,8 +884,8 @@ schemes:
 # *TomorrowNight
 
 # colors: *Catppuccin-Mocha
-# colors: *EverforestDark
-colors: *EverforestLight
+colors: *EverforestDark
+# colors: *EverforestLight
 
 # Visual Bell
 #
