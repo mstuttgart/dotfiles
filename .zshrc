@@ -4,8 +4,6 @@
 # if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
 #   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 # fi
-# NPM_PACKAGES="${HOME}/.npm-packages"
-# NODE_PATH="$NPM_PACKAGES/node_modules:$NODE_PATH"
 
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -13,13 +11,11 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
-# export WEZTERM_CONFIG_FILE="$XDG_CONFIG_HOME/wezterm/wezterm.lua"
-
 # configure python alias
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
-export TERM="alacritty"
-# [[ -n $TMUX ]] && export TERM="screen-256color"
+export TERM="xterm-256color"
+[[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -216,17 +212,11 @@ zle -N ctrl_l
 bindkey '^l' ctrl_l
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # enable starship theme
 eval "$(starship init zsh)"
 
-# . "$HOME/.asdf/asdf.sh"
-#
+. "$HOME/.asdf/asdf.sh"
 
 
-# export PATH="$NPM_PACKAGES/bin:$PATH"
-
-# Preserve MANPATH if you already defined it somewhere in your config.
-# Otherwise, fall back to `manpath` so we can inherit from `/etc/manpath`.
-# export MANPATH="${MANPATH-$(manpath)}:$NPM_PACKAGES/share/man"
