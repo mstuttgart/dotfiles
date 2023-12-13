@@ -875,7 +875,7 @@ schemes:
 # *EverforestLight
 
 # colors: *Catppuccin-Mocha
-# colors: *Nord
+# colors: *AyuLight
 # colors: *EverforestDark
 colors: *EverforestLight
 # colors: *SolarizedDark

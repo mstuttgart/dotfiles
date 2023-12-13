@@ -32,11 +32,11 @@ local plugins = {
     -- end,
   },
   {
-    "shaunsingh/nord.nvim",
+    "Shatur/neovim-ayu",
     lazy = true,
     -- priority = 1000,
     -- config = function()
-    --   vim.cmd.colorscheme "nord"
+    --   vim.cmd.colorscheme "ayu"
     -- end,
   },
 }
