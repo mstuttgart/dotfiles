@@ -14,7 +14,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # configure python alias
 export VIRTUALENVWRAPPER_PYTHON=$(which python3)
 
-export TERM="xterm-256color"
+export TERM="alacritty"
 [[ -n $TMUX ]] && export TERM="screen-256color"
 
 # Set name of the theme to load --- if set to "random", it will

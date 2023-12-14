@@ -14,14 +14,14 @@ local plugins = {
 
     -- local get_servers = require("mason-lspconfig").get_installed_servers
 
-    -- vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
-    --   undercurl = true,
-    --   update_in_insert = false,
-    --   virtual_text = { spacing = 4, prefix = "●" },
-    --   severity_sort = true,
-    -- })
+    vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
+      undercurl = true,
+      update_in_insert = false,
+      virtual_text = { spacing = 4, prefix = "●" },
+      severity_sort = true,
+    })
 
-    -- vim.cmd [[highlight DiagnosticUnderlineError cterm=undercurl gui=undercurl guisp=Red]]
+    vim.cmd [[highlight DiagnosticUnderlineError cterm=undercurl gui=undercurl guisp=undercurl]]
 
     -- for _, server_name in ipairs(get_servers()) do
     --   lspconfig[server_name].setup {
@@ -30,39 +30,39 @@ local plugins = {
     -- end
 
     -- configure html server
-    lspconfig["html"].setup({
+    lspconfig["html"].setup {
       capabilities = capabilities,
-    })
+    }
 
     -- configure typescript server with plugin
-    lspconfig["tsserver"].setup({
+    lspconfig["tsserver"].setup {
       capabilities = capabilities,
-    })
+    }
 
     -- configure css server
-    lspconfig["cssls"].setup({
+    lspconfig["cssls"].setup {
       capabilities = capabilities,
-    })
+    }
 
     -- configure python server
-    lspconfig["pyright"].setup({
+    lspconfig["pyright"].setup {
       capabilities = capabilities,
-    })
+    }
 
     -- configure bash server
-    lspconfig["bashls"].setup({
+    lspconfig["bashls"].setup {
       capabilities = capabilities,
-    })
+    }
 
     -- configure ansible server
-    lspconfig["ansiblels"].setup({
+    lspconfig["ansiblels"].setup {
       capabilities = capabilities,
-    })
+    }
 
     -- configure lua server
-    lspconfig["lua_ls"].setup({
+    lspconfig["lua_ls"].setup {
       capabilities = capabilities,
-    })
+    }
 
     -- configure lua server (with special settings)
     -- lspconfig["lua_ls"].setup {

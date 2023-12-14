@@ -876,8 +876,8 @@ schemes:
 
 # colors: *Catppuccin-Mocha
 # colors: *AyuLight
-# colors: *EverforestDark
-colors: *EverforestLight
+colors: *EverforestDark
+# colors: *EverforestLight
 # colors: *SolarizedDark
 
 # Visual Bell
