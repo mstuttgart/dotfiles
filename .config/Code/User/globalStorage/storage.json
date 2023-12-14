@@ -39,20 +39,20 @@
         ],
         "emptyWindows": []
     },
-    "theme": "vs-dark",
-    "themeBackground": "#2d353b",
+    "theme": "vs",
+    "themeBackground": "#fdf6e3",
     "windowSplash": {
         "zoomLevel": 0,
-        "baseTheme": "vs-dark",
+        "baseTheme": "vs",
         "colorInfo": {
-            "foreground": "#9aa79d",
-            "background": "#2d353b",
-            "editorBackground": "#2d353b",
-            "titleBarBackground": "#2d353b",
-            "activityBarBackground": "#2d353b",
-            "sideBarBackground": "#2d353b",
-            "statusBarBackground": "#2d353b",
-            "statusBarNoFolderBackground": "#2d353b"
+            "foreground": "#879686",
+            "background": "#fdf6e3",
+            "editorBackground": "#fdf6e3",
+            "titleBarBackground": "#fdf6e3",
+            "activityBarBackground": "#fdf6e3",
+            "sideBarBackground": "#fdf6e3",
+            "statusBarBackground": "#fdf6e3",
+            "statusBarNoFolderBackground": "#fdf6e3"
         },
         "layoutInfo": {
             "sideBarSide": "left",
@@ -71,7 +71,7 @@
             "uiState": {
                 "mode": 0,
                 "x": 0,
-                "y": 0,
+                "y": 32,
                 "width": 1920,
                 "height": 1044
             }

@@ -77,7 +77,7 @@
         "editor.defaultFormatter": "yzhang.markdown-all-in-one"
     },
     "python.analysis.autoFormatStrings": true,
-    "workbench.colorTheme": "Everforest Dark",
+    "workbench.colorTheme": "Everforest Light",
     "python.envFile": "${workspaceFolder}/.venv",
     "python.venvFolders": [
         ".venv"

@@ -1,8 +1,0 @@
-GitLens v14.5.2 activating in Visual Studio Code (1.85.0) on the desktop; language='en', logLevel='warn', defaultDateLocale='null' (9b2756a6060c25d588f0121b33cd82d4dc79e5499d3a908610f4168c866a4d18|3c830bd7-5dfb-4c38-b9ee-4c7f3620bf3a1702287720480)
-To enable debug logging, set `"gitlens.outputLevel: "debug"` or run "GitLens: Enable Debug Logging" from the Command Palette
-[2023-12-11 09:42:02.731] [GIT  ] [/home/michell/.config/nvim.chad.novo] git rev-parse --show-toplevel • spawn /usr/bin/git ENOENT [7ms]
-
-[2023-12-11 09:42:02.751] [GIT  ] [/home/michell/.config/nvim] git rev-parse --show-toplevel • Command failed: /usr/bin/git -c core.quotepath=false -c color.ui=false rev-parse --show-toplevel • not a git repository (or any of the parent directories): .git [28ms]
-
-[2023-12-11 09:42:02.787] [GIT  ] [/home/michell/.config] git rev-parse --show-toplevel • Command failed: /usr/bin/git -c core.quotepath=false -c color.ui=false rev-parse --show-toplevel • not a git repository (or any of the parent directories): .git [27ms]
-
