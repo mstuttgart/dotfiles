@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="account.action_invoice_tree1" model="ir.actions.act_window">
+       <field name="domain">[('journal_id.type','in', ('sale', 'simples_remessa', 'sale_no_financial')), ('type','=','out_invoice')]</field>
+    </record>
+
+    <record id="view_account_invoice_filter_supplier" model="ir.ui.view">
+        <field name="name">account.invoice.supplier.search</field>
+        <field name="model">account.invoice</field>
+        <field name="arch" type="xml">
+            <search string="Search Invoice">
+                <field name="vendor_number" string="Número NF Entrada"/>
+                <field name="number" string="Número do Pedido" context="{'active_test': False}" filter_domain="['|','|','|', ('number','ilike',self), ('origin','ilike',self), ('reference', 'ilike', self), ('partner_id', 'child_of', self)]"/>
+                <filter domain="[('user_id','=',uid)]" name="myinvoices" help="My Invoices"/>
+                <separator/>
+                <filter name="draft" string="Draft" domain="[('state','=','draft')]"/>
+                <filter name="unpaid" string="Open" domain="[('state', '=', 'open')]"/>
+                <filter name="in_payment" string="In Payment" domain="[('state', '=', 'in_payment')]"/>
+                <filter name="paid" string="Paid" domain="[('state', '=', 'paid')]"/>
+                <filter name="late" string="Overdue" domain="['&amp;', ('date_due', '&lt;', time.strftime('%%Y-%%m-%%d')), ('state', '=', 'open')]" help="Overdue invoices, maturity date passed"/>
+                <separator/>
+                <field name="partner_id" operator="child_of"/>
+                <field name="partner_legal_name"/>
+                <field name="partner_cnpj_cpf"/>
+                <field name="user_id" string="Salesperson" domain="[('share','=', False)]"/>
+                <field name="date" string="Period"/>
+                <field name="custom_stage_color" string="Estágio" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <separator/>
+                <filter string="My Activities" name="activities_my"
+                    domain="[('activity_ids.user_id', '=', uid)]"/>
+                <separator/>
+                <filter string="Late Activities" name="activities_overdue"
+                    domain="[('activity_ids.date_deadline', '&lt;', context_today().strftime('%Y-%m-%d'))]"
+                    help="Show all records which has next action date is before today"/>
+                <filter string="Today Activities" name="activities_today"
+                    domain="[('activity_ids.date_deadline', '=', context_today().strftime('%Y-%m-%d'))]"/>
+                <filter string="Future Activities" name="activities_upcoming_all"
+                    domain="[('activity_ids.date_deadline', '&gt;', context_today().strftime('%Y-%m-%d'))
+                    ]"/>
+                <group expand="0" string="Group By">
+                    <filter name="group_by_partner_id" string="Partner" context="{'group_by':'commercial_partner_id'}"/>
+                    <filter string="Salesperson" name="salesperson" context="{'group_by':'user_id'}"/>
+                    <filter name="status" string="Status" context="{'group_by':'state'}"/>
+                    <filter name='custom_stage_id' string="Stage"
+                            domain="[]" context="{'group_by':'custom_stage_id'}"/>
+                    <separator/>
+                    <filter string="Invoice Date" name="invoicedate" context="{'group_by':'date_invoice'}"/>
+                    <filter string="Due Date" name="duedate" context="{'group_by':'date_due'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="account.action_vendor_bill_template" model="ir.actions.act_window">
+       <field name="domain">[('journal_id.type','in', ('purchase', 'simples_remessa')), ('type','=','in_invoice')]</field>
+       <field name="search_view_id" ref="br_account.view_account_invoice_filter_supplier"/>
+    </record>
+
+    <record id="invoice_tree" model="ir.ui.view">
+        <field name="name">br_account.invoice.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree"/>
+        <field name="arch" type="xml">
+            <field name="date_due" position="after">
+                <field name="fiscal_position_id"/>
+                <field name="partner_legal_name" invisible="1"/>
+                <field name="partner_cnpj_cpf" invisible="1"/>
+            </field>
+
+            <field name="company_id" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="number" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="number" position="after">
+                <field name="number_backup" string="Número do Pedido"/>
+            </field>
+
+            <field name="amount_total_signed" position="after">
+                <field name="anticipated_residual_payment"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_br_account_invoice_form" model="ir.ui.view">
+        <field name="name">br_account.invoice.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('oe_button_box')]" position="after">
+                <div class="oe_button_status_box" colspan="12">
+                    <header>
+                        <field name="custom_stage_id" widget="statusbar"
+                               options="{'clickable': '1'}"/>
+                    </header>
+                </div>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/control/create[2]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/control/create[3]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']" position="attributes">
+                <attribute name="context">{'type': type, 'journal_id': journal_id, 'position_type': position_type}</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='%(account.action_account_invoice_payment)d']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='%(account.action_account_invoice_refund)d']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//group/group/field[@name='partner_id']" position="after">
+                <field name="block_draft_invoice" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//button[@name='action_invoice_draft']" position="attributes">
+                <attribute name="attrs">{'invisible': ['|',('block_draft_invoice', '!=', False)]}</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_invoice_open']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_invoice_open']" position="before">
+                <button name="action_br_account_invoice_open" type="object" string="Confirmar" class="oe_highlight" groups="account.group_account_invoice" attrs="{'invisible': [('state', '!=', 'draft')]}" confirm="Esta ação irá confirmar a fatura. Deseja continuar?"/>
+                <button name="action_br_account_invoice_open" type="object" states="proforma2" string="Confirmar" groups="account.group_account_invoice" confirm="Esta ação irá confirmar a fatura. Deseja continuar?"/>
+                <!-- Botao para teste dos calculo de impostos para empresa no regime de Lucro Presumido - NÃO REMOVER -->
+                <button name="action_br_account_invoice_recompute_tax" type="object" string="Recalcular Impostos" />
+            </xpath>
+
+            <xpath expr="//field[@name='journal_id']" position="after">
+                <field name="journal_type" invisible="1"/>
+            </xpath>
+
+            <field name="date_invoice" position="replace">
+                <field name="date_invoice" attrs="{'readonly': 1, 'invisible': [('state', '=', 'draft')]}"/>
+                <field name="pre_invoice_date" attrs="{'readonly':[('state','!=','draft')]}"/>
+                <field name="cancel_invoice_date" attrs="{'readonly': 1, 'invisible': [('state', '!=', 'cancel')]}"/>
+            </field>
+
+            <field name="pre_invoice_date" position="after">
+                <field name="internal_number" attrs="{'readonly': 1, 'invisible': [('state', 'not in', ('open', 'paid'))]}"/>
+            </field>
+
+            <field name="date_due" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <xpath expr="//field[@name='invoice_line_ids']" position="attributes">
+                <attribute name="attrs">{'readonly': ['|', ('fiscal_position_id', '=', False), ('state', '!=', 'draft')]}</attribute>
+            </xpath>
+
+            <field name="partner_bank_id" position="before">
+                <field name="client_order_ref"/>
+            </field>
+
+            <field name="partner_bank_id" position="after">
+                <field name="bank_account_for_expected" options="{'no_create': True, 'no_open': True}"/>
+            </field>
+
+            <field name="fiscal_position_id" position="replace"/>
+
+            <field name="payment_term_id" position="replace">
+                <field name="payment_term_id" attrs="{'required': [('type', '!=', 'out_refund'),('journal_type', '!=', 'simples_remessa')],'invisible': ['|', ('type', '=', 'out_refund'),('journal_type', '=', 'simples_remessa')]}" domain="[('internal_use', '=', False)]"/>
+                <field name="fiscal_position_id" required="1" domain="[('position_type', 'in', ['product', 'service', 'conjugate']),('company_id', '=', company_id)]"/>
+                <field name="reload_taxes" invisible="1"/>
+                <field name="position_type" invisible="1"/>
+                <field name="service_locale" attrs="{'required': [('position_type', 'in', ['service', 'conjugate'])],'invisible': [('position_type', 'not in', ['service', 'conjugate'])]}"/>
+                <field name="service_locale_address_id" domain="['|', '&amp;', ('type', '=', 'service_address'),('parent_id', '=', partner_id),('id', '=', partner_id)]" options="{'no_create': True, 'no_create_edit': True}" attrs="{'required': [('position_type', 'in', ['service', 'conjugate']),('service_locale', '=', '2')],'invisible': ['|', ('position_type', 'not in', ['service', 'conjugate']),('service_locale', '!=', '2')]}"/>
+                <field name="public_location" attrs="{'invisible': [('position_type', 'not in', ['service', 'conjugate'])]}"/>
+            </field>
+
+            <field name="sent" position="after">
+                <div class="alert alert-warning" role="alert" attrs="{'invisible': ['|', ('state', '!=', 'draft'),('reload_taxes', '=', False)]}">
+                    <b>A Posição Fiscal foi alterada! Por favor, recarregue os impostos.</b>
+                    <button name="action_reload_fiscal_position_taxes" type="object" icon="fa-refresh" class="oe_link"/>
+                    <br/>
+                </div>
+            </field>
+
+            <field name="date_invoice" position="before">
+                <field name="is_electronic" invisible="1"/>
+                <field name="number_backup" invisible="1"/>
+                <field name="fiscal_document_id"/>
+                <field name="document_serie_id"/>
+                <field name="invoice_model" invisible="1"/>
+            </field>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
+                <attribute name="editable"/>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='discount']" position="replace"/>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='quantity']" position="replace">
+                <field name="price_unit_base" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+                <field name="discount" widget="integer"/>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']" position="before">
+                <field name="analytic_type_id"
+                       groups="analytic.group_analytic_accounting"/>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='price_subtotal']" position="replace">
+                <field name="quantity"/>
+                <field name="price_subtotal" string="Valor Bruto"/>
+                <field name="valor_desconto" string="Desconto Financeiro" widget="monetary" options="{'currency_field': 'currency_id'}"/>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="inside">
+                <field name="valor_bruto" invisible="1"/>
+                <field name="currency_id" invisible="1"/>
+            </xpath>
+
+            <page name="other_info" position="before">
+                <page name="parcelas" string="Parcelas">
+                    <header name="parcel_ids">
+                        <button name="action_open_periodic_entry_wizard"
+                                class="oe_highlight oe_edit_only"
+                                type="object"
+                                attrs="{'invisible': ['|', '|', ('type', '=', 'out_refund'), ('journal_type', '=', 'simples_remessa'), ('state', 'not in', ('draft', 'sent'))]}"
+                                string="Gerar Parcelas"/>
+
+                        <button name="action_generate_anticipated_payment"
+                                class="oe_highlight oe_edit_only"
+                                type="object"
+                                confirm="Esta ação irá gerar Cobrança ref a(s) Parcela(s) Antecipada(s). Deseja Continuar?"
+                                attrs="{'invisible': [('anticipated_residual_value', '=', 0)]}"
+                                string="Gerar Título(s) de Antecipação"/>
+                    </header>
+
+                    <group>
+                        <field nolabel="1" name="parcel_ids"/>
+                    </group>
+
+                    <group>
+                        <field name="account_group_id" options="{'no_create': True, 'no_open': True}"/>
+                    </group>
+                </page>
+            </page>
+
+            <xpath expr="//page[@name='other_info']/group/group/field[@name='account_id']" position="attributes">
+                <attribute name="readonly">1</attribute>
+                <attribute name="force_save">1</attribute>
+                <attribute name="domain">[('company_id', '=', company_id),
+                                          ('deprecated', '=', False),
+                                          ('code_first_digit', '=', '1')]</attribute>
+            </xpath>
+
+            <page name="other_info" position="after">
+                <page name="vencimentos" string="Títulos">
+                    <field nolabel="1" name="move_ids">
+                        <tree name="vencimentos" string="Vencimentos" colors="red:date_maturity_current&lt;current_date">
+                            <field name="date_maturity_current"/>
+                            <field name="name"/>
+                            <field name="parcel_id"/>
+                            <field name="financial_operation_id"/>
+                            <field name="title_type_id"/>
+                            <field name="amount"/>
+                            <field name="amount_residual"/>
+                            <field name="paid_status"/>
+                        </tree>
+                    </field>
+                </page>
+            </page>
+
+            <xpath expr="//field[@name='tax_line_ids']/tree/field[@name='amount']" position="after">
+                <field name="company_id"/>
+                <field name="invoice_price_total" sum="Total" />
+                <field name="financial_price_total" sum="Total" />
+                <field name="amount_original"/>
+                <field name="minimal_value"/>
+            </xpath>
+
+            <field name="tax_line_ids" position="after">
+                <group name="documentos_relacionados" string="Documentos Relacionados">
+                    <field colspan="4" nolabel="1" name="fiscal_document_related_ids">
+                        <tree>
+                            <field name="document_type"/>
+                            <field name="access_key"/>
+                            <field name="serie"/>
+                            <field name="internal_number"/>
+                        </tree>
+
+                        <form string="Documentos Fiscais">
+                            <group>
+                                <field name="invoice_related_id"/>
+                            </group>
+
+                            <group>
+                                <field name="document_type"/>
+                            </group>
+
+                            <group string="NF-e/CT-e" attrs="{'invisible': [('document_type','in', ('nf', 'nfrural', 'cf', False))]}">
+                                <field name="access_key"/>
+                            </group>
+
+                            <group string="Nota Fiscal/Produtor/Cupom Fiscal" attrs="{'invisible': [('document_type', 'in', ('nfe','cte', False))]}">
+                                <field name="serie" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural', 'cf'))]}"/>
+                                <field name="internal_number" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural', 'cf'))]}"/>
+                                <field name="fiscal_document_id" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural', 'cf'))]}"/>
+                                <field name="state_id" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural'))], 'invisible': [('document_type', '=', 'cf')]}" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="date" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural'))], 'invisible': [('document_type', '=', 'cf')]}"/>
+                                <field name="cpfcnpj_type" attrs="{'required': [('document_type', 'in', ('nfrural'))], 'invisible': [('document_type', '!=', 'nfrural')]}"/>
+                                <field name="cnpj_cpf" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural'))], 'invisible': [('document_type', '=', 'cf')]}"/>
+                                <field name="inscr_est" attrs="{'invisible': [('document_type', '!=', 'nfrural')]}"/>
+                            </group>
+                        </form>
+                    </field>
+                </group>
+
+                <group string="Mensagens Documento Eletrônico">
+                    <field name="fiscal_observation_ids" nolabel="1"/>
+                </group>
+
+                <group string="Observações">
+                    <field name="comment" nolabel="1"/>
+                </group>
+
+                <group string="Observações Fiscais">
+                    <field name="fiscal_comment" nolabel="1"/>
+                </group>
+            </field>
+
+            <field name="amount_untaxed" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="amount_tax" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="amount_tax" position="before">
+                <field name="total_bruto" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="discount_type"/>
+                <field name="discount_rate"/>
+                <field name="total_desconto" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="total_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </field>
+
+            <field name="amount_total" position="after">
+                <field name="financial_price_total" class="oe_subtotal_footer_separator" attrs="{'invisible': ['|', ('type', '=', 'out_refund'),('journal_type', '=', 'simples_remessa')]}"/>
+                <field name="anticipated_value" attrs="{'invisible': [('anticipated_value', '=', 0)]}"/>
+                <field name="anticipated_residual_value" attrs="{'invisible': [('anticipated_value', '=', 0)]}"/>
+                <field name="anticipated_residual_payment" attrs="{'invisible': [('anticipated_value', '=', 0)]}"/>
+            </field>
+        </field>
+    </record>
+
+    <record id="view_br_account_invoice_cancel_form" model="ir.ui.view">
+        <field name="name">br_account.invoice.cancel.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_cancel.invoice_form_cancel_inherit"/>
+        <field name="arch" type="xml">
+            <button name="action_invoice_cancel" position="replace">
+                <button name="action_invoice_cancel_paid" type="object" states="draft,proforma2,open,paid" string="Cancelar Fatura" confirm="Esta ação além de alterar o status da fatura,                         também irá deletar os registros de título. Deseja Continuar?" groups="account.group_account_invoice"/></button>
+        </field>
+    </record>
+
+    <record id="view_br_account_invoice_supplier_form" model="ir.ui.view">
+        <field name="name">br_account.invoice.supplier.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_form"/>
+        <field name="arch" type="xml">
+            <field name="reference" position="after">
+                <field name="bank_account_for_expected" options="{'no_create': True, 'no_open': True}"/>
+            </field>
+            <xpath expr="//sheet/div" position="before">
+                <div class="oe_button_box" name="button_box"></div>
+            </xpath>
+
+            <xpath expr="//div[hasclass('oe_button_box')]" position="after">
+                <div colspan="12">
+                    <header>
+                        <field name="custom_stage_id" widget="statusbar"
+                               options="{'clickable': '1'}"/>
+                    </header>
+                </div>
+            </xpath>
+
+            <xpath expr="//button[@name='%(account.action_account_invoice_payment)d']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='%(account.action_account_invoice_refund)d']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_invoice_open']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//button[@name='action_invoice_open']" position="before">
+                <button name="action_br_account_invoice_open" type="object" states="draft,proforma2" string="Validate" class="oe_highlight" groups="account.group_account_invoice"/>
+            </xpath>
+
+            <field name="fiscal_position_id" position="replace"/>
+            <field name="payment_term_id" position="replace"/>
+
+            <field name="partner_id" position="after">
+                <field name="payment_term_id"
+                       attrs="{'required': [('type', '!=', 'int_refund'), ('journal_type', '!=', 'simples_remessa')],
+                               'invisible': ['|', ('type', '=', 'in_refund'), ('journal_type', '=', 'simples_remessa')]}"
+                       domain="[('internal_use', '=', False)]"/>
+                <field name="fiscal_position_id"
+                       required="1"
+                       domain="[('position_type', 'in', ['product', 'service', 'conjugate']), ('company_id', '=', company_id)]"/>
+            </field>
+
+            <field name="date_invoice" position="after">
+                <field name="financial_identifier" attrs="{'readonly': [('state', '!=', 'draft')]}"/>
+                <field name="is_electronic" invisible="1"/>
+                <field name="number_backup" invisible="1"/>
+                <field name="issuer"/>
+                <field name="cancel_invoice_date" attrs="{'readonly': 1, 'invisible': [('state', '!=', 'cancel')]}"/>
+                <field name="fiscal_document_id" attrs="{'invisible': [('issuer','=', '0')]}"/>
+                <field name="document_serie_id" attrs="{'invisible': [('issuer','=', '0')]}"/>
+                <field name="vendor_number" attrs="{'invisible': ['|', ('issuer','=', '1'), ('type', '=', 'in_refund')]}"/>
+                <field name="vendor_serie" attrs="{'invisible': ['|', ('issuer','=', '1'), ('type', '=', 'in_refund')]}"/>
+                <field name="chave_de_acesso" attrs="{'invisible': [('type', '=', 'in_refund')]}"/>
+            </field>
+
+            <field name="date_due" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="payment_term_id" position="attributes">
+                <attribute name="attrs"></attribute>
+            </field>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="attributes">
+                <attribute name="editable"></attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='invoice_line_tax_ids']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree" position="inside">
+                <field name="valor_bruto" invisible="1"/>
+                <field name="valor_desconto" invisible="1"/>
+            </xpath>
+
+            <xpath expr="//field[@name='invoice_line_ids']/tree/field[@name='account_analytic_id']" position="before">
+                <field name="analytic_type_id"
+                       groups="analytic.group_analytic_accounting"/>
+            </xpath>
+
+            <xpath expr="//page[2]" position="before">
+                <page name="parcelas" string="Parcelas">
+                    <header name="parcel_ids">
+                        <button name="action_open_periodic_entry_wizard"
+                                class="oe_highlight oe_edit_only"
+                                type="object"
+                                attrs="{'invisible': ['|',('state', '!=', 'draft'),('payment_term_id', '=', False)]}"
+                                string="Gerar Parcelas"/>
+                    </header>
+                    <field nolabel="1" name="parcel_ids"/>
+                </page>
+            </xpath>
+
+            <xpath expr="//page[2]" position="after">
+                <page name="vencimentos" string="Títulos">
+                    <field nolabel="1" name="move_ids">
+                        <tree name="vencimentos" string="Vencimentos" colors="red:date_maturity_current&lt;current_date">
+                            <field name="date_maturity_current"/>
+                            <field name="name"/>
+                            <field name="parcel_id"/>
+                            <field name="financial_operation_id"/>
+                            <field name="title_type_id"/>
+                            <field name="amount"/>
+                            <field name="amount_residual"/>
+                            <field name="paid_status"/>
+                        </tree>
+                    </field>
+                </page>
+            </xpath>
+
+            <xpath expr="//page[4]" position="inside">
+                <group name="documentos_relacionados" string="Documentos Relacionados">
+                    <field colspan="4" nolabel="1" name="fiscal_document_related_ids">
+                        <tree>
+                            <field name="document_type"/>
+                            <field name="access_key"/>
+                            <field name="serie"/>
+                            <field name="internal_number"/>
+                        </tree>
+                        <form string="Documentos Fiscais">
+                            <group>
+                                <field name="invoice_related_id"/>
+                            </group>
+
+                            <group>
+                                <field name="document_type"/>
+                            </group>
+
+                            <group string="NF-e/CT-e" attrs="{'invisible': [('document_type','in', ('nf', 'nfrural', 'cf', False))]}">
+                                <field name="access_key"/>
+                            </group>
+
+                            <group string="Nota Fiscal/Produtor/Cupom Fiscal" attrs="{'invisible': [('document_type', 'in', ('nfe','cte', False))]}">
+                                <field name="serie" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural', 'cf'))]}"/>
+                                <field name="internal_number" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural', 'cf'))]}"/>
+                                <field name="fiscal_document_id" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural', 'cf'))]}"/>
+                                <field name="state_id" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural'))], 'invisible': [('document_type', '=', 'cf')]}" options="{'no_create': True, 'no_create_edit': True}"/>
+                                <field name="date" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural'))], 'invisible': [('document_type', '=', 'cf')]}"/>
+                                <field name="cpfcnpj_type" attrs="{'required': [('document_type', 'in', ('nfrural'))], 'invisible': [('document_type', '!=', 'nfrural')]}"/>
+                                <field name="cnpj_cpf" attrs="{'required': [('document_type', 'in', ('nf', 'nfrural'))], 'invisible': [('document_type', '=', 'cf')]}"/>
+                                <field name="inscr_est" attrs="{'invisible': [('document_type', '!=', 'nfrural')]}"/>
+                            </group>
+                        </form>
+                    </field>
+                </group>
+
+                <group string="Observações Fiscais">
+                    <field name="fiscal_observation_ids" nolabel="1"/>
+                </group>
+
+                <group string="Observações">
+                    <field name="comment" nolabel="1"/>
+                </group>
+
+                <group string="Observações Fiscais">
+                    <field name="fiscal_comment" nolabel="1"/>
+                </group>
+            </xpath>
+
+            <field name="amount_untaxed" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="amount_tax" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </field>
+
+            <field name="amount_tax" position="before">
+                <field name="total_bruto" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="total_desconto" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+                <field name="total_tax" widget='monetary' options="{'currency_field': 'currency_id'}"/>
+            </field>
+
+            <xpath expr="//group[@name='total_amounts']/field[@name='residual']" position="after">
+                <field name="journal_type" invisible="1"/>
+                <field name="financial_price_total" class="oe_subtotal_footer_separator" attrs="{'invisible': ['|', ('type', '=', 'out_refund'),('journal_type', '=', 'simples_remessa')]}"/>
+            </xpath>
+
+            <xpath expr="//page[@name='other_info']/group/group/field[@name='account_id']" position="attributes">
+                <attribute name="domain">[('company_id', '=', company_id),
+                                          ('internal_type', '=', 'payable'),
+                                          ('deprecated', '=', False),
+                                          ('code_first_digit', '=', '2')]</attribute>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_br_account_invoice_supplier_cancel_form" model="ir.ui.view">
+        <field name="name">br_account.invoice.supplier.cancel.form</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account_cancel.invoice_supplier_cancel_form_inherit"/>
+        <field name="arch" type="xml">
+            <button name="action_invoice_cancel" position="replace">
+                <button name="action_invoice_cancel_paid" type="object" states="draft,proforma2,open,paid" string="Cancelar Fatura" groups="account.group_account_invoice"/></button>
+        </field>
+    </record>
+
+    <record id="br_account_invoice_supplier_tree" model="ir.ui.view">
+        <field name="name">br_account.invoice.supplier.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_supplier_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='number']" position="after">
+                <field name="vendor_number"/>
+                <field name="partner_legal_name" invisible="1"/>
+                <field name="partner_cnpj_cpf" invisible="1"/>
+            </xpath>
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="custom_stage_color" string="Stage" widget="many2many_tags" options="{'color_field': 'color'}"/>
+            </xpath>
+            <xpath expr="//field[@name='state']" position="before">
+                <field name="financial_price_total"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="br_account_invoice_customer_tree" model="ir.ui.view">
+        <field name="name">br_account.invoice.customer.tree</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.invoice_tree_with_onboarding"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='origin']" position="after">
+                <field name="custom_stage_color" string="Stage" widget="many2many_tags" options="{'color_field': 'color'}"/>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="view_account_invoice_filter" model="ir.ui.view">
+        <field name="name">account.invoice.select</field>
+        <field name="model">account.invoice</field>
+        <field name="inherit_id" ref="account.view_account_invoice_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//search/field[@name='number']" position="attributes">
+                <attribute name="string">Número do Pedido</attribute>
+            </xpath>
+
+            <xpath expr="//search/field[@name='number']" position="before">
+                <field name="internal_number" string="Número da Fatura"/>
+            </xpath>
+
+            <xpath expr="//search" position="inside">
+                <field name="custom_stage_color" string="Stage" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                <field name="partner_legal_name"/>
+                <field name="partner_cnpj_cpf"/>
+            </xpath>
+
+            <xpath expr="//filter[@name='status']" position="after">
+                <filter name='custom_stage_id' string="Stage"
+                        domain="[]" context="{'group_by':'custom_stage_id'}"/>
+            </xpath>
+
+            <xpath expr="//search/field[@name='user_id']" position="after">
+                <field name="account_analytic_ids" groups="analytic.group_analytic_accounting"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

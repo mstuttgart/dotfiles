@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_br_nfse_res_company_form" model="ir.ui.view">
+        <field name="name">br_nfse_tecnospeed.res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="br_nfse.view_br_nfse_res_company_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//group[@name='certificado_digital']" position="after">
+                <group name="tecnospeed_settings" string="Configurações Tecnospeed">
+
+                    <field name="tecnospeed_token_sandbox" readonly="1"/>
+                    <field name="tecnospeed_token_producao" />
+
+                    <label for="tecnospeed_certificado_sandbox"/>
+                    <div name="tecnospeed_certificado_sandbox_div" class="o_row">
+                        <field name="tecnospeed_certificado_sandbox" nolabel="1" readonly="1"/>
+                        <button name="action_get_tecnospeed_certificado" type="object" icon="fa-refresh" class="oe_link"/>
+                    </div>
+
+                    <label for="tecnospeed_certificado_producao"/>
+                    <div name="tecnospeed_certificado_producao_div" class="o_row">
+                        <field name="tecnospeed_certificado_producao" nolabel="1" readonly="1"/>
+                        <button name="action_get_tecnospeed_certificado" type="object" icon="fa-refresh" class="oe_link"/>
+                    </div>
+
+                    <field name="tecnospeed_sandbox_active"/>
+
+                </group>
+            </xpath>
+
+            <xpath expr="//field[@name='webservice_nfse']" position="after">
+                <!-- Add your fields here -->
+
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

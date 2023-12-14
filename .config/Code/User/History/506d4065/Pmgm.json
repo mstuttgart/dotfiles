@@ -1,0 +1,616 @@
+{
+    "odoo_odoo": {
+        "prefix": "odoo",
+        "body": [
+            "<?xml version='1.0' encoding='utf-8'?>",
+            "<odoo>",
+            "\t${0}",
+            "</odoo>"
+        ],
+        "description": "Odoo tag"
+    },
+    "odoo_form": {
+        "prefix": "oform",
+        "body": [
+            "<!-- ${1:model.name} form view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_form\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.view.form</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<form string=\"${3}\">",
+            "\t\t\t<sheet>",
+            "\t\t\t\t<group>",
+            "\t\t\t\t\t<!-- Add your fields here -->",
+            "\t\t\t\t\t$0",
+            "\t\t\t\t</group>",
+            "\t\t\t</sheet>",
+            "\t\t</form>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Form View"
+    },
+    "odoo_form_inherit": {
+        "prefix": "oformi",
+        "body": [
+            "<!-- ${1:model.name} inherit form view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.form</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add your xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Form View"
+    },
+    "odoo_tree": {
+        "prefix": "otree",
+        "body": [
+            "<!-- ${1:model.name} tree view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_tree\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.tree</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<tree>",
+            "\t\t\t<!-- Add your fields here -->",
+            "\t\t\t$0",
+            "\t\t</tree>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Tree View"
+    },
+    "odoo_tree_inherit": {
+        "prefix": "otreei",
+        "body": [
+            "<!-- ${1:model.name} inherit tree view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.tree</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add your xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Tree View"
+    },
+    "odoo_search": {
+        "prefix": "osearch",
+        "body": [
+            "<!-- ${1:model.name} search view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_search\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.search</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<search string=\"${3:Search Description}\">",
+            "\t\t\t<!-- Add your fields here -->",
+            "\t\t\t$0",
+            "\t\t</search>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Search View"
+    },
+    "odoo_search_inherit": {
+        "prefix": "osearchi",
+        "body": [
+            "<!-- ${1:model.name} inherit search view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.search</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add your xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Search View"
+    },
+    "odoo_dashboard": {
+        "prefix": "odash",
+        "body": [
+            "<!-- ${1:model.name} dashboard view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_dashboard\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.dashboard</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<dashboard>",
+            "\t\t\t<!-- Add your views here -->",
+            "\t\t\t$0",
+            "\t\t</dashboard>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Dashboard View"
+    },
+    "odoo_graph": {
+        "prefix": "ograph",
+        "body": [
+            "<!-- ${1:model.name} graph view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_graph\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.graph</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<graph string=\"${3:Graph Description}\">",
+            "\t\t\t<!-- Add your fields here -->",
+            "\t\t\t$0",
+            "\t\t</graph>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Graph View"
+    },
+    "odoo_graph_inherit": {
+        "prefix": "ographi",
+        "body": [
+            "<!-- ${1:model.name} inherit graph view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.graph</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add you xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Graph View"
+    },
+    "odoo_pivot": {
+        "prefix": "opivot",
+        "body": [
+            "<!-- ${1:model.name} pivot view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_pivot\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.pivot</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<pivot string=\"${3:Pivot Description}\">",
+            "\t\t\t<!-- Add your fields here -->",
+            "\t\t\t$0",
+            "\t\t</pivot>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Pivot View"
+    },
+    "odoo_pivot_inherit": {
+        "prefix": "opivoti",
+        "body": [
+            "<!-- ${1:model.name} inherit pivot view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.pivot</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add you xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Pivot View"
+    },
+    "odoo_kanban": {
+        "prefix": "okanban",
+        "body": [
+            "<!-- ${1:model.name} kanban view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_kanban\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.kanban</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<kanban string=\"${3:Kanban Description}\">",
+            "\t\t\t<!-- Add your fields here -->",
+            "\t\t\t$0",
+            "\t\t</kanban>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Kanban View"
+    },
+    "odoo_kanban_inherit": {
+        "prefix": "okanbani",
+        "body": [
+            "<!-- ${1:model.name} inherit kanban view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.kanban</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add you xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Kanban View"
+    },
+    "odoo_calendar": {
+        "prefix": "ocalendar",
+        "body": [
+            "<!-- ${1:model.name} calendar view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_calendar\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.calendar</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<calendar string=\"${3:Calendar Description}\" date_start=\"{4}\" mode=\"{6:month}\">",
+            "\t\t\t<!-- Add your fields here -->",
+            "\t\t\t$0",
+            "\t\t</calendar>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Calendar View"
+    },
+    "odoo_calendar_inherit": {
+        "prefix": "ocalendari",
+        "body": [
+            "<!-- ${1:model.name} inherit calendar view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.calendar</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add you xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Calendar View"
+    },
+    "odoo_gantt": {
+        "prefix": "ogantt",
+        "body": [
+            "<!-- ${1:model.name} gantt view -->",
+            "<record id=\"${2:${1/[.]/_/g}}_view_gantt\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:first.name}.view.gantt</field>",
+            "\t<field name=\"model\">${1:first.name}</field>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<gantt string=\"${3:Gantt Description}\" date_start=\"{4}\">",
+            "\t\t\t<!-- Add your fields here -->",
+            "\t\t\t$0",
+            "\t\t</gantt>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create Gantt View"
+    },
+    "odoo_gantt_inherit": {
+        "prefix": "ogantti",
+        "body": [
+            "<!-- ${1:model.name} inherit gantt view -->",
+            "<record id=\"${2:${1/[.]/_/g}}\" model=\"ir.ui.view\">",
+            "\t<field name=\"name\">${1:model.name}.inherit.view.gantt</field>",
+            "\t<field name=\"model\">${1:model.name}</field>",
+            "\t<field name=\"inherit_id\" ref=\"${3:base_module}.${2:${1/[.]/_/g}}\"/>",
+            "\t<field name=\"arch\" type=\"xml\">",
+            "\t\t<!-- Add you xpath here -->",
+            "\t\t$0",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Inherit Existing Gantt View"
+    },
+    "odoo_xpath": {
+        "prefix": "oxpath",
+        "body": [
+            "<xpath expr=\"//${1:field}[@${2:name}='${3:name}']\" position=\"${4:after}\">",
+            "\t<!-- Add your fields here -->",
+            "\t$0",
+            "</xpath>"
+        ],
+        "description": "Add the structure of xpath"
+    },
+    "odoo_xpath_attribute": {
+        "prefix": "oxpathattr",
+        "body": [
+            "<xpath expr=\"//${1:field}[@${2:name}='${3:name}']\" position=\"attributes\">",
+            "\t<attribute name=\"${4:attrs}\">{${5}}</attribute>",
+            "</xpath>"
+        ],
+        "description": "Add the structure of xpath to attributes"
+    },
+    "odoo_action": {
+        "prefix": "oact",
+        "body": [
+            "<!-- ${1:model.name} action window -->",
+            "<record id=\"${2:${1/[.]/_/g}}_action\" model=\"ir.actions.act_window\">",
+            "\t<field name=\"name\">${1:model.name}.action</field>",
+            "\t<field name=\"type\">ir.actions.act_window</field>",
+            "\t<field name=\"res_model\">${1:model.name}</field>",
+            "\t<field name=\"view_mode\">${3:tree,form}</field>",
+            "\t<field name=\"view_type\">form</field>",
+            "\t<field name=\"domain\">[${5}]</field>",
+            "\t<field name=\"context\">{${6}}</field>",
+            "\t<field name=\"target\">{${7|current,new,fullscreen,main,inline|}}</field>",
+            "\t<field name=\"help\" type=\"html\">",
+            "\t\t<p class=\"oe_view_nocontent_create\">",
+            "\t\t\t<!-- Add Text Here -->",
+            "\t\t</p><p>",
+            "\t\t\t<!-- More details about what a user can do with this object will be OK --> ",
+            "\t\t${0}",
+            "\t\t</p>",
+            "\t</field>",
+            "</record>"
+        ],
+        "description": "Create new Action"
+    },
+    "odoo_notebook": {
+        "prefix": "onote",
+        "body": [
+            "<notebook>",
+            "\t<page string=\"${1}\" name=\"${2}\">",
+            "\t\t<group>",
+            "\t\t\t<field name=\"${3}\"/>",
+            "\t\t</group>",
+            "\t</page>",
+            "</notebook>"
+        ],
+        "description": "Add notebook and page tags"
+    },
+    "odoo_page": {
+        "prefix": "opage",
+        "body": [
+            "<page name=\"${1}\" string=\"${2}\">",
+            "\t${0}",
+            "</page>"
+        ],
+        "description": "Add new page tag"
+    },
+    "odoo_menu_root": {
+        "prefix": "omenur",
+        "body": [
+            "<!-- This Menu Item will appear in the Upper bar, that's why It needs NO parent or action -->",
+            "<menuitem id=\"${1}_menu_root\" name=\"${2}\" sequence=\"${3}\"/>"
+        ],
+        "description": "Create New Menu Item in the Upper bar"
+    },
+    "odoo_menu_category": {
+        "prefix": "omenuc",
+        "body": [
+            "<!-- This Menu Item Must have a parent -->",
+            "<menuitem id=\"${1}_menu_categ\" name=\"${2}\" parent=\"${3}\" sequence=\"${4}\"/>"
+        ],
+        "description": "Create New Menu Item for Categories"
+    },
+    "odoo_menu_action": {
+        "prefix": "omenua",
+        "body": [
+            "<!-- This Menu Item must have a parent and an action -->",
+            "<menuitem id=\"${1}_menu_act\" name=\"${2}\" parent=\"${3}\" action=\"${4}\" sequence=\"${5}\"/>"
+        ],
+        "description": "Create New Menu Item for Actions"
+    },
+    "odoo_ir_cron": {
+        "prefix": "ocron",
+        "body": [
+            "<!-- ${1:model.name} cron -->",
+            "<record id=\"${2:model_name}_ir_cron\" forcecreate=\"${3:True}\" model=\"ir.cron\">",
+            "\t<field name=\"name\">${1}.ir.cron</field>",
+            "\t<field name=\"user_id\" ref=\"base.user_root\"/>",
+            "\t<field name=\"doall\" eval=\"${5:False}\"/>",
+            "\t<field name=\"active\" eval=\"${6:True}\"/>",
+            "\t<field name=\"interval_number\">${7:1}</field>",
+            "\t<field name=\"interval_type\">${8:minutes}</field>",
+            "\t<field name=\"numbercall\">${9:-1}</field>",
+            "\t<field name=\"model_id\" ref=\"model_${2:model_name}\"/>",
+            "\t<field name=\"state\">code</field>",
+            "\t<field name=\"code\">model.${10:method_name}()</field>",
+            "\t<field name=\"priority\" eval=\"5\" />",
+            "</record>"
+        ],
+        "description": "Add a ir.cron record"
+    },
+    "odoo_button": {
+        "prefix": "obtn",
+        "body": [
+            "<button name=\"action_${1:button_method_name}\" type=\"${2:object}\" string=\"${3:ObjectButton}\"/>"
+        ],
+        "description": "Add Odoo button"
+    },
+    "odoo_button_box": {
+        "prefix": "obtnbox",
+        "body": [
+            "<div class=\"oe_button_box\" name=\"${1:model_name}_button_box\">",
+            "\t<button name=\"action_${2:toggle_active}\"",
+            "\t\t\ttype=\"object\"",
+            "\t\t\tconfirm=\"${3:(Un)archiving a project automatically (un)archives its tasks and issues. Do you want to proceed?}\"",
+            "\t\t\tclass=\"oe_stat_button\"",
+            "\t\t\ticon=\"fa-archive\">",
+            "\t\t\t<field name=\"${5:active}\" widget=\"${6:boolean_button}\" options='{\"terminology\": \"archive\"}'/>",
+            "\t</button>",
+            "</div>"
+        ],
+        "description": "Add Button Box on View"
+    },
+    "odoo_group": {
+        "prefix": "ogroup",
+        "body": [
+            "<group name=\"${1:group_name}\" string=\"${2:group_string}\">",
+            "</group>"
+        ],
+        "description": "Create Group Tag"
+    },
+    "odoo_field": {
+        "prefix": "ofield",
+        "body": [
+            "<field name=\"${0:name}\"/>"
+        ],
+        "description": "Create Field"
+    },
+    "odoo_data": {
+        "prefix": "odata",
+        "body": [
+            "\t<data noupdate=\"${1:1}\">",
+            "\t\t<!-- Add you code here -->",
+            "\t\t${0}",
+            "\t</data>"
+        ],
+        "description": "Create Data Tag"
+    },
+    "odoo_status_bar": {
+        "prefix": "ostatusbar",
+        "body": [
+            "<header>",
+            "\t<field name=\"${1}\" widget=\"statusbar\"/>",
+            "</header>"
+        ],
+        "description": "Create Header with Status Bar"
+    },
+    "odoo_report": {
+        "prefix": "oreport",
+        "body": [
+            "<report id=\"report_${1}\"",
+            "\t\tstring=\"${2:report_name}\"",
+            "\t\tmodel=\"${3:model_name}\"",
+            "\t\treport_type=\"${4:qweb-pdf}\"",
+            "\t\tmenu=\"${5:False}\"",
+            "\t\tfile=\"${6:module_name}.${7:template_name}\"",
+            "\t\tname=\"${6:module_name}.${7:template_name}\"/>"
+        ],
+        "description": "Create report tag"
+    },
+    "odoo_template": {
+        "prefix": "otemplate",
+        "body": [
+            "<template id=\"template_${1:template_id}\" name=\"${2:Template Name}\">",
+            "\t${0}",
+            "</template>"
+        ],
+        "description": "Create Odoo template tag"
+    },
+    "odoo_template_inherit": {
+        "prefix": "otemplatei",
+        "body": [
+            "<template id=\"template_${1:template_id}\" inherit_id=\"${2:module}.${1:parent_template}\" name=\"${4:Template Name}\">",
+            "\t${0}",
+            "</template>"
+        ],
+        "description": "Create Odoo template inherit tag"
+    },
+    "odoo_template_call": {
+        "prefix": "otcall",
+        "body": [
+            "<t t-call=\"${1:module}.${2:template}\">",
+            "\t${0}",
+            "</t>"
+        ],
+        "description": "Create Odoo t-call tag"
+    },
+    "odoo_template_foreach": {
+        "prefix": "otforeach",
+        "body": [
+            "<t t-foreach=\"${1:array}\" t-as=\"${2:obj}\">",
+            "\t${0}",
+            "</t>"
+        ],
+        "description": "Create Odoo t-foreach tag"
+    },
+    "odoo_template_if": {
+        "prefix": "otif",
+        "body": [
+            "<t t-if=\"${1:condition}\">",
+            "\t${0}",
+            "</t>"
+        ],
+        "description": "Create Odoo t-if tag"
+    },
+    "odoo_template_elif": {
+        "prefix": "otelif",
+        "body": [
+            "<t t-if=\"${1:condition}\">",
+            "\t${0}",
+            "</t>",
+            "<t t-elif=\"${2:condition}\">",
+            "</t>",
+            "<t t-else=\"\">",
+            "</t>"
+        ],
+        "description": "Create Odoo t-ifelse tag"
+    },
+    "odoo_template_if_else": {
+        "prefix": "otifelse",
+        "body": [
+            "<t t-if=\"${1:condition}\">",
+            "\t${0}",
+            "</t>",
+            "<t t-else=\"\">",
+            "</t>"
+        ],
+        "description": "Create Odoo t-if and t-else tag"
+    },
+    "odoo_template_raw": {
+        "prefix": "otraw",
+        "body": [
+            "<t t-raw=\"${0:name}\"/>"
+        ],
+        "description": "Create Odoo t-raw tag"
+    },
+    "odoo_template_esc": {
+        "prefix": "otesc",
+        "body": [
+            "<t t-esc=\"${0:name}\"/>"
+        ],
+        "description": "Create Odoo t-esc tag"
+    },
+    "odoo_template_set": {
+        "prefix": "otset",
+        "body": [
+            "<t t-set=\"${1:var_name}\" t-value=\"${0:value}\"/>"
+        ],
+        "description": "Create Odoo t-set tag"
+    },
+    "odoo_template_field": {
+        "prefix": "otfield",
+        "body": [
+            "<span t-field=\"${0:field_name}\"/>"
+        ],
+        "description": "Create Odoo t-field tag"
+    },
+    "odoo_template_image": {
+        "prefix": "otimg",
+        "body": [
+            "<img t-att-src=\"'data:image/png;base64,%s' % to_text(${0:field_name})\"/>"
+        ],
+        "description": "Create Odoo templat image tag"
+    },
+    "odoo_chatter": {
+        "prefix": "ochatter",
+        "body": [
+            "<div class=\"oe_chatter\">",
+            "\t<field name=\"message_follower_ids\" widget=\"mail_followers\"/>",
+            "\t<field name=\"activity_ids\" widget=\"mail_activity\"/>",
+            "\t<field name=\"message_ids\" widget=\"mail_thread\"/>",
+            "</div>"
+        ],
+        "description": "Create Odoo 'oechater' tag"
+    },
+    "odoo_ir_action_act_url": {
+        "prefix": "oaurl",
+        "body": [
+            "\t<record id=\"action_${1:action_id}\" model=\"ir.actions.act_url\">",
+            "\t<field name=\"name\">${2:name}</field>",
+            "\t<field name=\"url\">/${3:url}</field>",
+            "\t<field name=\"target\">self</field>",
+            "</record>"
+        ],
+        "description": "Create action.url tag"
+    },
+    "odoo_ir_action_act_server": {
+        "prefix": "oaserver",
+        "body": [
+            <record model="ir.actions.server" id="print_instance">
+            <field name="name">Res Partner Server Action</field>
+            <field name="model_id" ref="model_res_partner"/>
+            <field name="state">code</field>
+            <field name="code">
+                raise Warning(record.name)
+            </field>
+            </record>
+        ],
+        "description": "Create action.url tag"
+    }
+}

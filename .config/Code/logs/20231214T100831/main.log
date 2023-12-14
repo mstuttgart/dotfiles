@@ -1,0 +1,6 @@
+2023-12-14 10:08:31.625 [info] update#setState idle
+2023-12-14 10:08:31.647 [error] SyntaxError: Unexpected non-whitespace character after JSON at position 17
+    at JSON.parse (<anonymous>)
+    at ft.Y (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:106:69235)
+2023-12-14 10:09:01.627 [info] update#setState checking for updates
+2023-12-14 10:09:01.825 [info] update#setState idle

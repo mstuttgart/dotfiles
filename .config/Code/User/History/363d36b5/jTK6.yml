@@ -1,0 +1,77 @@
+# Variaveis para o host grupo virtualbox
+odoo_project_submodule_branch: "main"
+
+odoo_group: multierp-12
+odoo_user: multierp-12
+
+odoo_admin_passwd: "{{ vault_odoo_admin_passwd }}"
+odoo_db_host: '192.168.100.6'
+odoo_db_maxconn: 100
+odoo_db_name: False
+odoo_db_password: "{{ vault_odoo_db_password  }}"
+odoo_db_port: 5432
+odoo_db_user: multierp12-prod2
+odoo_dbfilter: "^%d$"
+odoo_server_wide_modules: "web,queue_job,bus_alt_connection,muk_rest"
+odoo_limit_memory_hard: 2684354560
+odoo_limit_memory_soft: 2147483648
+odoo_limit_request: 8192
+odoo_limit_time_cpu: 1200
+odoo_limit_time_real: 2400
+odoo_limit_time_real_cron: -1
+odoo_longpolling_port: 8072
+odoo_list_db: True
+odoo_proxy_mode: True
+odoo_without_demo: True
+max_cron_threads: 2
+odoo_workers: 8
+odoo_http_interface: 0.0.0.0
+odoo_http_port: 8069
+odoo_xmlrpc: True
+odoo_xmlrpcs: True
+
+# Parametros para habilitar a configuracao do pgbouncer no odoo.cfg
+odoo_pgbouncer_dbport: 6432
+odoo_pgbouncer_dbhost: 'localhost'
+odoo_pgbouncer_active: True
+
+pgbouncer_postgresql_host: '{{ odoo_db_host }}'
+pgbouncer_postgresql_port: '{{ odoo_db_port }}'
+pgbouncer_listen_addr: '127.0.0.1, localhost'
+
+pgbouncer_max_client_conn: 900
+pgbouncer_default_pool_size: 150
+
+pgbouncer_auth_user_name: '{{ odoo_db_user }}'
+pgbouncer_auth_user_pass: '{{ odoo_db_password }}'
+
+# Parametros para habilitar a configuracao do queue_job no odoo.cfg
+odoo_jobrunner_db_host: '{{ odoo_db_host }}'
+odoo_jobrunner_db_port: '{{ odoo_db_port }}'
+odoo_queue_job_active: True
+odoo_queue_job_thread_max_count: 20
+
+# habilitar configuracao do chat
+odoo_imdispatcher_db_host: '{{ odoo_db_host }}'
+odoo_imdispatcher_db_port: '{{ odoo_db_port }}'
+
+nginx_certbot_email: michell.faria@multidadosti.com.br
+
+nginx_odoo_http_port: "{{ odoo_http_port }}"
+nginx_odoo_longpolling_port: "{{ odoo_longpolling_port }}"
+
+# configuracao numero de thread e conexoes do nginx
+nginx_worker_processes: 4
+nginx_worker_connections: 1024
+
+slack_channel: "#producao_02"
+slack_token: 'T9NLJFQHF/B04LCMY28QH/gxiGIAchkkV11tp0dGkNbwaf'
+slack_enable_notification: false
+
+dblist:
+  - "teledias"
+  - "cordontextil"
+  - "ramc"
+  - "dikta"
+  - "acre"
+  - "starbem"

@@ -1,0 +1,15 @@
+2023-12-11 06:42:01.463 [info] Deleted uninstalled extension from disk ms-python.python /home/michell/.vscode/extensions/ms-python.python-2023.20.0
+2023-12-11 06:46:26.479 [info] Getting Manifest... catppuccin.catppuccin-vsc-icons
+2023-12-11 06:46:26.485 [info] Installing extension: catppuccin.catppuccin-vsc-icons
+2023-12-11 06:46:28.851 [info] Extension signature is verified: catppuccin.catppuccin-vsc-icons
+2023-12-11 06:46:29.188 [info] Extracted extension to file:///home/michell/.vscode/extensions/catppuccin.catppuccin-vsc-icons-0.30.0: catppuccin.catppuccin-vsc-icons
+2023-12-11 06:46:29.196 [info] Renamed to /home/michell/.vscode/extensions/catppuccin.catppuccin-vsc-icons-0.30.0
+2023-12-11 06:46:29.197 [info] Extracting extension completed. catppuccin.catppuccin-vsc-icons
+2023-12-11 06:46:29.201 [info] Extension installed successfully: catppuccin.catppuccin-vsc-icons
+2023-12-11 06:46:34.915 [info] Getting Manifest... catppuccin.catppuccin-vsc
+2023-12-11 06:46:34.921 [info] Installing extension: catppuccin.catppuccin-vsc
+2023-12-11 06:46:35.951 [info] Extension signature is verified: catppuccin.catppuccin-vsc
+2023-12-11 06:46:35.957 [info] Extracted extension to file:///home/michell/.vscode/extensions/catppuccin.catppuccin-vsc-3.8.1: catppuccin.catppuccin-vsc
+2023-12-11 06:46:35.965 [info] Renamed to /home/michell/.vscode/extensions/catppuccin.catppuccin-vsc-3.8.1
+2023-12-11 06:46:35.965 [info] Extracting extension completed. catppuccin.catppuccin-vsc
+2023-12-11 06:46:35.969 [info] Extension installed successfully: catppuccin.catppuccin-vsc

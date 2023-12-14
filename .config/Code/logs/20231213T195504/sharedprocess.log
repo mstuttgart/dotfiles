@@ -1,0 +1,46 @@
+2023-12-13 19:55:06.041 [info] Deleted uninstalled extension from disk eamodio.gitlens /home/michell/.vscode/extensions/eamodio.gitlens-14.4.1
+2023-12-13 19:55:06.042 [info] Deleted uninstalled extension from disk jdinhlife.gruvbox /home/michell/.vscode/extensions/jdinhlife.gruvbox-1.16.0
+2023-12-13 19:55:06.042 [info] Deleted uninstalled extension from disk mechatroner.rainbow-csv /home/michell/.vscode/extensions/mechatroner.rainbow-csv-3.8.0
+2023-12-13 19:55:06.042 [info] Deleted uninstalled extension from disk ms-azuretools.vscode-docker /home/michell/.vscode/extensions/ms-azuretools.vscode-docker-1.27.0
+2023-12-13 19:55:06.042 [info] Deleted uninstalled extension from disk ms-python.pylint /home/michell/.vscode/extensions/ms-python.pylint-2023.8.1
+2023-12-13 19:55:06.042 [info] Deleted uninstalled extension from disk ms-python.vscode-pylance /home/michell/.vscode/extensions/ms-python.vscode-pylance-2023.10.50
+2023-12-13 19:55:10.148 [info] Getting Manifest... eamodio.gitlens
+2023-12-13 19:55:10.149 [info] Getting Manifest... ms-python.python
+2023-12-13 19:55:10.469 [info] Installing extension: eamodio.gitlens
+2023-12-13 19:55:10.469 [info] Installing extension: ms-python.python
+2023-12-13 19:55:14.487 [info] Extension signature is verified: eamodio.gitlens
+2023-12-13 19:55:14.821 [info] Extension signature is verified: ms-python.python
+2023-12-13 19:55:15.002 [info] Extracted extension to file:///home/michell/.vscode/extensions/eamodio.gitlens-14.6.0: eamodio.gitlens
+2023-12-13 19:55:15.011 [info] Renamed to /home/michell/.vscode/extensions/eamodio.gitlens-14.6.0
+2023-12-13 19:55:15.018 [info] Extracting extension completed. eamodio.gitlens
+2023-12-13 19:55:15.029 [info] Extension installed successfully: eamodio.gitlens
+2023-12-13 19:55:15.101 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/michell/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/michell/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2023-12-13 19:55:16.296 [info] Extracted extension to file:///home/michell/.vscode/extensions/ms-python.python-2023.22.1: ms-python.python
+2023-12-13 19:55:16.308 [info] Renamed to /home/michell/.vscode/extensions/ms-python.python-2023.22.1
+2023-12-13 19:55:16.310 [info] Extracting extension completed. ms-python.python
+2023-12-13 19:55:16.316 [info] Extension installed successfully: ms-python.python
+2023-12-13 19:55:16.398 [error] [uncaught exception in sharedProcess]: Error: ENOENT: no such file or directory, stat '/home/michell/.vscode/extensions/extensions.json.vsctmp': EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, stat '/home/michell/.vscode/extensions/extensions.json.vsctmp'
+    at r.create (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30056)
+    at a (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:51:30170)
+    at s.fb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:36175)
+    at s.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:28621)
+    at async E.stat (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:56:15732)
+    at async Y.tb (/usr/share/code/resources/app/out/vs/code/node/sharedProcess/sharedProcessMain.js:100:111319)
+2023-12-13 19:55:17.757 [info] Getting Manifest... eamodio.gitlens
+2023-12-13 19:55:17.758 [info] Getting Manifest... ms-python.python
+2023-12-13 19:55:17.762 [info] Installing extension: ms-python.python
+2023-12-13 19:55:17.766 [info] Installing extension: eamodio.gitlens
+2023-12-13 19:55:18.528 [info] Extension signature is verified: eamodio.gitlens
+2023-12-13 19:55:18.535 [info] Extracting extension completed. eamodio.gitlens
+2023-12-13 19:55:18.564 [info] Extension installed successfully: eamodio.gitlens
+2023-12-13 19:55:18.570 [info] Marked extension as uninstalled eamodio.gitlens-14.5.2
+2023-12-13 19:55:18.579 [info] Extension signature is verified: ms-python.python
+2023-12-13 19:55:18.581 [info] Extracting extension completed. ms-python.python
+2023-12-13 19:55:18.589 [info] Extension installed successfully: ms-python.python
+2023-12-13 19:55:18.593 [info] Marked extension as uninstalled ms-python.python-2023.22.0

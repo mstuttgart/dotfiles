@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ht_career_index" model="ir.ui.view">
+        <field name="name">ht.career.index</field>
+        <field name="inherit_id" ref="website_hr_recruitment.index"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='wrap']" position="before">
+                <div class="oe_structure o_editable">
+                    <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/jt_corporate2201_theme/static/src/images/banner.jpg');">
+                        <div class="container">
+                            <div class="banner-inner">
+                                <h1 class="page-title">Careers</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="/">Corporate</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Career</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="ht_career_detail_banner" model="ir.ui.view">
+        <field name="name">ht.career.detail.banner</field>
+        <field name="inherit_id" ref="website_hr_recruitment.detail"/>
+        <field name="arch" type="xml">
+            <xpath expr="//section[hasclass('mb16')]" position="replace">
+                <div class="oe_structure o_editable">
+                    <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/jt_corporate2201_theme/static/src/images/banner.jpg');">
+                        <div class="container">
+                            <div class="banner-inner">
+                                <h1 class="page-title">
+                                    <span t-if="job.name" t-field="job.name"/>
+                                </h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="/">Corporate -</a>
+                                        </li>
+                                        <span style="color:#fff;" t-field="job.address_id" t-options='{ "widget": "contact","fields": ["city"],"no_tag_br": True }'/>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="ht_career_job_appliation_banner" model="ir.ui.view">
+        <field name="name">ht.career.job.application.banner</field>
+        <field name="inherit_id" ref="website_hr_recruitment.apply"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='wrap']" position="before">
+                <div class="oe_structure o_editable">
+                    <section class="hero-section overlay bgs-cover pb-100" style="background-image: url('/jt_corporate2201_theme/static/src/images/hero/hero-one.jpg');background-position: top !important;">
+                        <div class="ht_bgc"/>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="ht_career_job_appliation_thankyou_banner" model="ir.ui.view">
+        <field name="name">ht.career.job.application.thankyou.banner</field>
+        <field name="inherit_id" ref="website_hr_recruitment.thankyou_ir_ui_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='wrap']" position="before">
+                <div class="oe_structure o_editable">
+                    <section class="hero-section overlay bgs-cover pb-100" style="background-image: url('/jt_corporate2201_theme/static/src/images/hero/hero-one.jpg');background-position: top !important;">
+                        <div class="ht_bgc"/>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

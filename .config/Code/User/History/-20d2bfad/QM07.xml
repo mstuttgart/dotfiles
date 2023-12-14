@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ht_event_banner_index" model="ir.ui.view">
+        <field name="name">ht.event.banner.index</field>
+        <field name="inherit_id" ref="website_event.index"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='oe_structure_website_event_index_1']" position="before">
+                <div class="oe_structure o_editable">
+                    <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/theme_jt_corporate2201/static/src/images/banner.jpg');">
+                        <div class="container">
+                            <div class="banner-inner">
+                                <h1 class="page-title">Events</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="/">Corporate</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Event</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="ht_event_banner" model="ir.ui.view">
+        <field name="name">ht.event.banner</field>
+        <field name="inherit_id" ref="website_event.layout"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='wrap']" position="before">
+                <div class="oe_structure o_editable">
+                    <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/theme_jt_corporate2201/static/src/images/banner.jpg');">
+                        <div class="container">
+                            <div class="banner-inner">
+                                <h1 class="page-title">Events</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="/">Corporate</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Event</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+    <record id="ht_event_register" model="ir.ui.view">
+        <field name="name">ht.event.register</field>
+        <field name="inherit_id" ref="website_event.registration_complete"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[hasclass('container')]" position="before">
+                <div class="oe_structure o_editable">
+                    <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/theme_jt_corporate2201/static/src/images/banner.jpg');">
+                        <div class="container">
+                            <div class="banner-inner">
+                                <h1 class="page-title">Confirm Events</h1>
+                                <nav aria-label="breadcrumb">
+                                    <ol class="breadcrumb">
+                                        <li class="breadcrumb-item">
+                                            <a href="/">Corporate</a>
+                                        </li>
+                                        <li class="breadcrumb-item active">Event</li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

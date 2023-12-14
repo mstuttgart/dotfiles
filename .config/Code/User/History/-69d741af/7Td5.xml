@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_br_nfse_goiania_res_company_form" model="ir.ui.view">
+        <field name="name">br_nfse_goiania.res.company.form</field>
+        <field name="model">res.company</field>
+        <field name="inherit_id" ref="br_nfse.view_br_nfse_res_company_form"/>
+        <field name="arch" type="xml">
+
+            <group name="nfse_settings" position="inside">
+                <field name="nfse_goiania_incentivador_cultural" attrs="{'required': [('webservice_nfse', '==', 'nfse_goiania')], 'invisible': [('webservice_nfse', '!=', 'nfse_goiania')]}"/>
+            </group>
+
+        </field>
+    </record>
+
+</odoo>

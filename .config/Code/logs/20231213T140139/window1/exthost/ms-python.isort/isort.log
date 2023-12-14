@@ -1,0 +1,89 @@
+2023-12-13 14:04:05.434 [info] Name: isort
+2023-12-13 14:04:05.434 [info] Module: isort
+2023-12-13 14:04:05.434 [info] Python extension loading
+2023-12-13 14:04:05.434 [info] Waiting for interpreter from python extension.
+2023-12-13 14:04:05.434 [info] No interpreter found from setting isort.interpreter
+2023-12-13 14:04:05.434 [info] Getting interpreter from ms-python.python extension for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 14:04:05.434 [info] Python extension loaded
+2023-12-13 14:04:05.434 [info] Interpreter from ms-python.python extension for /home/michell/Workspace/multidadosti/odoo: /home/michell/Workspace/multidadosti/odoo/.venv/bin/python
+2023-12-13 14:04:05.434 [info] No interpreter found from setting isort.interpreter
+2023-12-13 14:04:05.434 [info] Getting interpreter from ms-python.python extension for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 14:04:05.434 [info] Interpreter from ms-python.python extension for /home/michell/Workspace/multidadosti/odoo: /home/michell/Workspace/multidadosti/odoo/.venv/bin/python
+2023-12-13 14:04:05.435 [info] Server run command: /home/michell/Workspace/multidadosti/odoo/.venv/bin/python /home/michell/.vscode/extensions/ms-python.isort-2023.10.1/bundled/tool/lsp_server.py
+2023-12-13 14:04:05.435 [info] Server: Start requested.
+2023-12-13 14:04:06.076 [info] CWD Server: /home/michell/Workspace/multidadosti/odoo
+2023-12-13 14:04:06.076 [info] sys.path used to run Server:
+   /home/michell/.vscode/extensions/ms-python.isort-2023.10.1/bundled/libs
+   /home/michell/.vscode/extensions/ms-python.isort-2023.10.1/bundled/tool
+   /home/michell/.asdf/installs/python/3.8.18/lib/python38.zip
+   /home/michell/.asdf/installs/python/3.8.18/lib/python3.8
+   /home/michell/.asdf/installs/python/3.8.18/lib/python3.8/lib-dynload
+   /home/michell/Workspace/multidadosti/odoo/.venv/lib/python3.8/site-packages
+   /home/michell/Workspace/multidadosti/odoo
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/formio-data
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/python-cnab
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/python-sped
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/pytrust-cnab240
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/python-boleto
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/pytrustnfe
+2023-12-13 14:04:06.076 [info] Settings used to run Server:
+[
+    {
+        "check": false,
+        "cwd": "/home/michell/Workspace/multidadosti/odoo",
+        "workspace": "file:///home/michell/Workspace/multidadosti/odoo",
+        "args": [],
+        "path": [],
+        "severity": {
+            "W": "Warning",
+            "E": "Hint"
+        },
+        "interpreter": [
+            "/home/michell/Workspace/multidadosti/odoo/.venv/bin/python"
+        ],
+        "importStrategy": "useBundled",
+        "showNotifications": "off"
+    }
+]
+
+2023-12-13 14:04:06.076 [info] Global settings:
+{
+    "check": false,
+    "cwd": "/home/michell",
+    "workspace": "/home/michell",
+    "args": [],
+    "path": [],
+    "severity": {
+        "W": "Warning",
+        "E": "Hint"
+    },
+    "interpreter": [],
+    "importStrategy": "useBundled",
+    "showNotifications": "off"
+}
+
+2023-12-13 14:04:06.078 [info] /home/michell/Workspace/multidadosti/odoo/.venv/bin/python -m isort --version-number
+2023-12-13 14:04:06.078 [info] CWD Linter: /home/michell/Workspace/multidadosti/odoo
+2023-12-13 14:04:06.080 [info] Version info for isort running for /home/michell/Workspace/multidadosti/odoo:
+5.11.5
+
+2023-12-13 14:04:06.080 [info] SUPPORTED isort>=5.10.1
+FOUND isort==5.11.5
+
+2023-12-13 14:04:06.087 [info] [Trace - 2:04:06 PM] Sending request 'textDocument/codeAction - (1)'.
+2023-12-13 14:04:06.092 [info] [Trace - 2:04:06 PM] Received notification 'textDocument/publishDiagnostics'.
+2023-12-13 14:04:06.101 [info] [Trace - 2:04:06 PM] Received response 'textDocument/codeAction - (1)' in 14ms.
+2023-12-13 14:04:07.445 [info] [Trace - 2:04:07 PM] Sending notification 'textDocument/didClose'.
+2023-12-13 14:04:07.448 [info] [Trace - 2:04:07 PM] Received notification 'textDocument/publishDiagnostics'.
+2023-12-13 14:04:07.466 [info] [Trace - 2:04:07 PM] Sending notification 'textDocument/didOpen'.
+2023-12-13 14:04:07.470 [info] [Trace - 2:04:07 PM] Received notification 'textDocument/publishDiagnostics'.
+2023-12-13 14:04:07.489 [info] [Trace - 2:04:07 PM] Sending request 'textDocument/codeAction - (2)'.
+2023-12-13 14:04:07.506 [info] [Trace - 2:04:07 PM] Received response 'textDocument/codeAction - (2)' in 17ms.
+2023-12-13 14:04:07.901 [info] [Trace - 2:04:07 PM] Sending request 'textDocument/codeAction - (3)'.
+2023-12-13 14:04:07.904 [info] [Trace - 2:04:07 PM] Received response 'textDocument/codeAction - (3)' in 3ms.
+2023-12-13 14:04:08.343 [info] [Trace - 2:04:08 PM] Sending request 'textDocument/codeAction - (4)'.
+2023-12-13 14:04:08.345 [info] [Trace - 2:04:08 PM] Received response 'textDocument/codeAction - (4)' in 2ms.
+2023-12-13 14:04:22.463 [info] [Trace - 2:04:22 PM] Sending request 'textDocument/codeAction - (5)'.
+2023-12-13 14:04:22.466 [info] [Trace - 2:04:22 PM] Received response 'textDocument/codeAction - (5)' in 3ms.
+2023-12-13 14:04:24.207 [info] [Trace - 2:04:24 PM] Sending request 'textDocument/codeAction - (6)'.
+2023-12-13 14:04:24.209 [info] [Trace - 2:04:24 PM] Received response 'textDocument/codeAction - (6)' in 2ms.

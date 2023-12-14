@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="ht_theme_corporate_layout" name="Corporate Theme Layout" inherit_id="portal.frontend_layout">
+        <xpath expr="//header" position="replace">
+            <header class="main-header header-three text-white">
+                <div class="header-top-wrap bg-blue py-10">
+                    <div class="container">
+                        <div class="header-top">
+                            <div class="top-left">
+                                <ul>
+                                    <li>Call Us: <a href="#">
+                                        <t t-esc="res_company.phone"/>
+                                    </a>
+                                </li>
+                                <li>Email us: <a t-esc="res_company.email" href="mailto:${res_company.email}">
+                                    <t t-esc="res_company.email"/>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="top-right">
+                        <div class="office-time">
+                            <i class="fa fa-clock"></i>
+                            <span>08:00 am - 06:00 pm</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--Header-Upper-->
+        <div class="header-upper">
+            <div class="container clearfix">
+                <div class="header-inner d-flex align-items-center">
+                    <div class="logo-outer">
+                        <div class="logo">
+                            <a href="/">
+                                <img src="/jt_corporate2201_theme/static/src/images/logos/CORPORATE.png" alt="Logo" title="Logo"/>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="nav-outer clearfix d-flex align-items-center">
+                        <!-- Main Menu -->
+                        <nav class="main-menu navbar-expand-lg">
+                            <div class="navbar-header">
+                                <div class="mobile-logo py-15">
+                                    <a href="/">
+                                        <img src="/jt_corporate2201_theme/static/src/images/logos/CORPORATE.png" alt="Logo" title="Logo"/>
+                                    </a>
+                                </div>
+                                <!-- Toggle Button -->
+                                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                            </div>
+                            <div class="navbar-collapse collapse clearfix">
+                                <ul class="navigation clearfix">
+                                    <li class="current">
+                                        <a href="/" class="ht_hover">Home</a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="ht_hover">service</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/portfolio" class="ht_hover">Portfolio</a>
+                                            </li>
+                                            <!-- <li><a href="#" class="ht_hover">Cases</a></li> -->
+                                        </ul>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="ht_hover">Other</a>
+                                        <ul>
+                                            <li>
+                                                <a href="/event" class="ht_hover">Events</a>
+                                            </li>
+                                            <li>
+                                                <a href="/blog" class="ht_hover">blog</a>
+                                            </li>
+                                            <li>
+                                                <a href="/jobs" class="ht_hover">Careers</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <a href="/aboutus" class="ht_hover">About Us</a>
+                                    </li>
+                                    <!-- <li><a href="/team" class="ht_hover">Team</a></li> -->
+                                    <li>
+                                        <a href="/contactus" class="ht_hover">Contact</a>
+                                    </li>
+                                    <li groups="base.group_portal" class="dropdown">
+                                        <a href="#">
+                                            <t t-esc="user_id.name" class="ht_hover"/>
+                                        </a>
+                                        <ul>
+                                            <t t-set="is_connected" t-value="not user_id._is_public()"/>
+                                            <li>
+                                                <a t-attf-href="/web/session/logout?redirect=/" role="menuitem" id="o_logout" class="dropdown-item ht_hover">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li groups="base.group_user" class="dropdown">
+                                        <a href="#">
+                                            <t t-esc="user_id.name" class="ht_hover"/>
+                                        </a>
+                                        <ul>
+                                            <t t-set="is_connected" t-value="not user_id._is_public()"/>
+                                            <li>
+                                                <a t-attf-href="/web/session/logout?redirect=/" role="menuitem" id="o_logout" class="dropdown-item ht_hover">Logout</a>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </nav>
+                        <!-- Main Menu End-->
+                        <!-- Menu Button -->
+                        <div class="menu-btn">
+                            <a href="/contactus" class="theme-btn">meet with us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--End Header Upper-->
+    </header>
+</xpath>
+<xpath expr="//footer" position="replace">
+    <!-- Footer Area Start -->
+    <footer class="main-footer footer-two bgs-cover text-white" style="background-image: url('/jt_corporate2201_theme/static/src/images/footer/footer-bg-map.png');">
+        <div class="container">
+            <div class="footer-top pt-75">
+                <ul class="contact-info">
+                    <li>
+                        <i class="fa fa-phone-alt"></i>
+                        <div class="content">
+                            <span>Call Us</span>
+                            <h5>
+                                <a t-if="res_company.phone" href="#">
+                                    <t t-esc="res_company.phone"/>
+                                </a>
+                            </h5>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-envelope"></i>
+                        <div class="content">
+                            <span>Write to Us</span>
+                            <h5>
+                                <a t-if="res_company.email" href="mailto:${res_company.email}">
+                                    <t t-esc="res_company.email"/>
+                                </a>
+                            </h5>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa fa-clock"></i>
+                        <div class="content">
+                            <span>Office hours</span>
+                            <h5>Mon-Sat 9:00 - 7:00</h5>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-widget-area pt-85 pb-20">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6">
+                        <div class="footer-widget about-widget">
+                            <div class="footer-logo mb-35">
+                                <a href="/">
+                                    <img src="/jt_corporate2201_theme/static/src/images/logos/CORPORATE.png" alt="Logo"/>
+                                </a>
+                            </div>
+                            <div class="text">
+                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            </div>
+                            <ul class="contact-info mt-20">
+                                <li>
+                                    <span t-if="res_company.partner_id" t-field="res_company.partner_id" t-options='{"widget": "contact","fields": ["address"]}'/>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-6">
+                        <div class="footer-widget link-widget ml-20 rml-0">
+                            <h4 class="footer-title">Page Links</h4>
+                            <ul class="list-style-two">
+                                <li>
+                                    <a href="/">Home</a>
+                                </li>
+                                <li>
+                                    <a href="/blog">Blog</a>
+                                </li>
+                                <li>
+                                    <a href="/portfolio">Portfolio</a>
+                                </li>
+                                <li>
+                                    <a href="/jobs">Career</a>
+                                </li>
+                                <!-- <li><a href="/aboutus">About Us</a></li>
+                                        <li><a href="/service">Services</a></li>
+                                        <li><a href="/team">Team</a></li>
+                                        <li><a href="/contactus">Contact</a></li> -->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-6">
+                        <!--  <div class="footer-widget link-widget ml-20 rml-0">
+                                    <h4 class="footer-title">Explore</h4>
+                                    <ul class="list-style-two">
+                                        <li><a href="#">Our Scientists</a></li>
+                                        <li><a href="#">Our Services</a></li>
+                                        <li><a href="#">Testimonials</a></li>
+                                        <li><a href="#">SaaS Solutions</a></li>
+                                        <li><a href="#">Case Studies</a></li>
+                                    </ul>
+                                </div> -->
+                    </div>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="footer-widget newsletter-widget">
+                            <h4 class="footer-title">Newsletter</h4>
+                            <p>Lorem ipsum dolor sit amet, <br/>
+consectetur adipisicing</p>
+                            <form action="#" method="post" class="s_newsletter_subscribe_form js_subscribe" data-vxml="001" data-list-id="1">
+                                <input type="email" name="email" class="js_subscribe_email form-control" placeholder="Your Email Address"/>
+                                <a role="button" href="#" class="btn btn-primary js_subscribe_btn o_submit ht_btn">
+                                    <i class="fa fa-location-arrow"></i>
+                                </a>
+                                <a role="button" href="#" class="btn btn-success js_subscribed_btn d-none o_submit ht_btn" disabled="disabled">
+                                    <i class="fa fa-location-arrow"></i>
+                                </a>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="copyright-area">
+            <div class="container">
+                <div class="copyright-inner pt-15">
+                    <div class="social-style-one mb-10">
+                        <a t-if="res_company.social_facebook" t-attf-href="{{res_company.social_facebook}}" target="_blank">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a t-if="res_company.social_twitter" t-attf-href="{{res_company.social_twitter}}">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a t-if="res_company.social_instagram" t-attf-href="{{res_company.social_instagram}}">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                    </div>
+                    <p>Copyright <span t-if="res_company.name">
+                        <t t-esc="res_company.name"/>
+                    </span> Corporate All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</footer>
+</xpath>
+</template>
+</odoo>

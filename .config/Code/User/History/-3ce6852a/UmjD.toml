@@ -1,0 +1,76 @@
+[tool.poetry]
+name = "brazilcep"
+version = "6.2.0"
+description = "Minimalist and easy-to-use python library designed to query CEP (brazilian zip codes) data"
+authors = ["Michell Stuttgart <michellstut@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "brazilcep"}]
+
+include = ["CHANGELOG.md", "LICENSE"]
+keywords = ["viacep", "apicep", "cep", "brazil"]
+
+classifiers = [
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Development Status :: 5 - Production/Stable",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Software Development :: Libraries",
+    "Natural Language :: English",
+    "Natural Language :: Portuguese (Brazilian)",
+]
+
+[tool.poetry.urls]
+"Repository" = "https://github.com/mstuttgart/brazilcep"
+"Bug Tracker" = "https://github.com/mstuttgart/brazilcep/issues"
+"Documentation" = "https://brazilcep.readthedocs.io/en/stable/"
+"Donation" = "https://ko-fi.com/mstuttgart"
+
+[tool.poetry.dependencies]
+python = "^3.8"
+
+zeep = "^4.2.1"
+requests = "^2.28.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.3.1"
+requests-mock = "^1.10.0"
+nox = "^2022.11.21"
+
+[tool.poetry.group.coverage]
+optional = true
+
+[tool.poetry.group.coverage.dependencies]
+coveralls = "^3.3.1"
+pytest-cov = "^4.0.0"
+
+[tool.poetry.group.github-actions]
+optional = true
+
+[tool.poetry.group.github-actions.dependencies]
+pytest-github-actions-annotate-failures = "^0.1.7"
+
+[tool.poetry.group.docs.dependencies]
+mkdocs-material = "^9.1.6"
+mkdocs = "^1.4.2"
+
+[tool.poetry.group.lint.dependencies]
+black = "^23.3.0"
+pylint = "^2.17.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "."
+addopts = "--doctest-modules"

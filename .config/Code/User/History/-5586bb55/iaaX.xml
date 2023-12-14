@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="ht_assets_1" name="Theme Assert" inherit_id="web.assets_frontend">
+        <xpath expr="//link[last()]" position="after">
+            <link type="text/css" rel="stylesheet" href="/jt_corporate2201_theme/static/src/css/custom.css"/>
+            <link type="text/css" rel="stylesheet" href="/jt_corporate2201_theme/static/src/css/style.css"/>
+            <link type="text/css" rel="stylesheet" href="/jt_corporate2201_theme/static/src/css/flaticon.css"/>
+            <link type="text/css" rel="stylesheet" href="/jt_corporate2201_theme/static/src/css/magnific-popup.css"/>
+            <link type="text/css" rel="stylesheet" href="/jt_corporate2201_theme/static/src/css/font-awesome-5.9.0.css"/>
+            <link type="text/css" rel="stylesheet" href="/jt_corporate2201_theme/static/src/css/animate.css"/>
+            <link type="text/css" rel="stylesheet" href="/jt_corporate2201_theme/static/src/css/slick.css"/>
+        </xpath>
+        <xpath expr="." position="inside">
+            <script type="text/javascript" src="/jt_corporate2201_theme/static/src/js/script.js"></script>
+        </xpath>
+    </template>
+</odoo>

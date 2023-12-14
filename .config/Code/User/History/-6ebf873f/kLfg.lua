@@ -1,0 +1,343 @@
+-- coding plugins
+
+local plugins = {
+    -- snippets engine
+    {
+
+        'L3MON4D3/LuaSnip',
+        event = 'VeryLazy',
+
+    },
+    -- snippets collection
+    {
+        'rafamadriz/friendly-snippets',
+        event = 'VeryLazy',
+    },
+
+    -- highlight for color code
+    {
+        'norcalli/nvim-colorizer.lua',
+        event = 'VeryLazy',
+        config = function()
+            require('colorizer').setup(nil, { css = true })
+        end,
+    },
+
+    -- csv highlight
+    {
+        'mechatroner/rainbow_csv',
+        event = 'VeryLazy',
+    },
+
+    -- word highlight
+    {
+        'echasnovski/mini.cursorword',
+        event = 'VeryLazy',
+        version = '*',
+        config = function()
+            require('mini.cursorword').setup()
+        end,
+    },
+
+    -- auto close pairs
+    {
+        'echasnovski/mini.pairs',
+        version = '*',
+        event = 'VeryLazy',
+        config = function()
+            require('mini.cursorword').setup()
+        end,
+    },
+
+    -- comment
+    {
+        'echasnovski/mini.comment',
+        version = '*',
+        event = 'VeryLazy',
+        opts = {},
+        config = function()
+            require("mini.comment").setup {
+                options = {
+                    -- Whether to ignore blank lines
+                    ignore_blank_line = true,
+                },
+            }
+        end
+    },
+
+    -- surround
+    {
+        'echasnovski/mini.surround',
+        version = '*',
+        event = 'VeryLazy',
+        config = function()
+            require('mini.cursorword').setup()
+        end,
+    },
+
+    -- add code docs
+    {
+        'danymat/neogen',
+        config = true,
+        event = 'VeryLazy',
+        init = function()
+            vim.keymap.set(
+                'n',
+                '<Leader>cd',
+                ':lua require("neogen").generate()<CR>',
+                { silent = true, desc = 'Generate Documentation' }
+            )
+        end,
+    },
+
+    -- better scape shortcuts
+    {
+        "max397574/better-escape.nvim",
+        event = "InsertEnter",
+        config = function()
+            require("better_escape").setup()
+        end,
+    },
+
+    -- install odoo snippets
+    {
+        "mstuttgart/vscode-odoo-snippets",
+        event = "InsertEnter",
+        dependencies = {
+            "L3MON4D3/LuaSnip",
+        },
+        config = function()
+            require("luasnip.loaders.from_vscode").lazy_load()
+        end,
+    },
+
+    -- configure linters
+    {
+        "mfussenegger/nvim-lint",
+        event = {
+            "BufReadPre",
+            "BufNewFile",
+        },
+        config = function()
+            local lint = require("lint")
+
+            lint.linters_by_ft = {
+                ansible = { "ansible_lint" },
+                bash = { "shellcheck" },
+                javascript = { "eslint_d" },
+                python = { "pylint" },
+                typescript = { "eslint_d" },
+            }
+
+            vim.api.nvim_create_autocmd({ "BufWritePost" }, {
+                callback = function()
+                    lint.try_lint()
+                end,
+            })
+        end,
+    },
+
+    -- configure autoformatters
+    {
+        "stevearc/conform.nvim",
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+        event = { "BufReadPre", "BufNewFile" },
+        lazy = true,
+        keys = {
+            {
+                "<leader>cf",
+                function()
+                    require("conform").format({ async = true, lsp_fallback = true })
+                end,
+                mode = "",
+                desc = "Format buffer",
+            },
+        },
+        opts = {
+            -- Define formatters
+            formatters_by_ft = {
+                bash = { "shfmt" },
+                css = { "prettier" },
+                html = { "prettier" },
+                javascript = { "prettier" },
+                json = { "prettier" },
+                lua = { "stylua" },
+                markdown = { "prettier" },
+                python = { "isort", "autopep8" },
+                typescript = { "prettier" },
+                xml = { "xmlformat" },
+                yaml = { "prettier" },
+            },
+
+        },
+    },
+
+    -- Configure mason to autoinstall linters and formatters
+    {
+        "williamboman/mason.nvim",
+        dependencies = {
+            "WhoIsSethDaniel/mason-tool-installer.nvim",
+        },
+        config = function()
+            local mason = require("mason")
+
+            -- mason formatter linters
+            local mason_tool_installer = require("mason-tool-installer")
+
+            -- enable mason and configure icons
+            mason.setup({
+                ui = {
+                    icons = {
+                        package_installed = "✓",
+                        package_pending = "➜",
+                        package_uninstalled = "✗",
+                    },
+                },
+            })
+
+            mason_tool_installer.setup({
+                ensure_installed = {
+                    -- linters
+                    "eslint_d",
+                    "shellcheck",
+                    "pylint",
+
+                    -- formatters
+                    "autopep8",
+                    "isort",
+                    "prettier",
+                    "shfmt",
+                    "stylua",
+                    "xmlformatter",
+                },
+            })
+        end,
+    },
+
+    -- condfigure autocomplete
+    {
+        "hrsh7th/nvim-cmp",
+        event = "InsertEnter",
+        dependencies = {
+            -- autocomplete plugins
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            'hrsh7th/cmp-cmdline',
+
+            -- snippet autocomplete and engine
+            "L3MON4D3/LuaSnip",
+            "saadparwaiz1/cmp_luasnip",
+
+            -- vscode like icons to autocomplete list
+            "onsails/lspkind.nvim",
+        },
+        config = function()
+            local cmp = require("cmp")
+            local luasnip = require("luasnip")
+            local lspkind = require("lspkind")
+
+            local cmp_ui = {
+                icons = true,
+                lspkind_text = true,
+                style = "default",            -- default/flat_light/flat_dark/atom/atom_colored
+                border_color = "grey_fg",     -- only applicable for "default" style, use color names from base30 variables
+                selected_item_bg = "colored", -- colored / simple
+            }
+            local cmp_style = cmp_ui.style
+
+            -- loads vscode style snippets from installed plugins (e.g. friendly-snippets)
+            require("luasnip.loaders.from_vscode").lazy_load()
+
+            local has_words_before = function()
+                unpack = unpack or table.unpack
+                local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+                return col ~= 0 and
+                    vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+            end
+
+            local function border(hl_name)
+                return {
+                    { "╭", hl_name },
+                    { "─", hl_name },
+                    { "╮", hl_name },
+                    { "│", hl_name },
+                    { "╯", hl_name },
+                    { "─", hl_name },
+                    { "╰", hl_name },
+                    { "│", hl_name },
+                }
+            end
+
+            cmp.setup({
+                completion = {
+                    completeopt = "menu,menuone,preview,noselect",
+                },
+                snippet = { -- configure how nvim-cmp interacts with snippet engine
+                    expand = function(args)
+                        luasnip.lsp_expand(args.body)
+                    end,
+                },
+                window = {
+                    completion = {
+                        side_padding = (cmp_style ~= "atom" and cmp_style ~= "atom_colored") and 1 or 0,
+                        winhighlight = "Normal:CmpPmenu,CursorLine:CmpSel,Search:PmenuSel",
+                        scrollbar = false,
+                      },
+                    documentation = {
+                        border = border "CmpDocBorder",
+                    },
+                },
+                mapping = cmp.mapping.preset.insert({
+                    ["<C-k>"] = cmp.mapping.scroll_docs(-4),
+                    ["<C-j>"] = cmp.mapping.scroll_docs(4),
+                    ["<C-Space>"] = cmp.mapping.complete(), -- show completion suggestions
+                    ["<C-e>"] = cmp.mapping.abort(),        -- close completion window
+                    ["<CR>"] = cmp.mapping.confirm({ select = false }),
+                    ["<Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_next_item()
+                            -- You could replace the expand_or_jumpable() calls with expand_or_locally_jumpable()
+                            -- that way you will only jump inside the snippet region
+                        elseif luasnip.expand_or_jumpable() then
+                            luasnip.expand_or_jump()
+                        elseif has_words_before() then
+                            cmp.complete()
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                    ["<S-Tab>"] = cmp.mapping(function(fallback)
+                        if cmp.visible() then
+                            cmp.select_prev_item()
+                        elseif luasnip.jumpable(-1) then
+                            luasnip.jump(-1)
+                        else
+                            fallback()
+                        end
+                    end, { "i", "s" }),
+                }),
+
+                -- sources for autocompletion
+                sources = cmp.config.sources({
+                    { name = "nvim_lsp" },
+                    { name = "luasnip" }, -- snippets
+                    { name = "buffer" },  -- text within current buffer
+                    { name = "path" },    -- file system paths
+                    { name = "cmdline" }, -- command line
+                }),
+                -- configure lspkind for vs-code like pictograms in completion menu
+                formatting = {
+                    format = lspkind.cmp_format({
+                        maxwidth = 50,
+                        ellipsis_char = "...",
+                    }),
+                },
+            })
+        end,
+    }
+
+}
+
+return plugins

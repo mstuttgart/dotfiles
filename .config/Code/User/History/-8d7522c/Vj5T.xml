@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="view_br_nfse_invoice_electronic_form" model="ir.ui.view">
+        <field name="name">view.br_nfse.invoice.electronic.form</field>
+        <field name="model">invoice.electronic</field>
+        <field name="inherit_id" ref="br_account_einvoice.br_account_invoice_electronic_form"/>
+        <field name="arch" type="xml">
+
+            <div name="alertas" position="before">
+                <field name="ambiente_nfse" invisible="1"/>
+                <div class="alert alert-danger" role="alert" style="margin-bottom:0px;"
+                     attrs="{'invisible': ['|', ('ambiente_nfse', '==', '1'), ('model', 'not in', ('001', '002', '008', '009'))]}">
+                    A Nota de Serviço está em ambiente de homologação
+                </div>
+            </div>
+            <field name="numero" position="after">
+                <field name="numero_rps" attrs="{'invisible': [('model', 'not in', ('001'))]}"/>
+            </field>
+            <field name="ambiente" position="after">
+                <field name="webservice_nfse" attrs="{'invisible': [('model', 'not in', ('001'))]}"/>
+                <field name="codigo_tributacao_municipio" attrs="{'invisible': [('model', 'not in', ('001'))]}"/>
+            </field>
+            <field name="mensagem_retorno" position="after">
+                <span attrs="{'invisible': [('model', 'not in', ('001'))]}">
+                    <br/>
+                    <b>Código Verificação:</b>
+                    <field name="verify_code" class="oe_inline" readonly="1"/>
+                    <br/>
+                    <b>Lote:</b>
+                    <field name="lote_code" class="oe_inline" readonly="1"/>
+                </span>
+            </field>
+
+            <button name="action_cancel_document" position="after">
+                <button name="action_get_electronic_invoice_status" type="object" class="oe_highlight" icon="fa-search" string="Consultar NFSe" attrs="{'invisible': ['|', ('model', '!=', '001'), ('state', '!=', 'open')]}"/>
+            </button>
+
+        </field>
+    </record>
+
+</odoo>

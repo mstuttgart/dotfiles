@@ -1,0 +1,21 @@
+{
+  "*": {
+    "enabled": "all",
+    "refresh": "12h",
+    "includes": [
+      {
+        "name": "*"
+      }
+    ]
+  },
+  "redhat.java": {
+    "enabled": "all",
+    "excludes": [
+      {
+        "name": "textCompletion",
+        "ratio": "0.997"
+      }
+    ]
+  },
+  "timestamp": 1699018314414
+}

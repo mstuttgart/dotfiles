@@ -1,0 +1,37 @@
+---
+# defaults file for roles/pgbouncer
+
+pgbouncer_config_path: "/etc/pgbouncer"
+pgbouncer_config_ini_path: "{{ pgbouncer_config_path }}/pgbouncer.ini"
+
+pgbouncer_user: postgres
+
+pgbouncer_auth_user_name: ''
+pgbouncer_auth_user_pass: ''
+
+pgbouncer_postgresql_host: '127.0.0.1'
+pgbouncer_postgresql_port: 5432
+
+pgbouncer_logfile: "/var/log/postgresql/pgbouncer.log"
+pgbouncer_pidfile: "/var/log/postgresql/pgbouncer.pid"
+pgbouncer_listen_addr: 'localhost, 192.168.100.*'
+pgbouncer_listen_port: 6432
+pgbouncer_auth_type: hba
+pgbouncer_auth_hba_file: "{{ pgbouncer_config_path }}/hba.conf"
+pgbouncer_auth_file: "{{ pgbouncer_config_path }}/userlist.txt"
+pgbouncer_pool_mode: transaction
+pgbouncer_ignore_startup_parameters: extra_float_digits
+pgbouncer_max_client_conn: 200
+pgbouncer_default_pool_size: 150
+pgbouncer_reserve_pool_size: 0
+pgbouncer_reserve_pool_timeout: 5
+pgbouncer_server_lifetime: 3600
+pgbouncer_server_idle_timeout: 600
+pgbouncer_server_connect_timeout: 15
+pgbouncer_server_login_retry: 15
+pgbouncer_query_timeout: 0
+pgbouncer_query_wait_timeout: 120
+pgbouncer_client_idle_timeout: 0
+pgbouncer_client_login_timeout: 60
+
+pgbouncer_deb_url: 'https://apt.postgresql.org/pub/repos/apt/pool/main/p/pgbouncer/pgbouncer_1.21.0-1.pgdg20.04%2B1_amd64.deb'

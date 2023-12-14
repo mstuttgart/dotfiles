@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="ht_our_blog" model="ir.ui.view">
+        <field name="name">ht.our.blog</field>
+        <field name="inherit_id" ref="website_blog.blog_post_short"/>
+        <field name="arch" type="xml">
+            <xpath expr="//section[hasclass('mb0')]" position="replace">
+                <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/theme_jt_corporate2201/static/src/images/banner.jpg');">
+                    <div class="container">
+                        <div class="banner-inner">
+                            <h1 class="page-title" t-if="blog.name">
+                                <t t-esc="blog.name"/>
+                            </h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/">Corporate</a>
+                                    </li>
+                                    <li class="breadcrumb-item active" t-if="blog.subtitle">
+                                        <t t-esc="blog.subtitle"/>
+                                    </li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+            </xpath>
+        </field>
+    </record>
+    <!-- <record id="ht_blog_complete" model="ir.ui.view">
+		<field name="name">ht.blog.complete</field>
+		<field name="inherit_id" ref="website_blog.blog_post_complete"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[hasclass('blog_header')]" position="before">
+				<section class="hero-section overlay bgs-cover pb-100" style="background-image: url('/theme_jt_corporate2201/static/src/images/hero/hero-one.jpg');background-position: top !important;">
+	                <div class="ht_bgc"/>
+	            </section>
+			</xpath>
+		</field>
+	</record> -->
+</odoo>

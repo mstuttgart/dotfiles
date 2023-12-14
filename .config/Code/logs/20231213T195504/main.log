@@ -1,0 +1,10 @@
+2023-12-13 19:55:04.859 [info] update#setState idle
+2023-12-13 19:55:04.864 [error] SyntaxError: Unexpected non-whitespace character after JSON at position 17
+    at JSON.parse (<anonymous>)
+    at ft.Y (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:106:68900)
+2023-12-13 19:55:12.752 [info] Extension host with pid 23473 exited with code: 0, signal: unknown.
+2023-12-13 19:55:12.764 [error] [UtilityProcessWorker]: terminated unexpectedly with code 15, signal: unknown
+2023-12-13 19:55:12.765 [error] [UtilityProcess id: 1, type: fileWatcher, pid: 23487]: crashed with code 15 and reason 'killed'
+2023-12-13 19:55:34.833 [info] update#setState checking for updates
+2023-12-13 19:55:34.838 [info] update#setState available for download
+2023-12-13 20:05:27.445 [info] Extension host with pid 23627 exited with code: 0, signal: unknown.

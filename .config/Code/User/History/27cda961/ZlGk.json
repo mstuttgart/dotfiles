@@ -1,0 +1,120 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.simpleVim.scrollDownPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-extension.simpleVim.scrollUpPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "left",
+        "command": "-list.collapse",
+        "when": "listFocus && treeElementCanCollapse && !inputFocus || listFocus && treeElementHasParent && !inputFocus"
+    },
+    {
+        "key": "down",
+        "command": "-list.focusDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "home",
+        "command": "-list.focusFirst",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "end",
+        "command": "-list.focusLast",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "pagedown",
+        "command": "-list.focusPageDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "pageup",
+        "command": "-list.focusPageUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "up",
+        "command": "-list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "space",
+        "command": "-list.toggleExpand",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+shift+unknown",
+        "command": "extension.simpleVim.scrollUpHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-extension.simpleVim.scrollUpHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-extension.simpleVim.scrollDownHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    },
+    {
+        "key": "ctrl+w w",
+        "command": "workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer",
+        "when": "viewContainer.workbench.view.explorer.enabled"
+    },
+    {
+        "key": "ctrl+w k",
+        "command": "extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+j",
+        "command": "-extension.vim_ctrl+j",
+        "when": "editorTextFocus && vim.active && vim.use<C-j> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+w j",
+        "command": "extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+        "key": "ctrl+k",
+        "command": "-extension.vim_ctrl+k",
+        "when": "editorTextFocus && vim.active && vim.use<C-k> && !inDebugRepl"
+    },
+    {
+        "key": "space b",
+        "command": "workbench.action.toggleSidebarVisibility"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-workbench.action.toggleSidebarVisibility"
+    }
+]

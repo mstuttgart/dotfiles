@@ -1,0 +1,7 @@
+Language server is set to Pylance.
+Acquiring model
+vs-intellicode-python was passed a model: {}.
+Acquiring model 'intellisense-members-lstm-pylance' for python
+Querying IntelliCode service for available models.
+Cached model is up to date.
+Activating Python extension

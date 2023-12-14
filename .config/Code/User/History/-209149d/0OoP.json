@@ -1,0 +1,102 @@
+{
+    "name": "odoo-scaffold",
+    "displayName": "Odoo Scaffold",
+    "description": "Odoo modules made easy",
+    "version": "0.1.5",
+    "publisher": "mstuttgart",
+    "license": "SEE LICENSE IN LICENSE",
+    "engines": {
+        "vscode": "^1.20.0"
+    },
+    "author": {
+        "name": "Michell Stuttgart",
+        "email": "michellstut@gmail.com"
+    },
+    "keywords": [
+        "odoo",
+        "module",
+        "scanffold",
+        "project"
+    ],
+    "icon": "images/icon.png",
+    "galleryBanner": {
+        "theme": "light"
+    },
+    "categories": [
+        "Other",
+        "Programming Languages"
+    ],
+    "bugs": {
+        "url": "https://github.com/mstuttgart/vscode-odoo-scaffold/issues",
+        "email": "michellstut@gmail.com"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/mstuttgart/vscode-odoo-scaffold"
+    },
+    "activationEvents": [
+        "onCommand:extension.odooScaffold"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "configuration": [
+            {
+                "type": "object",
+                "title": "Odoo Scaffold Configuration",
+                "properties": {
+                    "odooScaffold.odooBinPath": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Set odoo-bin path",
+                        "scope": "window"
+                    },
+                    "odooScaffold.pythonVirtualEnv": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Set Python from you virtualenv",
+                        "scope": "window"
+                    },
+                    "odooScaffold.odooTemplatePath": {
+                        "type": "string",
+                        "default": "",
+                        "description": "Set odoo template path",
+                        "scope": "window"
+                    }
+                }
+            }
+        ],
+        "commands": [
+            {
+                "command": "extension.odooScaffold",
+                "title": "New Odoo Module",
+                "category": "Python"
+            }
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.odooScaffold",
+                    "group": "navigation"
+                }
+            ]
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^8.10.66",
+        "@vscode/vsce": "^2.21.1",
+        "tslint": "^5.8.0",
+        "typescript": "^2.6.1"
+        // "vscode": "^1.1.21"
+    },
+    "extensionDependencies": [
+        "ms-python.python"
+    ]
+}

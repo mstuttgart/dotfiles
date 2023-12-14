@@ -1,0 +1,3403 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* service_contract_line_event
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2023-09-27 15:05+0000\n"
+"PO-Revision-Date: 2023-09-27 15:05+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/service_contract_cancel_wizard.py:40
+#, python-format
+msgid "\n"
+"            User <strong>{0}</strong> Canceled the Contract<br>\n"
+"            <strong>Reason</strong>: {1}<br>"
+msgstr "\n"
+"            Usuário <strong>{0}</strong> Cancelou o Contrato<br>\n"
+"            <strong>Motivo</strong>: {1}<br>"
+
+#. module: service_contract_line_event
+#: model:mail.template,body_html:service_contract_line_event.notify_validity_contract_email_template
+msgid "\n"
+"<html>\n"
+"  <head>\n"
+"    <meta charset=\"utf-8\">\n"
+"  </head>\n"
+"  <body style=\"margin: 5px; padding: 0;\">\n"
+"  <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed\" summary=\"o_mail_notification\">\n"
+"      <tbody>\n"
+"        <!-- HEADER -->\n"
+"        <tr>\n"
+"          <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#243742\" style=\"min-width: 590px; background-color: rgb(36, 55, 66); padding: 10px;\">\n"
+"              <tr>\n"
+"                <td valign=\"middle\" align=\"center\">\n"
+"                    <img src=\"/logo.png?company=${object.company_id.id}\" style=\"padding: 0px; margin: 0px; height: auto; max-width: 300px;\" alt=\"${object.company_id.name}\">\n"
+"                </td>\n"
+"              </tr>\n"
+"            </table>\n"
+"          </td>\n"
+"        </tr>\n"
+"\n"
+"        <!-- CONTENT -->\n"
+"        % if object.company_id.days_to_notify_maturity == 1\n"
+"            % set dias = 'dia'\n"
+"        % else\n"
+"            % set dias = 'dias'\n"
+"        % endif\n"
+"        <tr>\n"
+"          <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;\">\n"
+"              <tbody>\n"
+"                <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;\">\n"
+"                  <p>Prezado(a) <strong>${object.company_id.name}</strong>,</p>\n"
+"                  <p>O <b>Contrato de Serviço ${object.code} - ${object.partner_id.name}</b> está a ${object.company_id.days_to_notify_maturity} ${dias} para vencer ou vencido.\n"
+"                  <div style=\"width:100%;display:table\">\n"
+"                    <div style=\"padding: 5px 20px; float: left\">\n"
+"                      <p>\n"
+"                        <strong>Contrato de Serviço:</strong><br/>\n"
+"                        <strong>Data de Validade:</strong>\n"
+"                      </p>\n"
+"                    </div>\n"
+"                    <div style=\"padding: 5px 2px; float: left\">\n"
+"                      <p>\n"
+"                        ${object.code}<br/>\n"
+"                        ${object.validity_date.strftime('%d/%m/%Y')}\n"
+"                      </p>\n"
+"                    </div>\n"
+"                  </div>\n"
+"                </td>\n"
+"              </tbody>\n"
+"            </table>\n"
+"          </td>\n"
+"        </tr>\n"
+"\n"
+"        <!-- FOOTER -->\n"
+"        <tr>\n"
+"          <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#243742\" style=\"min-width: 590px; background-color: rgb(36, 55, 66); padding: 20px;\">\n"
+"              <tr>\n"
+"                <td valign=\"middle\" align=\"left\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                  ${object.company_id.name}<br/>\n"
+"                  ${object.company_id.phone or ''}\n"
+"                </td>\n"
+"                <td valign=\"middle\" align=\"right\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                  <a href=\"mailto:${object.company_id.email}\" style=\"text-decoration:none; color: white;\">${object.company_id.email}</a><br/>\n"
+"                  % if object.company_id.website:\n"
+"                      <a href=\"${object.company_id.website}\" style=\"text-decoration:none; color: white;\">\n"
+"                          ${object.company_id.website}\n"
+"                      </a>\n"
+"                  % endif\n"
+"                </td>\n"
+"              </tr>\n"
+"              <tr style=\"color: #FFF;font-size: 10px; text-align: center;\">\n"
+"                  <td colspan=\"2\" style=\"padding: 20px 0 0 0;\">\n"
+"                  Desenvolvido por <a href=\"https://multi.multidados.tech/\" style=\"color: #07A09D;\">MultidadosTI</a></td>\n"
+"              </tr>\n"
+"            </table>\n"
+"          </td>\n"
+"        </tr>\n"
+"      </tbody>\n"
+"  </table>\n"
+"  </body>\n"
+"</html>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:mail.template,body_html:service_contract_line_event.notify_event_maturity_email_template
+msgid "\n"
+"<html>\n"
+"  <head>\n"
+"    <meta charset=\"utf-8\">\n"
+"  </head>\n"
+"  <body style=\"margin: 5px; padding: 0;\">\n"
+"  <table border=\"0\" width=\"100%\" cellpadding=\"0\" bgcolor=\"#ededed\" style=\"padding: 20px; background-color: #ededed\" summary=\"o_mail_notification\">\n"
+"      <tbody>\n"
+"        <!-- HEADER -->\n"
+"        <tr>\n"
+"          <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#243742\" style=\"min-width: 590px; background-color: rgb(36, 55, 66); padding: 10px;\">\n"
+"              <tr>\n"
+"                <td valign=\"middle\" align=\"center\">\n"
+"                    <img src=\"/logo.png?company=${object.contract_id.company_id.id}\" style=\"padding: 0px; margin: 0px; height: auto; max-width: 300px;\" alt=\"${object.contract_id.company_id.name}\">\n"
+"                </td>\n"
+"              </tr>\n"
+"            </table>\n"
+"          </td>\n"
+"        </tr>\n"
+"\n"
+"        <!-- CONTENT -->\n"
+"        % if object.contract_id.company_id.days_to_notify_maturity == 1\n"
+"            % set dias = 'dia'\n"
+"        % else\n"
+"            % set dias = 'dias'\n"
+"        % endif\n"
+"        <tr>\n"
+"          <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#ffffff\" style=\"min-width: 590px; background-color: rgb(255, 255, 255); padding: 20px;\">\n"
+"              <tbody>\n"
+"                <td valign=\"top\" style=\"font-family:Arial,Helvetica,sans-serif; color: #555; font-size: 14px;\">\n"
+"                  <p>Prezado(a) <strong>${object.contract_id.company_id.name}</strong>,</p>\n"
+"                  <p>O evento  do <b>Contrato de Serviço ${object.contract_id.code} - ${object.contract_id.partner_id.name}</b> está a ${object.contract_id.company_id.days_to_notify_maturity} ${dias} para vencer ou vencido.\n"
+"                  <div style=\"width:100%;display:table\">\n"
+"                    <div style=\"padding: 5px 20px; float: left\">\n"
+"                      <p>\n"
+"                        <strong>Contrato de Serviço:</strong><br/>\n"
+"                        <strong>Serviço:</strong><br/>\n"
+"                        <strong>Data de Vencimento:</strong>\n"
+"                      </p>\n"
+"                    </div>\n"
+"                    <div style=\"padding: 5px 2px; float: left\">\n"
+"                      <p>\n"
+"                        ${object.contract_id.code}<br/>\n"
+"                        ${object.name}<br/>\n"
+"                        ${object.invoice_finish_date.strftime('%d/%m/%Y')}\n"
+"                      </p>\n"
+"                    </div>\n"
+"                  </div>\n"
+"                </td>\n"
+"              </tbody>\n"
+"            </table>\n"
+"          </td>\n"
+"        </tr>\n"
+"\n"
+"        <!-- FOOTER -->\n"
+"        <tr>\n"
+"          <td align=\"center\" style=\"min-width: 590px;\">\n"
+"            <table width=\"590\" border=\"0\" cellpadding=\"0\" bgcolor=\"#243742\" style=\"min-width: 590px; background-color: rgb(36, 55, 66); padding: 20px;\">\n"
+"              <tr>\n"
+"                <td valign=\"middle\" align=\"left\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                  ${object.contract_id.company_id.name}<br/>\n"
+"                  ${object.contract_id.company_id.phone or ''}\n"
+"                </td>\n"
+"                <td valign=\"middle\" align=\"right\" style=\"color: #fff; padding-top: 10px; padding-bottom: 10px; font-size: 12px;\">\n"
+"                  <a href=\"mailto:${object.contract_id.company_id.email}\" style=\"text-decoration:none; color: white;\">${object.contract_id.company_id.email}</a><br/>\n"
+"                  % if object.contract_id.company_id.website:\n"
+"                      <a href=\"${object.contract_id.company_id.website}\" style=\"text-decoration:none; color: white;\">\n"
+"                          ${object.contract_id.company_id.website}\n"
+"                      </a>\n"
+"                  % endif\n"
+"                </td>\n"
+"              </tr>\n"
+"              <tr style=\"color: #FFF;font-size: 10px; text-align: center;\">\n"
+"                  <td colspan=\"2\" style=\"padding: 20px 0 0 0;\">\n"
+"                  Desenvolvido por <a href=\"https://multi.multidados.tech/\" style=\"color: #07A09D;\">MultidadosTI</a></td>\n"
+"              </tr>\n"
+"            </table>\n"
+"          </td>\n"
+"        </tr>\n"
+"      </tbody>\n"
+"  </table>\n"
+"  </body>\n"
+"</html>\n"
+"\n"
+"            "
+msgstr ""
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line_event.py:339
+#, python-format
+msgid "%s - Contract: %s - Event: %s"
+msgstr "%s - Contrato: %s - Evento: %s"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "<span class=\"fa fa-lg fa-building-o\" title=\"Values set here are company-specific.\"/>"
+msgstr "<span class=\"fa fa-lg fa-building-o\" title=\"Valores definidos aqui são específicos para empresa.\"/>"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "<span class=\"fa fa-lg fa-question-circle-o\" title=\"To send notify for more than 1 email, separate them with a comma ','\"/>"
+msgstr "<span class=\"fa fa-lg fa-question-circle-o\" title=\"Para mandar o lembrete para mais de 1 email, separe-os com uma vírgula ','\"/>\""
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.account_service_statement_report_template
+msgid "<strong>Produtos Alocados</strong>"
+msgstr ""
+
+#. module: service_contract_line_event
+#: selection:product.rental.category,product_rental_type:0
+msgid "Accessories"
+msgstr "Acessórios"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__account_group_id
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Account Group"
+msgstr "Grupo de Contas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_needaction
+msgid "Action Needed"
+msgstr "Ação Necessária"
+
+#. module: service_contract_line_event
+#: selection:sale.order.line,rental_status:0
+#: selection:service.contract.line.event.rental,rental_status:0
+msgid "Active"
+msgstr "Ativo"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__add_cash_flow
+msgid "Add Cash Flow"
+msgstr "Adicionar fluxo de caixa"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Add contract maturity email options"
+msgstr "Adicionar opções de email para contratos a vencer"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Add options regarding the rental contract"
+msgstr "Adicionar opções em relação ao contrato de locação"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+msgid "Additional Filters"
+msgstr "Filtros Adicionais"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Allow manage hours and expenses events for service contracts."
+msgstr "Permite gerenciar eventos de hora e despesa para contratos de serviço."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__amount_invoiced
+msgid "Amount Invoiced"
+msgstr "Valor Faturado"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__amount_to_invoice
+msgid "Amount To Invoice"
+msgstr "Valor a Faturar"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__amount_total
+msgid "Amount Total"
+msgstr "Valor Total"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__invoice_amount
+msgid "Amount to Invoice (hour)"
+msgstr "Valor a Faturar"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:506
+#, python-format
+msgid "An error has ocurred, try reloading the page."
+msgstr "Ocorreu um erro, tente recarregar a página."
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_account_analytic_line
+msgid "Analytic Line"
+msgstr "Linha Analítica"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__fatura_antecipada
+msgid "Anticipated Billing"
+msgstr "Cobrança Antecipada"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_anticipated_invoicing
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__anticipated_invoicing
+msgid "Anticipated Invoicing"
+msgstr "Faturamento Antecipado"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line_event.py:831
+#, python-format
+msgid "Any recurrent franchise event was found. Try Generate recurrent events again."
+msgstr "Nenhum evento recorrente de franquia foi encontrado. Tente gerar os eventos recorrentes novamente."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "Apply Filter"
+msgstr "Aplicar Filtro"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_fixed_tree
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Approve"
+msgstr "Aprovar"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.action_line_event_approve_wizard
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__approve_events
+#: model:ir.ui.menu,name:service_contract_line_event.action_line_event_approve_wizard_menu
+msgid "Approve Events"
+msgstr "Aprovar Eventos"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+msgid "Approve Lines"
+msgstr "Aprovar linhas"
+
+#. module: service_contract_line_event
+#: model:res.groups,name:service_contract_line_event.group_line_event
+msgid "Approve events"
+msgstr "Aprovar eventos"
+
+#. module: service_contract_line_event
+#: selection:account.analytic.line,state:0
+#: selection:br_sale.parcel,contract_event_state:0
+#: selection:br_sale.parcel.wizard,contract_event_state:0
+#: selection:hr.expense,state:0
+#: selection:job.costing.events.view,state:0
+#: selection:sale.order,type_event:0
+#: selection:service.contract.line.event,state:0
+msgid "Approved"
+msgstr "Aprovado"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "April"
+msgstr "Abril"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_cancel_wizard_form
+msgid "Are you sure you want to Cancel this Contract?"
+msgstr "Você tem certeza que deseja cancelar o Contrato?"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+msgid "Are you sure you want to confirm this action?                                         All due dates below will be recalculated.                                         If you only want to recalculate specific dates, please cancel this action.                                         and select only the desired items!"
+msgstr "Tem certeza de que deseja confirmar esta ação? Todas as datas de vencimento abaixo serão recalculadas. Se você deseja apenas recalcular datas específicas, cancele esta ação. e selecione apenas os itens desejados!"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Are you sure you want to create/update the Contract in this Quotation?"
+msgstr "Tem certeza de que deseja criar/atualizar o Contrato nesse Orçamento? "
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_attachment_count
+msgid "Attachment Count"
+msgstr "Contagem de Anexos"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+msgid "Attachments"
+msgstr "Anexos"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "August"
+msgstr "Agosto"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_stock_backorder_confirmation
+msgid "Backorder Confirmation"
+msgstr "Confirmação Pedido em Espera"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_backorder_rental_confirmation
+msgid "Backorder Rental Creation"
+msgstr "Criação Retorno Locação"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.batch_event_creation_wizard_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+msgid "Batch Events Creation"
+msgstr "Criação de Eventos em Lote"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_batch_event_creation_wizard
+msgid "Batch Events Creation Wizard"
+msgstr "Assistente de Criação de Eventos em Lote"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__invoice_per_maturity
+msgid "Bill by Maturity"
+msgstr "Faturar pelo Vencimento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__billable
+msgid "Billable"
+msgstr "Cobravél"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__qty_billed
+msgid "Billed Qty"
+msgstr "Qtd Faturada"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__pro_rata
+msgid "Billing Apportionment"
+msgstr "Repartição de faturamento"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_wizard
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "Billing Events"
+msgstr "Eventos de Cobrança"
+
+#. module: service_contract_line_event
+#: selection:sale.order,state:0
+msgid "Blocked"
+msgstr "Bloqueado"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_renegociate_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_reason_cancel_paused
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.wiz_cancel_shipping_massage_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+msgid "Cancel Contract"
+msgstr "Cancelar Contrato"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.batch_event_creation_wizard_form
+msgid "Cancelar"
+msgstr ""
+
+#. module: service_contract_line_event
+#: selection:account.analytic.line,state:0
+#: selection:job.costing.events.view,state:0
+#: selection:sale.order,state:0
+#: selection:sale.order.line,rental_status:0
+#: selection:service.contract.line,state:0
+#: selection:service.contract.line.event,state:0
+msgid "Cancelled"
+msgstr "Cancelado"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__cancel_event_ids
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Cancelled Events"
+msgstr "Eventos Cancelados"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/account_invoice.py:95
+#, python-format
+msgid "Cannot duplicate an invoice generated by contract, if you need a copy of the current invoice, you can generate another service from current contract, then generate other events and invoice them"
+msgstr "Não é possível duplicar uma fatura gerada pelo contrato, se você precisar de uma cópia da fatura atual, você pode gerar outro serviço do contrato atual, e então gerar outros eventos e faturá-los"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_br_sale_parcel
+msgid "Classe utilizada para parcelamento"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__code_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__code_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__code_str
+msgid "Code"
+msgstr "Código"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__display_code
+msgid "Code Display"
+msgstr "Código"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__code_seq_id
+msgid "Code ID"
+msgstr "ID do Código"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__code_list_str
+msgid "Code List Str"
+msgstr "Lista de Códigos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__parent_code_id
+msgid "Code Parent"
+msgstr "Código Pai"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_line_event_code
+msgid "Code sequence of contract line events"
+msgstr "Sequencia de código dos eventos do contrato"
+
+#. module: service_contract_line_event
+#: selection:sale.order,type_sale_order:0
+#: selection:service.contract,contract_type:0
+msgid "Commercial"
+msgstr "Comercial"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_res_company
+msgid "Companies"
+msgstr "Empresas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__company_id
+msgid "Company"
+msgstr "Empresa"
+
+#. module: service_contract_line_event
+#: model:account.payment.term,note:service_contract_line_event.account_payment_term_service_contract
+msgid "Condição de Pagamento utilizada para faturamento de Contrato de Serviço"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_res_config_settings
+msgid "Config Settings"
+msgstr "Ajuste de configurações"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_cancel_wizard_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_renegociate_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_reason_cancel_paused
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.wiz_cancel_shipping_massage_view
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/line_event_wizard.py:116
+#, python-format
+msgid "Confirm Invoice Events"
+msgstr "Confirmar Faturar Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_invoice__contract_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing__contract_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__contract_id
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.job_costing_form_view
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_br_account_invoice_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_partner_form
+msgid "Contract"
+msgstr "Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_code
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__contract_code
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__code
+msgid "Contract Code"
+msgstr "Código do Contrato"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Contract Data"
+msgstr "Dados do Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__contract_event_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_invoice_line__contract_event_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_hr_expense__contract_event_id
+#: model:ir.ui.menu,name:service_contract_line_event.service_contract_line_event_menu
+msgid "Contract Event"
+msgstr "Evento do Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_br_sale_parcel__contract_event_state
+#: model:ir.model.fields,field_description:service_contract_line_event.field_br_sale_parcel_wizard__contract_event_state
+msgid "Contract Event State"
+msgstr "Estado Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__line_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__line_ids
+msgid "Contract Events"
+msgstr "Eventos do Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_fiscal_position
+msgid "Contract Fiscal Position"
+msgstr "Posição Fiscal do Contrato"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_form
+msgid "Contract Info"
+msgstr "Informações do contrato"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Contract Information to Report"
+msgstr "Informações do Contrato para o Relatório"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__contract_line_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__contract_line_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__contract_line_id
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+msgid "Contract Line"
+msgstr "Linha do contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__contract_line_event_id
+msgid "Contract Line Event"
+msgstr "Evento Linha de Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_line_event
+msgid "Contract Line Events"
+msgstr "Eventos Linha de Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_line_event_rental
+msgid "Contract Line Rental Events"
+msgstr "Eventos Locação Linha de Contrato"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/batch_event_creation_wizard.py:84
+#, python-format
+msgid "Contract Line for lot creation is not set, try reloading the page and try again."
+msgstr "A linha de contrato para criação de eventos em lote não está definida, tente recarregar a página e tente novamente."
+
+#. module: service_contract_line_event
+#: model:ir.ui.menu,name:service_contract_line_event.service_management_menu
+msgid "Contract Management"
+msgstr "Gestão de Contratos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__open_amount_total
+msgid "Contract Open Value"
+msgstr "Valor em Aberto do Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_print_info
+msgid "Contract Period"
+msgstr "Periodo do Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.contract_products_leased_tree
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_contract_products_leased_tree
+msgid "Contract Products Leased"
+msgstr "Produtos Locados"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__contract_id
+msgid "Contract Service"
+msgstr "Contrato Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_financial_operation_id
+msgid "Contract Service Financial Operation"
+msgstr "Operação Financeira do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_line_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__contract_line_id
+msgid "Contract Service Line"
+msgstr "Linha de Serviço de Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_title_type_id
+msgid "Contract Service Title"
+msgstr "Tipo de Título"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__type_contract_line
+msgid "Contract Service Type"
+msgstr "Tipo de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__line_ids
+msgid "Contract Services"
+msgstr "Serviços de Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__type_contract_order
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_contract_type
+msgid "Contract Type"
+msgstr "Tipo de Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__contract_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__contract_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__contract_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_ids
+msgid "Contracts"
+msgstr "Contratos"
+
+#. module: service_contract_line_event
+#: model:account.payment.term,name:service_contract_line_event.account_payment_term_service_contract
+msgid "Contrato de Serviço"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__count_invoices
+msgid "Count Invoices"
+msgstr "Total Faturas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__count_sale_orders_lines
+msgid "Count Sale Order Lines"
+msgstr "Total Produtos Locados"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_partner__count_service_contract
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_users__count_service_contract
+msgid "Count Service Contract"
+msgstr "Contabilizar Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_partner__count_service_contract_line_to_invoice
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_users__count_service_contract_line_to_invoice
+msgid "Count Service Contract Fixed"
+msgstr "Contar contrato de serviço fixo"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_partner__count_service_contract_line_approved
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_users__count_service_contract_line_approved
+msgid "Count Service Contract Recurrent"
+msgstr "Contar contrato de serviço recorrente"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Create Contract"
+msgstr "Criar Contrato"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_backorder_rental_confirmation
+msgid "Create Rental Backorder"
+msgstr "Criar Retorno Locação"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/stock_picking.py:29
+#, python-format
+msgid "Create Rental Backorder?"
+msgstr "Criar Retorno Locação?"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_backorder_rental_confirmation
+msgid "Create a rental backorder if you expect to process the remaining\n"
+"                        products later. Do not create a backorder if you will not\n"
+"                        process the remaining products."
+msgstr "Crie um pedido pendente de locação se você espera processar o restante.\n"
+"                        Não crie um pedido em espera se você não vai\n"
+"                        processar os produtos restantes."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused__create_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__create_uid
+msgid "Created by"
+msgstr "Criado por"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused__create_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__create_date
+msgid "Created on"
+msgstr "Criado em"
+
+#. module: service_contract_line_event
+#: model:ir.actions.server,name:service_contract_line_event.cron_expense_timesheet_to_events_ir_actions_server
+#: model:ir.cron,cron_name:service_contract_line_event.cron_expense_timesheet_to_events
+#: model:ir.cron,name:service_contract_line_event.cron_expense_timesheet_to_events
+msgid "Cron Timesheet and Expenses to Events"
+msgstr "Cron de Timesheets e Despesas para Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__currency_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__currency_id
+msgid "Currency"
+msgstr "Moeda"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Current month"
+msgstr "Mês atual"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Current week"
+msgstr "Semana atual"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__customer_partner_id
+msgid "Customer Partner"
+msgstr "Cliente Parceiro"
+
+#. module: service_contract_line_event
+#: model:ir.ui.menu,name:service_contract_line_event.service_contract_customer
+msgid "Customers"
+msgstr "Clientes"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__date
+msgid "Date"
+msgstr "Data"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Dates"
+msgstr "Datas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__dia_faturamento
+msgid "Day of Billing"
+msgstr "Dia de cobrança"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__dia_pagamento
+msgid "Day of Payment"
+msgstr "Dia de Pagamento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__deadline_days
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__deadline_days
+msgid "Days"
+msgstr "Dias"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_br_sale_parcel__days_to_payment
+msgid "Days to Payment"
+msgstr "Dias para Pagamento"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "December"
+msgstr "Dezembro"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__name
+msgid "Description"
+msgstr "Descrição"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__service_end
+msgid "Determine Service End ?"
+msgstr "Determinar o fim do Serviço ?"
+
+#. module: service_contract_line_event
+#: selection:sale.order,contract_service_end:0
+#: selection:sale.order,contract_validity_type:0
+#: selection:service.contract.line,service_end:0
+msgid "Determined"
+msgstr "Determinada"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_reason_cancel_paused.py:29
+#, python-format
+msgid "Different module than expected !"
+msgstr "Módulo diferente do esperado!"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__display_name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__display_name
+msgid "Display Name"
+msgstr "Nome exibido"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Display all events in the current month."
+msgstr "Exibir todos os eventos no mês atual."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Display all events in the current week."
+msgstr "Exibir todos os eventos da semana atual."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Do you confirm the generation of Events?"
+msgstr "Você confirma a geração dos Eventos?"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+msgid "Do you really want to approve the event(s) ?"
+msgstr "Você realmente deseja aprovar o(s) evento(s)?"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/line_event_wizard.py:105
+#, python-format
+msgid "Do you really want to invoice the event(s) ?"
+msgstr "Você realmente deseja faturar o(s) evento(s)?"
+
+#. module: service_contract_line_event
+#: selection:service.contract.line,state:0
+msgid "Done"
+msgstr "Concluído"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Done Events"
+msgstr "Eventos Concluídos"
+
+#. module: service_contract_line_event
+#: selection:account.analytic.line,state:0
+#: selection:br_sale.parcel,contract_event_state:0
+#: selection:br_sale.parcel.wizard,contract_event_state:0
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+#: selection:job.costing.events.view,state:0
+#: selection:service.contract.line.event,state:0
+msgid "Draft"
+msgstr "Provisório"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__data_vencto_evento
+msgid "Due Date"
+msgstr "Data Vencimento"
+
+#. module: service_contract_line_event
+#: selection:batch.event.creation.wizard,value_usage:0
+msgid "Each Event"
+msgstr "Cada Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_company__service_contract_maturity_email_notify
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_config_settings__service_contract_maturity_email_notify
+msgid "Emails"
+msgstr "E-mails"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Emails separeted by comma."
+msgstr "Emails separados por vírgula."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Emails to Notify"
+msgstr "Emails para Notificar"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__employee_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__employee_id
+msgid "Employee"
+msgstr "Funcionário"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_company__is_enable_hours_expenses
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_config_settings__is_enable_hours_expenses
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__is_enable_hours_expenses
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__is_enable_hours_expenses
+msgid "Enable Hours and Expenses Events"
+msgstr "Habilitar Eventos de Hora e Despesa"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Enable Rental ?"
+msgstr "Ativar Modulo de Locação?"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_company__is_enable_rental
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_config_settings__is_enable_rental
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__is_enable_rental
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__is_enable_rental
+msgid "Enable Rental Contract"
+msgstr "Habilitar Contrato de Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__evento
+#: selection:service.contract.line,line_type:0
+msgid "Event"
+msgstr "Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__valor_evento
+msgid "Event Billing Value"
+msgstr "Valor de cobrança do evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__dias_para_pagto_evento
+msgid "Event Days of Billing"
+msgstr "Dias p/ Cobrança do Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__data_final_evento
+msgid "Event End Data"
+msgstr "Dados de Término do Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__event_id
+msgid "Event ID"
+msgstr "ID Evento"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_form
+msgid "Event Info"
+msgstr "Informações do Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__quantity
+msgid "Event Quantity"
+msgstr "Quantidade de Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__data_inicial_evento
+msgid "Event Start Data"
+msgstr "Dados de Início do Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__status_evento
+msgid "Event Status"
+msgstr "Status do Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__type_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__tipo_evento
+msgid "Event Type"
+msgstr "Tipo de Evento"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:790
+#, python-format
+msgid "Event code must be unique in '%s' line!"
+msgstr "Código de evento deve ser único na linha %s!"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line__month_to_maturity
+msgid "Event's maturity date will be after this number of month."
+msgstr "A data de vencimento do evento será após este número de mês."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing__line_event_ids
+#: model:ir.ui.menu,name:service_contract_line_event.service_contract_line_event_itens_menu
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.job_costing_form_view
+msgid "Events"
+msgstr "Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__event_prefix
+msgid "Events Prefix"
+msgstr "Prefixo dos Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__value
+msgid "Events Values"
+msgstr "Valor dos Eventos"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/line_event_approve_wizard.py:12
+#: code:addons/service_contract_line_event/wizards/line_event_wizard.py:37
+#, python-format
+msgid "Events to Invoice"
+msgstr "Eventos para Faturar"
+
+#. module: service_contract_line_event
+#: selection:sale.order,type_contract_line:0
+#: selection:sale.order,type_contract_order:0
+msgid "Existing One"
+msgstr "Existente"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__expected_deadline
+msgid "Expected Deadline"
+msgstr "Data de Vencimento"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_hr_expense
+#: selection:service.contract.line,line_type:0
+msgid "Expense"
+msgstr "Despesa"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/hr_expense.py:116
+#, python-format
+msgid "Expense Event"
+msgstr "Evento de Despesa"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_event_form_from_tree
+msgid "Expense Event Details"
+msgstr "Detalhes do Evento de Despesa"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__event_expense_ids
+msgid "Expense Events Expenses"
+msgstr "Despesas dos Eventos de Despesa"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/hr_expense.py:142
+#, python-format
+msgid "Expense can't be deleted. Expense record %s is already approved by a service contract event."
+msgstr "A despesa não pode ser excluída. O registro de despesa %s já foi aprovado por um evento de contrato de serviço."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_event_form_from_tree
+msgid "Expenses Details"
+msgstr "Detalhes das Despesas"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract.py:230
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_line_expense_action
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+#, python-format
+msgid "Expenses Events"
+msgstr "Eventos de Despesas"
+
+#. module: service_contract_line_event
+#: model_terms:ir.actions.act_window,help:service_contract_line_event.service_contract_line_expense_action
+msgid "Expenses events services from this contract."
+msgstr "Eventos de despesas deste contrato."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__extra_hour_value
+msgid "Extra Hour Value"
+msgstr "Valor Extra das Horas"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "February"
+msgstr "Fevereiro"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.account_service_statement_report_template
+msgid "Fim"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__final_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__final_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__final_date
+msgid "Final Date"
+msgstr "Data final"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_event_form_from_tree
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_event_form_from_tree
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Financial"
+msgstr "Financeiro"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__financial_operation_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__financial_operation
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__contract_financial_operation_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__financial_operation_id
+msgid "Financial Operation"
+msgstr "Operação Financeira"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__posicao_fiscal
+msgid "Fiscal Posicion"
+msgstr "Posição Fiscal"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__fiscal_position_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__fiscal_position_id
+msgid "Fiscal Position"
+msgstr "Posição Fiscal"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract.py:200
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_line_fixed_action
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+#, python-format
+msgid "Fixed Events"
+msgstr "Eventos Fixos"
+
+#. module: service_contract_line_event
+#: model_terms:ir.actions.act_window,help:service_contract_line_event.service_contract_line_fixed_action
+msgid "Fixed event services from this contract."
+msgstr "Serviços de eventos corrigidos deste contrato."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_follower_ids
+msgid "Followers"
+msgstr "Seguidores"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_channel_ids
+msgid "Followers (Channels)"
+msgstr "Seguidores (Canais)"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_partner_ids
+msgid "Followers (Partners)"
+msgstr "Seguidores (Parceiros)"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__franchise_hour_event_ids
+msgid "Franchise Hour Events"
+msgstr "Eventos de Hora da Franquia"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.action_service_contract_config_settings
+#: model:ir.ui.menu,name:service_contract_line_event.menu_service_contract_general_settings
+msgid "General Settings"
+msgstr "Configurações Gerais"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.batch_event_creation_wizard_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Generate Events"
+msgstr "Gerar Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.contracts_action_order
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Generated Contracts"
+msgstr "Contratos Gerados"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Group By"
+msgstr "Agrupar Por"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Group all events by Account Groups."
+msgstr "Agrupar todos os eventos pelo Grupo de Contas"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Group all events by partner."
+msgstr "Agrupar todos os eventos por parceiro."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Group all events by project."
+msgstr "Agrupar todos os eventos por projeto."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Group all events in the same contract."
+msgstr "Agrupar todos os eventos do mesmo contrato."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Group all events in the same month."
+msgstr "Agrupe todos os eventos no mesmo mês."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Group all events in the same year."
+msgstr "Agrupe todos os eventos no mesmo ano."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__has_invoiced_events
+msgid "Has Invoiced Events"
+msgstr "Possui Eventos Faturados"
+
+#. module: service_contract_line_event
+#: selection:service.contract.line,line_type:0
+msgid "Hour"
+msgstr "Hora"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__amount
+msgid "Hour Cost"
+msgstr ""
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/account_analytic_line.py:208
+#: code:addons/service_contract_line_event/models/account_analytic_line.py:222
+#, python-format
+msgid "Hour Event"
+msgstr "Evento de Hora"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_event_form_from_tree
+msgid "Hour Event Details"
+msgstr "Detalhes do Evento de Hora"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__event_timesheet_ids
+msgid "Hour Events Timesheet"
+msgstr "Planilhas de Hora do Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__is_recurrent_franchise
+msgid "Hour Franchise"
+msgstr "Franquia de Horas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__hour_event_franchise_id
+msgid "Hour Franchise Event"
+msgstr "Evento de Hora de Franquia"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_event_form_from_tree
+msgid "Hours Amount"
+msgstr "Quantidade de Horas"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract.py:215
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_line_hour_action
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+#, python-format
+msgid "Hours Events"
+msgstr "Eventos de Hora"
+
+#. module: service_contract_line_event
+#: model_terms:ir.actions.act_window,help:service_contract_line_event.service_contract_line_hour_action
+msgid "Hours events services from this contract."
+msgstr "Eventos de hora deste contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__id
+msgid "ID"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line__is_recurrent_franchise
+msgid "If a recurrent event is an hour allowance, an hour event has to be selected, to compute total hours values. Value invoiced in hour events will be summed to the extra value."
+msgstr "Se um evento recorrente é uma franquia de horas, um evento de hora deve ser selecionado para computar as horas consumidas. O valor a faturar no evento de horas será somado ao valor extra."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__message_unread
+msgid "If checked new messages require your attention."
+msgstr "Se marcado, novas mensagens solicitarão sua atenção."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr "Se marcado novas mensagens solicitarão sua atenção."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr "Se marcado, algumas mensagens tem erro de entrega."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line__service_end
+msgid "If end is not determined, events renewal becomes auto.\n"
+"- Every time a event is invoiced, new events will be auto generated."
+msgstr "Se o fim do serviço não for determinado, a renovação dos eventos se torna automática.\n"
+"- Toda vez que um evento for faturado, novos eventos serão gerados automaticamente."
+
+#. module: service_contract_line_event
+#: selection:account.analytic.line,state:0
+#: code:addons/service_contract_line_event/models/sale_order.py:105
+#: selection:hr.expense,state:0
+#: selection:sale.order,state:0
+#, python-format
+msgid "In Contract"
+msgstr "Em Contrato"
+
+#. module: service_contract_line_event
+#: selection:sale.order,state:0
+msgid "In Project"
+msgstr "Em Projeto"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_account_analytic_line__invoice_unit_amount
+msgid "In this field is set how much hours will be invoiced. A timesheet record may expend some hours but only a few of them will be fee."
+msgstr "Nesse campo é selecionado quantas horas serão faturadas. Um registro de planilha de horas pode ter consumido algumas horas, porém só algumas delas serão faturadas."
+
+#. module: service_contract_line_event
+#: selection:sale.order,contract_service_end:0
+#: selection:sale.order,contract_validity_type:0
+#: selection:service.contract.line,service_end:0
+msgid "Indeterminate"
+msgstr "Indeterminada"
+
+#. module: service_contract_line_event
+#: selection:readjust.services.wizard,type_readjustment:0
+msgid "Index"
+msgstr "Índice"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__index_of_readjustment
+msgid "Index of readjustment"
+msgstr "Índice de reajuste"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Information for Generating the Service Agreement"
+msgstr "Informações para Gerar o Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_form_from_contract
+msgid "Informations Event"
+msgstr "Informações dos Eventos"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+msgid "Informations Expense Event"
+msgstr "Informações do Evento de Despesa"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+msgid "Informations Fixed Event"
+msgstr "Informações Eventos Fixos"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+msgid "Informations Hour Event"
+msgstr "Informações do Evento de Hora"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__initial_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__initial_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__initial_date
+msgid "Initial Date"
+msgstr "Data inicial"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__code
+msgid "Internal Code"
+msgstr "Código Interno"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__internal_note
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__internal_note
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_form_from_contract
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+msgid "Internal Note"
+msgstr "Anotação Interna"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+msgid "Internal Note..."
+msgstr "Anotações Internas..."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form_from_tree
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_event_form_from_tree
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_event_form_from_tree
+msgid "Internal Notes..."
+msgstr "Notas internas ..."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/batch_event_creation_wizard.py:87
+#, python-format
+msgid "Invalid event quantity, event quantity must be greather than 0 and less than 1000."
+msgstr "Quantidade de eventos inválida, a quantidade de eventos deve ser maior que 0 e menor que 1000."
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_account_invoice
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Invoice"
+msgstr "Fatura"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+msgid "Invoice Event"
+msgstr "Evento de fatura"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.action_line_event_wizard
+#: model:ir.ui.menu,name:service_contract_line_event.action_line_event_wizard_menu
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_wizard
+msgid "Invoice Events"
+msgstr "Faturar Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__invoice_finish_date
+msgid "Invoice Finish Date"
+msgstr "Data Término Fatura"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_account_invoice_line
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__invoice_line_id
+msgid "Invoice Line"
+msgstr "Linha da Fatura"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_line_description
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_form_from_contract
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+msgid "Invoice Narrative"
+msgstr "Narrativa da Fatura"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+msgid "Invoice Narrative ..."
+msgstr "Narrativa da Fatura ..."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__invoice_note
+msgid "Invoice Note"
+msgstr "Anotação na Nota Fiscal"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+msgid "Invoice Note..."
+msgstr "Anotação na Nota Fiscal..."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__invoice_separately
+msgid "Invoice Separately"
+msgstr "Faturar Separadamente"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_invoice_start_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__invoice_start_date
+msgid "Invoice Start Date"
+msgstr "Data de início da fatura"
+
+#. module: service_contract_line_event
+#: model:res.groups,name:service_contract_line_event.group_line_event_invoice
+msgid "Invoice events"
+msgstr "Faturar Eventos"
+
+#. module: service_contract_line_event
+#: selection:job.costing.events.view,state:0
+#: selection:service.contract.line.event,state:0
+msgid "Invoiced"
+msgstr "Faturado"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Invoiced Events"
+msgstr "Eventos Faturados"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__invoiced_event_ids
+msgid "Invoiced Line Events"
+msgstr "Linhas de Eventos Faturados"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+msgid "Invoices"
+msgstr "Faturas"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_form_from_contract
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+msgid "Invoicing"
+msgstr "Faturamento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__invoice_day
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__invoicing_day
+msgid "Invoicing Day"
+msgstr "Dia de Faturamento"
+
+#. module: service_contract_line_event
+#: model:ir.ui.menu,name:service_contract_line_event.invoice_event_menu
+msgid "Invoicing Service Contracts"
+msgstr "Faturar Contratos de Serviços"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.account_service_statement_report_template
+msgid "Início"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_is_follower
+msgid "Is Follower"
+msgstr "É um seguidor"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__is_hour_franchise
+msgid "Is Hour Franchise ?"
+msgstr "É uma Franquia de Horas?"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__is_recurrent
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__is_recurrent
+msgid "Is Recurrent"
+msgstr "Recorrente"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__is_rental
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__is_rental
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__is_rental
+#: model:ir.model.fields,field_description:service_contract_line_event.field_stock_picking__is_rental
+msgid "Is Rental"
+msgstr "Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__is_rental
+msgid "Is Rental ?"
+msgstr "É Locação ?"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "January"
+msgstr "Janeiro"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__job_costing_id
+msgid "Job Cost Sheets"
+msgstr "Planilha de Custos"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_job_costing
+msgid "Job Costing"
+msgstr "Planilha de Custo"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_job_costing_events_view
+msgid "Job Costing Events View"
+msgstr "Visualização dos Eventos de Custo"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "July"
+msgstr "Julho"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "June"
+msgstr "Junho"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_readjustment_history
+msgid "Keeps logs of the last readjustments"
+msgstr "Mantém os logs dos últimos reajustes"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view____last_update
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage____last_update
+msgid "Last Modified on"
+msgstr "Última modificação em"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused__write_uid
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__write_uid
+msgid "Last Updated by"
+msgstr "Última atualização por"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_code__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused__write_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__write_date
+msgid "Last Updated on"
+msgstr "Última atualização em"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_stock_picking__rental_end_date
+msgid "Lease Return Date"
+msgstr "Data Devolução Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__rental_lease_type
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_lease_type
+msgid "Lease Type"
+msgstr "Tipo de locação"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+msgid "Leased"
+msgstr "Prod Locados"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line_event.py:768
+#, python-format
+msgid "Line Event"
+msgstr "Evento de Linha"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_line_event_approve_wizard
+msgid "Line Event Approve Wizard"
+msgstr "Assistente de aprovação de evento de linha"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_line_event_wizard
+msgid "Line Event Wizard"
+msgstr "Assistente de Eventos de Linha"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__line_event_ids
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_form_from_contract
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Line Events"
+msgstr "Eventos de Linha"
+
+#. module: service_contract_line_event
+#: selection:sale.order,state:0
+msgid "Locked"
+msgstr "Trancado"
+
+#. module: service_contract_line_event
+#: selection:product.rental.category,product_rental_type:0
+msgid "Machine"
+msgstr "Máquina"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_main_attachment_id
+msgid "Main Attachment"
+msgstr "Anexo Principal"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "March"
+msgstr "Março"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__name
+msgid "Massage"
+msgstr "Dev Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__deadline_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__expected_deadline
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+msgid "Maturity Date"
+msgstr "Data Vencimento"
+
+#. module: service_contract_line_event
+#: model:mail.template,subject:service_contract_line_event.notify_event_maturity_email_template
+msgid "Maturity Service Contract - ${object.contract_id.code}"
+msgstr "Vencimento do Contrato de Serviço - ${object.contract_id.code}"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "May"
+msgstr "Maio"
+
+#. module: service_contract_line_event
+#: selection:sale.order,type_sale_order:0
+msgid "Merge Orders to Invoice"
+msgstr "Mesclar Pedidos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_has_error
+msgid "Message Delivery error"
+msgstr "Erro na entrega da Mensagem"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_ids
+msgid "Messages"
+msgstr "Mensagens"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order_line.py:165
+#, python-format
+msgid "Missing End Date for sale order line with Product '%s'."
+msgstr "Data de término ausente para linha de pedido de venda com o produto '%s'."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order_line.py:170
+#, python-format
+msgid "Missing Start Date for sale order line with Product '%s'."
+msgstr "Data de início ausente para linha de pedido de venda com o produto '%s'."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__month_field
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Month"
+msgstr "Mês"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__competence_month
+msgid "Month Competence"
+msgstr "Mês Competência"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__month_to_maturity
+msgid "Month to Maturity"
+msgstr "Qt Mês Add Vencto"
+
+#. module: service_contract_line_event
+#: selection:service.contract.line,type_event_recurrent:0
+msgid "Monthly"
+msgstr "Por mês"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__name
+msgid "Name"
+msgstr "Nome"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__name_event
+msgid "Name Event"
+msgstr "Nome do Evento"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_reason_tree
+msgid "Name Reason"
+msgstr "Nome do Motivo"
+
+#. module: service_contract_line_event
+#: selection:sale.order,type_contract_order:0
+msgid "New Contract"
+msgstr "Novo Contrato"
+
+#. module: service_contract_line_event
+#: selection:sale.order,type_contract_line:0
+msgid "New Service"
+msgstr "Novo Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_renegociate_form
+msgid "New Value"
+msgstr "Novo Valor"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__next_code
+msgid "Next Code"
+msgstr "Código Seguinte"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__next_event_initial_date
+msgid "Next Event Initial Date"
+msgstr "Data Inicial Próximo Evento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__next_readjust_date
+msgid "Next Readjustment Date"
+msgstr "Próxima Data de Reajuste"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/readjust_services_wizard.py:76
+#, python-format
+msgid "No Services are selected for readjust."
+msgstr "Não foram selecionados serviços para o reajuste."
+
+#. module: service_contract_line_event
+#: model:ir.actions.server,name:service_contract_line_event.notify_event_maturity_ir_actions_server
+#: model:ir.cron,cron_name:service_contract_line_event.notify_event_maturity
+#: model:ir.cron,name:service_contract_line_event.notify_event_maturity
+msgid "Notify Service Contract Event Maturity"
+msgstr "Notificar Vencimento de Eventos de Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "November"
+msgstr "Novembro"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_needaction_counter
+msgid "Number of Actions"
+msgstr "Número de Ações"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_has_error_counter
+msgid "Number of error"
+msgstr "Número do erro"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__message_needaction_counter
+msgid "Number of messages which requires an action"
+msgstr "Número de mensagens que requerem uma ação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr "Número de mensagens com erro de entrega"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line__readjustment_interval
+msgid "Number of months that service will have to be readjusted again."
+msgstr "Número de meses que o serviço levará para ser renovado novamente."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__message_unread_counter
+msgid "Number of unread messages"
+msgstr "Quantidade de mensagens não lidas."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/readjust_services_wizard.py:99
+#, python-format
+msgid "O período informado é inválido!"
+msgstr ""
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "October"
+msgstr "Outubro"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order_line.py:139
+#, python-format
+msgid "On sale order line with product '%s', the number of days is negative (%d) ; this is not allowed. The number of days has been forced to 1."
+msgstr "Na linha do pedido com o produto '%s', o número de dias é negativo (%d); isso não é permitido. O número de dias foi forçado a 1."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+#: selection:service.contract.line,state:0
+msgid "Open"
+msgstr "Aberto"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__open_event_ids
+msgid "Open Line Events"
+msgstr "Linha de Eventos em Aberto"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_value
+msgid "Original Rental Value"
+msgstr "Valor Original da Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__original_value
+msgid "Original Value"
+msgstr "Valor original"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__srv_vence_proximo_mes
+msgid "Outdo next month"
+msgstr "Superar no próximo mês"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__srv_vence_nesse_mes
+msgid "Outdo this month"
+msgstr "Superar este mês"
+
+#. module: service_contract_line_event
+#: selection:hr.expense,state:0
+msgid "Paid"
+msgstr "Pago"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order.py:418
+#, python-format
+msgid "Parcel %s"
+msgstr "Parcela %s"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__parent_code_id
+msgid "Parent Code"
+msgstr "Código Pai"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__display_parent_code
+msgid "Parent Code Display"
+msgstr "Código Parente"
+
+#. module: service_contract_line_event
+#: selection:sale.order.line,rental_status:0
+msgid "Partial"
+msgstr "Parcial"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_res_partner
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__partner_id
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Partner"
+msgstr "Parceiro"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__parceiro
+msgid "Partner Name"
+msgstr "Nome Parceiro"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__partner_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__partner_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__partner_ids
+#: model:ir.ui.menu,name:service_contract_line_event.service_contract_partners
+msgid "Partners"
+msgstr "Parceiros"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_expense_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_fixed_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Pause"
+msgstr "Pausar"
+
+#. module: service_contract_line_event
+#: selection:service.contract.line,state:0
+msgid "Paused"
+msgstr "Pausado"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_line_paused_action
+#: model:ir.ui.menu,name:service_contract_line_event.service_contract_line_paused_menu
+msgid "Paused Services"
+msgstr "Serviços Pausados"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__pay_day
+msgid "Pay Day"
+msgstr "Dia do pagamento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_payment
+msgid "Payment"
+msgstr "Pagamento"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_payment_day
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__payment_day
+msgid "Payment Day"
+msgstr "Dia de pagamento"
+
+#. module: service_contract_line_event
+#: selection:sale.order.line,rental_status:0
+msgid "Pending"
+msgstr "Pendente"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Period"
+msgstr "Período"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__periodo_narrativa_fatura
+msgid "Period in Invoice Narrative"
+msgstr "Período na narrativa da fatura"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order.py:283
+#, python-format
+msgid "Please complete the Service for Fixed Events Line"
+msgstr "Favor Preencher o Serviço para Linha Eventos Fixos"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:850
+#, python-format
+msgid "Please, Inform a valid number for payment day"
+msgstr "Por favor, informe uma data válida para o dia de pagamento."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:423
+#, python-format
+msgid "Please, set a readjustment index in contract."
+msgstr "Por favor, defina um índice de reajuste no contrato."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:898
+#, python-format
+msgid "Please, the final invoice date must be greater than initial invoice date"
+msgstr "Por favor, a data da fatura final deve ser posterior do que a da fatura inicial."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_company__days_to_notify_maturity
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_config_settings__days_to_notify_maturity
+msgid "Previous Days to Notify"
+msgstr "Dias Anteriores para Notificar"
+
+#. module: service_contract_line_event
+#: selection:readjust.services.wizard,type_readjustment:0
+msgid "Price List"
+msgstr "Lista de Preços"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_pro_rata
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__pro_rata
+msgid "Pro Rata"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__product_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_wiz_cancel_shipping_massage__sale_line_id
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Product"
+msgstr "Produto"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_stock_move_line
+msgid "Product Moves (Stock Move Line)"
+msgstr "Movimentos do produto (Linha do Movimento do Estoque)"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_rental_category__product_rental_type
+msgid "Product Rental Type"
+msgstr "Tipo de Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_product_template
+msgid "Product Template"
+msgstr "Modelo de Produto"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.product_rental_category_action_form
+#: model:ir.ui.menu,name:service_contract_line_event.menu_product_sale_rental_category_action_form
+#: model:ir.ui.menu,name:service_contract_line_event.menu_product_stock_rental_category_action_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.product_rental_category_list_view
+msgid "Product Utilization Categories"
+msgstr "Categorias de Utilização do Produto"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.account_service_statement_report_template
+msgid "Produto"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__project_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__project_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__project_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__project_id
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Project"
+msgstr "Projeto"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Project Information"
+msgstr "Informação do Projeto"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__projeto_nome
+msgid "Project Name"
+msgstr "Nome do Projeto"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_approve_wizard__project_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__project_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__project_ids
+msgid "Projects"
+msgstr "Projetos"
+
+#. module: service_contract_line_event
+#: selection:sale.order,type_sale_order:0
+msgid "Projeto"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.account_service_statement_report_template
+msgid "Qtd"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__unit_amount
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__quantity
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__quantity
+msgid "Quantity"
+msgstr "Quantidade"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__invoice_unit_amount
+msgid "Quantity Hours to Invoice"
+msgstr "Quantidade de Horas a Faturar"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__quantity_years
+msgid "Quantity Years"
+msgstr "Quantidade Anos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_batch_event_creation_wizard__quantity
+msgid "Quantity of events that will be generated."
+msgstr "Quantidade de eventos que serão gerados."
+
+#. module: service_contract_line_event
+#: selection:service.contract.line,type_event_recurrent:0
+msgid "Quarterly"
+msgstr "Trimestral"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order.py:137
+#: selection:sale.order,rental_lease_type:0
+#, python-format
+msgid "Quick Lease"
+msgstr "Locação Rápida"
+
+#. module: service_contract_line_event
+#: selection:sale.order,state:0
+msgid "Quotation"
+msgstr "Cotação"
+
+#. module: service_contract_line_event
+#: selection:sale.order,state:0
+msgid "Quotation Sent"
+msgstr "Orçamento Enviado"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "Readjust All Services"
+msgstr "Reajustar Todos os Serviços"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__readjust_date
+msgid "Readjust Date"
+msgstr "Data do Reajuste"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_readjust_view_tree
+msgid "Readjust Service Contract Line"
+msgstr "Reajustar Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.service_line_readjust_wizard_action
+#: model:ir.ui.menu,name:service_contract_line_event.service_contract_line_readjust_menu
+msgid "Readjust Services"
+msgstr "Reajustar Serviços"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_readjust_services_wizard
+msgid "Readjust Services Wizard"
+msgstr "Wizard de Reajustar Serviços"
+
+#. module: service_contract_line_event
+#: model:ir.actions.server,name:service_contract_line_event.action_readjust_by_index
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "Readjust by Index"
+msgstr "Reajustar por Índice"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_readjust_view_tree
+msgid "Readjust by index"
+msgstr "Reajustar por Índice"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:377
+#, python-format
+msgid "Readjust date for service %s can't be set."
+msgstr "A data de reajuste para o serviço %s não pode ser definida."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Readjustment"
+msgstr "Reajuste"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Readjustment History"
+msgstr "Histórico de Reajuste"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__indice_reajuste
+msgid "Readjustment Index"
+msgstr "Índice de reajuste"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__readjust_index
+msgid "Readjustment Index Value"
+msgstr "Valor do Índice de Reajuste"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__readjustment_interval
+msgid "Readjustment Interval (months)"
+msgstr "Intervalo de Reajuste (meses)"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__month_field
+msgid "Readjustment Month"
+msgstr "Mês do Reajuste"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__year_field
+msgid "Readjustment Year"
+msgstr "Ano do Reajuste"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__readjustment_history_ids
+msgid "Readjustments History"
+msgstr "Histórico de Reajustes"
+
+#. module: service_contract_line_event
+#: selection:account.analytic.line,state:0
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.hr_timesheet_line_form
+msgid "Ready for Contract"
+msgstr "Pronto para Contrato"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "Really want to extend service readjustment date ?"
+msgstr "Deseja realmente extender a data de reajuste do serviço ?"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "Really want to readjust this service by index ?"
+msgstr "Deseja realmente reajustar esse serviço pelo índice ?"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_cancel_wizard__service_contract_reason_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason__name
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_reason_cancel_paused__service_contract_reason_id
+#: model:ir.ui.menu,name:service_contract_line_event.create_reason_menu
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_reason_cancel_paused
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_reason_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_reason_tree
+msgid "Reason"
+msgstr "Motivo"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_reason
+msgid "Reason for Cancel and Paused Services"
+msgstr "Motivo para Serviços Cancelados e Pausados"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+msgid "Recalculate Expected Deadlines"
+msgstr "Recalcular prazos esperados"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order.py:138
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+#: selection:sale.order,rental_lease_type:0
+#, python-format
+msgid "Recurrent"
+msgstr "Recorrente"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_view_form
+msgid "Recurrent Events"
+msgstr "Eventos Recorrentes"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__recurrent_franchise_event_id
+msgid "Recurrent Franchise Event"
+msgstr "Evento Recorrente de Franquia"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__recurrent_franchise_line_id
+msgid "Recurrent Franchise Line"
+msgstr "Serviço Recorrente de Franquia"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract.py:185
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_line_action
+#, python-format
+msgid "Recurring Events"
+msgstr "Eventos Recorrentes"
+
+#. module: service_contract_line_event
+#: model_terms:ir.actions.act_window,help:service_contract_line_event.service_contract_line_action
+msgid "Recurring event services from this contract."
+msgstr "Serviços de eventos recorrentes deste contrato."
+
+#. module: service_contract_line_event
+#: selection:hr.expense,state:0
+msgid "Refused"
+msgstr "Recusado"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Renegociate"
+msgstr "Renegociar"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_renegociate_form
+msgid "Renegociate Value"
+msgstr "Renegociar Valor"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_qty_active
+msgid "Rental Active Qty"
+msgstr "Qtde Locada Ativa"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order.py:383
+#: code:addons/service_contract_line_event/models/sale_order.py:471
+#, python-format
+msgid "Rental Agreement cannot be replaced."
+msgstr "Contrato de Locação não pode ser Substituído."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_product__rental_categ_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_template__rental_categ_id
+msgid "Rental Category"
+msgstr "Categoria Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_end_date
+msgid "Rental End Date"
+msgstr "Data Final Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_expected_end_date
+msgid "Rental Expected End Date"
+msgstr "Data Final Esperada"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_product__property_rental_account_income_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_template__property_rental_account_income_id
+msgid "Rental Income Account"
+msgstr "Conta de Receita Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__line_event_rental_ids
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form_from_tree
+msgid "Rental Line Events"
+msgstr "Linha Eventos Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_number_of_days
+msgid "Rental Number of Days"
+msgstr "Dias Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_product__property_rental_account_expense_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_template__property_rental_account_expense_id
+msgid "Rental Product Account"
+msgstr "Conta de Despesa Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__rental_product_line
+msgid "Rental Product Line"
+msgstr "Linha do Produto de Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_renegociate_wizard__rental_product_line
+msgid "Rental Product to renegotiate."
+msgstr "Produto Locado para Renegociar"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Rental Products"
+msgstr "Produtos de Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_qty_returned
+msgid "Rental Returned Qty"
+msgstr "Qtde Retornada Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_start_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_stock_move__rental_start_date
+msgid "Rental Start Date"
+msgstr "Data Inicial Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__rental_status
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__rental_status
+msgid "Rental Status"
+msgstr "Status Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_product__rental_value
+#: model:ir.model.fields,field_description:service_contract_line_event.field_product_template__rental_value
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order_line__last_rental_value
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Rental Value"
+msgstr "Valor da Locação"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Rental Value per Day"
+msgstr "Valor Locação por Dia"
+
+#. module: service_contract_line_event
+#: selection:sale.order.line,rental_status:0
+msgid "Return In-Progress"
+msgstr "Retorno em Processo"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "Return Rental"
+msgstr "Retornar Locação"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+msgid "Return to Draft"
+msgstr "Retornar ao Rascunho"
+
+#. module: service_contract_line_event
+#: selection:sale.order.line,rental_status:0
+#: selection:service.contract.line.event.rental,rental_status:0
+msgid "Returned"
+msgstr "Retornada"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/stock_move_line.py:24
+#, python-format
+msgid "Returned quantity can't be greather than rental's active quantity."
+msgstr "A quantidade retornada não pode ser maior que a quantidade ativa na locação."
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_sale_order
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__sale_order
+msgid "Sale Order"
+msgstr "Pedido de Venda"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__sale_order_line_ids
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__sale_order_line_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__order_line_id
+msgid "Sale Order Line"
+msgstr "Itens do Pedido"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__sale_order_id
+msgid "Sale Order Origin"
+msgstr "Pedido Originador"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_br_sale_parcel_wizard
+msgid "Sale Parcel Wizard"
+msgstr "Gerar Parcela da Venda"
+
+#. module: service_contract_line_event
+#: selection:sale.order,state:0
+msgid "Sales Order"
+msgstr "Pedidos de Venda"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_sale_order_line
+msgid "Sales Order Line"
+msgstr "Linha do Pedido de Vendas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__sale_order_ids
+msgid "Sales Orders"
+msgstr "Ordens de Vendas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract__sale_orders_lines_ids
+msgid "Sales Orders Lines"
+msgstr "Linhas Pedidos"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_partner_form
+msgid "Schedule meeting with this applicant"
+msgstr "Agendar reuniões com esta aplicação"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/line_event_approve_wizard.py:43
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_approve_wizard
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.line_event_wizard
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+#, python-format
+msgid "Search Events"
+msgstr "Pesquisar Eventos"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/readjust_services_wizard.py:89
+#, python-format
+msgid "Select a month and a year to search services to readjust."
+msgstr "Selecione um mês e um ano para buscar serviços a serem reajustados."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_company__send_service_contract_maturity_email_notify
+#: model:ir.model.fields,field_description:service_contract_line_event.field_res_config_settings__send_service_contract_maturity_email_notify
+msgid "Send Service Contract Maturity Email Notify"
+msgstr "Enviar Lembrete de Email para Vencimento de Contratos de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__separate_employee
+msgid "Separate Employee Events"
+msgstr "Separar Eventos por Funcionários"
+
+#. module: service_contract_line_event
+#: selection:line.event.wizard,month_field:0
+#: selection:readjust.services.wizard,month_field:0
+msgid "September"
+msgstr "Setembro"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Service"
+msgstr "Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__servico_codigo
+msgid "Service Code"
+msgstr "Código de Serviço"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order.py:20
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__service_contract_id
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+#: selection:sale.order,type_sale_order:0
+#, python-format
+msgid "Service Contract"
+msgstr "Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_cancel_wizard
+msgid "Service Contract Cancel Wizard"
+msgstr "Assistente de Cancelamento de Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_cancel_wizard_action
+msgid "Service Contract Cancel Wizard Action"
+msgstr "Assistente de Cancelamento de Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_line_event_action
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_report_view_action
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Service Contract Events"
+msgstr "Eventos Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Service Contract Events Options"
+msgstr "Opções de Eventos de Contratos de Serviços"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__product_contract_line_id
+msgid "Service Contract Line"
+msgstr "Linha de Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_view_form_from_tree
+msgid "Service Contract Line Event"
+msgstr "Evento da linha do contrato de serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+msgid "Service Contract Line Event Search"
+msgstr "Pesquisa de eventos da linha do contrato de serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_line_renegociate_wizard
+msgid "Service Contract Line Renegociate"
+msgstr "Renegociar linha de Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Service Contract Maturity Options"
+msgstr "Opções de Vencimento do Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract
+msgid "Service Contract Model"
+msgstr "Modelo do Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_reason_action
+msgid "Service Contract Reason"
+msgstr "Motivo do Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_reason_cancel_paused
+msgid "Service Contract Reason Cancel Paused"
+msgstr "Motivo do contrato de serviço Cancelar pausado"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.res_config_settings_view_form
+msgid "Service Contract Rental"
+msgstr "Locação de Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_tree
+msgid "Service Contract Report View"
+msgstr "Visão do Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_form
+msgid "Service Contract Report View Form"
+msgstr "Visão Form do Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Service Contract Report View Search"
+msgstr "Visão Search do Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_report_view
+msgid "Service Contract Report View for Consulting"
+msgstr "Contrato de Serviço - Relatório para Consulta"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__service_contract_reason
+msgid "Service Contract State Reason"
+msgstr "Razão do Estado do Contrato de Serviço"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Service Data"
+msgstr "Dados de Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__service_description
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__servico_descricao
+msgid "Service Description"
+msgstr "Descrição do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_service_end
+msgid "Service End"
+msgstr "Fim do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__data_termino_fatura
+msgid "Service End Billing"
+msgstr "Data Término da Fatura"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_service_finish_date
+msgid "Service Finish Date"
+msgstr "Data Final do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__product_fixed_contract_line_id
+msgid "Service Fixed Contract"
+msgstr "Serviço para Eventos Fixo"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_order_form
+msgid "Service Fixed Contract Line"
+msgstr "Serviço para Linha Eventos Fixo"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_form
+msgid "Service Info"
+msgstr "Informações de serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__servico_nome
+msgid "Service Name"
+msgstr "Nome do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_service_price_unit
+msgid "Service Price Unit"
+msgstr "Valor do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__service_readjust_date
+msgid "Service Readjust Date"
+msgstr "Data de Reajuste do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__data_inicio_fatura
+msgid "Service Start Billing"
+msgstr "Data Início da Fatura"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_service_start_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__service_start_date
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__data_inicio_servico
+msgid "Service Start Date"
+msgstr "Data de Início do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__contract_line_state
+msgid "Service State"
+msgstr "Status do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__status_servico
+msgid "Service Status"
+msgstr "Status do Serviço"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__contract_line_type
+msgid "Service Type"
+msgstr "Tipo de Serviço"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:764
+#, python-format
+msgid "Service cannot be cancelled.\n"
+" There are Product(s) with Active Lease."
+msgstr "O Serviço não pode ser Cancelado.\n"
+" Existe(m) Produto(s) com Locação Ativa."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:400
+#: code:addons/service_contract_line_event/models/service_contract_line.py:485
+#, python-format
+msgid "Services have been successfully readjusted."
+msgstr "Os serviços foram reajustados com sucesso."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_batch_event_creation_wizard__value_usage
+msgid "Set how events values will be set.\n"
+" - Each Event: Each event will have the value especified.\n"
+" - Total Events: Value will be divided by the quantity of events, and each event value will be a parcel of division."
+msgstr "Defina como os valores dos eventos serão definidos.\n"
+" - Cada Evento: Cada evento terá o valor especificado.\n"
+" - Total dos Eventos: O valor será dividido pela quantidade de eventos, e cada evento terá o valor do resultado da divisão."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.job_costing_form_view
+msgid "Stage"
+msgstr "Estágio"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order_line.py:175
+#, python-format
+msgid "Start Date should be before or be the same as End Date for sale order line with Product '%s'."
+msgstr "A data de início deve ser anterior ou igual à data de término para a linha do pedido com o produto '%s'."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__state
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__state
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__state
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__state
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "State"
+msgstr "Estado"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_hr_expense__state
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__state
+msgid "Status"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_hr_expense__state
+msgid "Status of the expense."
+msgstr "Status da despesa."
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_stock_move
+msgid "Stock Move"
+msgstr "Movimento de Estoque"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.product_open_quants_stock
+msgid "Stock On Hand"
+msgstr "Estoque Atual"
+
+#. module: service_contract_line_event
+#: selection:hr.expense,state:0
+msgid "Submitted"
+msgstr "Enviada"
+
+#. module: service_contract_line_event
+#: model:ir.ui.menu,name:service_contract_line_event.service_contract_supplier
+msgid "Suppliers"
+msgstr "Fornecedores"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__task_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__project_task_id
+msgid "Task"
+msgstr "Tarefa"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:449
+#, python-format
+msgid "The Contract {0} does not Have a Index of Readjustment"
+msgstr "O Contrato {0} não tem Índice de Reajuste"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:853
+#, python-format
+msgid "The maximum allowed period for recurrent services is 5 years"
+msgstr "O período máximo permitido para serviços recorrentes é de 5 anos."
+
+#. module: service_contract_line_event
+#: sql_constraint:product.rental.category:0
+msgid "The name of the Product Rental Type must be unique!"
+msgstr "O nome do Tipo Locação de Produto deve ser exclusivo!"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/readjust_services_wizard.py:102
+#, python-format
+msgid "The selected year and month must be greater than or equal current month and year."
+msgstr "O ano e o mês selecionado devem ser posteriores ao mês e ano atual."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:430
+#, python-format
+msgid "There is no readjustment index for event date: '%s'"
+msgstr "Não foi encontrado um índice de reajuste para a data do evento: '%s'"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/service_contract_line.py:434
+#, python-format
+msgid "There were find more than one index for this date: '%s'"
+msgstr "Foram encontrados mais de um índice de reajuste para esta data: '%s'"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "This Action will readjust by index all filtered services lines. Do you want to proceed?"
+msgstr "Esta ação irá reajustar por índice todos os serviços filtrados nas linhas. Você deseja continuar?"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_product_product__property_rental_account_expense_id
+#: model:ir.model.fields,help:service_contract_line_event.field_product_template__property_rental_account_expense_id
+msgid "This account will be used for invoices instead of the default one to value Rental expenses for the current product."
+msgstr "Esta conta será usada para faturas em vez da conta padrão para avaliar as despesas de locação do produto atual."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_product_product__property_rental_account_income_id
+#: model:ir.model.fields,help:service_contract_line_event.field_product_template__property_rental_account_income_id
+msgid "This account will be used for invoices instead of the default one to value Rental for the current product."
+msgstr "Esta conta será usada para faturas em vez da conta padrão para valorizar a locação do produto atual."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/wizards/shipping_massage.py:25
+#, python-format
+msgid "This action will cancel Rental order line and process Incoming shipment for the same. Are you Sure, You want to cancel this rental?"
+msgstr "Esta ação cancelará a linha de pedido de locação e processará a remessa de entrada para a mesma. Tem certeza, deseja cancelar esta locação?"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_renegociate_form
+msgid "This action will change the rental value of selected Rental Product Line, and                                  will affect event lines values too, do you want to confirm?"
+msgstr "Essa ação irá alterar o valor de locação da linha de produto locado selecionada, e irá afetar também as linhas dos eventos, você deseja confirmar?"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_renegociate_form
+msgid "This action will change the value of the event lines, do you want to confirm?"
+msgstr "Essa ação vai alterar o valor das linhas de evento, você deseja confirmar?"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_account_analytic_line__invoice_amount
+msgid "This field is to set how much each hour will cost to the partner."
+msgstr "Esse campo indica quanto a hora custará ao parceiro."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/account_invoice.py:56
+#, python-format
+msgid "This invoice cannot be validated because has at least one invoiced event!"
+msgstr "Esta fatura não pode ser validada porque tem pelo menos um evento faturado!"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_batch_event_creation_wizard__deadline_date
+msgid "This is first event's maturity date, other events will have 1 month more of difference from each other."
+msgstr "Essa é a validade do primeiro evento, os outros eventos terão 1 mês a mais de diferença entre eles."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_readjustment_history__service_readjust_date
+msgid "This is the date that was expected for next readjustment in the service."
+msgstr "Esta é a data esperada para o próximo reajuste do serviço."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__end_time
+msgid "Time End"
+msgstr "Tempo Final"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_account_analytic_line__start_time
+msgid "Time Start"
+msgstr "Tempo Inicial"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_hour_event_form_from_tree
+msgid "Timesheet Info"
+msgstr "Informações das Planilhas de Hora"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/account_analytic_line.py:259
+#, python-format
+msgid "Timesheet can't be cancelled. Timesheet record %s is already approved by a service contract event."
+msgstr "O Timesheet não pode ser cancelado. O Timesheet %s ja foi aprovado em um evento de contrato de serviço."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/account_analytic_line.py:244
+#, python-format
+msgid "Timesheet record must be in 'Approved' state to set for contract."
+msgstr "O registro de Planilha de Hora deve estar no estado 'Aprovado' para definir para contrato."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/account_analytic_line.py:242
+#, python-format
+msgid "Timesheet record must have amount greater than zero to set for contract."
+msgstr "O registro de Planílha de Hora deve ter o valor maior que zero para definir para contrato."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__title_type_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__title_type
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__contract_title_type_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__title_type_id
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__tipo_titulo
+msgid "Title Type"
+msgstr "Tipo de Titulo"
+
+#. module: service_contract_line_event
+#: selection:sale.order,type_event:0
+msgid "To Approve"
+msgstr "Para Aprovar"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+#: selection:job.costing.events.view,state:0
+#: selection:service.contract.line.event,state:0
+msgid "To Invoice"
+msgstr "Para Faturar"
+
+#. module: service_contract_line_event
+#: selection:hr.expense,state:0
+msgid "To Submit"
+msgstr "Para Enviar"
+
+#. module: service_contract_line_event
+#: selection:batch.event.creation.wizard,value_usage:0
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_tree
+msgid "Total Events"
+msgstr "Total de Eventos"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__total_rental_value
+msgid "Total Rental Value"
+msgstr "Valor Total da Locação"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.br_sale_parcel_wizard_form
+msgid "Total Value of Fixed Events"
+msgstr "Valor total Eventos Fixos"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_stock_picking
+msgid "Transfer"
+msgstr "Transferir"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__line_type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_report_view__tipo_cobranca_evento
+msgid "Type Billing"
+msgstr "Tipo de Cobrança"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_report_type
+msgid "Type Contract Template"
+msgstr "Modelo do Contrato"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__type_sale_order
+msgid "Type Sale Order"
+msgstr "Tipo de Ordem de Venda"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__type_event_recurrent
+msgid "Type of Event Recurrent"
+msgstr "Tipo Recorrência"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_readjust_services_wizard__type_readjustment
+msgid "Type of Readjustment"
+msgstr "Tipo de Reajuste"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/stock_picking.py:95
+#, python-format
+msgid "Unable to delete rental stock picking."
+msgstr "Não é Possível Excluir a Separação de Estoque de Locação."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line__price_unit
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_renegociate_wizard__unit_value
+msgid "Unit Value"
+msgstr "Valor Unitário"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_unread
+msgid "Unread Messages"
+msgstr "Mensagens não lidas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__message_unread_counter
+msgid "Unread Messages Counter"
+msgstr "Contador de Mensagens Não Lidas"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__account_group_id
+msgid "Use the Financial Group for Reports, Dashboards and Statistics."
+msgstr "Use o Grupo Financeiro para Relatórios, Dashboards e Estatísticas."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__user_id
+msgid "User Readjusted"
+msgstr "Usuário Reajustado"
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.wiz_cancel_shipping_massage_action
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.wiz_cancel_shipping_massage_view
+msgid "Validation Massage"
+msgstr "Validação do Retorno da Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_validity_date
+msgid "Validity Date"
+msgstr "Data Validade"
+
+#. module: service_contract_line_event
+#: model:mail.template,subject:service_contract_line_event.notify_validity_contract_email_template
+msgid "Validity Service Contract - ${object.code}"
+msgstr "Validade do Contrato de Serviço - ${object.code}"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_sale_order__contract_validity_type
+msgid "Validity Type"
+msgstr "Tipo Validade"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.account_service_statement_report_template
+msgid "Valor"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_job_costing_events_view__value
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__value
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__value
+msgid "Value"
+msgstr "Valor"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__value_tx_admin
+msgid "Value Admin Taxes"
+msgstr "Valor Taxa Administrativa"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__value_after_readjust
+msgid "Value After"
+msgstr "Valor Depois"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_readjustment_history__value_before_readjust
+msgid "Value Before"
+msgstr "Valor Antes"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__value_tx_extra
+msgid "Value Extra Taxes"
+msgstr "Valor da Taxa Extra"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__value_pro_rata
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event_rental__value_pro_rata
+msgid "Value Pro-Rata"
+msgstr "Valor Pro-Rata"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_batch_event_creation_wizard__value_usage
+msgid "Value Usage"
+msgstr "Uso do Valor"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_sale_order_line__last_rental_value
+msgid "Value of active rental product line (real value for events).\n"
+"This value is used in case of renegotiations, readjusments and products returns. In case of these, this value changes and keeps original value in sale order line's \"Original Rental Value\" field."
+msgstr "Valor atual da locação de um produto (o valor real para os eventos).\n"
+"Esse valor é utilizado no caso de renegociações, reajustes e devoluções de produtos. No caso de algum desses, este valor muda e mantém o valor original no campo \"Valor Original da Locação\" da linha de venda."
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_batch_event_creation_wizard__event_prefix
+msgid "Value set here is the prefix of generated events name. Events names are the prefix with an auto incremented sequence.\n"
+"\n"
+"Ex:\n"
+"- Prefix = 'EV-'\n"
+"Events names: 'EV-001', 'EV-002','EV-003','EV-004' ..."
+msgstr "O valor definido auqi é o prefixo dos nomes dos eventos gerados. Os nomes dos eventos são o prefixo com uma sequencia auto incrementada.\n"
+"\n"
+"Ex:\n"
+"- Prefixo = 'EV-'\n"
+"Nomes dos Eventos: 'EV-001', 'EV-002','EV-003','EV-004' ..."
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "View Rental Picking"
+msgstr "Visualizar Movimentos Locação"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_recurrent_view_form
+msgid "View Returned Picking"
+msgstr "Visualizar Retorno Locação"
+
+#. module: service_contract_line_event
+#: selection:sale.order,state:0
+msgid "Waiting Approval"
+msgstr "Esperando Aprovação"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/stock_move_line.py:25
+#, python-format
+msgid "Warning"
+msgstr "Aviso"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__website_message_ids
+msgid "Website Messages"
+msgstr "Mensagens do Site"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,help:service_contract_line_event.field_service_contract_line_event__website_message_ids
+msgid "Website communication history"
+msgstr "Histórico de Comunicação do Site"
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order_line.py:138
+#, python-format
+msgid "Wrong number of days"
+msgstr "Número Errado de Dias"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_line_event_wizard__year_field
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_event_default_search
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_report_view_search
+msgid "Year"
+msgstr "Ano"
+
+#. module: service_contract_line_event
+#: model:ir.model.fields,field_description:service_contract_line_event.field_service_contract_line_event__competence_year
+msgid "Year Competence"
+msgstr "Ano Competência"
+
+#. module: service_contract_line_event
+#: selection:service.contract.line,type_event_recurrent:0
+msgid "Yearly"
+msgstr "Anual"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_backorder_rental_confirmation
+msgid "You have processed less rental products than the initial demand."
+msgstr "Você processou menos produtos de locação do que a demanda inicial."
+
+#. module: service_contract_line_event
+#: code:addons/service_contract_line_event/models/sale_order_line.py:247
+#, python-format
+msgid "You may only return pickings that are Done!"
+msgstr "Você só pode devolver as produtos que foram concluídos!"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_readjust_view_tree
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_reason_cancel_paused
+msgid "You wish to confirm?"
+msgstr "Deseja confirmar ?"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.readjust_service_wizard_form
+msgid "Zero Readjust"
+msgstr "Zerar o Reajuste"
+
+#. module: service_contract_line_event
+#: model:ir.actions.server,name:service_contract_line_event.action_zero_readjust
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.service_contract_line_readjust_view_tree
+msgid "Zero Readjustment"
+msgstr "Zerar Reajuste"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.view_backorder_rental_confirmation
+msgid "_Cancel"
+msgstr "_Cancelar"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_wiz_cancel_shipping_massage
+msgid "cancel shipping message"
+msgstr "cancelar mensagem de envio"
+
+#. module: service_contract_line_event
+#: model_terms:ir.ui.view,arch_db:service_contract_line_event.product_rental_category_form_view
+msgid "e.g. Lamps"
+msgstr "por exemplo, Lâmpadas"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_invoice_electronic
+msgid "invoice.electronic"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_product_rental_category
+msgid "rental category"
+msgstr "Categoria de Locação"
+
+#. module: service_contract_line_event
+#: model:ir.model,name:service_contract_line_event.model_service_contract_line
+msgid "service.contract.line"
+msgstr ""
+
+#. module: service_contract_line_event
+#: model:ir.actions.act_window,name:service_contract_line_event.service_contract_reason_cancel_paused_action
+msgid "service_contract.reason.cancel.paused.action"
+msgstr ""

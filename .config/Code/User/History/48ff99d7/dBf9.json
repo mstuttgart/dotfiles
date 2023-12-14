@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "/home/michell/.config/nvim"
+		},
+		{
+			"path": "/home/michell/.config/nvim.bkp"
+		},
+		{
+			"path": "../../../nvim.novo"
+		},
+		{
+			"path": "../../../tmux"
+		},
+		{
+			"path": "../../../nvim.chad"
+		},
+		{
+			"path": "../../../nvim.lazy"
+		}
+	],
+	"settings": {}
+}

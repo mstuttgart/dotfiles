@@ -1,0 +1,1 @@
+2023-12-12 19:51:46.520 [error] electron #106: https://mobile.events.data.microsoft.com/OneCollector/1.0?cors=true&content-type=application/x-json-stream - error POST net::ERR_NAME_NOT_RESOLVED

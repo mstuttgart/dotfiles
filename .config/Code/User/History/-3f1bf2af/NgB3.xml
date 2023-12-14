@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <!--Inherit Form View to Modify it -->
+    <record id="br_account_position_form" model="ir.ui.view">
+        <field name="name">br_nfse.tecnospeed.fiscal.position.form</field>
+        <field name="model">account.fiscal.position</field>
+        <field name="inherit_id" ref="br_nfse.br_account_position_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='service_type_id']" position="after">
+                <field name="nfse_tecnospeed_natureza_operacao" attrs="{'required': [('position_type', '=', 'service'),('fiscal_document_id_code','=','001')], 'invisible': [('position_type', '!=', 'service')]}"/>
+            </xpath>
+
+        </field>
+    </record>
+
+</odoo>

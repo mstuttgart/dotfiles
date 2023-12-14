@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+  <record id="br_account_invoice_electronic_form" model="ir.ui.view">
+    <field name="name">view.br_account_einvoice_tecnospeed.invoice.electronic.form</field>
+    <field name="model">invoice.electronic</field>
+    <field name="inherit_id" ref="br_account_einvoice.br_account_invoice_electronic_form" />
+    <field name="arch" type="xml">
+
+      <field name="client_order_ref" position="before">
+        <field name="codigo_tributacao_municipio"
+          attrs="{'invisible': ['|', ('model', '!=', '001'), ('webservice_nfse', '!=', 'nfse_tecnospeed')]}" />
+        <field name="nfse_tecnospeed_natureza_operacao" string="Natureza da Operação"
+          attrs="{'invisible': ['|', ('model', '!=', '001'), ('webservice_nfse', '!=', 'nfse_tecnospeed')]}" />
+        <field name="nfse_tecnospeed_regime_tributacao" string="Regime Tributação"
+          attrs="{'invisible': ['|', ('model', '!=', '001'), ('webservice_nfse', '!=', 'nfse_tecnospeed')]}" />
+        <field name="nfse_tecnospeed_incentivador_cultural" string="Incentivador Cultural"
+          attrs="{'invisible': ['|', ('model', '!=', '001'), ('webservice_nfse', '!=', 'nfse_tecnospeed')]}" />
+      </field>
+
+      <field name="lote_code" position="after">
+        <span attrs="{'invisible': [('webservice_nfse', '!=', 'nfse_tecnospeed')]}">
+          <br />
+          <b>Tecnospeed ID Nota:</b>
+          <field name="tecnospeed_id_nota" class="oe_inline" readonly="1" />
+          <br />
+        </span>
+      </field>
+
+    </field>
+  </record>
+
+</odoo>

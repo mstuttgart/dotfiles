@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="br_zip_view_partner_form2" model="ir.ui.view">
+        <field name="name">br_base.partner.form2</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="br_base.view_partner_form"/>
+        <field name="priority">33</field>
+        <field name="arch" type="xml">
+
+            <div name="div_address" position="replace">
+                <field name="zip"/>
+                <field name="street" placeholder="Logradouro"/>
+                <field name="number" placeholder="Numero"/>
+                <field name="district" placeholder="Bairro"/>
+                <field name="street2" placeholder="Complemento"/>
+                <field name="country_id" placeholder="Pais"/>
+                <field name="state_id" placeholder="Estado"/>
+                <field name="city_id" placeholder="Cidade"/>
+            </div>
+
+            <xpath expr="//field[@name='city_id']" position="after">
+                <div class="alert alert-warning" role="alert">
+                    <field name="search_cep_exception" readonly="0" class="oe_inline"/>
+                </div>
+                <separator/>
+            </xpath>
+
+        </field>
+    </record>
+</odoo>

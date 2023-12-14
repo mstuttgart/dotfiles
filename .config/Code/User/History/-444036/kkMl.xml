@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="res_config_settings_view_form" model="ir.ui.view">
+        <field name="name">res.config.settings.account.invoice.send.email</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="account.res_config_settings_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//div[@id='invoicing_settings']" position="after">
+                <h2>Token Tecnospeed para emissão de NFe e NFSe</h2>
+                <div class="row mt16 o_settings_container" id="invoicing_email_settings">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="tecnospeed_certificado_sandbox" string="Token Tecnospeed Sandbox"/>
+                            <span class="fa fa-lg fa-building-o" groups="base.group_multi_company"/>
+                            <div class="text-muted">Define o token para envio de NFSe em ambiente de sandbox (desenvolvimento)</div>
+                            <div class="content-group">
+                                <div class="row mt16" id="tecnospeed_certificado_sandbox"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row mt16 o_settings_container" id="cancel_invoicing_email_settings">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane"/>
+                        <div class="o_setting_right_pane">
+                            <label for="template_email_cancelamento" string="Token Tecnospeed san"/>
+                            <span class="fa fa-lg fa-building-o" title="Values set here are company-specific." groups="base.group_multi_company"/>
+                            <div class="text-muted">Define o token para envio de NFSe em ambiente de homologação/produção</div>
+                            <div class="content-group">
+                                <div class="row mt16" id="cancel_invoicing_email_templates"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='invoicing_settings']" position="after">
+               <h2>Outras Configurações de Email</h2>
+                <div class="row mt16 o_settings_container" id="others_email_settings">
+                    <div class="col-xs-12 col-md-6 o_setting_box">
+                        <div class="o_setting_left_pane">
+                            <field name="disable_email_in_non_fiscal_docs"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="disable_email_in_non_fiscal_docs"/>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </field>
+    </record>
+</odoo>

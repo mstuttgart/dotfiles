@@ -1,0 +1,8 @@
+2023-12-12 19:32:58.579 [info] update#setState idle
+2023-12-12 19:32:58.602 [error] SyntaxError: Unexpected non-whitespace character after JSON at position 17
+    at JSON.parse (<anonymous>)
+    at ft.Y (/usr/share/code/resources/app/out/vs/code/electron-main/main.js:106:68900)
+2023-12-12 19:33:13.986 [info] Extension host with pid 40653 exited with code: 0, signal: unknown.
+2023-12-12 19:33:28.582 [info] update#setState checking for updates
+2023-12-12 19:33:29.135 [info] update#setState idle
+2023-12-12 19:59:19.948 [info] Extension host with pid 41094 exited with code: 0, signal: unknown.

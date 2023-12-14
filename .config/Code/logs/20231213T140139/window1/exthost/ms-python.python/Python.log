@@ -1,0 +1,48 @@
+2023-12-13 14:01:55.265 [info] Experiment 'pythonaacf' is active
+2023-12-13 14:01:55.265 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2023-12-13 14:01:55.265 [info] Experiment 'pythonREPLSmartSend' is active
+2023-12-13 14:01:55.265 [info] Experiment 'pythonTestAdapter' is active
+2023-12-13 14:01:55.265 [info] Default formatter is set to null for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 14:01:55.265 [info] Test server listening.
+2023-12-13 14:01:57.843 [error] Custom .env is likely not pointing to a valid file [EntryIsADirectory (FileSystemError): Error: EISDIR: illegal operation on a directory, read
+	at v.e (/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:143:26973)
+	at Object.readFile (/usr/share/code/resources/app/out/vs/workbench/api/node/extensionHostProcess.js:143:25177)
+	at async b.readText (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:196050)
+	at async f.parseFile (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:322153)
+	at async v._getEnvironmentVariables (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:326836)
+	at async v.getEnvironmentVariables (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:326003)
+	at async u.create (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:217175)
+	at async t.shellExecute (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:612989)
+	at async t.getInterpreterInfo (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:536154)
+	at async c.g [as workerFunc] (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:531059)
+	at async s.start (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:319484)] {
+  code: 'FileIsADirectory'
+}
+2023-12-13 14:01:57.855 [info] > ./.venv/bin/python -I ~/.vscode/extensions/ms-python.python-2023.22.0/pythonFiles/get_output_via_markers.py ~/.vscode/extensions/ms-python.python-2023.22.0/pythonFiles/interpreterInfo.py
+2023-12-13 14:01:57.907 [info] Python interpreter path: ./.venv/bin/python
+2023-12-13 14:01:58.723 [info] Starting Pylance language server.
+2023-12-13 14:01:59.031 [error] Custom .env is likely not pointing to a valid file [Error: EISDIR: illegal operation on a directory, read
+	at Object.readSync (node:fs:751:3)
+	at tryReadSync (node:fs:451:20)
+	at readFileSync (node:fs:497:19)
+	at t.readFileSync (node:electron/js2c/asar_bundle:2:9212)
+	at f.parseFileSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:322377)
+	at v.getCustomEnvironmentVariablesSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:327540)
+	at v._getEnvironmentVariablesSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:326970)
+	at v.getEnvironmentVariablesSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:326269)
+	at Object.getEnvironmentVariables (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:410142)
+	at Object.configuration (/home/michell/.vscode/extensions/ms-python.vscode-pylance-2023.11.10/dist/extension.bundle.js:1:130102)] {
+  errno: -21,
+  syscall: 'read',
+  code: 'EISDIR'
+}
+2023-12-13 14:04:34.517 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:04:40.250 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:04:54.076 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:05:00.069 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:05:08.598 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:05:19.316 [info] Discover tests for workspace name: odoo - uri: /home/michell/Workspace/multidadosti/odoo
+2023-12-13 14:05:45.165 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:17:26.294 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:17:31.903 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 14:17:50.912 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json

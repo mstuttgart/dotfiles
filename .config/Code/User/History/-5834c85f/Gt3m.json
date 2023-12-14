@@ -1,0 +1,216 @@
+// Place your key bindings in this file to override the defaultsauto[]
+[
+    {
+        "key": "ctrl+w w",
+        "command": "workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+shift+e",
+        "command": "-workbench.view.explorer"
+    },
+    {
+        "key": "ctrl+shift+c u",
+        "command": "editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+down",
+        "command": "-editor.action.copyLinesDownAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+alt+d",
+        "command": "editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+alt+up",
+        "command": "-editor.action.copyLinesUpAction",
+        "when": "editorTextFocus && !editorReadonly"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "editor.action.duplicateSelection"
+    },
+    {
+        "key": "shift+enter",
+        "command": "-python.execSelectionInTerminal",
+        "when": "editorTextFocus && !findInputFocussed && !jupyter.ownsSelection && !notebookEditorFocused && !replaceInputFocussed && editorLangId == 'python'"
+    },
+    {
+        "key": "ctrl+shift+d",
+        "command": "-workbench.view.debug",
+        "when": "viewContainer.workbench.view.debug.enabled"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeGroup",
+        "when": "activeEditorGroupEmpty && multipleEditorGroups"
+    },
+    {
+        "key": "ctrl+w q",
+        "command": "workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.closeActiveEditor"
+    },
+    {
+        "key": "ctrl+w",
+        "command": "-workbench.action.terminal.killEditor",
+        "when": "terminalEditorFocus && terminalFocus && terminalHasBeenCreated && resourceScheme == 'vscode-terminal' || terminalEditorFocus && terminalFocus && terminalProcessSupported && resourceScheme == 'vscode-terminal'"
+    },
+    {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-extension.simpleVim.scrollDownPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+b",
+        "command": "-extension.simpleVim.scrollUpPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "h",
+        "command": "list.collapse",
+        "when": "listFocus && treeElementCanCollapse && !inputFocus || listFocus && treeElementHasParent && !inputFocus"
+    },
+    {
+        "key": "left",
+        "command": "-list.collapse",
+        "when": "listFocus && treeElementCanCollapse && !inputFocus || listFocus && treeElementHasParent && !inputFocus"
+    },
+    {
+        "key": "j",
+        "command": "list.focusDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "down",
+        "command": "-list.focusDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "g g",
+        "command": "list.focusFirst",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "home",
+        "command": "-list.focusFirst",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "shift+g",
+        "command": "list.focusLast",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "end",
+        "command": "-list.focusLast",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "list.focusPageDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "pagedown",
+        "command": "-list.focusPageDown",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "list.focusPageUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "pageup",
+        "command": "-list.focusPageUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "k",
+        "command": "list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "up",
+        "command": "-list.focusUp",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "l",
+        "command": "list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "enter",
+        "command": "-list.select",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "o",
+        "command": "list.toggleExpand",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "space",
+        "command": "-list.toggleExpand",
+        "when": "listFocus && !inputFocus"
+    },
+    {
+        "key": "shift+j",
+        "command": "list.expandSelectionDown",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "shift+down",
+        "command": "-list.expandSelectionDown",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "shift+k",
+        "command": "list.expandSelectionUp",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "shift+up",
+        "command": "-list.expandSelectionUp",
+        "when": "listFocus && listSupportsMultiselect && !inputFocus"
+    },
+    {
+        "key": "ctrl+q",
+        "command": "-workbench.action.quit"
+    },
+    {
+        "key": "ctrl+shift+unknown",
+        "command": "extension.simpleVim.scrollUpHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+u",
+        "command": "-extension.simpleVim.scrollUpHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+d",
+        "command": "-extension.simpleVim.scrollDownHalfPage",
+        "when": "editorTextFocus && !extension.simpleVim.insertMode"
+    },
+    {
+        "key": "ctrl+shift+l",
+        "command": "workbench.action.terminal.clear",
+        "when": "terminalFocus && terminalHasBeenCreated"
+    },
+    {
+        "key": "ctrl+f",
+        "command": "-workbench.action.terminal.focusFind",
+        "when": "terminalFindFocused && terminalHasBeenCreated || terminalFindFocused && terminalProcessSupported || terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+    }
+]

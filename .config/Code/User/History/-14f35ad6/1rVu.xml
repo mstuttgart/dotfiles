@@ -1,0 +1,108 @@
+<GerarNfseResposta xmlns="http://www.abrasf.org.br/nfse.xsd">
+    <NumeroLote>1</NumeroLote>
+    <DataRecebimento>2023-08-01T15:56:11</DataRecebimento>
+    <Protocolo>S21385983J23X213naaaVxJ4S</Protocolo>
+    <ListaNfse>
+        <CompNfse>
+            <Nfse xmlns="http://www.abrasf.org.br/nfse.xsd" versao="1.00">
+                <InfNfse Id="nfse">
+                    <Numero>202300000009999</Numero>
+                    <CodigoVerificacao>00000000</CodigoVerificacao>
+                    <DataEmissao>2023-08-03T15:56:11</DataEmissao>
+                    <IdentificacaoRps>
+                        <Numero>3</Numero>
+                        <Serie>1</Serie>
+                        <Tipo>1</Tipo>
+                    </IdentificacaoRps>
+                    <DataEmissaoRps>2023-08-03</DataEmissaoRps>
+                    <NaturezaOperacao>1</NaturezaOperacao>
+                    <OptanteSimplesNacional>2</OptanteSimplesNacional>
+                    <IncentivadorCultural>2</IncentivadorCultural>
+                    <Competencia>2023-08-03T15:46:04</Competencia>
+                    <OutrasInformacoes>NFS-e gerada em ambiente de teste. NÃO TEM VALOR JURÍDICO NEM FISCAL.</OutrasInformacoes>
+                    <Servico>
+                        <Valores>
+                            <ValorServicos>9.13</ValorServicos>
+                            <ValorDeducoes>0.00</ValorDeducoes>
+                            <ValorPis>0.07</ValorPis>
+                            <ValorCofins>0.30</ValorCofins>
+                            <ValorInss>0.00</ValorInss>
+                            <ValorIr>0.15</ValorIr>
+                            <ValorCsll>0.10</ValorCsll>
+                            <IssRetido>2</IssRetido>
+                            <ValorIss>0.23</ValorIss>
+                            <BaseCalculo>9.13</BaseCalculo>
+                            <Aliquota>0.025</Aliquota>
+                            <ValorLiquidoNfse>8.51</ValorLiquidoNfse>
+                        </Valores>
+                        <ItemListaServico>01.07</ItemListaServico>
+                        <CodigoTributacaoMunicipio>10700188</CodigoTributacaoMunicipio>
+                        <Discriminacao>Alocacao Operacional</Discriminacao>
+                        <CodigoMunicipio>3106200</CodigoMunicipio>
+                    </Servico>
+                    <PrestadorServico>
+                        <IdentificacaoPrestador>
+                            <Cnpj>23456359000173</Cnpj>
+                            <InscricaoMunicipal>07383060017</InscricaoMunicipal>
+                        </IdentificacaoPrestador>
+                        <RazaoSocial>GUSTAVO H A SOARES SUPORTE E SERVICOS EM TI LTDA</RazaoSocial>
+                        <NomeFantasia>GHAS CONSULTING</NomeFantasia>
+                        <Endereco>
+                            <Endereco>RUA RIO GRANDE DO NORTE</Endereco>
+                            <Numero>694</Numero>
+                            <Complemento>SALA 801</Complemento>
+                            <Bairro>Savassi</Bairro>
+                            <CodigoMunicipio>3106200</CodigoMunicipio>
+                            <Uf>MG</Uf>
+                            <Cep>30130920</Cep>
+                        </Endereco>
+                    </PrestadorServico>
+                    <TomadorServico>
+                        <IdentificacaoTomador>
+                            <CpfCnpj>
+                                <Cnpj>42945394000109</Cnpj>
+                            </CpfCnpj>
+                        </IdentificacaoTomador>
+                        <RazaoSocial>NEOCENTER S/A</RazaoSocial>
+                        <Endereco>
+                            <Endereco>Rua Albita</Endereco>
+                            <Numero>131</Numero>
+                            <Complemento>LOJA 2 TERREO</Complemento>
+                            <Bairro>Cruzeiro</Bairro>
+                            <CodigoMunicipio>3106200</CodigoMunicipio>
+                            <Uf>MG</Uf>
+                            <Cep>30310160</Cep>
+                        </Endereco>
+                        <Contato>
+                            <Email>ti@neocenter.com.br</Email>
+                        </Contato>
+                    </TomadorServico>
+                    <OrgaoGerador>
+                        <CodigoMunicipio>3106200</CodigoMunicipio>
+                        <Uf>MG</Uf>
+                    </OrgaoGerador>
+                </InfNfse>
+                <Signature xmlns="http://www.w3.org/2000/09/xmldsig#" Id="NfseAssSMF_nfse">
+                    <SignedInfo>
+                        <CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></CanonicalizationMethod>
+                        <SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"></SignatureMethod>
+                        <Reference URI="#nfse">
+                            <Transforms>
+                                <Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"></Transform>
+                                <Transform Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"></Transform>
+                            </Transforms>
+                            <DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"></DigestMethod>
+                            <DigestValue>QJGon6hajo0eXQXvl+OZqJVY7e4=</DigestValue>
+                        </Reference>
+                    </SignedInfo>
+                    <SignatureValue>woSE5q0rOWQJVFo0W02msnQ2MIDDFfte399Zr0HtSf8m0/goianiaVe3EhS0JySHlZD8lM55SRDBMk5AWiJTutOYa0F9oADn5zLKWV44NaCjZtiqy0/F7TAgayyxOHGigzCFjYwTAYCqJdNUU85SAbLgsIL4DLypRP/lcAOd8ir/18h7RDHkK/dc+BFAxSAQfDfayzs8D8SWQOLC9LortLktiZNWeiyKZFB+q4LDj8GCy4dMW3lDuuivZzqF8303Kk4Wj6GZIuKvpWKYNTUd2XitC9cJt73Nr3mcDr9LfqFE3KUQY6t29sU0GZ7jtIJbwERsgPKShgfLvXJp2jpQA4wGQng==</SignatureValue>
+                    <KeyInfo>
+                        <X509Data>
+                            <X509Certificate>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</X509Certificate>
+                        </X509Data>
+                    </KeyInfo>
+                </Signature>
+            </Nfse>
+        </CompNfse>
+    </ListaNfse>
+</GerarNfseResposta>

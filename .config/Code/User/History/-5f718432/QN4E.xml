@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="portfolio_page" name="Portfolio Page">
+        <t t-call="website.layout">
+            <div id="wrap">
+                <div class="oe_structure oe_empty"/>
+                <!-- Page Banner Start -->
+                <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/jt_corporate2201_theme/static/src/images/banner.jpg');">
+                    <div class="container">
+                        <div class="banner-inner">
+                            <h1 class="page-title">Portfolio</h1>
+                            <nav aria-label="breadcrumb">
+                                <ol class="breadcrumb">
+                                    <li class="breadcrumb-item">
+                                        <a href="/">Corporate</a>
+                                    </li>
+                                    <li class="breadcrumb-item active">Portfolio</li>
+                                </ol>
+                            </nav>
+                        </div>
+                    </div>
+                </section>
+                <!-- Page Banner End -->
+                <div class="oe_structure oe_empty"/>
+                <!-- Gallery Section Start -->
+                <section class="gallery-section-two overlay pt-115 rpt-95 pb-85 rpb-65 px-60 rpx-0">
+                    <div class="container-fluid">
+                        <div class="section-title text-center mb-55">
+                            <span class="sub-title">Our Gallery</span>
+                            <h2>Offer The Latest Software And <br/>
+Solutions To Our customers!</h2>
+                        </div>
+                        <div class="row text-white justify-content-center">
+                            <div class="col-xl-4 col-md-6">
+                                <div class="gallery-item style-two fadeInUp delay-0-2s">
+                                    <img src="/jt_corporate2201_theme/static/src/images/gallery/gallery-two-1.jpg" alt="Gallery"/>
+                                    <div class="gallery-content">
+                                        <div class="gallery-content-inner">
+                                            <h5>
+                                                <a href="#">Cyber Security Services</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="gallery-item style-two fadeInUp delay-0-4s">
+                                    <img src="/jt_corporate2201_theme/static/src/images/gallery/gallery-two-2.jpg" alt="Gallery"/>
+                                    <div class="gallery-content">
+                                        <div class="gallery-content-inner">
+                                            <h5>
+                                                <a href="#">Software License Management</a>
+                                            </h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="gallery-item style-two fadeInUp delay-0-6s">
+                                    <img src="/jt_corporate2201_theme/static/src/images/gallery/gallery-two-3.jpg" alt="Gallery"/>
+                                    <div class="gallery-content">
+                                        <div class="gallery-content-inner">
+                                            <h5>
+                                                <a href="#">Knowledge Base &amp; Live Chat</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="gallery-item style-two fadeInUp delay-0-2s">
+                                    <img src="/jt_corporate2201_theme/static/src/images/gallery/gallery-four-1.jpg" alt="Gallery"/>
+                                    <div class="gallery-content">
+                                        <div class="gallery-content-inner">
+                                            <h5>
+                                                <a href="#">Cyber Security Services</a>
+                                            </h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="gallery-item style-two fadeInUp delay-0-4s">
+                                    <img src="/jt_corporate2201_theme/static/src/images/gallery/gallery-four-2.jpg" alt="Gallery"/>
+                                    <div class="gallery-content">
+                                        <div class="gallery-content-inner">
+                                            <h5>
+                                                <a href="#">Software License Management</a>
+                                            </h5>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-xl-4 col-md-6">
+                                <div class="gallery-item style-two fadeInUp delay-0-6s">
+                                    <img src="/jt_corporate2201_theme/static/src/images/gallery/gallery-four-3.jpg" alt="Gallery"/>
+                                    <div class="gallery-content">
+                                        <div class="gallery-content-inner">
+                                            <h5>
+                                                <a href="#">Knowledge Base &amp; Live Chat</a>
+                                            </h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- Gallery Section End -->
+            </div>
+        </t>
+    </template>
+</odoo>

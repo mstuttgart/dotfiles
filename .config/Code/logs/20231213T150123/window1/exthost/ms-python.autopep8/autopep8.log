@@ -1,0 +1,79 @@
+2023-12-13 15:01:25.263 [info] Name: autopep8
+2023-12-13 15:01:25.263 [info] Module: autopep8
+2023-12-13 15:01:25.263 [info] Default formatter is set to null for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:25.263 [warning] autopep8 Formatter is NOT set as the default formatter for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:25.263 [warning] To set autopep8 Formatter as the default formatter, add the following to your settings.json file:
+2023-12-13 15:01:25.263 [warning] 
+"[python]": {
+    "editor.defaultFormatter": "ms-python.autopep8"
+}
+2023-12-13 15:01:25.263 [info] Python extension loading
+2023-12-13 15:01:25.263 [info] Waiting for interpreter from python extension.
+2023-12-13 15:01:25.263 [info] No interpreter found from setting autopep8.interpreter
+2023-12-13 15:01:25.263 [info] Getting interpreter from ms-python.python extension for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:25.263 [info] Python extension loaded
+2023-12-13 15:01:25.263 [info] Interpreter from ms-python.python extension for /home/michell/Workspace/multidadosti/odoo: /home/michell/Workspace/multidadosti/odoo/.venv/bin/python
+2023-12-13 15:01:25.263 [info] No interpreter found from setting autopep8.interpreter
+2023-12-13 15:01:25.263 [info] Getting interpreter from ms-python.python extension for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:25.263 [info] Interpreter from ms-python.python extension for /home/michell/Workspace/multidadosti/odoo: /home/michell/Workspace/multidadosti/odoo/.venv/bin/python
+2023-12-13 15:01:25.263 [info] Server run command: /home/michell/Workspace/multidadosti/odoo/.venv/bin/python /home/michell/.vscode/extensions/ms-python.autopep8-2023.8.0/bundled/tool/lsp_server.py
+2023-12-13 15:01:25.263 [info] Server: Start requested.
+2023-12-13 15:01:26.180 [info] CWD Server: /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:26.217 [info] sys.path used to run Server:
+   /home/michell/.vscode/extensions/ms-python.autopep8-2023.8.0/bundled/libs
+   /home/michell/.vscode/extensions/ms-python.autopep8-2023.8.0/bundled/tool
+   /home/michell/.asdf/installs/python/3.8.18/lib/python38.zip
+   /home/michell/.asdf/installs/python/3.8.18/lib/python3.8
+   /home/michell/.asdf/installs/python/3.8.18/lib/python3.8/lib-dynload
+   /home/michell/Workspace/multidadosti/odoo/.venv/lib/python3.8/site-packages
+   /home/michell/Workspace/multidadosti/odoo
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/formio-data
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/python-cnab
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/python-sped
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/pytrust-cnab240
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/python-boleto
+   /home/michell/Workspace/multidadosti/odoo/multierp/lib/pytrustnfe
+2023-12-13 15:01:26.260 [info] PYTHONPATH env variable used to run Server:
+   /home/michell/.vscode/extensions/ms-python.autopep8-2023.8.0/bundled/libs:
+2023-12-13 15:01:26.302 [info] Settings used to run Server:
+[
+    {
+        "cwd": "/home/michell/Workspace/multidadosti/odoo",
+        "workspace": "file:///home/michell/Workspace/multidadosti/odoo",
+        "args": [],
+        "path": [],
+        "interpreter": [
+            "/home/michell/Workspace/multidadosti/odoo/.venv/bin/python"
+        ],
+        "importStrategy": "useBundled",
+        "showNotifications": "off"
+    }
+]
+
+2023-12-13 15:01:26.304 [info] Global settings:
+{
+    "cwd": "/home/michell",
+    "workspace": "/home/michell",
+    "args": [],
+    "path": [],
+    "interpreter": [],
+    "importStrategy": "useBundled",
+    "showNotifications": "off"
+}
+
+2023-12-13 15:01:26.549 [info] /home/michell/Workspace/multidadosti/odoo/.venv/bin/python -m autopep8 --version
+2023-12-13 15:01:26.623 [info] CWD Server: /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:26.705 [info] Version info for formatter running for /home/michell/Workspace/multidadosti/odoo:
+autopep8 2.0.4 (pycodestyle: 2.11.1)
+
+2023-12-13 15:01:26.726 [info] SUPPORTED autopep8>=1.7.0
+FOUND autopep8==2.0.4
+
+2023-12-13 15:01:26.741 [info] /home/michell/Workspace/multidadosti/odoo/.venv/bin/python -m autopep8 --version
+2023-12-13 15:01:27.103 [info] CWD Server: /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:27.136 [info] Version info for formatter running for /home/michell/Workspace/multidadosti/odoo:
+autopep8 2.0.4 (pycodestyle: 2.11.1)
+
+2023-12-13 15:01:27.190 [info] SUPPORTED autopep8>=1.7.0
+FOUND autopep8==2.0.4
+

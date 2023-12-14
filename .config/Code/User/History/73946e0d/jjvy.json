@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "/home/michell/.config/nvim"
+		},
+		{
+			"path": "/home/michell/.config/nvim.bkp"
+		},
+		{
+			"path": "../../../tmux"
+		}
+	],
+	"settings": {}
+}

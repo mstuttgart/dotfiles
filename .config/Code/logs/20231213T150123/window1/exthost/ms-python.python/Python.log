@@ -1,0 +1,111 @@
+2023-12-13 15:01:24.819 [info] Experiment 'pythonaacf' is active
+2023-12-13 15:01:24.819 [info] Experiment 'pythonRecommendTensorboardExt' is active
+2023-12-13 15:01:24.819 [info] Experiment 'pythonREPLSmartSend' is active
+2023-12-13 15:01:24.819 [info] Experiment 'pythonTestAdapter' is active
+2023-12-13 15:01:24.819 [info] Default formatter is set to null for workspace /home/michell/Workspace/multidadosti/odoo
+2023-12-13 15:01:24.819 [info] Python interpreter path: ./.venv/bin/python
+2023-12-13 15:01:24.830 [info] Test server listening.
+2023-12-13 15:01:27.976 [info] Starting Pylance language server.
+2023-12-13 15:01:28.665 [error] Custom .env is likely not pointing to a valid file [Error: EISDIR: illegal operation on a directory, read
+	at Object.readSync (node:fs:751:3)
+	at tryReadSync (node:fs:451:20)
+	at readFileSync (node:fs:497:19)
+	at t.readFileSync (node:electron/js2c/asar_bundle:2:9212)
+	at f.parseFileSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:322377)
+	at v.getCustomEnvironmentVariablesSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:327540)
+	at v._getEnvironmentVariablesSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:326970)
+	at v.getEnvironmentVariablesSync (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:326269)
+	at Object.getEnvironmentVariables (/home/michell/.vscode/extensions/ms-python.python-2023.22.0/out/client/extension.js:2:410142)
+	at Object.configuration (/home/michell/.vscode/extensions/ms-python.vscode-pylance-2023.11.10/dist/extension.bundle.js:1:130102)
+	at runNextTicks (node:internal/process/task_queues:60:5)
+	at process.processImmediate (node:internal/timers:447:9)] {
+  errno: -21,
+  syscall: 'read',
+  code: 'EISDIR'
+}
+2023-12-13 15:01:29.921 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:05:59.981 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:06:03.304 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:09:41.609 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:09:46.196 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:09:48.226 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:10:54.339 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:10:55.609 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:11:01.308 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:11:02.894 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:11:04.697 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:11:18.641 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:11:21.238 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:11:22.403 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:12:22.246 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:12:23.466 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:12:35.321 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:12:38.525 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:12:40.594 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:13:46.637 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:13:49.884 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:13:53.783 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:13:58.166 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:14:13.340 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:14:14.832 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:14:26.804 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:18:59.493 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:19:01.682 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:20:55.671 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:20:58.095 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:00.178 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:01.699 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:04.665 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:14.700 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:21.274 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:34.499 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:52.849 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:54.567 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:21:56.069 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:06.725 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:09.690 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:11.718 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:25.041 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:31.664 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:35.686 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:39.861 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:42.250 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:22:47.128 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:23:02.242 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:23:24.805 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:23:26.283 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:23:42.984 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:24:02.605 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:24:05.560 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:24:07.825 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:24:12.402 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:24:18.553 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:25:52.362 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:25:55.531 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:25:57.531 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:26:04.614 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:26:40.835 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:26:42.179 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:26:45.374 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:26:49.658 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:27:06.473 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:27:53.211 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:28:55.501 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:28:56.671 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:29:04.633 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:29:09.155 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:30:03.365 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:31:25.935 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:31:26.999 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:31:35.806 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:31:37.742 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:31:40.568 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:31:41.566 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:32:33.754 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:34:19.157 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:34:24.486 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:34:27.265 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:34:34.453 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:34:38.579 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:34:52.913 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json
+2023-12-13 15:35:41.981 [info] Discover tests for workspace name: undefined - uri: /home/michell/.config/Code/User/profiles/-4f39f5a1/settings.json

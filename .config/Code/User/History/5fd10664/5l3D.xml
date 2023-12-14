@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+        <record id="br_account_invoice_electronic_form" model="ir.ui.view">
+            <field name="name">br.account.invoice.electronic.form</field>
+            <field name="model">invoice.electronic</field>
+            <field name="arch" type="xml">
+                <form string="Documento Eletrônico">
+                    <header>
+                        <button name="action_send_electronic_invoice"
+                                string="Enviar"
+                                type="object"
+                                class="oe_highlight"
+                                attrs="{'invisible':['|',
+                                       ('state', '!=','draft'),
+                                       ('cert_state', '=', 'expired'),
+                                       ('model', 'in', ('001', '55'))]}"
+                                confirm="Deseja confirmar o envio?"/>
+
+                        <button name="action_back_to_draft"
+                                states="edit,error"
+                                string="Rascunho"
+                                type="object"/>
+
+                        <button name="action_edit_edoc"
+                                states="draft,error"
+                                string="Habilitar Edição"
+                                type="object"
+                                groups="br_account_einvoice.group_edit_edoc"/>
+
+                        <button name="action_cancel_document"
+                                confirm="Confirma o cancelamento do documento?"
+                                class="oe_highlight"
+                                states="done"
+                                string="Cancelar"
+                                type="object"/>
+
+                        <button name="action_print_einvoice_report"
+                                type="object"
+                                string="Imprimir"
+                                class="oe_highlight"/>
+
+                        <field name="state" widget="statusbar" statusbar_visible="draft,done"/>
+                    </header>
+                    <div name="alertas" class="alert alert-info" role="alert" style="margin-bottom:0px;">
+                        <div class="row">
+                            <div class="col-md-6 col-md-offset-1">
+                                <b>Situação:</b>
+                                <field name="codigo_retorno" class="oe_inline" readonly="1"/>
+                                <br/>
+                                <b>Mensagem:</b>
+                                <field name="mensagem_retorno" class="oe_inline" readonly="1"/>
+                            </div>
+                        </div>
+                    </div>
+                    <field name="days_to_expire_cert" invisible="1"/>
+                    <field name="cert_state" invisible="1"/>
+                    <field name="company_fiscal_type" invisible="1"/>
+
+                    <div class="alert alert-warning"
+                         role="alert"
+                         style="margin-bottom:0px;"
+                         attrs="{'invisible': ['|','|','|',
+                                ('cert_state', '=', 'expired'),
+                                ('days_to_expire_cert', '&gt;', 30),
+                                ('days_to_expire_cert', '&lt;', 0),
+                                ('model', 'not in', ('001', '55'))]}">
+                         <p>Certificado próximo de expirar.</p>
+                         <b>Faltam: <field name="days_to_expire_cert" class="oe_inline"/> dias</b>
+                    </div>
+
+                    <div class="alert alert-warning"
+                                role="alert"
+                                style="margin-bottom:0px;"
+                                attrs="{'invisible': ['|',
+                                ('cert_state', '!=', 'expired'),
+                                ('model', 'not in', ('001', '55'))]}">
+                        <p>Certificado expirado.</p>
+                        <b>Expirou em: <field name="cert_expire_date" class="oe_inline"/></b>
+                    </div>
+
+                    <sheet string="Documento Eletronico">
+                        <div class="oe_button_box" name="button_box">
+                        </div>
+
+                        <widget name="web_ribbon" title="Cancelled" bg_color="bg-danger" attrs="{'invisible': [('state', '!=', 'cancel')]}"/>
+                        <widget name="web_ribbon" title="Sent" bg_color="bg-success" attrs="{'invisible': [('state', '!=', 'done')]}"/>
+                        <widget name="web_ribbon" title="Imported" bg_color="bg-info" attrs="{'invisible': [('state', '!=', 'imported')]}"/>
+                        <widget name="web_ribbon" title="Error" bg_color="bg-warning" attrs="{'invisible': [('state', '!=', 'error')]}"/>
+                        <widget name="web_ribbon" title="Denied" bg_color="bg-dark" attrs="{'invisible': [('state', '!=', 'denied')]}"/>
+
+                        <group>
+                            <group>
+                                <field name="model"/>
+                                <field name="invoice_id"/>
+                                <field name="partner_id"/>
+                                <field name="partner_shipping_id"/>
+                            </group>
+
+                            <group>
+                                <field name="tipo_operacao"/>
+                                <field name="payment_term_id"/>
+                                <field name="fiscal_position_id"/>
+                                <field name="service_locale_address_id"/>
+                                <field name="service_locale"/>
+                                <field name="email_sent"/>
+                                <field name="cancel_email_sent"/>
+                            </group>
+                        </group>
+
+                        <notebook>
+                            <page name="identificacao" string="Identificação">
+                                <group>
+                                    <group>
+                                        <field name="code"/>
+                                        <field name="name"/>
+                                        <field name="company_id"/>
+                                        <field name="currency_id" invisible="1"/>
+                                        <field name="serie"/>
+                                        <field name="numero_prefixo"/>
+                                        <field name="numero"/>
+                                        <field name="numero_controle"/>
+                                        <field name="xml_to_send_name" invisible="1"/>
+                                        <field name="xml_to_send" filename="xml_to_send_name"/>
+                                    </group>
+
+                                    <group>
+                                        <field name="data_emissao"/>
+                                        <field name="data_fatura"/>
+                                        <field name="data_autorizacao"/>
+                                        <field name="ambiente"/>
+                                        <field name="client_order_ref"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page name="itens" string="Itens">
+                                <group>
+                                    <field name="electronic_item_ids" nolabel="1">
+                                        <tree name="electronic_items">
+                                            <field name="state" invisible="1"/>
+                                            <field name="product_id" invisible="1"/>
+                                            <field name="name" force_save="1"/>
+                                            <field name="uom_id"/>
+                                            <field name="cfop"/>
+                                            <field name="quantidade"/>
+                                            <field name="preco_unitario"/>
+                                            <field name="valor_liquido"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+
+                            <page name="totais" string="Totais">
+                                <group>
+                                    <group name="totais" string="Totais">
+                                        <field name="valor_bruto"/>
+                                        <field name="valor_desconto"/>
+                                        <field name="valor_final"/>
+                                        <field name="financial_price_total"/>
+                                    </group>
+
+                                    <group name="impostos" string="Impostos">
+                                        <field name="valor_bc_icms"/>
+                                        <field name="valor_icms"/>
+                                        <field name="valor_icms_credito"/>
+                                        <field name="valor_icms_deson"/>
+                                        <field name="valor_bc_icmsst"/>
+                                        <field name="valor_icmsst"/>
+                                        <field name="valor_ii"/>
+                                        <field name="valor_ipi"/>
+                                        <field name="valor_pis"/>
+                                        <field name="valor_cofins"/>
+                                        <field name="valor_csll"/>
+                                        <field name="valor_inss"/>
+                                        <field name="valor_estimado_tributos"/>
+                                    </group>
+                                </group>
+
+                                <group>
+                                    <group name="servico" string="Totais de Serviço">
+                                        <field name="valor_servicos"/>
+                                        <field name="valor_bc_issqn"/>
+                                        <field name="valor_issqn"/>
+                                        <field name="valor_pis_servicos"/>
+                                        <field name="valor_cofins_servicos"/>
+                                    </group>
+
+                                    <group name="retencoes" string="Retenções">
+                                        <field name="valor_bc_issqn"/>
+                                        <field name="valor_retencao_issqn"/>
+                                        <field name="valor_retencao_pis"/>
+                                        <field name="valor_retencao_cofins"/>
+                                        <field name="valor_bc_irrf"/>
+                                        <field name="valor_retencao_irrf"/>
+                                        <field name="valor_bc_csll"/>
+                                        <field name="valor_retencao_csll"/>
+                                        <field name="valor_bc_inss"/>
+                                        <field name="inss_food_voucher"/>
+                                        <field name="inss_transportation_voucher"/>
+                                        <field name="inss_tools_supplies"/>
+                                        <field name="valor_retencao_inss"/>
+                                    </group>
+                                </group>
+                            </page>
+
+                            <page string="Observações">
+                                <group>
+                                    <field name="informacoes_legais"/>
+                                    <field name="informacoes_complementares"/>
+                                </group>
+                            </page>
+
+                            <page name="eventos" string="Eventos">
+                                <group>
+                                    <field name="electronic_event_ids" nolabel="1"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" groups="base.group_user"/>
+                        <field name="message_ids" widget="mail_thread"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="sped_base_electronic_doc_tree" model="ir.ui.view">
+            <field name="name">sped.electronic.doc.form</field>
+            <field name="model">invoice.electronic</field>
+            <field name="arch" type="xml">
+                <tree string="Documentos Eletrônicos">
+                    <field name="state"/>
+                    <field name="model"/>
+                    <field name="numero_prefixo"/>
+                    <field name="numero"/>
+                    <field name="invoice_id"/>
+                    <field name="data_emissao"/>
+                    <field name="partner_id"/>
+                    <field name="valor_final"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="sped_base_electronic_doc_search" model="ir.ui.view">
+            <field name="name">sped.electronic.doc.search</field>
+            <field name="model">invoice.electronic</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="invoice_id"/>
+                    <field name="numero"/>
+                </search>
+            </field>
+        </record>
+
+        <record id="action_sped_base_electronic_doc" model="ir.actions.act_window">
+            <field name="name">Documentos Eletrônicos</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">invoice.electronic</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_type">form</field>
+            <field name="view_id" ref="sped_base_electronic_doc_tree"/>
+        </record>
+
+        <menuitem id="menu_action_sped_base_electronic_doc" parent="account.menu_finance_entries"
+                  action="action_sped_base_electronic_doc" sequence="5"/>
+
+    </data>
+</openerp>

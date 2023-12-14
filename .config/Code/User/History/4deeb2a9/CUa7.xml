@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="about_page" name="About Page">
+        <t t-call="website.layout">
+            <div class="oe_structure"/>
+            <!-- Page Banner Start -->
+            <section class="page-banner bgs-cover overlay pt-50" style="background-image: url('/theme_jt_corporate2201/static/src/images/banner.jpg');">
+                <div class="container">
+                    <div class="banner-inner">
+                        <h1 class="page-title">About Us</h1>
+                        <nav aria-label="breadcrumb">
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Corporate</a>
+                                </li>
+                                <li class="breadcrumb-item active">About</li>
+                            </ol>
+                        </nav>
+                    </div>
+                </div>
+            </section>
+            <!-- Page Banner End -->
+            <div class="oe_structure"/>
+            <!-- About Section Start -->
+            <section class="about-three pt-120 rpt-100 pb-240 rpb-150">
+                <div class="container">
+                    <div class="row align-items-center">
+                        <div class="col-lg-6">
+                            <div class="about-three-image rmb-60 mr-10 rmr-0 fadeInLeft delay-0-2s">
+                                <img src="/theme_jt_corporate2201/static/src/images/about/about-three-1.jpg" alt="About"/>
+                                <img src="/theme_jt_corporate2201/static/src/images/about/about-three-2.jpg" alt="About"/>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="about-content pl-70 rpl-0 rpb-30 fadeInRight delay-0-2s">
+                                <div class="section-title mb-35">
+                                    <span class="sub-title">It Support For Business</span>
+                                    <h2>Preparing for your success trusted source in IT services.</h2>
+                                </div>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                                <ul class="list-style-three mt-15">
+                                    <li>
+                                        <i class="fa fa-check ht_check_s"/>
+which means as the company ramps</li>
+                                    <li>
+                                        <i class="fa fa-check ht_check_s"/>
+Available in 14.1-in. and 16-in. versions.</li>
+                                    <li>
+                                        <i class="fa fa-check ht_check_s"/>
+The potential loss of the Touch Bar.</li>
+                                    <li>
+                                        <i class="fa fa-check ht_check_s"/>
+High-speed USB 4.0.</li>
+                                </ul>
+                                <a href="/" class="theme-btn style-three mt-25">View details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Section End -->
+            <div class="oe_structure"/>
+            <!-- Team Section Start -->
+            <section class="team-section bg-lighter text-center pt-115 rpt-95 pb-200 rpb-70">
+                <div class="container">
+                    <div class="section-title mb-55">
+                        <span class="sub-title">Export Team</span>
+                        <h2>Meet our colleague</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-2s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-four-1.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">michael phelps</a>
+                                    </h5>
+                                    <span>Founder CEO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-4s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-four-2.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">Emile Smith Rowe</a>
+                                    </h5>
+                                    <span>Senior Manager</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-6s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-four-3.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">michelle williams</a>
+                                    </h5>
+                                    <span>UIUX Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-8s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-four-4.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">rachel weisz</a>
+                                    </h5>
+                                    <span>front end developer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-2s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-three-1.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">michael phelps</a>
+                                    </h5>
+                                    <span>Founder CEO</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-4s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-three-2.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">Emile Smith Rowe</a>
+                                    </h5>
+                                    <span>Senior Manager</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-6s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-three-3.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">michelle williams</a>
+                                    </h5>
+                                    <span>UIUX Designer</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="team-member-four fadeInUp delay-0-8s">
+                                <div class="image">
+                                    <img src="/theme_jt_corporate2201/static/src/images/team/team-three-1.jpg" alt="Team Member"/>
+                                    <div class="social-style-two">
+                                        <a href="#">
+                                            <i class="fab fa-facebook-f"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-twitter"></i>
+                                        </a>
+                                        <a href="#">
+                                            <i class="fab fa-instagram"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="member-designation">
+                                    <h5>
+                                        <a href="#">rachel weisz</a>
+                                    </h5>
+                                    <span>front end developer</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Team Section End -->
+            <div class="oe_structure"/>
+            <!-- Wrok Progress Start -->
+            <section class="work-progress-three bg-blue text-white pt-115 rpt-95 pb-85 rpb-65" style="background-image: url('/theme_jt_corporate2201/static/src/images/background/progress.png');">
+                <div class="container">
+                    <div class="section-title text-center mb-35">
+                        <span class="sub-title">How We Do</span>
+                        <h2>Custom IT Solutions <br/>
+for Your Business</h2>
+                    </div>
+                    <div class="work-progress-inner-three">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="progress-item-two style-two fadeInUp delay-0-2s">
+                                    <span class="progress-step">01</span>
+                                    <div class="icon">
+                                        <i class="flaticon flaticon-speech-bubble"></i>
+                                    </div>
+                                    <h3>Advertising and <br/>
+Marketing</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                                    <a href="#" class="learn-more">Read More <i class="fafa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="progress-item-two style-two fadeInUp delay-0-4s">
+                                    <span class="progress-step">02</span>
+                                    <div class="icon">
+                                        <i class="flaticon flaticon-vector"></i>
+                                    </div>
+                                    <h3>Web <br/>
+Development</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                                    <a href="#" class="learn-more">Read More <i class="fafa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-sm-6">
+                                <div class="progress-item-two style-two fadeInUp delay-0-6s no-border mb-0">
+                                    <span class="progress-step">03</span>
+                                    <div class="icon">
+                                        <i class="flaticon flaticon-like-1"></i>
+                                    </div>
+                                    <h3>Mobile App <br/>
+Development</h3>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore</p>
+                                    <a href="#" class="learn-more">Read More <i class="fafa-arrow-right"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="oe_structure"/>
+            <!-- Wrok Progress End -->
+            <!-- Counter Section Start -->
+            <section class="cournter-section-three bg-lighter text-center pt-115 rpt-95 pb-70 rpb-50">
+                <div class="container">
+                    <div class="section-title mb-55">
+                        <h2>Over 1200+ finished work and <br/>
+Still counting.</h2>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="success-item circle-style fadeInUp delay-0-2s counted animated" style="visibility: visible; animation-name: fadeInUp;">
+                                <span class="count-text k">35k</span>
+                                <span>Complate</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="success-item circle-style fadeInUp delay-0-4s color-two counted animated" style="visibility: visible; animation-name: fadeInUp;">
+                                <span class="count-text k">34k</span>
+                                <span>Trusted Users</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="success-item circle-style fadeInUp delay-0-6s color-three counted animated" style="visibility: visible; animation-name: fadeInUp;">
+                                <span class="count-text plus">119<i class="fa fa-plus ht_fa_plus"/>
+                                </span>
+                                <span>Awards</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-sm-6">
+                            <div class="success-item circle-style fadeInUp delay-0-8s color-four counted animated" style="visibility: visible; animation-name: fadeInUp;">
+                                <span class="count-text plus">119<i class="fa fa-plus ht_fa_plus"/>
+                                </span>
+                                <span>Happy Clients</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <div class="oe_structure"/>
+            <!-- Testimonial Section End -->
+        </t>
+    </template>
+</odoo>

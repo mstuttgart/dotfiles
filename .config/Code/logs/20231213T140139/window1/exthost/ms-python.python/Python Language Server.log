@@ -1,0 +1,16 @@
+2023-12-13 14:01:58.537 [info] [Info  - 2:01:58 PM] (254533) Pylance language server 2023.11.10 (pyright 088ebaa5) starting
+2023-12-13 14:01:58.581 [info] [Info  - 2:01:58 PM] (254533) Server root directory: /home/michell/.vscode/extensions/ms-python.vscode-pylance-2023.11.10/dist
+2023-12-13 14:01:58.622 [info] [Info  - 2:01:58 PM] (254533) Starting service instance "odoo"
+2023-12-13 14:01:58.680 [info] [Info  - 2:01:58 PM] (254533) Auto format for strings enabled
+2023-12-13 14:01:59.407 [info] [Info  - 2:01:59 PM] (254533) Setting pythonPath for service "odoo": "/home/michell/Workspace/multidadosti/odoo/.venv/bin/python"
+2023-12-13 14:01:59.444 [info] [Info  - 2:01:59 PM] (254533) Setting environmentName for service "odoo": "3.8.10 (.venv venv)"
+2023-12-13 14:01:59.465 [info] [Info  - 2:01:59 PM] (254533) Assuming Python version 3.8
+2023-12-13 14:02:01.335 [info] [Info  - 2:02:01 PM] (254533) Found 10359 source files
+2023-12-13 14:05:35.719 [info] [Info  - 2:05:35 PM] (254533) Setting pythonPath for service "odoo": "/home/michell/Workspace/multidadosti/odoo/.venv/bin/python"
+2023-12-13 14:05:35.719 [info] [Info  - 2:05:35 PM] (254533) Setting environmentName for service "odoo": "3.8.10 (.venv venv)"
+2023-12-13 14:05:35.751 [info] [Info  - 2:05:35 PM] (254533) Assuming Python version 3.8
+2023-12-13 14:05:37.593 [info] [Info  - 2:05:37 PM] (254533) Found 10359 source files
+2023-12-13 14:05:37.636 [info] [Info  - 2:05:37 PM] (254533) Setting pythonPath for service "odoo": "/home/michell/Workspace/multidadosti/odoo/.venv/bin/python"
+2023-12-13 14:05:37.636 [info] [Info  - 2:05:37 PM] (254533) Setting environmentName for service "odoo": "3.8.10 (.venv venv)"
+2023-12-13 14:05:37.681 [info] [Info  - 2:05:37 PM] (254533) Assuming Python version 3.8
+2023-12-13 14:05:39.322 [info] [Info  - 2:05:39 PM] (254533) Found 10359 source files

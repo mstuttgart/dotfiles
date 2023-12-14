@@ -1,0 +1,153 @@
+# qa
+
+qa-multierp:
+  host: qa-multierp.multidados.tech
+  database: qa-multierp
+  adminpassword: "!@#multierp-qa@#!"
+
+# producao
+
+cordontextil:
+  host: cordontextil.multidados.tech
+  database: cordontextil
+  adminpassword: "k#aE^I&TznQ$h4U"
+
+multi:
+  host: multi.multidados.tech
+  database: multi
+  adminpassword: "!@#mult!d@dos@#!"
+
+lawps:
+  host: lawps.multidados.tech
+  database: lawps
+  adminpassword: "JU{7ie=q.wh=)-2CS;Fe"
+
+ramc:
+  host: ramc.multidados.tech
+  database: ramc
+  adminpassword: "hkIILcqI0iqXZBC"
+
+dikta:
+  host: dikta.multidados.tech
+  database: dikta
+  adminpassword: "!@#jum@q@#!"
+
+kanxa:
+  host: kanxa.multidados.tech
+  database: kanxa
+  adminpassword: "famLRkHO9ehxPa4"
+
+lab88:
+  host: lab88.multidados.tech
+  database: lab88
+  adminpassword: "!@#l@b&&@#!"
+
+audiomulti:
+  host: audiomulti.multiphono.com.br
+  database: audiomulti
+  adminpassword: "s0nkc9GEJRvCBUa"
+
+audive:
+  host: audive.multiphono.com.br
+  database: audive
+  adminpassword: "BrPqku04mA95oYw"
+
+audisonic:
+  host: audisonic.multiphono.com.br
+  database: audisonic
+  adminpassword: "wDgvgJ3J0lBv3f7"
+
+multiphono:
+  host: multiphono.multidados.tech
+  database: multiphono
+  adminpassword: "sUV#!c&dQe{iImA"
+
+starbem:
+  host: starbem.multiphono.com.br
+  database: starbem
+  adminpassword: "Cn2AMWCRtgqW3OR"
+
+teledias:
+  host: teledias.multidados.tech
+  database: teledias
+  adminpassword: "x%6ZyuqY*EpL"
+
+audivida:
+  host: audivida.multiphono.com.br
+  database: audivida
+  adminpassword: "$Mu&!D&TcsA^"
+
+acre:
+  host: acre.multiphono.com.br
+  database: acre
+  adminpassword: "a^f524qXd89L"
+
+aasi:
+  host: aasi.multiphono.com.br
+  database: aasi
+  adminpassword: "%Iv45L9Z69eh"
+
+grupogas:
+  host: grupogas.multiphono.com.br
+  database: grupogas
+  adminpassword: "ejxN4W5S&c0(B@,"
+
+grupodeouvidos:
+  host: grupodeouvidos.multiphono.com.br
+  database: grupodeouvidos
+  adminpassword: "Fc'B9ZA+[X!2,HJ"
+
+ceia:
+  host: ceia.multidados.tech
+  database: ceia
+  adminpassword: "4w4NU3XA#@3o"
+
+ghasconsulting:
+  host: ghasconsulting.multidados.tech
+  database: ghasconsulting
+  adminpassword: "eG@sbXvPBArTf7c"
+
+hrst:
+  host: hrst.multidados.tech
+  database: hrst
+  adminpassword: "kahR!id!e(i8"
+
+danjor:
+  host: danjor.multidados.tech
+  database: danjor
+  adminpassword: "poo~t$ae8Oob"
+
+premier:
+  host: premier.multiphono.com.br
+  database: premier
+  adminpassword: "K%q\"4xH}xU7I"
+
+portalauditivo:
+  host: portalauditivo.multiphono.com.br
+  database: portalauditivo
+  adminpassword: "CQjkJ7,~&.!&"
+
+demo-multierp:
+  host: demo-multierp.multidados.tech
+  database: demo-multierp
+  adminpassword: "!#od@@demo#!"
+
+ampliare:
+  host: ampliare.multiphono.com.br
+  database: ampliare
+  adminpassword: "3074uB2*pDAk"
+
+livre:
+  host: livre.multiphono.com.br
+  database: livre
+  adminpassword: "eiVME4tUFESEXpH"
+
+livre-test:
+  host: livre-test.multiphono.com.br
+  database: livre-test
+  adminpassword: "eiVME4tUFESEXpH"
+
+livre-test:
+  host: livre-test.multiphono.com.br
+  database: livre-test
+  adminpassword: "eiVME4tUFESEXpH"

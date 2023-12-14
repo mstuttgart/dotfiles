@@ -1,0 +1,94 @@
+{
+    "userDataProfilesMigration": true,
+    "profileAssociations": {
+        "workspaces": {
+            "file:///home/michell/Workspace/multidadosti/crontab-deploy": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/vscode-odoo-scaffold": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/vscode-odoo-snippets": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/brazilcep": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/oficina/cursos/full-cycle": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/oficina/cursos/full-cycle/docker": "-75d3a488",
+            "file:///home/michell/Workspace/mstuttgart/oficina": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/full-cycle": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/full-cycle/03-nestjs": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/full-cycle/03-nestjs/nestjs-clean-arch": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/wiki": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/notes": "__default__profile__",
+            "file:///home/michell/Downloads/Municipio": "__default__profile__",
+            "file:///home/michell/Downloads/theme_jt_corporate2201": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/Everforest-GTK-Theme": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/til": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/docs": "__default__profile__",
+            "file:///home/michell/Workspace/mstuttgart/oficina/exercism": "-4f39f5a1",
+            "file:///home/michell/Workspace/multidadosti/infra-multierp": "-4f39f5a1",
+            "file:///home/michell/.config/nvim.bkp": "-4f39f5a1",
+            "file:///home/michell/.config/nvim": "-4f39f5a1",
+            "file:///home/michell/Workspace/multidadosti/odoo": "-4f39f5a1",
+            "file:///home/michell/Workspace/theodinproject/css-exercises": "-4f39f5a1"
+        },
+        "emptyWindows": {}
+    },
+    "profileAssociationsMigration": true,
+    "telemetry.machineId": "9b2756a6060c25d588f0121b33cd82d4dc79e5499d3a908610f4168c866a4d18",
+    "backupWorkspaces": {
+        "workspaces": [],
+        "folders": [
+            {
+                "folderUri": "file:///home/michell/Workspace/theodinproject/css-exercises"
+            }
+        ],
+        "emptyWindows": []
+    },
+    "theme": "vs-dark",
+    "themeBackground": "#2d353b",
+    "windowSplash": {
+        "zoomLevel": 0,
+        "baseTheme": "vs-dark",
+        "colorInfo": {
+            "foreground": "#9aa79d",
+            "background": "#2d353b",
+            "editorBackground": "#2d353b",
+            "titleBarBackground": "#2d353b",
+            "activityBarBackground": "#2d353b",
+            "sideBarBackground": "#2d353b",
+            "statusBarBackground": "#2d353b",
+            "statusBarNoFolderBackground": "#2d353b"
+        },
+        "layoutInfo": {
+            "sideBarSide": "left",
+            "editorPartMinWidth": 220,
+            "titleBarHeight": 35,
+            "activityBarWidth": 48,
+            "sideBarWidth": 510,
+            "statusBarHeight": 22,
+            "windowBorder": false
+        }
+    },
+    "windowsState": {
+        "lastActiveWindow": {
+            "folder": "file:///home/michell/Workspace/theodinproject/css-exercises",
+            "backupPath": "/home/michell/.config/Code/Backups/dbedec5c109093e9c42c219f31c18c3e",
+            "uiState": {
+                "mode": 0,
+                "x": 0,
+                "y": 0,
+                "width": 1920,
+                "height": 1044
+            }
+        },
+        "openedWindows": []
+    },
+    "userDataProfiles": [
+        {
+            "location": "-75d3a488",
+            "name": "Curso Full Cycle",
+            "icon": "code"
+        },
+        {
+            "location": "-4f39f5a1",
+            "name": "Odoo",
+            "icon": "briefcase"
+        }
+    ],
+    "telemetry.sqmId": ""
+}
