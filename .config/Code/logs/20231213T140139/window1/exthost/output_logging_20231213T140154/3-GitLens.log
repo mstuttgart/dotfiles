@@ -1,7 +1,0 @@
-GitLens v14.5.2 activating in Visual Studio Code (1.85.0) on the desktop; language='en', logLevel='warn', defaultDateLocale='null' (9b2756a6060c25d588f0121b33cd82d4dc79e5499d3a908610f4168c866a4d18|6a66ce36-11a8-42b5-a585-d857a3fc37831702486913966)
-To enable debug logging, set `"gitlens.outputLevel: "debug"` or run "GitLens: Enable Debug Logging" from the Command Palette
-[2023-12-13 17:01:57.371] [GIT  ] [/home/michell/Workspace/multidadosti/odoo] git rev-parse --git-dir --git-common-dir [*640ms] (slow)
-[2023-12-13 17:05:29.192] ServerConnection.getAccessToken
-Error: Authentication required
-[2023-12-13 17:05:29.246] getLocalWorkspaceData
-EntryNotFound (FileSystemError): Error: ENOENT: no such file or directory, open '/home/michell/.gitkraken/workspaces/workspaces.json'

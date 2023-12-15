@@ -1,4 +1,0 @@
-2023-12-12 20:07:59.272 [warning] Via 'product.json#extensionEnabledApiProposals' extension 'ms-python.python' wants API proposal 'registerIssueDataProvider' but that proposal DOES NOT EXIST. Likely, the proposal has been finalized (check 'vscode.d.ts') or was abandoned.
-2023-12-12 20:07:59.559 [info] Started local extension host with pid 76327.
-2023-12-12 20:08:02.316 [error] ENOENT: no such file or directory, open '/home/michell/.config/Code/User/globalStorage/vscodevim.vim/.registers': Error: ENOENT: no such file or directory, open '/home/michell/.config/Code/User/globalStorage/vscodevim.vim/.registers'
-2023-12-12 20:08:02.317 [info] [perf] Render performance baseline is 21ms
