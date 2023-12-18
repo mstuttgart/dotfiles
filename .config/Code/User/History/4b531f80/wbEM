@@ -1,5 +1,0 @@
-[webservers]
-srv-odoo ansible_host=177.93.109.64 ansible_ssh_private_key_file=~/.ssh/id_rsa
-
-[dbservers]
-srv-sql ansible_host=177.93.109.64 ansible_ssh_private_key_file=~/.ssh/id_rsa

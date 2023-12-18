@@ -1,7 +1,0 @@
----
-- name: Transfer and execute a script.
-  hosts: localhost
-  tasks:
-
-     - name: Execute the script
-       local_action: command sh ./bin/qa-update-odoo.sh

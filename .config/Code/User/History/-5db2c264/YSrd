@@ -1,2 +1,0 @@
-[webservers]
-srv-odoo-2 ansible_host=177.93.110.124 ansible_ssh_private_key_file=~/.ssh/id_rsa

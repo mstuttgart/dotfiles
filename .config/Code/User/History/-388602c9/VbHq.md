@@ -1,2 +1,0 @@
-# Manipulação de strings
-

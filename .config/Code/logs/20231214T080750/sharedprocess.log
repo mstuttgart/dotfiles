@@ -1,8 +1,0 @@
-2023-12-14 08:08:24.774 [info] Getting Manifest... ms-python.vscode-pylance
-2023-12-14 08:08:25.026 [info] Installing extension: ms-python.vscode-pylance
-2023-12-14 08:08:25.769 [info] Getting Manifest... ms-python.python
-2023-12-14 08:08:28.834 [info] Extension signature is verified: ms-python.vscode-pylance
-2023-12-14 08:08:30.269 [info] Extracted extension to file:///home/michell/.vscode/extensions/ms-python.vscode-pylance-2023.12.1: ms-python.vscode-pylance
-2023-12-14 08:08:30.273 [info] Renamed to /home/michell/.vscode/extensions/ms-python.vscode-pylance-2023.12.1
-2023-12-14 08:08:30.275 [info] Extracting extension completed. ms-python.vscode-pylance
-2023-12-14 08:08:30.281 [info] Extension installed successfully: ms-python.vscode-pylance

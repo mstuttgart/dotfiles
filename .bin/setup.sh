@@ -26,9 +26,9 @@ function check_return_code() {
 	new_line
 }
 
-config_dir="$HOME/.config"
-fonts_dir="$HOME/.fonts"
-icons_dir="$HOME/.icons"
+#config_dir="$HOME/.config"
+#fonts_dir="$HOME/.fonts"
+#icons_dir="$HOME/.icons"
 local_bin_dir="$HOME/.local/bin"
 
 Apps=(
@@ -46,7 +46,7 @@ Apps=(
 	"curl"
 	"net-tools"
 	#  "exa"
-	"bat"
+#	"bat"
 	#  "btop"
 	"pwgen"
 	"git"
@@ -64,11 +64,12 @@ Apps=(
 	#  "fzf"
 	#  "asdf"
 	"pass"
+    "fzf"
 
 	# fonts
-	"fonts-clear-sans"
-	"fonts-firacode"
-	"fonts-inter"
+#	"fonts-clear-sans"
+#	"fonts-firacode"
+#	"fonts-inter"
 
 	# i3
 	# "i3"
@@ -85,19 +86,19 @@ Apps=(
 	"xsettingsd"
 	"netctl"
 	"lxappearance"
-	#  "polybar"
-	#  "playerctl"
+	"polybar"
+	"playerctl"
 	"numlockx"
 	"acpi" # battery info
 
 	# ranger
-	"ranger"
-	"w3m-img"
-	"ffmpegthumbnailer"
-	"highlight"
-	"unrar"
-	"unzip"
-	"mediainfo"
+#	"ranger"
+#	"w3m-img"
+#	"ffmpegthumbnailer"
+#	"highlight"
+#	"unrar"
+#	"unzip"
+#	"mediainfo"
 	#  "mvp"
 
 	# Programming
@@ -148,8 +149,8 @@ Apps=(
 
 	# themes
 	# "arc-theme"
-	"font-manager"
-	"fonts-powerline"
+#	"font-manager"
+#	"fonts-powerline"
 )
 
 msg_info "Create basic folders"
@@ -161,7 +162,7 @@ print "Create $fonts_dir"
 #mkdir -p $fonts_dir
 
 print "Create $local_bin_dir"
-#mkdir -p $local_bin_dir
+mkdir -p $local_bin_dir
 
 print
 msg_checking

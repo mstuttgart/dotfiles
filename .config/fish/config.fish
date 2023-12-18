@@ -29,13 +29,13 @@ set -U fish_user_paths $PYENV_ROOT/bin
 # aliases
 
 # exa aliases
-alias ls 'exa --color=auto --icons'
-alias la 'exa -la --color=auto --icons'
-alias ll 'exa -alh --color=auto --icons'
-alias lt 'exa -a --tree --color=auto --icons' # show tree in directory
+alias ls 'eza --color=auto --icons'
+alias la 'eza -la --color=auto --icons'
+alias ll 'eza -alh --color=auto --icons'
+alias lt 'eza -a --tree --color=auto --icons' # show tree in directory
 
 # bat aliases
-alias cat 'batcat --theme=everforest'
+#alias cat 'batcat --theme=everforest'
 
 # colorize grep output (good for log files)
 alias grep 'grep --color=auto'
@@ -71,5 +71,5 @@ abbr pipr 'pip install -r requirements.txt'
 starship init fish | source
 set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
 
-# configure pyenv
-pyenv init - | source
+# add asdf support
+source ~/.asdf/asdf.fish
