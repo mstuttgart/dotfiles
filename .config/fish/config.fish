@@ -14,16 +14,13 @@ set -g theme_hostname always
 # ----------------------------------------
 # set global (export) values
 
-set -gx TERM xterm-256color
+# set -gx TERM xterm-256color
+set -gx TERM xterm-kitty
 set -gx EDITOR nvim
 
 # add paths to PATH var
 set -e fish_user_paths
 set -U fish_user_paths $HOME/.local/bin
-
-# pyenv configs
-set -Ux PYENV_ROOT $HOME/.pyenv
-set -U fish_user_paths $PYENV_ROOT/bin
 
 # ----------------------------------------
 # aliases
@@ -33,9 +30,6 @@ alias ls 'eza --color=auto --icons'
 alias la 'eza -la --color=auto --icons'
 alias ll 'eza -alh --color=auto --icons'
 alias lt 'eza -a --tree --color=auto --icons' # show tree in directory
-
-# bat aliases
-#alias cat 'batcat --theme=everforest'
 
 # colorize grep output (good for log files)
 alias grep 'grep --color=auto'
@@ -54,11 +48,14 @@ abbr mkdir 'mkdir -pv'
 
 # pyenv aliases
 abbr aenv 'source .venv/bin/activate.fish'
-abbr cenv 'virtualenv -p python3 .venv'
+abbr cenv 'python -m venv .venv'
 abbr denv deactivate
 
-# using terminfo of kitty in ssh
-abbr ssh 'ssh -t'
+# using terminfo in ssh
+# abbr ssh 'ssh -t
+
+# allows kitty to work with ssh
+alias ssh='env TERM=xterm-256color ssh' 
 
 # python server to server files
 abbr pyserver 'python3 -m http.server 8000'

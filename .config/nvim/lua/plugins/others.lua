@@ -1,12 +1,6 @@
 -- general plugins
 local plugins = {
 
-  -- csv highlight
-  -- {
-  --   "mechatroner/rainbow_csv",
-  --   event = "VeryLazy",
-  -- },
-
   -- word highlight
   {
     "echasnovski/mini.cursorword",
@@ -52,18 +46,19 @@ local plugins = {
     end,
   },
 
-  -- fuzzy finder
+  -- smooth scroll
   -- {
-  --   "junegunn/fzf.vim",
-  --   "junegunn/fzf",
+  --   "karb94/neoscroll.nvim",
+  --   config = function()
+  --     require("neoscroll").setup {}
+  --   end,
   -- },
 
-  -- smooth scroll
+  -- plugin to animate common Neovim actions
   {
-    "karb94/neoscroll.nvim",
-    config = function()
-      require("neoscroll").setup {}
-    end,
+    "echasnovski/mini.animate",
+    event = "VeryLazy",
+    version = '*',
   },
 
   -- navic complement to breadcumbs
@@ -77,63 +72,21 @@ local plugins = {
     config = true,
   },
 
-  -- Non-intrusive notification system for neovim
-  -- {
-  --   "vigoux/notifier.nvim",
-  --   config = function()
-  --     require("notifier").setup()
-  --   end,
-  -- },
-  --
+  -- markdown preview
   {
-    "NvChad/nvterm",
-    config = function()
-      require("nvterm").setup()
-
-      local terminal = require "nvterm.terminal"
-
-      -- local ft_cmds = {
-      --   python = "python3 " .. vim.fn.expand('%'),
-      --   ...
-      --   <your commands here>
-      -- }
-      local toggle_modes = { "n", "t" }
-      local mappings = {
-        -- {
-        --   "n",
-        --   "<C-l>",
-        --   function()
-        --     terminal.send(ft_cmds[vim.bo.filetype])
-        --   end,
-        -- },
-        {
-          toggle_modes,
-          "<A-h>",
-          function()
-            terminal.toggle "horizontal"
-          end,
-        },
-        -- {
-        --   toggle_modes,
-        --   "<A-v>",
-        --   function()
-        --     terminal.toggle "vertical"
-        --   end,
-        -- },
-        {
-          toggle_modes,
-          "<A-f>",
-          function()
-            terminal.toggle "float"
-          end,
-        },
-      }
-      local opts = { noremap = true, silent = true }
-      for _, mapping in ipairs(mappings) do
-        vim.keymap.set(mapping[1], mapping[2], mapping[3], opts)
-      end
+    "iamcco/markdown-preview.nvim",
+    lazy = true,
+    cmd = {
+      "MarkdownPreviewToggle",
+      "MarkdownPreview",
+      "MarkdownPreviewStop",
+    },
+    ft = { "markdown" },
+    build = function()
+      vim.fn["mkdp#util#install"]()
     end,
   },
+
 }
 
 return plugins

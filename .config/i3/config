@@ -1,11 +1,10 @@
 # set modifier
 set $super Mod4
-set $TERM --no-startup-id alacritty
+set $TERM --no-startup-id kitty
 set $BROWSER --no-startup-id firefox
 
 # set font
 font pango: JetBrainsMono Nerd Font Mono Regular 8
-#font pango: JetBrains Mono Regular Nerd Font Complete 8
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -37,7 +36,10 @@ bindsym $super+d exec "rofi -modi drun,run -show drun"
 bindsym Print exec "flameshot gui"
 bindsym $super+F6 exec i3lock -i "$HOME/.wallpaper.png"
 
-# Handle backlight.
+# disable power saving (for example if using xscreensaver)
+exec --no-startup-id xset -dpms
+
+# handle backlight.
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 20
 bindsym XF86MonBrightnessDown exec --no-startup-id light -U 20
 
@@ -155,6 +157,7 @@ for_window [window_role="pop-up"] floating enable
 for_window [window_role="task_dialog"] floating enable
 for_window [window_role="Organizer"] floating enable
 for_window [window_role="GtkFileChooserDialog"] floating enable
+for_window [class="(?i)gsimplecal"] floating enable, move position mouse, move down 50px, move right 70 px
 for_window [class="Pavucontrol"] floating enable
 for_window [class="Lxappearance"] floating enable
 for_window [class="Gnome-calculator"] floating enable
