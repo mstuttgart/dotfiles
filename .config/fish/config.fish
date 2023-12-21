@@ -51,9 +51,6 @@ abbr aenv 'source .venv/bin/activate.fish'
 abbr cenv 'python -m venv .venv'
 abbr denv deactivate
 
-# using terminfo in ssh
-# abbr ssh 'ssh -t
-
 # allows kitty to work with ssh
 alias ssh='env TERM=xterm-256color ssh' 
 
@@ -70,3 +67,5 @@ set -gx STARSHIP_CONFIG $HOME/.config/starship/starship.toml
 
 # add asdf support
 source ~/.asdf/asdf.fish
+
+fish_add_path /home/michell/.spicetify

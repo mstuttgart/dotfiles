@@ -51,7 +51,6 @@ Apps=(
 	"openssh-server"
 	"neofetch"
 	"imagemagick"
-	"gsimplecal"
 	"xclip"
 	"poedit"
 	"pass"
@@ -75,6 +74,7 @@ Apps=(
 	"playerctl"
 	"numlockx"
 	"acpi" # battery info
+	"gsimplecal"
 
 	# ranger
 	#	"ranger"

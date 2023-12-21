@@ -2,6 +2,7 @@
 set $super Mod4
 set $TERM --no-startup-id kitty
 set $BROWSER --no-startup-id firefox
+set $FILE_MANAGER thunar
 
 # set font
 font pango: JetBrainsMono Nerd Font Mono Regular 8
@@ -27,7 +28,8 @@ exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Ty
 bindsym $super+Return exec $TERM
 bindsym $super+w exec $BROWSER; workspace 2; focus
 bindsym $super+Shift+w exec $BROWSER --incognito
-bindsym $super+t exec thunar; workspace 4; focus
+bindsym $super+f exec $FILE_MANAGER;
+bindsym $super+t exec teams-for-linux;
 
 # start dmenu (a program launcher)
 bindsym $super+d exec "rofi -modi drun,run -show drun"
@@ -76,7 +78,7 @@ bindsym $super+b split h
 bindsym $super+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $super+f fullscreen toggle
+bindsym $super+F11 fullscreen toggle
 
 # change container layout split
 bindsym $super+s layout toggle split
@@ -141,16 +143,16 @@ bindsym $super+F2 mode "resize"
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 4
+for_window [class=".*"] border pixel 0
 
 # set gaps
-#gaps inner 5
-#gaps outer 2
+gaps inner 5
+gaps outer 2
 
 assign [class=firefox|google-chrome] 2
 assign [class=Thunar|Postman|Nautilus] 3
 assign [class=Vlc|Spotify] 4
-assign [class=Skype] 5
+assign [class=Skype|teams-for-linux] 5
 
 # set specific windows to floating mode
 for_window [window_role="pop-up"] floating enable
