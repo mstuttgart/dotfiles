@@ -20,7 +20,7 @@ Here are some details about my setup:
 
 - **Linux Distribution**           : [Linux Mint](https://www.linuxmint.com/)
 - **Window Manager**               : [i3](https://github.com/i3/i3)
-- **Shell**                        : [fish](https://fishshell.com/) with [tide](https://github.com/IlanCosman/tide) theme plugin!
+- **Shell**                        : [zsh](https://github.com/zsh-users/zsh)
 - **Terminal**                     : [kitty](https://github.com/kovidgoyal/kitty)
 - **Bar**                        : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
 - **Compositor**                   : [compton](https://github.com/chjj/compton)
@@ -29,20 +29,6 @@ Here are some details about my setup:
 - **Wallpaper Manager**            : [nitrogen](https://github.com/l3ib/nitrogen)
 - **Editor**                       : [neovim](https://neovim.io/)
 - **CLI System Information**       : [neofetch](https://github.com/dylanaraps/neofetch)
-
-### Shell Setup
-
-- [Fish shell](https://fishshell.com/)
-- [Fisher](https://github.com/jorgebucaran/fisher) - Plugin manager
-    - [z](https://github.com/jethrokuan/z) - Directory jumping
-    - [autopair](https://github.com/jorgebucaran/autopair.fish) -  Auto-complete matching pairs in the Fish command line
-    - [fzf](https://github.com/PatrickF1/fzf.fish) - Fzf plugin for Fish
-    - [gills](https://github.com/small-tech/gills) - adds an empty line after your prompt and before the output
-- [Starship](https://starship.rs/) - Shell theme. The minimal, blazing-fast, and infinitely customizable prompt for any shell!
-- [eza](https://github.com/eza-community/eza) - A modern, maintained replacement for `ls`
-- [btop](https://github.com/aristocratos/btop) - A monitor of resources
-- [tig](https://github.com/jonas/tig) - Text-mode interface for git
-- [Nerd Fonts](https://github.com/ryanoasis/nerd-fonts) - I use JetBrains and Sauce Code Pro (icons of Polybar)
 
 ## Install
 
