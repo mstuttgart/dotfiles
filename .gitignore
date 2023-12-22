@@ -1,6 +1,0 @@
-# .gitignore
-*
-# keep track
-!.bashrc
-!.zshrc
-!.gitignore
