@@ -2,6 +2,11 @@
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 export TERM="xterm-kitty"
 
+# configure zsh history
+HISTFILE=$HOME/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -61,15 +66,26 @@ SPACESHIP_CHAR_SUFFIX=" "
 
 # ----------------------------------------
 # aliases
+#
+alias cp="cp -iv"
+#             │└─ list copied files
+#             └─ prompt before overwriting an existing file
+
+alias mkdir="mkdir -pv"
+#                   │└─ list created directories
+#                   └─ create intermediate directories
+
+alias mv="mv -iv"
+#             │└─ list moved files
+#             └─ prompt before overwriting an existing file
+
+alias rm="rm -rf --"
 
 # eza aliases
-alias ls="eza --color=auto --icons"
-alias la="eza -la --color=auto --icons"
-alias ll="eza -alh --color=auto --icons"
-alias lt="eza -a --tree --color=auto --icons" # show tree in directory
-
-# bat aliases
-#alias cat="batcat --theme=everforest"
+alias ls="exa --color=auto --icons"
+alias la="exa -la --color=auto --icons"
+alias ll="exa -alh --color=auto --icons"
+alias lt="exa -a --tree --color=auto --icons" # show tree in directory
 
 # colorize grep output (good for log files)
 alias grep="grep --color=auto"
@@ -79,7 +95,7 @@ alias pgrep="ps aux | grep"
 
 # system aliases
 alias aptu="sudo apt update; sudo apt upgrade -y"
-alias aptr="sudo apt remove -y"
+alias aptr="sudo apt remove"
 alias apti="sudo apt install"
 alias apts="apt-cache search"
 
@@ -92,11 +108,7 @@ alias cenv="python3 -m venv .venv"
 alias denv="deactivate"
 
 # using terminfo of kitty in ssh
-#alias ssh=" ssh"
 alias ssh="TERM=xterm-256color ssh"
-
-# clear terminal
-alias cls="clear"
 
 # python server to server files
 alias pyserver="python3 -m http.server 8000"

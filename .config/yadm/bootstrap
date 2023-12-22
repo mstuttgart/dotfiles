@@ -139,6 +139,7 @@ Apps=(
 	"gimp"
 	"libreoffice"
 	"poedit"
+  "thunar"
 
 	# themes
 	"arc-theme"
