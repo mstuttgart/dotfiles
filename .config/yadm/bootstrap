@@ -148,6 +148,9 @@ Apps=(
 
 echo_info "Install Ubuntu packages"
 
+sudo apt update 
+sudo apt upgrade
+
 for app in "${Apps[@]}"; do
 	echo_print "Installing $app"
 
@@ -177,6 +180,29 @@ echo_nl
 
 if [ ! -d "$HOME/.asdf" ]; then
 	echo_print "Install and configure asdf"
-  sudo apt install curl git
+	sudo apt install curl git
 	git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.13.1
 fi
+
+if [ ! -d /etc/apt/sources.list.d/sur5r-i3.list ]; then
+
+	echo_print "Install and configure i3wm-gaps"
+
+	#
+	# get from: https://i3wm.org/docs/repositories.html
+	#
+	/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
+
+	sudo apt install ./keyring.deb
+
+	# repo for ubuntu 22.04 jammy
+	echo "deb http://debian.sur5r.net/i3/ jammy universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+
+	sudo apt update
+	sudo apt install i3
+	rm ./keyring.deb
+
+fi
+
+sudo apt update 
+sudo apt upgrade
