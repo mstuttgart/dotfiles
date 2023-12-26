@@ -18,7 +18,7 @@ This repository serves as my way to help me setup and maintain my Ubuntu (versio
 
 Here are some details about my setup:
 
-- **Linux Distribution**           : [Linux Mint 21 - XFCE](https://www.linuxmint.com/)
+- **Linux Distribution**           : [Linux Mint 21 - Xfce](https://www.linuxmint.com/)
 - **Window Manager**               : [i3](https://github.com/i3/i3)
 - **Shell**                        : [zsh](https://github.com/zsh-users/zsh)
   - [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)                       : Minimalistic, powerful and extremely customizable Zsh prompt
