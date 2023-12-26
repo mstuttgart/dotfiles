@@ -12,7 +12,7 @@
 
 ## About
 
-![2023-05-06_10-41](screenshot.png)
+![2023-05-06_10-41](screenshot_2.png)
 
 This repository serves as my way to help me setup and maintain my Ubuntu (version 22.04 LTS).
 
@@ -22,12 +22,13 @@ Here are some details about my setup:
 - **Window Manager**               : [i3](https://github.com/i3/i3)
 - **Shell**                        : [zsh](https://github.com/zsh-users/zsh)
 - **Terminal**                     : [kitty](https://github.com/kovidgoyal/kitty)
-- **Bar**                        : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
+- **Bar**                          : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
 - **Compositor**                   : [compton](https://github.com/chjj/compton)
 - **Notify Daemon**                : [dunst](https://wiki.archlinux.org/index.php/Dunst)
 - **Application Launcher**         : [rofi](https://github.com/davatorium/rofi)
 - **Wallpaper Manager**            : [nitrogen](https://github.com/l3ib/nitrogen)
 - **Editor**                       : [neovim](https://neovim.io/)
+- **File Manager**                 : [ranger](https://github.com/ranger/ranger) | [thunar](https://docs.xfce.org/xfce/thunar/start)
 - **CLI System Information**       : [neofetch](https://github.com/dylanaraps/neofetch)
 
 ## Install
@@ -39,7 +40,7 @@ My dotfiles is managed by [yadm](https://yadm.io), a dotfiles manager. This make
 ### Debian/Ubuntu
 
 ```sh
-$ apt install yadm git
+$ apt install yadm
 ```
 
 To others systems install instructions, see [here](https://yadm.io/docs/install).
@@ -49,7 +50,7 @@ To others systems install instructions, see [here](https://yadm.io/docs/install)
 Use `yadm` to clone this repo and set up your enviromnent.
 
 ```sh
-yadm clone git@github.com:mstuttgart/dotfiles.git
+yadm clone https://github.com/mstuttgart/dotfiles.git
 ```
 
 The `clone` and `pull` command may result in warnings because of pre-existing dotfiles. Overwrite the existing files with commands below.
@@ -57,6 +58,12 @@ The `clone` and `pull` command may result in warnings because of pre-existing do
 ```sh
 yadm fetch --all
 yadm reset --hard origin/main
+```
+
+Execute the follow command to install all dependencies and apps:
+
+```sh 
+yadm bootstrap
 ```
 
 ## Credits
