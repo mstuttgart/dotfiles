@@ -19,7 +19,7 @@ local plugins = {
         italics = true,
         transparent_background_level = 1,
       }
-      vim.o.background = "dark"
+      -- vim.o.background = "dark"
       vim.cmd.colorscheme "everforest"
     end,
   },

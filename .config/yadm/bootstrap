@@ -2,6 +2,18 @@
 
 set -eu
 
+# Variables for dotfiles repo.
+GIT_USER="mstuttgart"
+GIT_REPO="dotfiles"
+
+# Set XDG directories.
+# export XDG_CONFIG_HOME="${HOME}/.config"
+# export XDG_CACHE_HOME="${HOME}/.cache"
+# export XDG_DATA_HOME="${HOME}/.local/share"
+
+# Set user bin directory.
+export USER_BIN_DIR="${HOME}/.local/bin"
+
 # colors to log
 RED='\e[31m'
 YELLOW='\e[33m'
@@ -48,162 +60,295 @@ function check_return_code {
 	echo_nl
 }
 
+function print_header {
+	clear
+	echo -e "${BOLDBLUE}
+
+██████╗  ██████╗ ████████╗███████╗██╗██╗     ███████╗███████╗
+██╔══██╗██╔═══██╗╚══██╔══╝██╔════╝██║██║     ██╔════╝██╔════╝
+██║  ██║██║   ██║   ██║   █████╗  ██║██║     █████╗  ███████╗
+██║  ██║██║   ██║   ██║   ██╔══╝  ██║██║     ██╔══╝  ╚════██║
+██████╔╝╚██████╔╝   ██║   ██║     ██║███████╗███████╗███████║
+╚═════╝  ╚═════╝    ╚═╝   ╚═╝     ╚═╝╚══════╝╚══════╝╚══════╝
+
+  ${YELLOW}BOOTSTRAP SCRiPT${BOLDGREEN}
+
+" >&1
+}
+
+function print_footer {
+	echo -e "${BOLDGREEN}
+  Bootstrap of dotfiles completed!${YELLOW}
+  Log out${BOLDBLUE} and${YELLOW} login${BOLDBLUE} to apply changes!${ENDCOLOR}
+
+" >&1
+}
+
+function update_distro {
+	sudo apt update
+	sudo apt upgrade -y
+}
+
+function update_yadm_repo {
+	echo_print "Updating the yadm repo origin URL"
+	yadm remote set-url origin "git@github.com:${GIT_USER}/${GIT_REPO}.git"
+	echo_ok "origin set"
+}
+
+function install_nvim {
+
+	NVIM_PKG=(
+		# nvim
+		"exuberant-ctags"
+		"ncurses-term"
+		"ripgrep"
+		"fd-find"
+		"fzf"
+		"xclip"
+	)
+
+	echo_print "Installing nvim"
+
+	echo_info "Downloading nvim..."
+	curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+	chmod u+x nvim.appimage
+	mv nvim.appimage nvim
+
+	echo_info "Move nvim appimage to /usr/bin"
+	sudo mv nvim /usr/bin
+
+	for app in "${NVIM_PKG[@]}"; do
+
+		echo_print "Installing $app"
+
+		# Install app
+		sudo apt install "$app" -y
+
+		# The $? get result of last command
+		check_return_code $? "$app"
+
+	done
+
+	echo_ok "nvim installed"
+}
+
+function install_i3wm {
+
+	i3wm_pkg=(
+		# i3
+		"i3"
+		"i3lock"
+		"netctl"
+		"nitrogen"
+		"compton"
+		"rofi"
+		"light" # brightness control
+		"hsetroot"
+		"fonts-noto"
+		"fonts-mplus"
+		"xsettingsd"
+		"netctl"
+		"lxappearance"
+		"polybar"
+		"playerctl"
+		"numlockx"
+		"acpi" # battery info
+		"gsimplecal"
+		"neofetch"
+		"imagemagick"
+	)
+	echo
+
+	for app in "${i3wm_pkg[@]}"; do
+		echo_print "Installing $app"
+
+		# Install app
+		sudo apt install "$app" -y
+
+		# The $? get result of last command
+		check_return_code $? "$app"
+
+	done
+
+	if [ ! -f /etc/apt/sources.list.d/sur5r-i3.list ]; then
+
+		echo_print "Install and configure i3wm-gaps"
+
+		#
+		# get from: https://i3wm.org/docs/repositories.html
+		#
+		/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
+
+		sudo apt install ./keyring.deb
+
+		# repo for ubuntu 22.04 jammy
+		echo "deb http://debian.sur5r.net/i3/ jammy universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
+
+		sudo apt update
+		sudo apt install i3
+		rm ./keyring.deb
+
+	fi
+
+}
+
+function install_asdf {
+	echo_print "Install and configure asdf"
+
+	ASDF_PATH_DIR="$HOME/.asdf"
+
+	if [ ! -d "$ASDF_PATH_DIR" ]; then
+
+		plugins=(
+			nodejs
+			python
+		)
+
+		git clone https://github.com/asdf-vm/asdf.git "$ASDF_PATH_DIR" --branch v0.13.1
+
+		for plugin in "${plugins[@]}"; do
+			asdf plugin-add "$plugin"
+		done
+
+		echo_nl
+	fi
+
+}
+
+function install_zsh {
+	echo_print "Install and configure ZSH"
+
+	echo_info "Install ZSH"
+	sudo apt install zsh curl -y
+	check_return_code $? zsh
+
+	if [ ! -d "$HOME/.zplug" ]; then
+		echo_info "Install zplug"
+		curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+	fi
+
+	if [ "$(basename "$SHELL")" != 'zsh' ]; then
+		echo_info "Change Shell to Zsh"
+		chsh -s /bin/zsh
+	fi
+
+	echo_nl
+}
+
+function install_ranger {
+
+	ranger_pkg=(
+		"ranger"
+		"w3m-img"
+		"ffmpegthumbnailer"
+		"highlight"
+		"unrar"
+		"unzip"
+		"mediainfo"
+		 "mvp"
+	)
+
+	for app in "${ranger_pkg[@]}"; do
+		echo_print "Installing $app"
+
+		# Install app
+		sudo apt install "$app" -y
+
+		# The $? get result of last command
+		check_return_code $? "$app"
+
+	done
+}
+
+function install_packages {
+	Apps=(
+		# basic apps
+		"p7zip"
+		"p7zip-full"
+		"p7zip-rar"
+		"rar"
+		"software-properties-common"
+		"ubuntu-restricted-extras"
+		"unace-nonfree"
+		"unrar"
+		"uuid-runtime"
+		"wget"
+		"curl"
+		"net-tools"
+		"pwgen"
+		"openssh-server"
+		"pass"
+		"bat"
+		"exa"
+
+		# Programming
+		"build-essential"
+		"cmake"
+		"g++"
+		"libsqlite3-dev"
+		"llvm"
+		"make"
+		"git"
+		"tig"
+		"kitty"
+		"curl"
+
+		# python
+		"python3-dev"
+		"python3-pip"
+		"python3-venv"
+
+		# apps
+		"gpick"
+		"flameshot"
+		"gdebi"
+		"libreoffice"
+		"openssh-server"
+		"poedit"
+		"filezilla"
+		"firefox"
+		"gpick"
+		"gimp"
+		"libreoffice"
+		"poedit"
+		"thunar"
+
+		# themes
+		"arc-theme"
+		"font-manager"
+		"fonts-powerline"
+	)
+
+	echo_info "Install Ubuntu packages"
+
+	for app in "${Apps[@]}"; do
+		echo_print "Installing $app"
+
+		# Install app
+		sudo apt install "$app" -y
+
+		# The $? get result of last command
+		check_return_code $? "$app"
+
+	done
+
+}
+
 # Because Git submodule commands cannot operate without a work tree, they must
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME" || exit
 
-echo_nl
+# disable sleep
+sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
-echo_print "Updating the yadm repo origin URL to ssh version"
-yadm remote set-url origin "git@github.com:mstuttgart/dotfiles.git"
-echo_ok "origin set"
-echo_nl
-
-Apps=(
-	# basic apps
-	"p7zip"
-	"p7zip-full"
-	"p7zip-rar"
-	"rar"
-	"software-properties-common"
-	"ubuntu-restricted-extras"
-	"unace-nonfree"
-	"unrar"
-	"uuid-runtime"
-	"wget"
-	"curl"
-	"net-tools"
-	"pwgen"
-	"openssh-server"
-	"pass"
-	"bat"
-	"exa"
-
-	# i3
-	"i3"
-	"i3lock"
-	"netctl"
-	"nitrogen"
-	"compton"
-	"rofi"
-	"light" # brightness control
-	"hsetroot"
-	"fonts-noto"
-	"fonts-mplus"
-	"xsettingsd"
-	"netctl"
-	"lxappearance"
-	"polybar"
-	"playerctl"
-	"numlockx"
-	"acpi" # battery info
-	"gsimplecal"
-	"neofetch"
-	"imagemagick"
-
-	# Programming
-	"build-essential"
-	"cmake"
-	"g++"
-	"libsqlite3-dev"
-	"llvm"
-	"make"
-	"git"
-	"tig"
-	"kitty"
-	"curl"
-
-	# python
-	"python3-dev"
-	"python3-pip"
-	"python3-venv"
-
-	# nvim
-	"exuberant-ctags"
-	"ncurses-term"
-	"ripgrep"
-	"fd-find"
-	"fzf"
-	"xclip"
-
-	# apps
-	"gpick"
-	"flameshot"
-	"gdebi"
-	"libreoffice"
-	"openssh-server"
-	"poedit"
-	"filezilla"
-	"firefox"
-	"gpick"
-	"gimp"
-	"libreoffice"
-	"poedit"
-  "thunar"
-
-	# themes
-	"arc-theme"
-	"font-manager"
-	"fonts-powerline"
-)
-
-echo_info "Install Ubuntu packages"
-
-sudo apt update 
-sudo apt upgrade
-
-for app in "${Apps[@]}"; do
-	echo_print "Installing $app"
-
-	# Install app
-	sudo apt install "$app" -y
-
-	# The $? get result of last command
-	check_return_code $? "$app"
-
-done
-
-echo_print "Install and configure ZSH"
-
-echo_info "Install ZSH"
-sudo apt install zsh curl -y
-check_return_code $? zsh
-
-if [ ! -d "$HOME/.zplug" ]; then
-	echo_info "Install zplug"
-	curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
-fi
-
-echo_info "Change Shell to Zsh"
-chsh -s /bin/zsh
-
-echo_nl
-
-if [ ! -d "$HOME/.asdf" ]; then
-	echo_print "Install and configure asdf"
-	sudo apt install curl git
-	git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.13.1
-fi
-
-if [ ! -d /etc/apt/sources.list.d/sur5r-i3.list ]; then
-
-	echo_print "Install and configure i3wm-gaps"
-
-	#
-	# get from: https://i3wm.org/docs/repositories.html
-	#
-	/usr/lib/apt/apt-helper download-file https://debian.sur5r.net/i3/pool/main/s/sur5r-keyring/sur5r-keyring_2023.02.18_all.deb keyring.deb SHA256:a511ac5f10cd811f8a4ca44d665f2fa1add7a9f09bef238cdfad8461f5239cc4
-
-	sudo apt install ./keyring.deb
-
-	# repo for ubuntu 22.04 jammy
-	echo "deb http://debian.sur5r.net/i3/ jammy universe" | sudo tee /etc/apt/sources.list.d/sur5r-i3.list
-
-	sudo apt update
-	sudo apt install i3
-	rm ./keyring.deb
-
-fi
-
-sudo apt update 
-sudo apt upgrade
+print_header
+update_yadm_repo
+update_distro
+install_packages
+install_zsh
+install_nvim
+install_asdf
+install_i3wm
+install_ranger
+update_distro
+print_footer

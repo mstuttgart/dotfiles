@@ -5,7 +5,8 @@ set $BROWSER --no-startup-id firefox
 set $FILE_MANAGER thunar
 
 # set font
-font pango: JetBrainsMono Nerd Font Mono Regular 8
+# font pango: JetBrainsMono Nerd Font Mono Regular 8
+font pango: DejaVu Sans Mono 8
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -13,8 +14,7 @@ floating_modifier $super
 #autostart
 exec --no-startup-id nitrogen --restore
 exec --no-startup-id xsettingsd &
-exec --no-startup-id compton -b
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=secrets
+exec --no-startup-id compton -f
 exec --no-startup-id xfce4-power-manager
 exec_always --no-startup-id "$HOME/.screenlayout/autoxrandr.sh"
 exec --no-startup-id dunst -config "$HOME/.config/dunst/dunstrc"
@@ -30,6 +30,8 @@ bindsym $super+w exec $BROWSER; workspace 2; focus
 bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+f exec $FILE_MANAGER;
 bindsym $super+t exec teams-for-linux;
+bindsym $super+c exec rofi -show calc -modi "calc:qalc +u8 -nocurrencies"
+bindsym $super+r exec $TERM -e ranger; workspace 3; focus
 
 # start dmenu (a program launcher)
 bindsym $super+d exec "rofi -modi drun,run -show drun"
@@ -37,9 +39,6 @@ bindsym $super+d exec "rofi -modi drun,run -show drun"
 # system shortcuts
 bindsym Print exec "flameshot gui"
 bindsym $super+F6 exec i3lock -i "$HOME/.wallpaper.png"
-
-# disable power saving (for example if using xscreensaver)
-exec --no-startup-id xset -dpms
 
 # handle backlight.
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 20
@@ -72,7 +71,7 @@ bindsym $super+Shift+k move up
 bindsym $super+Shift+l move right
 
 # split in horizontal orientation
-bindsym $super+b split h
+bindsym $super+Shift+v split h
 
 # split in vertical orientation
 bindsym $super+v split v
@@ -148,6 +147,7 @@ for_window [class=".*"] border pixel 0
 # set gaps
 gaps inner 5
 gaps outer 2
+smart_gaps on
 
 assign [class=firefox|google-chrome] 2
 assign [class=Thunar|Postman|Nautilus] 3
@@ -172,3 +172,4 @@ client.unfocused        #3D484D #2D353B #859289 #3D484D   #3D484D
 client.urgent           #E67E80 #E67E80 #2D353B #E67E80   #E67E80
 client.placeholder      #2D353B #2D353B #859289 #2D353B   #2D353B
 client.background       #2D353B
+
