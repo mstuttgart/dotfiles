@@ -14,7 +14,7 @@
 
 ![2023-05-06_10-41](screenshot_2.png)
 
-This repository serves as my way to help me setup and maintain my Ubuntu (version 22.04 LTS).
+This repository serves as my way to help me setup and maintain my Linux Mint 21 (or Ubuntu 22.04 LTS).
 
 Here are some details about my setup:
 
