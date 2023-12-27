@@ -12,7 +12,7 @@
 
 ## About
 
-![2023-05-06_10-41](screenshot_2.png)
+![2023-12-27_15-21](https://github.com/mstuttgart/dotfiles/assets/8174740/63935f69-5774-4196-967a-9ef907790493)
 
 This repository serves as my way to help me setup and maintain my Linux Mint 21 (or Ubuntu 22.04 LTS).
 
