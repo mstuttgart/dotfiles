@@ -31,7 +31,6 @@ Here are some details about my setup:
   - [asdf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/asdf)                            : *Oh-My-Zsh* asdf plugin                                
   - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)                              : *Oh-My-Zsh* fzf plugin                                
   - [virtualenvwrapper](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/virtualenvwrapper)  : *Oh-My-Zsh* python virtualenvwrapper plugin                                 
-
 - **Terminal**                     : [kitty](https://github.com/kovidgoyal/kitty)
   - [tig](https://github.com/jonas/tig)             : Text-mode interface for git
   - [bat](https://github.com/sharkdp/bat)           : A cat(1) clone with wings
