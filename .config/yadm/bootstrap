@@ -12,7 +12,10 @@ GIT_REPO="dotfiles"
 # export XDG_DATA_HOME="${HOME}/.local/share"
 
 # Set user bin directory.
-export USER_BIN_DIR="${HOME}/.local/bin"
+USER_BIN_DIR="$HOME/.local/bin"
+USER_FONT_DIR="$HOME/.local/bin"
+
+# TEMP_DIR="$(mkdir /tmp/install-temp)"
 
 # colors to log
 RED='\e[31m'
@@ -156,6 +159,7 @@ function install_i3wm {
 		"gsimplecal"
 		"neofetch"
 		"imagemagick"
+		"arand"
 	)
 	echo
 
@@ -245,7 +249,7 @@ function install_ranger {
 		"unrar"
 		"unzip"
 		"mediainfo"
-		 "mvp"
+		"mvp"
 	)
 
 	for app in "${ranger_pkg[@]}"; do
@@ -258,6 +262,29 @@ function install_ranger {
 		check_return_code $? "$app"
 
 	done
+}
+
+function install_fonts {
+	echo_print "Download and Install Nerd Fonts"
+
+	TEMP_DIR="/tmp/nerd-fonts"
+
+	if [ ! -d /tmp/nerd-fonts ]; then
+		echo_info "Clone Nerd Font Repositorie"
+		git clone --depth 1 git@github.com:ryanoasis/nerd-fonts.git "$TEMP_DIR"
+	fi
+
+	cd "$TEMP_DIR"
+
+	echo_info "Install Font JetBrainsMono"
+	./install.sh -q JetBrainsMono 
+
+	echo_info "Install Font SourceCodePro"
+	./install.sh -q SourceCodePro 
+
+	echo_info "Update font cache"
+	fc-cache -f -v >/dev/null 2>&1
+
 }
 
 function install_packages {
@@ -280,6 +307,8 @@ function install_packages {
 		"pass"
 		"bat"
 		"exa"
+		"pgcli"
+		"zathura"
 
 		# Programming
 		"build-essential"
@@ -312,6 +341,7 @@ function install_packages {
 		"libreoffice"
 		"poedit"
 		"thunar"
+		"spotify-client"
 
 		# themes
 		"arc-theme"
@@ -350,5 +380,6 @@ install_nvim
 install_asdf
 install_i3wm
 install_ranger
+install_fonts
 update_distro
 print_footer

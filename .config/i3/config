@@ -5,8 +5,8 @@ set $BROWSER --no-startup-id firefox
 set $FILE_MANAGER thunar
 
 # set font
-# font pango: JetBrainsMono Nerd Font Mono Regular 8
-font pango: DejaVu Sans Mono 8
+font pango: JetBrainsMono Nerd Font Mono Regular 8
+# font pango: DejaVu Sans Mono 8
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
