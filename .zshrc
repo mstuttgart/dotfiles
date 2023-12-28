@@ -68,16 +68,8 @@ SPACESHIP_CHAR_SUFFIX=" "
 # aliases
 #
 alias cp="cp -iv"
-#             │└─ list copied files
-#             └─ prompt before overwriting an existing file
-
 alias mkdir="mkdir -pv"
-#                   │└─ list created directories
-#                   └─ create intermediate directories
-
 alias mv="mv -iv"
-#             │└─ list moved files
-#             └─ prompt before overwriting an existing file
 
 alias rm="rm -rf --"
 
@@ -118,5 +110,4 @@ alias pipu="pip install pip --upgrade"
 alias pipr="pip install -r requirements.txt"
 
 
-
-
+export PATH=$PATH:/home/michell/.spicetify
