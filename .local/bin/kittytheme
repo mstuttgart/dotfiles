@@ -1,0 +1,31 @@
+#!/usr/bin/bash
+
+# change to home folder
+cd "$HOME" || exit
+
+KITTYDIR="$HOME/.config/kitty"
+THEMEFILE="$KITTYDIR/theme.conf"
+
+PS3="Select kitty theme: "
+
+select theme in "Everforest Dark" "Everforest Light" Quit; do
+
+	case "$theme" in
+	"Everforest Dark")
+		ln -sf "$KITTYDIR/themes/everforest_dark_medium.conf" "$THEMEFILE"
+    kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
+		;;
+	"Everforest Light")
+		ln -sf "$KITTYDIR/themes/everforest_light_medium.conf" "$THEMEFILE"
+    kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
+		;;
+	"Quit")
+		echo "Done"
+		break
+		;;
+	*)
+		echo "Invalid Option"
+		;;
+	esac
+
+done
