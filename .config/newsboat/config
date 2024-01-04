@@ -1,0 +1,27 @@
+# reflesh feed on open newsboat
+refresh-on-startup yes
+reload-threads 100
+
+# limit articles
+show-read-feeds no
+show-read-articles no
+
+bind-key h quit
+bind-key j down
+bind-key k up
+bind-key l open
+bind-key H prev-feed
+bind-key L next-feed
+bind-key g home
+bind-key G end
+bind-key SPACE macro-prefix 
+bind-key b bookmark 
+bind-key ^F pagedown 
+bind-key ^B pageup 
+bind-key ^H toggle-show-read-feeds
+
+macro f set browser "firefox %u" ; open-in-browser ; set browser "lynx -vikeys -accept_all_cookies %u"
+
+# sort feed
+feed-sort-order lastupdated
+

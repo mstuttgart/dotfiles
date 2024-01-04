@@ -1,0 +1,17 @@
+"query:YouTube:tags # \"YouTube\""
+https://www.youtube.com/feeds/videos.xml?channel_id=UCylGUf9BvQooEFjgdNudoQg "Linux"            "Youtube"   #thelinuxcast
+https://www.youtube.com/feeds/videos.xml?channel_id=UC3zoY9LapZERsN7caDKqz0w "Documentary"      "YouTube"   #archipel
+https://www.youtube.com/feeds/videos.xml?channel_id=UCsBjURrPoezykLs9EqgamOA "Dev - Humor"      "YouTube"   #fireship
+https://www.youtube.com/feeds/videos.xml?channel_id=UCBZA3z_u8LPiVuIo7YUdDcg "Dev - Blog"       "YouTube"   #devaslife
+https://www.youtube.com/feeds/videos.xml?channel_id=UCo71RUe6DX4w-Vd47rFLXPg "Dev - Technical"  "YouTube"   #craftzdog
+https://www.youtube.com/feeds/videos.xml?channel_id=UCib793mnUOhWymCh2VJKplQ "Dev - Technical"  "YouTube"   #akitando
+https://www.youtube.com/feeds/videos.xml?channel_id=UCWQaM7SpSECp9FELz-cHzuQ "Dev - Technical"  "YouTube"   #dreamsofcode
+
+"query:Reddit:tags # \"Reddit\""
+https://www.reddit.com/r/neovim.rss       "Reddit" "neovim"
+https://www.reddit.com/r/brdev.rss        "Reddit" "BrDev"
+https://www.reddit.com/r/thedivision.rss  "Reddit" "TheDivision"
+
+"query:Blogs:tags # \"Blog\""
+https://www.tabnews.com.br/recentes/rss "Forum" "Dev"
+
