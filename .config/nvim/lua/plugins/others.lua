@@ -47,18 +47,11 @@ local plugins = {
   },
 
   -- smooth scroll
-  -- {
-  --   "karb94/neoscroll.nvim",
-  --   config = function()
-  --     require("neoscroll").setup {}
-  --   end,
-  -- },
-
-  -- plugin to animate common Neovim actions
   {
-    "echasnovski/mini.animate",
-    event = "VeryLazy",
-    version = '*',
+    "karb94/neoscroll.nvim",
+    config = function()
+      require("neoscroll").setup {}
+    end,
   },
 
   -- navic complement to breadcumbs
@@ -86,7 +79,6 @@ local plugins = {
       vim.fn["mkdp#util#install"]()
     end,
   },
-
 }
 
 return plugins
