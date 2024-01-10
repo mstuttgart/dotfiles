@@ -35,7 +35,7 @@ zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
 
 # Load theme file
-zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+# zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
@@ -111,3 +111,7 @@ alias pipr="pip install -r requirements.txt"
 
 
 export PATH=$PATH:/home/michell/.spicetify
+
+# configure starship
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"

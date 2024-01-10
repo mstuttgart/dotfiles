@@ -8,15 +8,35 @@ THEMEFILE="$KITTYDIR/theme.conf"
 
 PS3="Select kitty theme: "
 
-select theme in "Everforest Dark" "Everforest Light" Quit; do
+select theme in "Ayu Light" "Ayu Dark" "Ayu Mirage" "Everforest Dark" "Everforest Light" "Gruvbox Dark" "Tokyo Night" Quit; do
 
 	case "$theme" in
+	"Ayu Light")
+		ln -sf "$KITTYDIR/themes/ayu_light.conf" "$THEMEFILE"
+    kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
+		;;
+	"Ayu Dark")
+		ln -sf "$KITTYDIR/themes/ayu_dark.conf" "$THEMEFILE"
+    kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
+		;;
+	"Ayu Mirage")
+		ln -sf "$KITTYDIR/themes/ayu_mirage.conf" "$THEMEFILE"
+    kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
+		;;
 	"Everforest Dark")
 		ln -sf "$KITTYDIR/themes/everforest_dark_medium.conf" "$THEMEFILE"
     kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
 		;;
 	"Everforest Light")
 		ln -sf "$KITTYDIR/themes/everforest_light_medium.conf" "$THEMEFILE"
+    kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
+		;;
+	"Gruvbox Dark")
+		ln -sf "$KITTYDIR/themes/gruvbox_dark.conf" "$THEMEFILE"
+    kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
+		;;
+  "Tokyo Night")
+		ln -sf "$KITTYDIR/themes/tokyonight_night.conf" "$THEMEFILE"
     kitty @ set-colors --all --configured "$KITTYDIR/kitty.conf"
 		;;
 	"Quit")

@@ -19,9 +19,17 @@ local plugins = {
         italics = true,
         transparent_background_level = 1,
       }
-      -- vim.o.background = "dark"
       vim.cmd.colorscheme "everforest"
     end,
+  },
+  {
+    "sainnhe/gruvbox-material",
+    lazy=true,
+    -- priority = 1000,
+    -- config = function()
+    --   vim.g.gruvbox_material_background = "hard"
+    --   vim.cmd.colorscheme "gruvbox-material"
+    -- end,
   },
   {
     "maxmx03/solarized.nvim",
@@ -30,14 +38,6 @@ local plugins = {
     -- config = function()
     --   vim.o.background = "dark" -- or 'light'
     --   vim.cmd.colorscheme "solarized"
-    -- end,
-  },
-  {
-    "Shatur/neovim-ayu",
-    lazy = true,
-    -- priority = 1000,
-    -- config = function()
-    --   vim.cmd.colorscheme "ayu"
     -- end,
   },
 }
