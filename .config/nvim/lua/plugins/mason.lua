@@ -38,7 +38,6 @@ local plugins = {
         "prettier",
         "shfmt",
         "stylua",
-        "xmlformatter",
         "yamlfmt",
       },
 

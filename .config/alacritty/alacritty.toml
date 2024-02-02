@@ -1,5 +1,5 @@
 import = [
-    "~/.config/alacritty/themes/themes/everforest_dark.toml"
+    "~/.config/alacritty/themes/themes/nord.toml"
 ]
 
 [env]
@@ -9,15 +9,15 @@ TERM = "xterm-256color"
 size = 11.0
 
 [font.bold]
-family = "JetBrainsMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font"
 style = "Bold"
 
 [font.bold_italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font"
 style = "Bold Italic"
 
 [font.italic]
-family = "JetBrainsMono Nerd Font Mono"
+family = "JetBrainsMono Nerd Font"
 style = "Italic"
 
 [font.normal]

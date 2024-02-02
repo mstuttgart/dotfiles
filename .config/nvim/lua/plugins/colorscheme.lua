@@ -19,12 +19,13 @@ local plugins = {
         italics = true,
         transparent_background_level = 1,
       }
+      vim.o.background = "light"
       vim.cmd.colorscheme "everforest"
     end,
   },
   {
     "sainnhe/gruvbox-material",
-    lazy=true,
+    lazy = true,
     -- priority = 1000,
     -- config = function()
     --   vim.g.gruvbox_material_background = "hard"
@@ -32,12 +33,19 @@ local plugins = {
     -- end,
   },
   {
-    "maxmx03/solarized.nvim",
+    "shaunsingh/nord.nvim",
     lazy = true,
     -- priority = 1000,
     -- config = function()
-    --   vim.o.background = "dark" -- or 'light'
-    --   vim.cmd.colorscheme "solarized"
+    --   vim.cmd.colorscheme "nord"
+    -- end,
+  }, 
+  {
+    "folke/tokyonight.nvim",
+    lazy = true,
+    -- priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme "tokyonight"
     -- end,
   },
 }

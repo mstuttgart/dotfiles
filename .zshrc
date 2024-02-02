@@ -91,6 +91,9 @@ alias aptr="sudo apt remove"
 alias apti="sudo apt install"
 alias apts="apt-cache search"
 
+# clear terminal
+alias cls="clear"
+
 # create directory recursive
 alias mkdir="mkdir -pv"
 
@@ -109,9 +112,8 @@ alias pyserver="python3 -m http.server 8000"
 alias pipu="pip install pip --upgrade"
 alias pipr="pip install -r requirements.txt"
 
-
 export PATH=$PATH:/home/michell/.spicetify
 
-# configure starship
+# configure starship prompt theme
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"

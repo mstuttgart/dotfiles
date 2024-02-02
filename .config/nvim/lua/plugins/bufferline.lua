@@ -25,7 +25,7 @@ local plugin = {
             end,
             diagnostics = "nvim_lsp",
             separator_style = "thin",
-            always_show_bufferline = false,
+            always_show_bufferline = true,
             offsets = {
                 {
                     filetype = "NvimTree",
