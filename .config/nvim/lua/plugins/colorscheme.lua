@@ -19,7 +19,7 @@ local plugins = {
         italics = true,
         transparent_background_level = 1,
       }
-      vim.o.background = "light"
+      -- vim.o.background = "light"
       vim.cmd.colorscheme "everforest"
     end,
   },
@@ -39,13 +39,13 @@ local plugins = {
     -- config = function()
     --   vim.cmd.colorscheme "nord"
     -- end,
-  }, 
+  },
   {
-    "folke/tokyonight.nvim",
+    "Shatur/neovim-ayu",
     lazy = true,
     -- priority = 1000,
     -- config = function()
-    --   vim.cmd.colorscheme "tokyonight"
+    --   vim.cmd.colorscheme "ayu"
     -- end,
   },
 }
