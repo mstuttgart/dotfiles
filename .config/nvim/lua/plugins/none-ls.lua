@@ -21,9 +21,9 @@ local plugin = {
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.isort,
         nls.builtins.formatting.autopep8,
-        nls.builtins.formatting.xmlformat.with {
-          arg = { "--blanks", "--indent 4" },
-        },
+        -- nls.builtins.formatting.xmlformat.with {
+        --   arg = { "--blanks", "--indent 4" },
+        -- },
         nls.builtins.formatting.yamlfmt,
         nls.builtins.formatting.prettier.with {
           prefer_local = "node_modules/.bin",
@@ -35,13 +35,13 @@ local plugin = {
           prefer_local = ".venv/bin",
         },
         nls.builtins.diagnostics.ansiblelint,
-        nls.builtins.diagnostics.eslint.with {
-          prefer_local = "node_modules/.bin",
-        },
+        -- nls.builtins.diagnostics.eslint.with {
+        --   prefer_local = "node_modules/.bin",
+        -- },
         nls.builtins.diagnostics.shellcheck,
-        nls.builtins.code_actions.eslint.with {
-          prefer_local = "node_modules/.bin",
-        },
+        -- nls.builtins.code_actions.eslint.with {
+        --   prefer_local = "node_modules/.bin",
+        -- },
       },
     }
   end,
