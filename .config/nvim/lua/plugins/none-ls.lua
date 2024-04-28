@@ -20,10 +20,8 @@ local plugin = {
         nls.builtins.formatting.shfmt,
         nls.builtins.formatting.stylua,
         nls.builtins.formatting.isort,
-        nls.builtins.formatting.autopep8,
-        -- nls.builtins.formatting.xmlformat.with {
-        --   arg = { "--blanks", "--indent 4" },
-        -- },
+        nls.builtins.formatting.black,
+        nls.builtins.formatting.xmlformat,
         nls.builtins.formatting.yamlfmt,
         nls.builtins.formatting.prettier.with {
           prefer_local = "node_modules/.bin",

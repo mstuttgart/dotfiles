@@ -5,6 +5,8 @@ local plugins = {
   dependencies = {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "hrsh7th/cmp-nvim-lsp",
+    -- "pearofducks/ansible-vim",
+    -- "mfussenegger/nvim-ansible",
   },
   config = function()
     local lspconfig = require "lspconfig"
@@ -14,7 +16,7 @@ local plugins = {
 
     vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, {
       undercurl = true,
-      update_in_insert = false,
+      update_is = false,
       virtual_text = { spacing = 4, prefix = "●" },
       severity_sort = true,
     })
@@ -56,6 +58,10 @@ local plugins = {
       capabilities = capabilities,
     }
 
+    -- configure xml server
+    lspconfig["lemminx"].setup {
+      capabilities = capabilities,
+    }
   end,
 }
 

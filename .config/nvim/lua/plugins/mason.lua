@@ -26,11 +26,13 @@ local plugins = {
         "lua-language-server",
         "pyright",
         "typescript-language-server",
+        "lemminx",
 
         -- linters
         "eslint_d",
         "pylint",
         "shellcheck",
+        "ansible-lint",
 
         -- formatters
         "autopep8",
@@ -39,6 +41,7 @@ local plugins = {
         "shfmt",
         "stylua",
         "yamlfmt",
+        "xmlformatter",
       },
 
       -- auto-install configured servers (with lspconfig)

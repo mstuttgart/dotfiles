@@ -3,6 +3,9 @@
 
 local plugin = {
   "nvim-treesitter/nvim-treesitter",
+  dependencies = {
+    "pearofducks/ansible-vim",
+  },
   version = false, -- last release is way too old and doesn't work on Windows
   build = ":TSUpdate",
   event = { "BufReadPre", "BufNewFile" },
