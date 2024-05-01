@@ -23,20 +23,20 @@ Here are some details about my setup:
 - **Shell**                        : [zsh](https://github.com/zsh-users/zsh)
   - [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)                       : Minimalistic, powerful and extremely customizable Zsh prompt
   - [zplug](https://github.com/zplug/zplug)                                                        : A next-generation plugin manager for zsh
-  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)                : Fish shell like syntax highlighting for Zsh. 
-  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)                        : Fish-like autosuggestions for zsh 
-  - [zsh-z](https://github.com/agkozak/zsh-z)                                                      : Jump quickly to directories that you have visited "frecently." A native Zsh port of z.sh with added features. 
-  - [zsh-autopair](https://github.com/hlissner/zsh-autopair)                                       : Auto-close and delete matching delimiters in zsh 
+  - [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)                : Fish shell like syntax highlighting for Zsh.
+  - [zsh-autosuggestions](https://github.com/zsh-users/zsh-autosuggestions)                        : Fish-like autosuggestions for zsh
+  - [zsh-z](https://github.com/agkozak/zsh-z)                                                      : Jump quickly to directories that you have visited "frecently." A native Zsh port of z.sh with added features.
+  - [zsh-autopair](https://github.com/hlissner/zsh-autopair)                                       : Auto-close and delete matching delimiters in zsh
   - [git](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/git)                              : *Oh My Zsh* git plugin
-  - [asdf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/asdf)                            : *Oh-My-Zsh* asdf plugin                                
-  - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)                              : *Oh-My-Zsh* fzf plugin                                
-  - [virtualenvwrapper](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/virtualenvwrapper)  : *Oh-My-Zsh* python virtualenvwrapper plugin                                 
+  - [asdf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/asdf)                            : *Oh-My-Zsh* asdf plugin
+  - [fzf](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/fzf)                              : *Oh-My-Zsh* fzf plugin
+  - [virtualenvwrapper](https://github.com/ohmyzsh/ohmyzsh/tree/master/plugins/virtualenvwrapper)  : *Oh-My-Zsh* python virtualenvwrapper plugin
 - **Terminal**                     : [kitty](https://github.com/kovidgoyal/kitty)
   - [tig](https://github.com/jonas/tig)             : Text-mode interface for git
   - [bat](https://github.com/sharkdp/bat)           : A cat(1) clone with wings
   - [fzf](https://github.com/junegunn/fzf)          : A command-line fuzzy finder
   - [exa](https://github.com/ogham/exa)             : A modern replacement for ‘ls’
-  - [btop](https://github.com/aristocratos/btop)    : A monitor of resources 
+  - [btop](https://github.com/aristocratos/btop)    : A monitor of resources
 - **Bar**                          : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
 - **Compositor**                   : [compton](https://github.com/chjj/compton)
 - **Notify Daemon**                : [dunst](https://wiki.archlinux.org/index.php/Dunst)
@@ -55,7 +55,7 @@ My dotfiles is managed by [yadm](https://yadm.io), a dotfiles manager. This make
 ### Debian/Ubuntu
 
 ```sh
-$ apt install yadm
+apt install yadm
 ```
 
 To others systems install instructions, see [here](https://yadm.io/docs/install).
@@ -77,10 +77,10 @@ yadm reset --hard origin/main
 
 Execute the follow command to install all dependencies and apps:
 
-```sh 
+```sh
 yadm bootstrap
 ```
 
 ## Credits
 
-Copyright (C) 2019-2023 by Michell Stuttgart
+Copyright (C) 2019-2024 by Michell Stuttgart
