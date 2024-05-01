@@ -5,8 +5,6 @@ local plugins = {
   dependencies = {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     "hrsh7th/cmp-nvim-lsp",
-    -- "pearofducks/ansible-vim",
-    -- "mfussenegger/nvim-ansible",
   },
   config = function()
     local lspconfig = require "lspconfig"
@@ -60,6 +58,11 @@ local plugins = {
 
     -- configure xml server
     lspconfig["lemminx"].setup {
+      capabilities = capabilities,
+    }
+
+    -- configure yaml server
+    lspconfig["yaml"].setup {
       capabilities = capabilities,
     }
   end,

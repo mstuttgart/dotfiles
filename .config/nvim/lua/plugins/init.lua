@@ -1,6 +1,11 @@
 -- general plugins
 local plugins = {
 
+  -- lua functions that many plugins use
+  {
+    "nvim-lua/plenary.nvim",
+  },
+
   -- better scape shortcuts
   {
     "max397574/better-escape.nvim",
@@ -8,6 +13,18 @@ local plugins = {
     config = function()
       require("better_escape").setup()
     end,
+  },
+
+  -- A fancy, configurable, notification manager for NeoVim
+  {
+    "rcarriga/nvim-notify",
+    event = "VeryLazy",
+  },
+
+  -- Neovim plugin to improve the default vim.ui interfaces
+  {
+    "stevearc/dressing.nvim",
+    event = "VeryLazy",
   },
 
   -- smooth scroll
@@ -20,3 +37,4 @@ local plugins = {
 }
 
 return plugins
+

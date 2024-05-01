@@ -19,8 +19,11 @@ local plugin = {
       -- Add languages to be installed here that you want installed for treesitter
       ensure_installed = {
         "bash",
+        "c",
         "css",
+        "dockerfile",
         "embedded_template",
+        "gitignore",
         "html",
         "javascript",
         "json",
@@ -31,8 +34,8 @@ local plugin = {
         "query",
         "regex",
         "toml",
-        "typescript",
         "tsx",
+        "typescript",
         "xml",
         "yaml",
       },

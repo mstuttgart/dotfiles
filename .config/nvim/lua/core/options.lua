@@ -25,9 +25,9 @@ opt.cursorline = true -- highlight the current cursor line
 
 -- appearance
 
--- turn on termguicolors for nightfly colorscheme to work
--- (have to use iterm2 or any other true color terminal)
+-- turn on termguicolors for colorscheme to work
 opt.termguicolors = true
+opt.showmode = false -- hide mode (mode is already show in lualine bar)
 opt.signcolumn = "yes" -- show sign column so that text doesn't shift
 
 -- backspace
@@ -42,44 +42,4 @@ opt.splitbelow = true -- split horizontal window to the bottom
 
 -- turn off swapfile
 opt.swapfile = false
-
--- opt.laststatus = 3 -- global statusline
--- opt.showmode = false
-
--- opt.clipboard = "unnamedplus"
--- opt.cursorline = true
-
--- -- Indenting
--- opt.expandtab = true
--- opt.shiftwidth = 2
--- opt.smartindent = true
--- opt.tabstop = 2
-
--- opt.fillchars = { eob = " " }
--- opt.ignorecase = true
--- opt.smartcase = true
--- opt.mouse = "a"
-
--- -- Numbers
--- opt.number = true
--- -- opt.numberwidth = 1
--- opt.ruler = false
-
--- -- disable nvim intro
--- opt.shortmess:append "sI"
-
--- opt.signcolumn = "yes"
--- opt.splitbelow = true
--- opt.splitright = true
--- opt.termguicolors = true
--- opt.timeoutlen = 400
--- opt.undofile = true
-
--- -- interval for writing swap file to disk, also used by gitsigns
--- opt.updatetime = 250
-
--- -- disable some default providers
--- for _, provider in ipairs { "node", "perl", "python3", "ruby" } do
---   vim.g["loaded_" .. provider .. "_provider"] = 0
--- end
 

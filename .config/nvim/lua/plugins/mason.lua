@@ -24,24 +24,27 @@ local plugins = {
         "css-lsp",
         "html-lsp",
         "lua-language-server",
+        "marksman",
         "pyright",
         "typescript-language-server",
         "lemminx",
+        "yaml-language-server",
 
         -- linters
         "eslint_d",
+        "markdownlint",
         "pylint",
         "shellcheck",
         "ansible-lint",
+        "yamllint",
 
         -- formatters
-        "autopep8",
+        "black",
         "isort",
         "prettier",
         "shfmt",
         "stylua",
         "yamlfmt",
-        "xmlformatter",
       },
 
       -- auto-install configured servers (with lspconfig)

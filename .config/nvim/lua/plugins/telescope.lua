@@ -18,7 +18,7 @@ local plugins = {
   keys = {
     -- git
     { "<leader>gc", "<cmd>Telescope git_commits<CR>", desc = "commits" },
-    { "<leader>gs", "<cmd>Telescope git_status<CR>",  desc = "status" },
+    { "<leader>gs", "<cmd>Telescope git_status<CR>", desc = "status" },
   },
   config = function()
     require("telescope").setup {
@@ -29,10 +29,10 @@ local plugins = {
       },
       extensions = {
         fzf = {
-          fuzzy = true,                   -- false will only do exact matching
+          fuzzy = true, -- false will only do exact matching
           override_generic_sorter = true, -- override the generic sorter
-          override_file_sorter = true,    -- override the file sorter
-          case_mode = "smart_case",       -- or "ignore_case" or "respect_case"
+          override_file_sorter = true, -- override the file sorter
+          case_mode = "smart_case", -- or "ignore_case" or "respect_case"
         },
       },
     }
@@ -44,7 +44,12 @@ local plugins = {
     vim.keymap.set("n", "<leader>sf", require("telescope.builtin").find_files, { desc = "Search Files" })
     vim.keymap.set("n", "<leader>sw", require("telescope.builtin").grep_string, { desc = "Search current Word" })
     vim.keymap.set("n", "<leader>sh", require("telescope.builtin").help_tags, { desc = "Search Help" })
-    vim.keymap.set("n", "<leader>sg", require("telescope").extensions.live_grep_args.live_grep_args, { desc = "Search by Grep" })
+    vim.keymap.set(
+      "n",
+      "<leader>sg",
+      require("telescope").extensions.live_grep_args.live_grep_args,
+      { desc = "Search by Grep" }
+    )
     vim.keymap.set("n", "<leader>ss", require("telescope.builtin").lsp_document_symbols, { desc = "Search Symbols" })
     vim.keymap.set("n", "<leader>sd", require("telescope.builtin").diagnostics, { desc = "Search Diagnostics" })
   end,
