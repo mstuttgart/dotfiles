@@ -14,7 +14,7 @@ set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsea
 set({ "i", "v", "n", "s" }, "<C-s>", "<cmd>wa<cr><esc>", { desc = "Save file" })
 
 -- search word under cursos
-set({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
+set({ "n", "x" }, "<leader>cw", "*N", { desc = "Search word under cursor" })
 
 -- Don't copy the replaced text after pasting in visual mode
 -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste

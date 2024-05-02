@@ -1,4 +1,4 @@
--- comment
+-- cursorword
 local plugin = {
   "echasnovski/mini.cursorword",
   event = "VeryLazy",

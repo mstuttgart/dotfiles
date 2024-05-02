@@ -34,7 +34,16 @@ local plugins = {
       require("neoscroll").setup {}
     end,
   },
+
+--   -- helping you establish good command workflow and quit bad habit
+--   {
+--     "m4xshen/hardtime.nvim",
+--     dependencies = { "MunifTanjim/nui.nvim", "nvim-lua/plenary.nvim" },
+--     opts = {},
+--     config = function()
+--       require("hardtime").setup {}
+--     end,
+--   },
 }
 
 return plugins
-

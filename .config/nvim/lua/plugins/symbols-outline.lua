@@ -2,7 +2,7 @@ local plugin = {
   "simrat39/symbols-outline.nvim",
   cmd = "SymbolsOutline",
   keys = {
-    { "<leader>ct", "<cmd>SymbolsOutline<cr>", desc = "Code Tags (Symbols Outline)" },
+    { "<leader>ct", "<cmd>SymbolsOutline<cr>", desc = "Toogle Code Tags (Symbols Outline)" },
   },
   config = function()
     require("symbols-outline").setup {

@@ -1,7 +1,10 @@
 -- snippet plugin
 local plugin = {
   "L3MON4D3/LuaSnip",
-  dependencies = "rafamadriz/friendly-snippets",
+  dependencies = {
+    "rafamadriz/friendly-snippets",
+    "mstuttgart/vscode-odoo-snippets",
+  },
   opts = {
     history = true,
     updateevents = "TextChanged,TextChangedI",
@@ -9,7 +12,7 @@ local plugin = {
   keys = function()
     return {}
   end,
-  config = function(_, opts)
+  config = function()
     require("luasnip.loaders.from_vscode").lazy_load()
   end,
 }
