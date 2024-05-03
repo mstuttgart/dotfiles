@@ -16,6 +16,9 @@ set({ "i", "v", "n", "s" }, "<C-s>", "<cmd>wa<cr><esc>", { desc = "Save file" })
 -- search word under cursos
 set({ "n", "x" }, "<leader>cw", "*N", { desc = "Search word under cursor" })
 
+set({ "n", "x" }, "\"", "ciw\"\"<esc>P", { desc = "Insert double quotes surround word" })
+set({ "n", "x" }, "\'", "ciw\'\'<esc>P", { desc = "Insert single quotes surround word" })
+
 -- Don't copy the replaced text after pasting in visual mode
 -- https://vim.fandom.com/wiki/Replace_a_word_with_yanked_text#Alternative_mapping_for_paste
 set({ "v", "x" }, "p", 'p:let @+=@0<CR>:let @"=@0<CR>', { desc = "Dont copy replaced text" })

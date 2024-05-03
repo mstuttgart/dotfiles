@@ -10,9 +10,9 @@ local plugins = {
     "nvim-tree/nvim-web-devicons",
   },
   keys = {
-    { "<leader>ee", "<cmd> NvimTreeFocus <CR>", desc = "Focus NvimTree" },
+    { "<leader>ef", "<cmd> NvimTreeFocus <CR>", desc = "Focus NvimTree" },
     { "<leader>et", "<cmd> NvimTreeToggle <CR>", desc = "Toogle NvimTree" },
-    { "<leader>ef", "<cmd> NvimTreeFindFile <CR>", desc = "NvimTree open with current File" },
+    { "<leader>ee", "<cmd> NvimTreeFindFile <CR>", desc = "NvimTree open with current File" },
     { "<leader>er", "<cmd> NvimTreeRefresh <CR>", desc = "NvimTree Refresh" },
     { "<leader>ec", "<cmd> NvimTreeCollapse<CR>", desc = "Collapse Nvim Tree" },
   },
