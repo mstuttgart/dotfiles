@@ -42,7 +42,7 @@ Here are some details about my setup:
 - **Notify Daemon**                : [dunst](https://wiki.archlinux.org/index.php/Dunst)
 - **Application Launcher**         : [rofi](https://github.com/davatorium/rofi)
 - **Wallpaper Manager**            : [nitrogen](https://github.com/l3ib/nitrogen)
-- **Editor**                       : [neovim](https://neovim.io/)
+- **Editor**                       : [neovim](https://neovim.io/) -- check my configuration [here](https://github.com/mstuttgart/nvim)
 - **File Manager**                 : [ranger](https://github.com/ranger/ranger) | [thunar](https://docs.xfce.org/xfce/thunar/start)
 - **CLI System Information**       : [neofetch](https://github.com/dylanaraps/neofetch)
 
