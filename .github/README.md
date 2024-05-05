@@ -48,7 +48,7 @@ Here are some details about my setup:
 
 ## Install
 
-> [!Warning]
+> [!CAUTION]
 > Settings applied by this repository are very personal, and definitely not suite everyones needs. Don’t blindly use my settings unless you know what that entails. Use at your own risk!
 
 My dotfiles is managed by [yadm](https://yadm.io), a dotfiles manager. This makes it simple to set up a new computer and keep updates my config files. I order to set up a new system with these dotfiles, do the following:
