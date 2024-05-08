@@ -1,6 +1,6 @@
 # set modifier
 set $super Mod4
-set $TERM --no-startup-id kitty
+set $TERM --no-startup-id alacritty
 set $BROWSER --no-startup-id firefox
 set $FILE_MANAGER thunar
 
