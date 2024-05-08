@@ -5,7 +5,7 @@ keybinds clear-defaults=true{
         // bind "Alt c" { Copy; }
     }
     locked {
-        bind "Ctrl l" { SwitchToMode "Normal"; }
+        bind "Ctrl g" { SwitchToMode "Normal"; }
     }
     resize {
         bind "Ctrl x" { SwitchToMode "Normal"; }
