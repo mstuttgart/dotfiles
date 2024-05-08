@@ -1,6 +1,7 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export TERM="xterm-kitty"
+# export TERM="xterm-kitty"
+export TERM="alacritty"
 
 # configure zsh history
 HISTFILE=$HOME/.histfile
@@ -112,6 +113,15 @@ alias pyserver="python3 -m http.server 8000"
 alias pipu="pip install pip --upgrade"
 alias pipr="pip install -r requirements.txt"
 
+# nvim aliases
+alias nvimconf="cd $HOME/.config/nvim && nvim"
+alias nvimclean="nvim --clean"
+alias nvimdel="rm -rf $HOME/.local/share/nvim $HOME/.cache/nvim"
+
+# i3 aliases 
+alias i3conf="cd $HOME.config/i3 && nvim"
+
+# spicetify part (theme spotify)
 export PATH=$PATH:/home/michell/.spicetify
 
 # configure starship prompt theme
