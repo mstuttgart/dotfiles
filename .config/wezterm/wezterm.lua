@@ -1,12 +1,13 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
--- local act = wezterm.action
+local act = wezterm.action
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices
+config.automatically_reload_config = true
 
 -- For example, changing the color scheme:
 config.color_scheme_dirs = { "$HOME/.config/wezterm/themes" }
@@ -22,7 +23,7 @@ config.inactive_pane_hsb = {
 	brightness = 0.9,
 }
 
-	-- Tab Bar
+-- Tab Bar
 config.enable_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
@@ -37,22 +38,18 @@ config.window_padding = {
 	bottom = 3,
 }
 
-	-- Aesthetic Night Colorscheme
+-- Aesthetic Night Colorscheme
 config.bold_brightens_ansi_colors = true
-
-
 
 config.window_frame = {
 	font = wezterm.font({ family = "Noto Sans", weight = "Regular" }),
 }
 
-config.disable_default_key_bindings = true
-config.leader = { key = "b", mods = "CMD", timeout_milliseconds = 2000 }
-config.automatically_reload_config = true
-
 -- Keybinds
 
 config.disable_default_key_bindings = true
+config.leader = { key = "b", mods = "CTRL|SHIFT", timeout_milliseconds = 2000 }
+
 config.keys = {
 	{
 		key = [[\]],
@@ -70,7 +67,7 @@ config.keys = {
 	},
 	{
 		key = "q",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT|ALT",
 		action = wezterm.action({ CloseCurrentPane = { confirm = false } }),
 	},
 	{
@@ -115,12 +112,12 @@ config.keys = {
 	},
 	{ -- browser-like bindings for tabbing
 		key = "t",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action({ SpawnTab = "CurrentPaneDomain" }),
 	},
 	{
 		key = "q",
-		mods = "CTRL",
+		mods = "CTRL|SHIFT",
 		action = wezterm.action({ CloseCurrentTab = { confirm = false } }),
 	},
 	{
