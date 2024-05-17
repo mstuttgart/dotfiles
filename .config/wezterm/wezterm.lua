@@ -9,12 +9,21 @@ local config = wezterm.config_builder()
 -- This is where you actually apply your config choices
 config.automatically_reload_config = true
 
+config.window_background_opacity = 1.0
+
 -- For example, changing the color scheme:
 config.color_scheme_dirs = { "$HOME/.config/wezterm/themes" }
-config.color_scheme = "Everforest Dark (Medium)"
+
+config.color_scheme = "Everforest Light (Medium)"
+-- config.color_scheme = "Everforest Dark (Medium)"
+-- config.color_scheme = "Catppuccin Frappe"
+-- config.color_scheme = "Nord (base16)"
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 12.0
+
+-- Use the defaults as a base
+config.hyperlink_rules = wezterm.default_hyperlink_rules()
 
 -- Dim inactive panes
 config.inactive_pane_hsb = {
@@ -49,6 +58,15 @@ config.window_frame = {
 
 config.disable_default_key_bindings = true
 config.leader = { key = "b", mods = "CTRL|SHIFT", timeout_milliseconds = 2000 }
+
+config.mouse_bindings = {
+  -- Ctrl-click will open the link under the mouse cursor
+  {
+    event = { Up = { streak = 1, button = 'Left' } },
+    mods = 'CTRL',
+    action = wezterm.action.OpenLinkAtMouseCursor,
+  },
+}
 
 config.keys = {
 	{
