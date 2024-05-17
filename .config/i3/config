@@ -1,6 +1,6 @@
 # set modifier
 set $super Mod4
-set $TERM --no-startup-id alacritty
+set $TERM --no-startup-id wezterm
 set $BROWSER --no-startup-id firefox
 set $FILE_MANAGER thunar
 
@@ -15,7 +15,7 @@ exec --no-startup-id nitrogen --restore
 exec --no-startup-id xsettingsd &
 exec --no-startup-id compton -f
 exec --no-startup-id xfce4-power-manager
-exec_always --no-startup-id "$HOME/.screenlayout/autoxrandr.sh"
+# exec_always --no-startup-id "$HOME/.screenlayout/autoxrandr.sh"
 exec --no-startup-id dunst -config "$HOME/.config/dunst/dunstrc"
 
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Natural Scrolling Enabled" 1
