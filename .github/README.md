@@ -12,7 +12,10 @@
 
 ## About
 
-![2023-12-27_15-21](https://github.com/mstuttgart/dotfiles/assets/8174740/63935f69-5774-4196-967a-9ef907790493)
+<!--![2023-12-27_15-21](https://github.com/mstuttgart/dotfiles/assets/8174740/63935f69-5774-4196-967a-9ef907790493) -->
+
+![2024-05-17_20-53_1 Everforest Dark](https://github.com/mstuttgart/dotfiles/assets/8174740/e0205c3a-57db-463d-84e5-84dc4d50dfcd)
+![2024-05-17_20-53 Everforest Light](https://github.com/mstuttgart/dotfiles/assets/8174740/7753990c-9c5d-4c80-8c68-6a07c5d74e0c)
 
 This repository serves as my way to help me setup and maintain my Linux Mint 21 (or Ubuntu 22.04 LTS).
 
@@ -38,6 +41,12 @@ Here are some details about my setup:
   - [exa](https://github.com/ogham/exa)             : A modern replacement for ‘ls’
   - [btop](https://github.com/aristocratos/btop)    : A monitor of resources
 - **Bar**                          : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
+ - Everforest theme (dark/light)
+ - Gruvbox theme (dark)
+ - Gruvbox Material theme (dark)
+ - Ayu theme (dark, light and mirage)
+ - Nord theme (dark)
+ - TokyoNight theme (dark)
 - **Compositor**                   : [compton](https://github.com/chjj/compton)
 - **Notify Daemon**                : [dunst](https://wiki.archlinux.org/index.php/Dunst)
 - **Application Launcher**         : [rofi](https://github.com/davatorium/rofi)
