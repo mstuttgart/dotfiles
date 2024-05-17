@@ -1,7 +1,9 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # export TERM="xterm-kitty"
-export TERM="alacritty"
+# export TERM="alacritty"
+# export TERM="xterm-256color"
+export TERM="wezterm"
 
 # configure zsh history
 HISTFILE=$HOME/.histfile
@@ -11,6 +13,10 @@ SAVEHIST=1000
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
+
+  # fix ctrl+p, ctrl+n, ctrl+f and etc not work on tmux and others terminals
+  # https://superuser.com/questions/750965/tmux-printing-p
+  bindkey -e
 else
   export EDITOR='nvim'
 fi
@@ -35,9 +41,6 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
 
-# Load theme file
-# zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
     zplug install
@@ -45,25 +48,6 @@ fi
 
 # Then, source plugins and add commands to $PATH
 zplug load
-
-# spaceship theme configuration
-SPACESHIP_PROMPT_ORDER=(
-  venv          # virtualenv section
-  user          # Username section
-  dir           # Current directory section
-  host          # Hostname section
-  git           # Git section (git_branch + git_status)
-  exec_time     # Execution time
-  line_sep      # Line break
-  jobs          # Background jobs indicator
-  exit_code     # Exit code section
-  char          # Prompt character
-)
-
-SPACESHIP_USER_SHOW=always
-SPACESHIP_PROMPT_ADD_NEWLINE=false
-SPACESHIP_CHAR_SYMBOL="❯"
-SPACESHIP_CHAR_SUFFIX=" "
 
 # ----------------------------------------
 # aliases
@@ -119,7 +103,10 @@ alias nvimclean="nvim --clean"
 alias nvimdel="rm -rf $HOME/.local/share/nvim $HOME/.cache/nvim"
 
 # i3 aliases 
-alias i3conf="cd $HOME.config/i3 && nvim"
+alias i3conf="nvim $HOME/.config/i3/config"
+
+# wezterm aliases
+alias wezconf="nvim $HOME/.config/wezterm/wezterm.lua"
 
 # spicetify part (theme spotify)
 export PATH=$PATH:/home/michell/.spicetify
