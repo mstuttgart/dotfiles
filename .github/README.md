@@ -65,7 +65,7 @@ My dotfiles is managed by [yadm](https://yadm.io), a dotfiles manager. This make
 ### Debian/Ubuntu
 
 ```sh
-apt install yadm
+sudo apt install yadm
 ```
 
 To others systems install instructions, see [here](https://yadm.io/docs/install).
