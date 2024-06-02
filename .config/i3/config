@@ -17,6 +17,8 @@ exec --no-startup-id compton -f
 exec --no-startup-id xfce4-power-manager
 # exec_always --no-startup-id "$HOME/.screenlayout/autoxrandr.sh"
 exec --no-startup-id dunst -config "$HOME/.config/dunst/dunstrc"
+# disable capslock
+exec --no-startup-id setxkbmap -option caps:escape
 
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Typing Enabled" 1
