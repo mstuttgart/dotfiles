@@ -41,12 +41,12 @@ Here are some details about my setup:
   - [exa](https://github.com/ogham/exa)             : A modern replacement for ‘ls’
   - [btop](https://github.com/aristocratos/btop)    : A monitor of resources
 - **Bar**                          : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
- - Everforest theme (dark/light)
- - Gruvbox theme (dark)
- - Gruvbox Material theme (dark)
- - Ayu theme (dark, light and mirage)
- - Nord theme (dark)
- - TokyoNight theme (dark)
+  - Everforest theme (dark/light)
+  - Gruvbox theme (dark)
+  - Gruvbox Material theme (dark)
+  - Ayu theme (dark, light and mirage)
+  - Nord theme (dark)
+  - TokyoNight theme (dark)
 - **Compositor**                   : [compton](https://github.com/chjj/compton)
 - **Notify Daemon**                : [dunst](https://wiki.archlinux.org/index.php/Dunst)
 - **Application Launcher**         : [rofi](https://github.com/davatorium/rofi)
