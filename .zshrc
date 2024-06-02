@@ -1,14 +1,14 @@
 # If you come from bash you might have to change your $PATH.
 export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # export TERM="xterm-kitty"
-# export TERM="alacritty"
+export TERM="alacritty"
 # export TERM="xterm-256color"
-export TERM="wezterm"
+# export TERM="wezterm"
 
 # configure zsh history
 HISTFILE=$HOME/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=5000
+SAVEHIST=5000
 
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -114,3 +114,4 @@ export PATH=$PATH:/home/michell/.spicetify
 # configure starship prompt theme
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
+
