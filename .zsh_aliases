@@ -1,0 +1,63 @@
+# General use aliases
+#
+alias cp="cp -iv"
+alias mkdir="mkdir -pv"
+alias mv="mv -iv"
+alias rm="rm -rf --"
+
+# eza aliases
+alias ls="exa --color=auto --icons"
+alias la="exa -la --color=auto --icons"
+alias ll="exa -alh --color=auto --icons"
+alias lt="exa -a --tree --color=auto --icons" # show tree in directory
+
+# colorize grep output (good for log files)
+alias grep="grep --color=auto"
+
+# ps aux
+alias pgrep="ps aux | grep"
+
+# system aliases
+alias aptu="sudo apt update; sudo apt upgrade -y"
+alias aptr="sudo apt remove"
+alias apti="sudo apt install"
+alias apts="apt-cache search"
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# clear terminal
+alias cls="clear"
+
+# create directory recursive
+alias mkdir="mkdir -pv"
+
+# pyenv aliases
+alias aenv="source .venv/bin/activate"
+alias cenv="python3 -m venv .venv"
+alias denv="deactivate"
+
+# using terminfo of kitty in ssh
+alias ssh="TERM=xterm-256color ssh"
+
+# python server to server files
+alias pyserver="python3 -m http.server 8000"
+
+# update pip
+alias pipu="pip install pip --upgrade"
+alias pipr="pip install -r requirements.txt"
+
+# nvim aliases
+alias nvimconf="cd $HOME/.config/nvim && nvim"
+alias nvimclean="nvim --clean"
+alias nvimdel="rm -rf $HOME/.local/share/nvim $HOME/.cache/nvim"
+
+# i3 and polybar aliases 
+alias i3conf="nvim $HOME/.config/i3/config"
+alias polybarconf="nvim $HOME/.config/polybar/config.ini"
+
+# terminal aliases
+alias wezconf="nvim $HOME/.config/wezterm/wezterm.lua"
+alias alacrittyconf="nvim $HOME/.config/alacritty/alacritty.toml"
+
