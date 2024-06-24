@@ -14,8 +14,8 @@ config.window_background_opacity = 1.0
 -- For example, changing the color scheme:
 config.color_scheme_dirs = { "$HOME/.config/wezterm/themes" }
 
-config.color_scheme = "Everforest Light (Medium)"
--- config.color_scheme = "Everforest Dark (Medium)"
+-- config.color_scheme = "Everforest Light (Medium)"
+config.color_scheme = "Everforest Dark (Medium)"
 -- config.color_scheme = "Catppuccin Frappe"
 -- config.color_scheme = "Nord (base16)"
 
@@ -148,11 +148,11 @@ config.keys = {
 		mods = "CTRL|SHIFT",
 		action = wezterm.action({ ActivateTabRelative = -1 }),
 	}, -- standard copy/paste bindings
-	{
-		key = "x",
-		mods = "CTRL",
-		action = "ActivateCopyMode",
-	},
+	-- {
+	-- 	key = "x",
+	-- 	mods = "CTRL",
+	-- 	action = "ActivateCopyMode",
+	-- },
 	{
 		key = "v",
 		mods = "CTRL|SHIFT",
