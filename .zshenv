@@ -10,7 +10,7 @@ export XDG_CACHE_HOME="${HOME}/.cache"
 
 # set default applications
 export EDITOR="nvim"
-export TERMINAL="kitty"
+export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # export TERM="xterm-kitty"
