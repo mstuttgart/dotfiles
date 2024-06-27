@@ -362,6 +362,10 @@ function install_packages {
 
 	done
 
+	echo_info "Install pip packages"
+        pip install pipx --user
+        pipx install atty
+
 }
 
 # Because Git submodule commands cannot operate without a work tree, they must
