@@ -249,7 +249,7 @@ function install_ranger {
 		"unrar"
 		"unzip"
 		"mediainfo"
-		"mvp"
+		"mpv"
 	)
 
 	for app in "${ranger_pkg[@]}"; do
