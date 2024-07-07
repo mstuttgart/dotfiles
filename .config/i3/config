@@ -142,12 +142,12 @@ bindsym $super+F2 mode "resize"
 exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 
 # window rules, you can find the window class using xprop
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 4
 
 # set gaps
-gaps inner 5
-gaps outer 2
-smart_gaps on
+# gaps inner 5
+# gaps outer 2
+# smart_gaps on
 
 assign [class=firefox|google-chrome] 2
 assign [class=Thunar|Postman|Nautilus] 3
