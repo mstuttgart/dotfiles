@@ -6,7 +6,7 @@ import = [
 TERM = "xterm-256color"
 
 [font]
-size = 11.0
+size = 9.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
@@ -34,7 +34,7 @@ bindings = [
     { action = "Copy", key = "C", mods = "Control|Shift" },
     { action = "PasteSelection", key = "Insert", mods = "Shift" },
     { action = "ResetFontSize", key = "Key0", mods = "Control" },
-    { action = "IncreaseFontSize", key = "Equals", mods = "Control" },
+    { action = "ResetFontSize", key = "Equals", mods = "Control" },
     { action = "IncreaseFontSize", key = "Plus", mods = "Control" },
     { action = "DecreaseFontSize", key = "Minus", mods = "Control" },
     { action = "ToggleFullscreen", key = "F11", mods = "None" },
