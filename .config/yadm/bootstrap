@@ -6,16 +6,9 @@ set -eu
 GIT_USER="mstuttgart"
 GIT_REPO="dotfiles"
 
-# Set XDG directories.
-# export XDG_CONFIG_HOME="${HOME}/.config"
-# export XDG_CACHE_HOME="${HOME}/.cache"
-# export XDG_DATA_HOME="${HOME}/.local/share"
-
 # Set user bin directory.
 USER_BIN_DIR="$HOME/.local/bin"
 USER_FONT_DIR="$HOME/.local/bin"
-
-# TEMP_DIR="$(mkdir /tmp/install-temp)"
 
 # colors to log
 RED='\e[31m'
@@ -90,6 +83,7 @@ function print_footer {
 function update_distro {
 	sudo apt update
 	sudo apt upgrade -y
+  sudo apt autoremove -y
 }
 
 function update_yadm_repo {
@@ -155,7 +149,7 @@ function install_i3wm {
 		"polybar"
 		"playerctl"
 		"numlockx"
-		"acpi" # battery info
+	  "acpi" # battery info
 		"gsimplecal"
 		"neofetch"
 		"imagemagick"
