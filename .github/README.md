@@ -75,7 +75,7 @@ To others systems install instructions, see [here](https://yadm.io/docs/install)
 Use `yadm` to clone this repo and set up your enviromnent.
 
 ```sh
-yadm clone https://github.com/mstuttgart/dotfiles.git
+yadm clone --recursive https://github.com/mstuttgart/dotfiles.git
 ```
 
 The `clone` and `pull` command may result in warnings because of pre-existing dotfiles. Overwrite the existing files with commands below.
