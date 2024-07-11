@@ -6,7 +6,7 @@ import = [
 TERM = "xterm-256color"
 
 [font]
-size = 9.0
+size = 12.0
 
 [font.bold]
 family = "JetBrainsMono Nerd Font"
