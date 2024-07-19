@@ -31,6 +31,9 @@ bindsym $super+f exec $FILE_MANAGER;
 bindsym $super+t exec teams-for-linux;
 bindsym $super+r exec $TERM -e ranger; workspace 3; focus
 
+bindsym $super+F7 exec "$HOME/.screenlayout/external.sh"
+bindsym $super+F8 exec "$HOME/.screenlayout/notebook.sh"
+
 # start dmenu (a program launcher)
 bindsym $super+d exec "rofi -modi drun,run -show drun"
 
