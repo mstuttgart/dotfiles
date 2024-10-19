@@ -51,7 +51,7 @@ alias pipr="pip install -r requirements.txt"
 # nvim aliases
 alias nvimconf="cd $HOME/.config/nvim && nvim"
 alias nvimclean="nvim --clean"
-alias nvimdel="rm -rf $HOME/.local/share/nvim $HOME/.cache/nvim"
+alias nvimdel="rm -rf $HOME/.local/share/nvim $HOME/.local/state/nvim $HOME/.cache/nvim"
 
 # i3 and polybar aliases 
 alias i3conf="nvim $HOME/.config/i3/config"
