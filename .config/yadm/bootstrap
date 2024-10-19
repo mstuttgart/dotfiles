@@ -6,10 +6,6 @@ set -eu
 GIT_USER="mstuttgart"
 GIT_REPO="dotfiles"
 
-# Set user bin directory.
-USER_BIN_DIR="$HOME/.local/bin"
-USER_FONT_DIR="$HOME/.local/bin"
-
 # colors to log
 RED='\e[31m'
 YELLOW='\e[33m'
@@ -81,10 +77,8 @@ function print_footer {
 }
 
 function update_distro {
+  echo_info "Update System"
   sudo pacman -Syu
-  #	sudo apt update
-  #	sudo apt upgrade -y
-  #  sudo apt autoremove -y
 }
 
 function update_yadm_repo {
@@ -97,8 +91,6 @@ function install_nvim {
 
   NVIM_PKG=(
     "neovim"
-    #"exuberant-ctags"
-    #"ncurses-term"
     "ripgrep"
     "fd"
     "python-pip"
@@ -108,23 +100,14 @@ function install_nvim {
     "git"
     "python3"
     "python-pip"
+    "rust"
     "ttf-jetbrains-mono-nerd"
     "ttf-sourcecodepro-nerd"
   )
 
-  #echo_print "Installing nvim"
-  #sudo pacman -S neovim --noconfirm
-
-  #echo_info "Downloading nvim..."
-  #curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
-  #chmod u+x nvim.appimage
-  #mv nvim.appimage nvim
-
-  #echo_info "Move nvim appimage to /usr/bin"
-  #sudo mv nvim /usr/bin
-
   for app in "${NVIM_PKG[@]}"; do
 
+    echo_info "-----------------------------------------------"
     echo_print "Installing $app"
 
     # Install app
@@ -141,84 +124,63 @@ function install_nvim {
 function install_i3wm {
 
   i3wm_pkg=(
-    # i3
-    "i3"
-    "i3lock"
-    "netctl"
-    "nitrogen"
-    "compton"
-    "rofi"
-    "light" # brightness control
-    "hsetroot"
-    "fonts-noto"
-    "fonts-mplus"
-    "xsettingsd"
-    "netctl"
-    # "lxappearance"
-    "polybar"
-    "playerctl"
-    # "numlockx"
-    "acpi" # battery info
-    # "gsimplecal"
-    "neofetch"
-    # "imagemagick"
+    "acpi"
     "arandr"
+    "arc-gtk-theme-eos"
+    "archlinux-xdg-menu"
+    "awesome-terminal-fonts"
+    "dex"
+    "dmenu"
+    "dunst"
+    "eos-settings-i3wm"
+    "endeavouros-xfce4-terminal-colors"
+    "eos-lightdm-slick-theme"
+    "eos-qogir-icons"
+    "galculator"
+    "gvfs"
+    "gvfs-afc"
+    "gvfs-gphoto2"
+    "gvfs-mtp"
+    "gvfs-nfs"
+    "gvfs-smb"
+    "i3-wm"
+    "i3lock"
+    "jq"
+    "lightdm"
+    "lightdm-slick-greeter"
+    "nwg-look"
+    "mpv"
+    "network-manager-applet"
+    "neofetch"
+    "nitrogen"
+    "numlockx"
+    "picom"
+    "playerctl"
+    "polybar"
+    "polkit-gnome"
+    "rofi"
+    "scrot"
+    "sysstat"
+    "thunar"
+    "thunar-archive-plugin"
+    "thunar-volman"
+    "tumbler"
+    "unzip"
+    "xarchiver"
+    "xbindkeys"
+    "xdg-user-dirs-gtk"
+    "xed"
+    "xorg-xbacklight"
+    "xorg-xdpyinfo"
+    "zip"
+    "ttf-jetbrains-mono-nerd"
+    "ttf-sourcecodepro-nerd"
   )
   echo
 
   for app in "${i3wm_pkg[@]}"; do
-    echo_print "Installing $app"
 
-    # Install app
-    sudo pacman -S "$app" --confirm
-
-    # The $? get result of last command
-    check_return_code $? "$app"
-
-  done
-
-}
-
-function install_asdf {
-  echo_print "Install and configure asdf"
-
-  ASDF_PATH_DIR="$HOME/.asdf"
-
-  # if [ ! -d "$ASDF_PATH_DIR" ]; then
-
-  plugins=(
-    nodejs
-    python
-  )
-
-  git clone https://github.com/asdf-vm/asdf.git "$ASDF_PATH_DIR" --branch v0.13.1
-
-  if [ "$(basename "$SHELL")" != 'zsh' ]; then
-    echo_info "Change Shell to Zsh"
-    zsh
-  fi
-
-  for plugin in "${plugins[@]}"; do
-    asdf plugin-add "$plugin"
-  done
-
-  echo_nl
-  # fi
-
-}
-
-function install_zsh {
-  echo_print "Install and configure ZSH"
-
-  i3wm_pkg=(
-    "zsh"
-    "curl"
-    "starship"
-  )
-
-  echo
-
-  for app in "${i3wm_pkg[@]}"; do
+    echo_info "-----------------------------------------------"
     echo_print "Installing $app"
 
     # Install app
@@ -229,9 +191,28 @@ function install_zsh {
 
   done
 
-  # echo_info "Install ZSH"
-  # sudo pacman -S zsh curl starship --noconfirm
-  # check_return_code $? zsh
+}
+
+function install_zsh {
+  echo_print "Install and configure ZSH"
+
+  zsh_pkg=(
+    zsh
+    curl
+  )
+
+  echo
+
+  for app in "${zsh_pkg[@]}"; do
+    echo_print "Installing $app"
+
+    # Install app
+    sudo pacman -S "$app" --noconfirm
+
+    # The $? get result of last command
+    check_return_code $? "$app"
+
+  done
 
   if [ ! -d "$HOME/.zplug" ]; then
     echo_info "Install zplug"
@@ -240,134 +221,71 @@ function install_zsh {
 
   if [ "$(basename "$SHELL")" != 'zsh' ]; then
     echo_info "Change Shell to Zsh"
-    zsh
-    sudo chsh -s /bin/zsh
+    chsh -s /bin/zsh
   fi
 
   echo_nl
 }
 
-# function install_ranger {
-#
-# 	ranger_pkg=(
-# 		"ranger"
-# 		"w3m-img"
-# 		"ffmpegthumbnailer"
-# 		"highlight"
-# 		"unrar"
-# 		"unzip"
-# 		"mediainfo"
-# 		"mpv"
-# 	)
-#
-# 	for app in "${ranger_pkg[@]}"; do
-# 		echo_print "Installing $app"
-#
-# 		# Install app
-# 		sudo apt install "$app" -y
-#
-# 		# The $? get result of last command
-# 		check_return_code $? "$app"
-#
-# 	done
-# }
-
-# function install_fonts {
-# 	echo_print "Download and Install Nerd Fonts"
-#
-# 	TEMP_DIR="/tmp/nerd-fonts"
-#
-# 	if [ ! -d /tmp/nerd-fonts ]; then
-# 		echo_info "Clone Nerd Font Repositorie"
-# 		git clone --depth 1 git@github.com:ryanoasis/nerd-fonts.git "$TEMP_DIR"
-# 	fi
-#
-# 	cd "$TEMP_DIR"
-#
-# 	echo_info "Install Font JetBrainsMono"
-# 	./install.sh -q JetBrainsMono
-#
-# 	echo_info "Install Font SourceCodePro"
-# 	./install.sh -q SourceCodePro
-#
-# 	echo_info "Update font cache"
-# 	fc-cache -f -v >/dev/null 2>&1
-#
-# }
-
 function install_packages {
-  Apps=(
-    # basic apps
-    "p7zip"
-    #"p7zip-full"
-    #"p7zip-rar"
-    #"rar"
-    #"software-properties-common"
-    #"ubuntu-restricted-extras"
-    #"unace-nonfree"
-    "unrar"
-    #"uuid-runtime"
-    "wget"
-    "curl"
-    "net-tools"
-    "pwgen"
-    #"openssh-server"
-    "pass"
+
+  PacmanPackages=(
+    # cli apps
     "bat"
-    "exa"
-    "kitty"
     "btop"
-    #"pgcli"
-    #"zathura"
+    "curl"
+    "exa"
+    "net-tools"
+    "p7zip"
+    "pass"
+    "pwgen"
+    "unrar"
+    "wget"
 
     # Programming
-    #"build-essential"
+    "alacritty"
     "cmake"
-    #"g++"
-    #"libsqlite3-dev"
-    #"llvm"
-    "gcc"
-    "make"
-    "git"
-    "tig"
-    "kitty"
-
-    # python
-    "python3"
-    "python-pip"
-    #"python-venv"
-
     "docker"
+    "docker-buildx"
     "docker-compose"
+    "gcc"
+    "git"
+    "make"
     "nodejs"
     "npm"
+    "python-pip"
+    "python-pipx"
+    "python3"
+    "rust"
+    "tig"
 
     # apps
-    "gpick"
-    "flameshot"
-    #"gdebi"
-    "libreoffice"
-    #"openssh-server"
-    "poedit"
     "filezilla"
     "firefox"
-    "gpick"
-    "gimp"
-    "poedit"
-    "thunar"
-    #"spotify-client"
-
-    # themes
-    #"arc-theme"
+    "flameshot"
     "font-manager"
-    #"fonts-powerline"
+    "gimp"
+    "gpick"
+    "meld"
+    "poedit"
+    "poedit"
+    "spotify-launcher"
+    "transmission-gtk"
+    "tmux"
+
+    # UI
     "ttf-jetbrains-mono-nerd"
     "ttf-sourcecodepro-nerd"
   )
 
+  echo_info "Update Packages"
+  sudo pacman -Syu
+
   echo_info "Install Arch packages"
 
-  for app in "${Apps[@]}"; do
+  for app in "${PacmanPackages[@]}"; do
+
+    echo_info "-----------------------------------------------"
     echo_print "Installing $app"
 
     # Install app
@@ -378,12 +296,48 @@ function install_packages {
 
   done
 
-  # Avoid use sudo do run docker
-  sudo usermod -aG docker $USER
+  AURPackages=(
+    "teams-for-linux"
+    "postman-bin"
+  )
 
-  #echo_info "Install pip packages"
-  #pip install pipx --user
-  #pipx install atty
+  for app in "${AURPackages[@]}"; do
+
+    echo_info "-----------------------------------------------"
+    echo_print "Installing $app"
+
+    # Install app
+    yay -S "$app" --noconfirm
+
+    # The $? get result of last command
+    check_return_code $? "$app"
+
+  done
+
+  # Avoid use sudo do run docker
+  sudo usermod -aG docker "$USER"
+
+  # Habilita e inicia o servidor do docker
+  sudo systemctl enable docker
+  sudo systemctl start docker
+
+  # install tmux plugin manager
+  if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+  fi
+
+  # Install asdf version manager
+  if [ ! -d "$HOME/.asdf" ]; then
+    git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.13.1
+  fi
+
+  # Install python and nodejs plugins
+  ./.asdf/bin/asdf plugin-add python
+  ./.asdf/bin/asdf plugin-add nodejs
+
+  # Install python versions
+  ./.asdf/bin/asdf install python 3.8.10
+  ./.asdf/bin/asdf install python 3.10.9
 
 }
 
@@ -391,18 +345,54 @@ function install_packages {
 # be run from within $HOME (assuming this is the root of your dotfiles)
 cd "$HOME" || exit
 
-# disable sleep
-#sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
-
 print_header
-# update_yadm_repo
-#update_distro
-#install_packages
-# install_zsh
-# install_nvim
-# install_asdf
-install_i3wm
-# install_ranger
-#install_fonts
-# update_distro
-# print_footer
+
+PS3="Select action please: "
+
+items=("Update System" "Install Packages" "Install Neovim" "Install i3wm" "Install ZSH")
+
+while true; do
+  select item in "${items[@]}" Quit; do
+    case $REPLY in
+    1)
+      echo "Selected item #$item"
+      update_distro
+      echo
+      break
+      ;;
+    2)
+      echo "Selected item #$item"
+      install_packages
+      echo
+      break
+      ;;
+    3)
+      echo "Selected item #$item"
+      install_nvim
+      echo
+      break
+      ;;
+    4)
+      echo "Selected item #$item"
+      install_i3wm
+      echo
+      break
+      ;;
+    5)
+      echo "Selected item #$item"
+      install_zsh
+      echo
+      break
+      ;;
+    $((${#items[@]} + 1)))
+      echo "We're done!"
+      print_footer
+      break 2
+      ;;
+    *)
+      echo "Ooops - unknown choice $REPLY"
+      break
+      ;;
+    esac
+  done
+done

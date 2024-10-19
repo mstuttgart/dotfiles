@@ -12,10 +12,11 @@ floating_modifier $super
 
 #autostart
 exec --no-startup-id nitrogen --restore
-exec --no-startup-id xsettingsd &
-exec --no-startup-id compton -f
-exec --no-startup-id xfce4-power-manager
-exec_always --no-startup-id "$HOME/.screenlayout/external.sh"
+# exec --no-startup-id xsettingsd &
+# exec --no-startup-id compton -f
+exec_always --no-startup-id picom -b
+# exec --no-startup-id xfce4-power-manager
+# exec_always --no-startup-id "$HOME/.screenlayout/external.sh"
 exec --no-startup-id dunst -config "$HOME/.config/dunst/dunstrc"
 # disable capslock
 exec --no-startup-id setxkbmap -option caps:escape
