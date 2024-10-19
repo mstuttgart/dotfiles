@@ -155,7 +155,7 @@ plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 //
-theme "rose-pine-dawn"
+theme "everforest-dark"
 
 // The name of the default layout to load on startup
 // Default: "default"

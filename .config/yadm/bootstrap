@@ -350,14 +350,14 @@ cd "$HOME" || exit
 sudo systemctl mask sleep.target suspend.target hibernate.target hybrid-sleep.target
 
 print_header
-update_yadm_repo
-update_distro
-install_packages
-install_zsh
+# update_yadm_repo
+# update_distro
+# install_packages
+# install_zsh
 install_nvim
-install_asdf
-install_i3wm
-install_ranger
-install_fonts
-update_distro
-print_footer
+# install_asdf
+# install_i3wm
+# install_ranger
+# install_fonts
+# update_distro
+# print_footer

@@ -12,10 +12,11 @@ config.automatically_reload_config = true
 config.window_background_opacity = 1.0
 
 -- For example, changing the color scheme:
-config.color_scheme_dirs = { "$HOME/.config/wezterm/themes" }
+config.color_scheme_dirs = { "$HOME/.config/wezterm/colors" }
 
 -- config.color_scheme = "Everforest Light (Medium)"
 config.color_scheme = "Everforest Dark (Medium)"
+-- config.color_scheme = "Everforest Dark (Gogh)"
 -- config.color_scheme = "Catppuccin Frappe"
 -- config.color_scheme = "Nord (base16)"
 
@@ -33,7 +34,7 @@ config.inactive_pane_hsb = {
 }
 
 -- Tab Bar
-config.enable_tab_bar = false
+config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
 
@@ -54,18 +55,24 @@ config.window_frame = {
 	font = wezterm.font({ family = "Noto Sans", weight = "Regular" }),
 }
 
+-- The filled in variant of the < symbol
+local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
+
+-- The filled in variant of the > symbol
+local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
+
 -- Keybinds
 
 config.disable_default_key_bindings = true
 config.leader = { key = "b", mods = "CTRL|SHIFT", timeout_milliseconds = 2000 }
 
 config.mouse_bindings = {
-  -- Ctrl-click will open the link under the mouse cursor
-  {
-    event = { Up = { streak = 1, button = 'Left' } },
-    mods = 'CTRL',
-    action = wezterm.action.OpenLinkAtMouseCursor,
-  },
+	-- Ctrl-click will open the link under the mouse cursor
+	{
+		event = { Up = { streak = 1, button = "Left" } },
+		mods = "CTRL",
+		action = wezterm.action.OpenLinkAtMouseCursor,
+	},
 }
 
 config.keys = {
