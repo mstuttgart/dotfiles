@@ -29,7 +29,7 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 # plguins from oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/asdf", from:oh-my-zsh
+# zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 
@@ -39,6 +39,8 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
+zplug "mafredri/zsh-async"
+zplug "sindresorhus/pure, use:pure.zsh, as:theme"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
@@ -49,14 +51,16 @@ fi
 zplug load
 
 # load aliases
-if [ -f "${HOME}/.zsh_aliases" ]; then
-  . "${HOME}/.zsh_aliases"
+if [ -f "$HOME/.zsh_aliases" ]; then
+  . "$HOME/.zsh_aliases"
 fi
 
-# spicetify part (theme spotify)
-export PATH=$PATH:/home/michell/.spicetify
-
 # configure starship prompt theme
-export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
-eval "$(starship init zsh)"
+# export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
+# eval "$(starship init zsh)"
+
+# Fiz thunar file manager not update gtk theme
+if [[ -f "$HOME/.profile" ]]; then
+  . "$HOME/.profile"
+fi
 
