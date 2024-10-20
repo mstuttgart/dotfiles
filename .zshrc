@@ -29,7 +29,7 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 # plguins from oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-# zplug "plugins/asdf", from:oh-my-zsh
+zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 
@@ -55,9 +55,6 @@ if [ -f "$HOME/.zsh_aliases" ]; then
   . "$HOME/.zsh_aliases"
 fi
 
-# configure starship prompt theme
-# export STARSHIP_CONFIG="${XDG_CONFIG_HOME}/starship/starship.toml"
-# eval "$(starship init zsh)"
 
 # Fiz thunar file manager not update gtk theme
 if [[ -f "$HOME/.profile" ]]; then
