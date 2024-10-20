@@ -1,6 +1,6 @@
 # set modifier
 set $super Mod4
-set $TERM --no-startup-id alacritty
+set $TERM --no-startup-id kitty
 set $BROWSER --no-startup-id firefox
 set $FILE_MANAGER thunar
 
@@ -175,10 +175,3 @@ client.urgent           #E67E80 #E67E80 #2D353B #E67E80   #E67E80
 client.placeholder      #2D353B #2D353B #859289 #2D353B   #2D353B
 client.background       #2D353B
 
-# rose-pine dawn
-# client.focused          #faf4ed #faf4ed #575279 #faf4ed   #faf4ed
-# client.focused_inactive #575279 #575279 #faf4ed #575279   #575279
-# client.unfocused        #575279 #575279 #faf4ed #575279   #575279D
-# client.urgent           #E67E80 #E67E80 #2D353B #E67E80   #E67E80
-# client.placeholder      #2D353B #2D353B #859289 #2D353B   #2D353B
-# client.background       #2D353B
