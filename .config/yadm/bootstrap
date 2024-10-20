@@ -103,6 +103,7 @@ function install_nvim {
     "rust"
     "ttf-jetbrains-mono-nerd"
     "ttf-sourcecodepro-nerd"
+    "xclip"
   )
 
   for app in "${NVIM_PKG[@]}"; do
