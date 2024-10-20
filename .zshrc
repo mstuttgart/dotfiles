@@ -19,6 +19,12 @@ fi
 # https://superuser.com/questions/750965/tmux-printing-p
 bindkey -e
 
+# fix delete key
+bindkey "\e[3~" delete-char
+
+# disable INSERT
+bindkey -s '\e[2~' ''
+
 # ----------------------------------------
 # Install zplug and zsh plugins
 # zplug 
