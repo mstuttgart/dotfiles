@@ -37,7 +37,6 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
-zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 
 # install others plugs 
 zplug "zsh-users/zsh-syntax-highlighting"
@@ -46,7 +45,6 @@ zplug "zsh-users/zsh-completions"
 zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
 zplug "mafredri/zsh-async"
-zplug "sindresorhus/pure, use:pure.zsh, as:theme"
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
@@ -66,4 +64,7 @@ fi
 if [[ -f "$HOME/.profile" ]]; then
   . "$HOME/.profile"
 fi
+
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+eval "$(starship init zsh)"
 

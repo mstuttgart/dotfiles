@@ -167,6 +167,7 @@ function install_i3wm {
     "thunar-volman"
     "tumbler"
     "unzip"
+    "viewnior"
     "xarchiver"
     "xbindkeys"
     "xdg-user-dirs-gtk"
@@ -200,6 +201,7 @@ function install_zsh {
   zsh_pkg=(
     zsh
     curl
+    starship
   )
 
   echo
