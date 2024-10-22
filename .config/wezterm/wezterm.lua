@@ -1,7 +1,7 @@
 -- Pull in the wezterm API
 local wezterm = require("wezterm")
 
-local act = wezterm.action
+-- local act = wezterm.action
 
 -- This will hold the configuration.
 local config = wezterm.config_builder()
@@ -19,6 +19,7 @@ config.color_scheme = "Everforest Dark (Medium)"
 -- config.color_scheme = "Everforest Dark (Gogh)"
 -- config.color_scheme = "Catppuccin Frappe"
 -- config.color_scheme = "Nord (base16)"
+--
 
 config.font = wezterm.font("JetBrainsMono Nerd Font")
 config.font_size = 12.0
@@ -37,7 +38,7 @@ config.inactive_pane_hsb = {
 config.enable_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
 config.adjust_window_size_when_changing_font_size = false
-
+config.use_fancy_tab_bar = true
 config.use_dead_keys = false
 config.scrollback_lines = 5000
 
@@ -54,12 +55,6 @@ config.bold_brightens_ansi_colors = true
 config.window_frame = {
 	font = wezterm.font({ family = "Noto Sans", weight = "Regular" }),
 }
-
--- The filled in variant of the < symbol
-local SOLID_LEFT_ARROW = wezterm.nerdfonts.pl_right_hard_divider
-
--- The filled in variant of the > symbol
-local SOLID_RIGHT_ARROW = wezterm.nerdfonts.pl_left_hard_divider
 
 -- Keybinds
 
@@ -156,9 +151,9 @@ config.keys = {
 		action = wezterm.action({ ActivateTabRelative = -1 }),
 	}, -- standard copy/paste bindings
 	-- {
-	-- 	key = "x",
-	-- 	mods = "CTRL",
-	-- 	action = "ActivateCopyMode",
+	--  key = "x",
+	--  mods = "CTRL",
+	--  action = "ActivateCopyMode",
 	-- },
 	{
 		key = "v",
@@ -171,6 +166,38 @@ config.keys = {
 		action = wezterm.action({ CopyTo = "ClipboardAndPrimarySelection" }),
 	},
 }
+
+wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
+	local edge_background = "#2d353b"
+	local background = "#2d353b"
+	local foreground = "#d3c6aa"
+
+	if tab.is_active then
+		background = "#a7c080"
+		foreground = "#2d353b"
+	elseif hover then
+		background = "#2d353b"
+		foreground = "#d3c6aa"
+	end
+
+	local edge_foreground = background
+
+	-- ensure that the titles fit in the available space,
+	-- and that we have room for the edges.
+	local title = wezterm.truncate_right(tab.active_pane.title, max_width + 4)
+
+	return {
+		{ Background = { Color = edge_background } },
+		{ Foreground = { Color = edge_foreground } },
+		-- { Text = wezterm.nerdfonts.pl_right_hard_divider },
+		{ Background = { Color = background } },
+		{ Foreground = { Color = foreground } },
+		{ Text = title },
+		{ Background = { Color = edge_background } },
+		{ Foreground = { Color = edge_foreground } },
+		-- { Text = wezterm.nerdfonts.pl_left_hard_divider },
+	}
+end)
 
 -- and finally, return the configuration to wezterm
 return config
