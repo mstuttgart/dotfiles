@@ -66,3 +66,10 @@ alias alacrittyconf="nvim $HOME/.config/alacritty/alacritty.toml"
 alias tmuxa="tmux a -t"
 # create session
 alias tmuxs="tmux new -s"
+
+# Docker
+# run odoo bin
+alias odoorun="docker compose run --rm --remove-orphans --service-ports odoo"
+
+# List databases on postgres container
+alias odoodbls="docker exec postgresql psql -U odoo -l"
