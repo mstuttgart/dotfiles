@@ -1,11 +1,11 @@
 # set modifier
 set $super Mod4
-set $TERM --no-startup-id kitty
-set $BROWSER --no-startup-id firefox
+set $TERM --no-startup-id alacritty
+set $BROWSER --no-startup-id brave
 set $FILE_MANAGER thunar
 
 # set font
-font pango: JetBrainsMono Nerd Font Mono Regular 8
+font pango: JetBrainsMono Nerd Font Regular 10
 
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
@@ -16,7 +16,7 @@ exec_always --no-startup-id picom -b
 # exec_always --no-startup-id "$HOME/.screenlayout/external.sh"
 exec --no-startup-id dunst -config "$HOME/.config/dunst/dunstrc"
 # disable capslock
-# exec --no-startup-id setxkbmap -option caps:escape
+exec --no-startup-id setxkbmap -option caps:escape
 
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Typing Enabled" 1
@@ -166,6 +166,7 @@ for_window [class="Lxappearance"] floating enable
 for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-calendar"] floating enable
 for_window [class="GoogleCalendar"] floating enable
+for_window [class="galculator"] floating enable
 
 # everforest
 client.focused          #A7C080 #A7C080 #2D353B #A7C080   #A7C080
