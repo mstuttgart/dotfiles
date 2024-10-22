@@ -138,6 +138,7 @@ function install_i3wm {
     "eos-lightdm-slick-theme"
     "eos-qogir-icons"
     "galculator"
+    "gsimplecal"
     "gvfs"
     "gvfs-afc"
     "gvfs-gphoto2"
