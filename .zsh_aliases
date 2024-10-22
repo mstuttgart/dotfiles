@@ -61,3 +61,8 @@ alias polybarconf="nvim $HOME/.config/polybar/config.ini"
 alias wezconf="nvim $HOME/.config/wezterm/wezterm.lua"
 alias alacrittyconf="nvim $HOME/.config/alacritty/alacritty.toml"
 
+# tmux aliases
+# attach session
+alias tmuxa="tmux a -t"
+# create session
+alias tmuxs="tmux new -s"
