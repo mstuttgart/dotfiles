@@ -37,6 +37,7 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 zplug "plugins/git", from:oh-my-zsh
 zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
+zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 
 # install others plugs 
 zplug "zsh-users/zsh-syntax-highlighting"
