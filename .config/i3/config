@@ -1,5 +1,7 @@
 # set modifier
 set $super Mod4
+
+# set default apps
 set $TERM --no-startup-id alacritty
 set $BROWSER --no-startup-id brave
 set $FILE_MANAGER thunar
@@ -10,11 +12,21 @@ font pango: JetBrainsMono Nerd Font Regular 10
 # Use Mouse+$super to drag floating windows to their wanted position
 floating_modifier $super
 
-#autostart
-exec --no-startup-id nitrogen --restore
+# Set wallpaper
+exec --no-startup-id sleep 2 && nitrogen --restore
+
+# The configuration is available ~/.config/picom/picom.conf
 exec_always --no-startup-id picom -b
+
 # exec_always --no-startup-id "$HOME/.screenlayout/external.sh"
-exec --no-startup-id dunst -config "$HOME/.config/dunst/dunstrc"
+
+# Desktop notifications
+# dunst config used ~/.config/dunst/dunstrc
+exec --no-startup-id dunst --config "$HOME/.config/dunst/dunstrc"
+
+# num lock activated
+exec --no-startup-id numlockx option
+
 # disable capslock
 exec --no-startup-id setxkbmap -option caps:escape
 
@@ -57,6 +69,9 @@ bindsym XF86AudioPlay exec playerctl play-pause
 bindsym $super+q kill
 bindsym $super+F4 exec "$HOME/.config/polybar/scripts/rofi-poweroff.sh"
 
+# keybinding in fancy rofi (automated):
+bindsym F1 exec --no-startup-id ~/.config/i3/scripts/keyhint
+
 # change focus
 bindsym $super+h focus left
 bindsym $super+j focus down
@@ -89,33 +104,6 @@ bindsym $super+space floating toggle
 # change focus between tiling / floating windows
 bindsym $super+Shift+space focus mode_toggle
 
-# switch to workspace
-bindsym $super+Tab        workspace next
-bindsym $super+Shift+Tab  workspace prev
-
-bindsym $super+1 workspace 1
-bindsym $super+2 workspace 2
-bindsym $super+3 workspace 3
-bindsym $super+4 workspace 4
-bindsym $super+5 workspace 5
-bindsym $super+6 workspace 6
-bindsym $super+7 workspace 7
-bindsym $super+8 workspace 8
-bindsym $super+9 workspace 9
-bindsym $super+0 workspace 0
-
-# move focused container to workspace
-bindsym $super+Shift+1 move container to workspace 1
-bindsym $super+Shift+2 move container to workspace 2
-bindsym $super+Shift+3 move container to workspace 3
-bindsym $super+Shift+4 move container to workspace 4
-bindsym $super+Shift+5 move container to workspace 5
-bindsym $super+Shift+6 move container to workspace 6
-bindsym $super+Shift+7 move container to workspace 7
-bindsym $super+Shift+8 move container to workspace 8
-bindsym $super+Shift+9 move container to workspace 9
-bindsym $super+Shift+0 move container to workspace 0
-
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $super+F5 restart
 
@@ -146,14 +134,53 @@ exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
 for_window [class=".*"] border pixel 0
 
 # set gaps
-gaps inner 5
-gaps outer 2
+gaps inner 6
+gaps outer 3
 smart_gaps on
 
-assign [class=firefox|google-chrome] 2
+# window title alignment
+title_align center
+
+
+##########################################
+# configuration for workspace behaviour: #
+##########################################
+
+# switch to workspace
+bindsym $super+Tab        workspace next
+bindsym $super+Shift+Tab  workspace prev
+
+bindsym $super+1 workspace 1
+bindsym $super+2 workspace 2
+bindsym $super+3 workspace 3
+bindsym $super+4 workspace 4
+bindsym $super+5 workspace 5
+bindsym $super+6 workspace 6
+bindsym $super+7 workspace 7
+bindsym $super+8 workspace 8
+bindsym $super+9 workspace 9
+bindsym $super+0 workspace 0
+
+# move focused container to workspace
+bindsym $super+Shift+1 move container to workspace 1
+bindsym $super+Shift+2 move container to workspace 2
+bindsym $super+Shift+3 move container to workspace 3
+bindsym $super+Shift+4 move container to workspace 4
+bindsym $super+Shift+5 move container to workspace 5
+bindsym $super+Shift+6 move container to workspace 6
+bindsym $super+Shift+7 move container to workspace 7
+bindsym $super+Shift+8 move container to workspace 8
+bindsym $super+Shift+9 move container to workspace 9
+bindsym $super+Shift+0 move container to workspace 0
+
+assign [class=firefox|google-chrome|brave] 2
 assign [class=Thunar|Postman|Nautilus] 3
 assign [class=Vlc|Spotify] 4
 assign [class=Skype|teams-for-linux] 5
+
+##################
+# floating rules #
+##################
 
 # set specific windows to floating mode
 for_window [window_role="pop-up"] floating enable
@@ -167,6 +194,12 @@ for_window [class="Gnome-calculator"] floating enable
 for_window [class="Gnome-calendar"] floating enable
 for_window [class="GoogleCalendar"] floating enable
 for_window [class="galculator"] floating enable
+for_window [class="Pamac-manager"] floating enable
+for_window [window_role="About"] floating enable
+
+######################################
+# color settings for bar and windows #
+######################################
 
 # everforest
 client.focused          #A7C080 #A7C080 #2D353B #A7C080   #A7C080
