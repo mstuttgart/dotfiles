@@ -3,7 +3,7 @@ set $super Mod4
 
 # set default apps
 set $TERM --no-startup-id alacritty
-set $BROWSER --no-startup-id brave
+set $BROWSER --no-startup-id brave-browser
 set $FILE_MANAGER thunar
 
 # set font
@@ -18,7 +18,8 @@ exec --no-startup-id sleep 2 && nitrogen --restore
 # The configuration is available ~/.config/picom/picom.conf
 exec_always --no-startup-id picom -b
 
-# exec_always --no-startup-id "$HOME/.screenlayout/external.sh"
+# Configure monitor externo como saida padrao
+exec_always --no-startup-id "$HOME/.screenlayout/external.sh"
 
 # Desktop notifications
 # dunst config used ~/.config/dunst/dunstrc
@@ -135,7 +136,7 @@ for_window [class=".*"] border pixel 0
 
 # set gaps
 gaps inner 6
-gaps outer 3
+gaps outer 2
 smart_gaps on
 
 # window title alignment
