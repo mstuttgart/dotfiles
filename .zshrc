@@ -47,8 +47,7 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
-# zplug "mafredri/zsh-async", from:github
-# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "mafredri/zsh-async", from:github
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
