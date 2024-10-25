@@ -6,6 +6,8 @@ HISTFILE="${HOME}/.histfile"
 HISTSIZE=5000
 SAVEHIST=5000
 
+export TERM=alacritty
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -45,7 +47,8 @@ zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
-zplug "mafredri/zsh-async"
+# zplug "mafredri/zsh-async", from:github
+# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then

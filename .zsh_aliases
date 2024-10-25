@@ -6,10 +6,10 @@ alias mv="mv -iv"
 alias rm="rm -rf --"
 
 # eza aliases
-alias ls="exa --color=auto --icons"
-alias la="exa -la --color=auto --icons"
-alias ll="exa -alh --color=auto --icons"
-alias lt="exa -a --tree --color=auto --icons" # show tree in directory
+alias ls="eza --color=auto --icons"
+alias la="eza -la --color=auto --icons"
+alias ll="eza -alh --color=auto --icons"
+alias lt="eza -a --tree --color=auto --icons" # show tree in directory
 
 # colorize grep output (good for log files)
 alias grep="grep --color=auto"
