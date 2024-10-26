@@ -3,7 +3,7 @@ set $super Mod4
 
 # set default apps
 set $TERM --no-startup-id alacritty
-set $BROWSER --no-startup-id brave-browser
+set $BROWSER --no-startup-id brave
 set $FILE_MANAGER thunar
 
 # set font
@@ -49,7 +49,7 @@ bindsym $super+d exec "rofi -modi drun,run -show drun"
 
 # system shortcuts
 bindsym --release Print exec "flameshot gui -p $HOME/Downloads"
-bindsym $super+F6 exec i3lock -i "$HOME/.wallpaper.jpg"
+bindsym $super+F6 exec i3lock -i "$HOME/.wallpapers/flowers.png"
 
 # handle backlight.
 bindsym XF86MonBrightnessUp exec --no-startup-id light -A 20
