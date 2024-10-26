@@ -17,7 +17,7 @@
 ![2024-05-17_20-53_1 Everforest Dark](https://github.com/mstuttgart/dotfiles/assets/8174740/e0205c3a-57db-463d-84e5-84dc4d50dfcd)
 ![2024-05-17_20-53 Everforest Light](https://github.com/mstuttgart/dotfiles/assets/8174740/7753990c-9c5d-4c80-8c68-6a07c5d74e0c)
 
-This repository serves as my way to help me setup and maintain my Linux Mint 21 (or Ubuntu 22.04 LTS).
+This repository serves as my way to help me setup and maintain my Manjaro.
 
 Here are some details about my setup:
 
@@ -38,7 +38,7 @@ Here are some details about my setup:
   - [tig](https://github.com/jonas/tig)             : Text-mode interface for git
   - [bat](https://github.com/sharkdp/bat)           : A cat(1) clone with wings
   - [fzf](https://github.com/junegunn/fzf)          : A command-line fuzzy finder
-  - [exa](https://github.com/ogham/exa)             : A modern replacement for ‘ls’
+  - [eza](https://github.com/eza-community/eza)     : A modern replacement for ‘ls’
   - [btop](https://github.com/aristocratos/btop)    : A monitor of resources
 - **Bar**                          : [polybar](https://github.com/polybar/polybar) using [nerd fonts](https://github.com/ryanoasis/nerd-fonts)!
   - Everforest theme (dark/light)
@@ -47,12 +47,12 @@ Here are some details about my setup:
   - Ayu theme (dark, light and mirage)
   - Nord theme (dark)
   - TokyoNight theme (dark)
-- **Compositor**                   : [compton](https://github.com/chjj/compton)
+- **Compositor**                   : [picom](https://github.com/yshui/picom)
 - **Notify Daemon**                : [dunst](https://wiki.archlinux.org/index.php/Dunst)
 - **Application Launcher**         : [rofi](https://github.com/davatorium/rofi)
 - **Wallpaper Manager**            : [nitrogen](https://github.com/l3ib/nitrogen)
 - **Editor**                       : [neovim](https://neovim.io/) -- check my configuration [here](https://github.com/mstuttgart/nvim)
-- **File Manager**                 : [ranger](https://github.com/ranger/ranger) | [thunar](https://docs.xfce.org/xfce/thunar/start)
+- **File Manager**                 : [thunar](https://docs.xfce.org/xfce/thunar/start)
 - **CLI System Information**       : [neofetch](https://github.com/dylanaraps/neofetch)
 
 ## Install
