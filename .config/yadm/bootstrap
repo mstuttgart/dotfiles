@@ -78,44 +78,24 @@ function print_footer {
 
 function update_distro {
   echo_info "Update System"
-  sudo apt update
-  sudo apt upgrade -y
-  sudo apt autoremove -y
-}
-
-function update_yadm_repo {
-  echo_print "Updating the yadm repo origin URL"
-  yadm remote set-url origin "git@github.com:${GIT_USER}/${GIT_REPO}.git"
-  echo_ok "origin set"
+  # update mirrows. Improve download speed of packages
+  sudo pacman-mirrors --fasttrack && sudo pacman -Syyu
+  sudo pacman -Syu
 }
 
 function install_nvim {
 
-  wget https://github.com/neovim/neovim/releases/download/v0.10.2/nvim.appimage
-  chmod +x nvim.appimage
-  mv nvim.appimage nvim
-  sudo mv nvim /usr/bin
-
   NVIM_PKG=(
-    #"neovim"
+    "neovim"
     "ripgrep"
-    #    "fd"
-    "python3-pip"
-    #"nodejs"
-    #"npm"
+    "fd"
+    "python-pip"
     "gcc"
     "git"
-    "python3-dev"
-    #"exuberant-ctags"
-    "ncurses-term"
-    #		"ripgrep"
-    "fd-find"
+    "ripgrep"
+    "fd"
     "fzf"
     "xclip"
-
-    #"ttf-jetbrains-mono-nerd"
-    #"ttf-sourcecodepro-nerd"
-    #    "xclip"
   )
 
   for app in "${NVIM_PKG[@]}"; do
@@ -124,7 +104,7 @@ function install_nvim {
     echo_print "Installing $app"
 
     # Install app
-    sudo apt install "$app" -y
+    sudo pacman -S "$app" --noconfirm
 
     # The $? get result of last command
     check_return_code $? "$app"
@@ -137,61 +117,42 @@ function install_nvim {
 function install_i3wm {
 
   i3wm_pkg=(
-    "acpi"
-    "arandr"
-    "autorandr"
-    #"arc-gtk-theme-eos"
-    #"archlinux-xdg-menu"
-    #"awesome-terminal-fonts"
-    #"dex"
-    "dmenu"
-    "dunst"
-    #"eos-settings-i3wm"
-    #"endeavouros-xfce4-terminal-colors"
-    #"eos-lightdm-slick-theme"
-    #"eos-qogir-icons"
-    "galculator"
-    "gsimplecal"
-    #    "gvfs"
-    #    "gvfs-afc"
-    #    "gvfs-gphoto2"
-    #    "gvfs-mtp"
-    #    "gvfs-nfs"
-    #    "gvfs-smb"
-    "i3-wm"
-    "i3lock"
-    "jq"
-    #    "lightdm"
-    #    "lightdm-slick-greeter"
-    #    "nwg-look"
-    "mpv"
-    "lxappearance"
-    #    "network-manager-applet"
-    "neofetch"
-    "nitrogen"
-    "numlockx"
-    "picom"
-    "playerctl"
-    "polybar"
-    #    "polkit-gnome"
-    "rofi"
-    #    "scrot"
-    "sysstat"
-    "thunar"
-    "thunar-archive-plugin"
-    "thunar-volman"
-    "tumbler"
-    "unzip"
-    "viewnior"
-    "xarchiver"
-    "xbindkeys"
-    "xdg-user-dirs-gtk"
-    "xed"
-    #    "xorg-xbacklight"
-    #    "xorg-xdpyinfo"
-    "zip"
-    #"ttf-jetbrains-mono-nerd"
-    #"ttf-sourcecodepro-nerd"
+    acpi
+    arandr
+    autorandr
+    dmenu
+    dunst
+    galculator
+    gsimplecal
+    i3-wm
+    i3lock
+    jq
+    lightdm
+    lightdm-slick-greeter
+    nwg-look
+    mpv
+    network-manager-applet
+    neofetch
+    nitrogen
+    numlockx
+    picom
+    playerctl
+    polybar
+    rofi
+    sysstat
+    thunar
+    thunar-archive-plugin
+    thunar-volman
+    tumbler
+    unzip
+    viewnior
+    xarchiver
+    xbindkeys
+    xdg-user-dirs-gtk
+    xed
+    zip
+    ttf-jetbrains-mono-nerd
+    ttf-sourcecodepro-nerd
   )
   echo
 
@@ -201,7 +162,7 @@ function install_i3wm {
     echo_print "Installing $app"
 
     # Install app
-    sudo apt install "$app" -y
+    sudo pacman -S "$app" --noconfirm
 
     # The $? get result of last command
     check_return_code $? "$app"
@@ -216,7 +177,7 @@ function install_zsh {
   zsh_pkg=(
     zsh
     curl
-    #starship
+    starship
   )
 
   echo
@@ -225,14 +186,12 @@ function install_zsh {
     echo_print "Installing $app"
 
     # Install app
-    sudo apt install "$app" -y
+    sudo pacman -S "$app" --noconfirm
 
     # The $? get result of last command
     check_return_code $? "$app"
 
   done
-
-  curl -sS https://starship.rs/install.sh | sh
 
   if [ ! -d "$HOME/.zplug" ]; then
     echo_info "Install zplug"
@@ -255,7 +214,7 @@ function install_packages {
     "btop"
     "curl"
     "eza"
-    #"lazygit"
+    "lazygit"
     "net-tools"
     "p7zip"
     "pass"
@@ -266,17 +225,25 @@ function install_packages {
     # Programming
     "alacritty"
     "cmake"
-    #"docker"
-    #"docker-buildx"
-    #"docker-compose"
+    "docker"
+    "docker-buildx"
+    "docker-compose"
     "gcc"
     "git"
     "make"
-    "python3-dev"
-    "python3-pip"
-    "python3-venv"
-    "pipx"
+    "python"
+    "python-pip"
+    "python-pipx"
+    "go"
     "tig"
+    "yay"
+
+    # dependencies to build python versions
+    "base-devel"
+    "openssl"
+    "zlib"
+    "xz"
+    "tk"
 
     # apps
     "filezilla"
@@ -288,24 +255,15 @@ function install_packages {
     "gpick"
     "meld"
     "poedit"
-    "spotify-client"
+    "spotify-launcher"
+    "playerctl"
     "transmission-gtk"
     "tmux"
 
     # UI
-    #"ttf-jetbrains-mono-nerd"
-    #"ttf-sourcecodepro-nerd"
+    "ttf-jetbrains-mono-nerd"
+    "ttf-sourcecodepro-nerd"
   )
-
-  # Dependencia para compiar o python
-
-  sudo apt update
-  sudo apt install build-essential libssl-dev zlib1g-dev \
-    libbz2-dev libreadline-dev libsqlite3-dev curl git \
-    libncursesw5-dev xz-utils tk-dev libxml2-dev libxmlsec1-dev libffi-dev liblzma-dev
-
-  echo_info "Update Packages"
-  #sudo pacman -Syu
 
   echo_info "Install Arch packages"
 
@@ -315,7 +273,7 @@ function install_packages {
     echo_print "Installing $app"
 
     # Install app
-    sudo apt install "$app" -y
+    sudo pacman -S "$app" --noconfirm
 
     # The $? get result of last command
     check_return_code $? "$app"
@@ -323,8 +281,7 @@ function install_packages {
   done
 
   AURPackages=(
-    #"teams-for-linux"
-    #"postman-bin"
+    "postman-bin"
   )
 
   for app in "${AURPackages[@]}"; do
@@ -340,22 +297,6 @@ function install_packages {
 
   done
 
-  # Add Docker's official GPG key:
-  sudo apt-get update
-  sudo apt-get install ca-certificates curl
-  sudo install -m 0755 -d /etc/apt/keyrings
-  sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
-  sudo chmod a+r /etc/apt/keyrings/docker.asc
-
-  # Add the repository to Apt sources:
-  echo \
-    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
-      $(. /etc/os-release && echo "$UBUNTU_CODENAME") stable" |
-    sudo tee /etc/apt/sources.list.d/docker.list >/dev/null
-  sudo apt-get update
-
-  sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-
   # Avoid use sudo do run docker
   sudo usermod -aG docker "$USER"
 
@@ -364,7 +305,7 @@ function install_packages {
   sudo systemctl start docker
 
   # install tmux plugin manager
-  if [ ! -d "$HOME/.tmux/plugins/tpm" ]; then
+  if [[ ! -d "$HOME/.tmux/plugins/tpm" ]]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
   fi
 
@@ -373,42 +314,8 @@ function install_packages {
     git clone https://github.com/asdf-vm/asdf.git "$HOME/.asdf" --branch v0.13.1
   fi
 
-  # Install python and nodejs plugins
-  ./.asdf/bin/asdf plugin-add python
-  ./.asdf/bin/asdf plugin-add nodejs
-
   # Install rust
   curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-
-  install_fonts
-  install_zsh
-
-  # Install python versions
-  #./.asdf/bin/asdf install python 3.8.10
-  #./.asdf/bin/asdf install python 3.10.9
-
-}
-
-function install_fonts {
-  echo_print "Download and Install Nerd Fonts"
-
-  TEMP_DIR="/tmp/nerd-fonts"
-
-  if [ ! -d /tmp/nerd-fonts ]; then
-    echo_info "Clone Nerd Font Repositorie"
-    git clone --depth 1 git@github.com:ryanoasis/nerd-fonts.git "$TEMP_DIR"
-  fi
-
-  cd "$TEMP_DIR"
-
-  echo_info "Install Font JetBrainsMono"
-  ./install.sh -q JetBrainsMono
-
-  echo_info "Install Font SourceCodePro"
-  ./install.sh -q SourceCodePro
-
-  echo_info "Update font cache"
-  fc-cache -f -v >/dev/null 2>&1
 
 }
 
