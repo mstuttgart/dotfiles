@@ -18,11 +18,10 @@ exec --no-startup-id sleep 2 && nitrogen --restore
 # The configuration is available ~/.config/picom/picom.conf
 exec_always --no-startup-id picom -b
 
-# Configure monitor externo como saida padrao
-exec_always --no-startup-id "$HOME/.screenlayout/external.sh"
+# Add support to external monitor
+exec autorandr -c
 
 # Desktop notifications
-# dunst config used ~/.config/dunst/dunstrc
 exec --no-startup-id dunst --config "$HOME/.config/dunst/dunstrc"
 
 # num lock activated

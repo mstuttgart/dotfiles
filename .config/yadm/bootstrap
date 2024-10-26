@@ -139,6 +139,7 @@ function install_i3wm {
   i3wm_pkg=(
     "acpi"
     "arandr"
+    "autorandr"
     #"arc-gtk-theme-eos"
     #"archlinux-xdg-menu"
     #"awesome-terminal-fonts"
