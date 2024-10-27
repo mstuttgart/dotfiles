@@ -136,7 +136,8 @@ function install_i3wm {
     i3lock
     jq
     lightdm
-    lightdm-slick-greeter
+    lightdm-gtk-greeter
+    lightdm-gtk-greeter-settings
     nwg-look
     mpv
     network-manager-applet
