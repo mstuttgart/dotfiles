@@ -299,6 +299,7 @@ function install_packages {
 
   AURPackages=(
     "postman-bin"
+    "brave-bin"
   )
 
   for app in "${AURPackages[@]}"; do
