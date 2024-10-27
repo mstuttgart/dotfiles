@@ -90,6 +90,8 @@ function install_nvim {
     "ripgrep"
     "fd"
     "python-pip"
+    "nodejs"
+    "npm"
     "gcc"
     "git"
     "ripgrep"
@@ -144,6 +146,8 @@ function install_i3wm {
     picom
     playerctl
     polybar
+    polkit-gnome
+    pulseaudio
     rofi
     sysstat
     thunar
@@ -242,7 +246,6 @@ function install_packages {
     "python-pipx"
     "go"
     "tig"
-    "yay"
 
     # dependencies to build python versions
     "base-devel"
@@ -269,6 +272,7 @@ function install_packages {
     # UI
     "ttf-jetbrains-mono-nerd"
     "ttf-sourcecodepro-nerd"
+    "noto-fonts-emoji"
   )
 
   echo_info "Install Arch packages"
@@ -279,12 +283,19 @@ function install_packages {
     echo_print "Installing $app"
 
     # Install app
-    sudo pacman -S "$app" --noconfirm
+    sudo pacman -S "$app" --noconfirm --needed
 
     # The $? get result of last command
     check_return_code $? "$app"
 
   done
+
+  echo_info "-----------------------------------------------"
+  echo_print "Installing yay package manager"
+  git clone https://aur.archlinux.org/yay.git /tmp/yay
+  cd /tmp/yay
+  makepkg -si
+  cd "$HOME"
 
   AURPackages=(
     "postman-bin"
@@ -296,7 +307,7 @@ function install_packages {
     echo_print "Installing $app"
 
     # Install app
-    yay -S "$app" --noconfirm
+    yay -S "$app" --noconfirm --needed
 
     # The $? get result of last command
     check_return_code $? "$app"
