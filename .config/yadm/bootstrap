@@ -124,6 +124,12 @@ function install_i3wm {
     dunst
     galculator
     gsimplecal
+    gvfs
+    gvfs-afc
+    gvfs-gphoto2
+    gvfs-mtp
+    gvfs-nfs
+    gvfs-smb
     i3-wm
     i3lock
     jq
