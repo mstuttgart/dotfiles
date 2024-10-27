@@ -48,11 +48,17 @@ zplug "zsh-users/zsh-completions"
 zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
 zplug "mafredri/zsh-async", from:github
+zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
   zplug install
 fi
+
+# change the path color
+zstyle :prompt:pure:virtualenv color white
+zstyle :prompt:pure:git:branch color yellow
+zstyle :prompt:pure:path color cyan
 
 # Then, source plugins and add commands to $PATH
 zplug load
@@ -68,6 +74,6 @@ if [[ -f "$HOME/.profile" ]]; then
   . "$HOME/.profile"
 fi
 
-export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
-eval "$(starship init zsh)"
+# export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
+# eval "$(starship init zsh)"
 
