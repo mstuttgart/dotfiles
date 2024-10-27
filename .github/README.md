@@ -12,11 +12,11 @@
 
 ## About
 
-This repository serves as my way to help me setup and maintain my Manjaro.
+This repository serves as my way to help me setup and maintain my ArchLinux.
 
 ![2024-05-17_20-53_1 Everforest Dark](https://github.com/mstuttgart/dotfiles/assets/8174740/e0205c3a-57db-463d-84e5-84dc4d50dfcd)
 
-- OS: [ManjaroLinux]()
+- OS: [ArchLinux]()
 - Window Manager: [i3wm](https://github.com/i3/i3)
 - Shell: [zsh](https://github.com/zsh-users/zsh)
   - [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)                       : Minimalistic, powerful and extremely customizable Zsh prompt
