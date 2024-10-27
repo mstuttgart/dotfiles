@@ -21,7 +21,7 @@ This repository serves as my way to help me setup and maintain my Manjaro.
 
 Here are some details about my setup:
 
-- **Linux Distribution**           : [Linux Mint 21 - Xfce](https://www.linuxmint.com/)
+- **Linux Distribution**           : [ManjaroLinux - 24.1.1 (Xahea](https://wiki.manjaro.org/index.php/Main_Page)
 - **Window Manager**               : [i3wm](https://github.com/i3/i3)
 - **Shell**                        : [zsh](https://github.com/zsh-users/zsh)
   - [spaceship-prompt](https://github.com/spaceship-prompt/spaceship-prompt)                       : Minimalistic, powerful and extremely customizable Zsh prompt
