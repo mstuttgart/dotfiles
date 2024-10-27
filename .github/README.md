@@ -72,7 +72,6 @@ yadm clone --recursive https://github.com/mstuttgart/dotfiles.git --no-bootstrap
 The `clone` and `pull` command may result in warnings because of pre-existing dotfiles. Overwrite the existing files with commands below.
 
 ```sh
-yadm fetch --all
 yadm reset --hard origin/main
 
 # download nvim
