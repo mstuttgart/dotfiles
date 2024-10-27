@@ -1,3 +1,6 @@
 [submodule ".config/nvim"]
 	path = .config/nvim
 	url = git@github.com:mstuttgart/nvim.git
+[submodule "/home/michell/.config/alacritty/themes"]
+	path = /home/michell/.config/alacritty/themes
+	url = git@github.com:mstuttgart/alacritty-theme.git

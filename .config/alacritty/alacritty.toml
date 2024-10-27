@@ -1,7 +1,3 @@
-import = [
-    "/home/michell/.config/alacritty/color.toml",
-]
-
 [env]
 TERM = "xterm-256color"
 
@@ -30,22 +26,22 @@ y = 1
 
 [keyboard]
 bindings = [
-    { action = "Paste", key = "V", mods = "Control|Shift" },
-    { action = "Copy", key = "C", mods = "Control|Shift" },
-    { action = "PasteSelection", key = "Insert", mods = "Shift" },
-    { action = "ResetFontSize", key = "Key0", mods = "Control" },
-    { action = "ResetFontSize", key = "Equals", mods = "Control" },
-    { action = "IncreaseFontSize", key = "Plus", mods = "Control" },
-    { action = "DecreaseFontSize", key = "Minus", mods = "Control" },
-    { action = "ToggleFullscreen", key = "F11", mods = "None" },
-    { action = "Paste", key = "Paste", mods = "None" },
-    { action = "Copy", key = "Copy", mods = "None" },
-    { action = "ClearLogNotice", key = "L", mods = "Control" },
-    { chars = "\f", key = "L", mods = "Control" },
-    { action = "ScrollPageUp", key = "PageUp", mode = "~Alt", mods = "None" },
-    { action = "ScrollPageDown", key = "PageDown", mode = "~Alt", mods = "None" },
-    { action = "ScrollToTop", key = "Home", mode = "~Alt", mods = "Shift" },
-    { action = "ScrollToBottom", key = "End", mode = "~Alt", mods = "Shift" },
+  { action = "Paste", key = "V", mods = "Control|Shift" },
+  { action = "Copy", key = "C", mods = "Control|Shift" },
+  { action = "PasteSelection", key = "Insert", mods = "Shift" },
+  { action = "ResetFontSize", key = "Key0", mods = "Control" },
+  { action = "ResetFontSize", key = "Equals", mods = "Control" },
+  { action = "IncreaseFontSize", key = "Plus", mods = "Control" },
+  { action = "DecreaseFontSize", key = "Minus", mods = "Control" },
+  { action = "ToggleFullscreen", key = "F11", mods = "None" },
+  { action = "Paste", key = "Paste", mods = "None" },
+  { action = "Copy", key = "Copy", mods = "None" },
+  { action = "ClearLogNotice", key = "L", mods = "Control" },
+  { chars = "\f", key = "L", mods = "Control" },
+  { action = "ScrollPageUp", key = "PageUp", mode = "~Alt", mods = "None" },
+  { action = "ScrollPageDown", key = "PageDown", mode = "~Alt", mods = "None" },
+  { action = "ScrollToTop", key = "Home", mode = "~Alt", mods = "Shift" },
+  { action = "ScrollToBottom", key = "End", mode = "~Alt", mods = "Shift" },
 ]
 
 [scrolling]
@@ -64,3 +60,6 @@ instance = "Alacritty"
 [window.padding]
 x = 2
 y = 1
+
+[general]
+import = ["/home/michell/.config/alacritty/themes/themes/ayu_mirage.toml"]
