@@ -42,13 +42,16 @@ zplug "plugins/fzf", from:oh-my-zsh
 zplug "plugins/virtualenvwrapper", from:oh-my-zsh
 
 # install others plugs 
-zplug "zsh-users/zsh-syntax-highlighting"
+# zplug "zsh-users/zsh-syntax-highlighting"
+zplug "zdharma-continuum/fast-syntax-highlighting"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-completions"
 zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
-zplug "mafredri/zsh-async", from:github
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+# zplug "mafredri/zsh-async", from:github
+# zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+zplug "spaceship-prompt/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
@@ -56,9 +59,9 @@ if ! zplug check; then
 fi
 
 # change the path color
-zstyle :prompt:pure:virtualenv color white
-zstyle :prompt:pure:git:branch color yellow
-zstyle :prompt:pure:path color cyan
+# zstyle :prompt:pure:virtualenv color white
+# zstyle :prompt:pure:git:branch color yellow
+# zstyle :prompt:pure:path color cyan
 
 # Then, source plugins and add commands to $PATH
 zplug load

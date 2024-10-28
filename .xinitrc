@@ -1,5 +1,7 @@
 #!/bin/bash
 
+xrandr
+
 # turn on numlock
 numlockx on
 
