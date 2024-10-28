@@ -39,7 +39,6 @@ bindsym $super+b exec $BROWSER; workspace 2; focus
 bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+f exec $FILE_MANAGER;
 bindsym $super+t exec teams-for-linux;
-bindsym $super+r exec $TERM -e ranger; workspace 3; focus
 
 bindsym $super+F7 exec "$HOME/.screenlayout/external.sh"
 bindsym $super+F8 exec "$HOME/.screenlayout/notebook.sh"
@@ -119,7 +118,7 @@ mode "resize" {
         bindsym Up resize shrink height 5 px or 5 ppt
         bindsym Right resize grow width 5 px or 5 ppt
 
-# back to normal: Entre or Escape
+# back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
