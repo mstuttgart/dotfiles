@@ -4,12 +4,12 @@
 POLYBAR_THEME_DIR="$HOME/.config/polybar/themes"
 
 function rofi_switch_theme_menu {
-	echo -e "Ayu Light\nAyu Dark\nAyu Mirage\nEverforest Light\nEverforest Dark\nGruvbox Dark\nGruvbox Material Dark\nNord\nTokyo Night" | rofi -font "JetBrainsMono Nerd Font 11" -show drun -show-icons -width 20 -dmenu -i
+  echo -e "Ayu Light\nAyu Dark\nAyu Mirage\nEverforest Light\nEverforest Dark\nGruvbox Dark\nGruvbox Material Dark\nNord\nTokyo Night\nOne Dark" | rofi -font "JetBrainsMono Nerd Font 11" -show drun -show-icons -width 20 -dmenu -i
 }
 
 function create_symlink {
-	ln -sf "$POLYBAR_THEME_DIR/$1.ini" "$POLYBAR_THEME_DIR/colors.ini"
-	bash "$HOME/.config/polybar/launch.sh"
+  ln -sf "$POLYBAR_THEME_DIR/$1.ini" "$POLYBAR_THEME_DIR/colors.ini"
+  bash "$HOME/.config/polybar/launch.sh"
 }
 
 CHOSEN=$(rofi_switch_theme_menu)
@@ -40,4 +40,8 @@ elif [[ $CHOSEN = "Nord" ]]; then
 
 elif [[ $CHOSEN = "Tokyo Night" ]]; then
   create_symlink 'tokyo-night'
+
+elif [[ $CHOSEN = "One Dark" ]]; then
+  create_symlink 'onedark'
+
 fi

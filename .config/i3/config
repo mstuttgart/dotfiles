@@ -40,11 +40,12 @@ bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+f exec $FILE_MANAGER;
 bindsym $super+t exec teams-for-linux;
 
-bindsym $super+F7 exec "$HOME/.screenlayout/external.sh"
+bindsym $super+F7 exec "$HOME/.screenlayout/monitor.sh"
 bindsym $super+F8 exec "$HOME/.screenlayout/notebook.sh"
 
 # start dmenu (a program launcher)
-bindsym $super+d exec "rofi -modi drun,run -show drun"
+# bindsym $super+d exec "rofi -modi drun,run -show drun"
+bindsym $super+d exec --no-startup-id "$HOME/.config/rofi/launchers/type-1/launcher.sh"
 
 # system shortcuts
 bindsym --release Print exec "flameshot gui -p $HOME/Downloads"
@@ -127,7 +128,7 @@ mode "resize" {
 bindsym $super+F2 mode "resize"
 
 # start polybar
-exec_always --no-startup-id "$HOME/.config/polybar/launch.sh"
+exec_always --no-startup-id "$HOME/.config/polybar/launch.sh --material"
 
 # window rules, you can find the window class using xprop
 for_window [class=".*"] border pixel 0

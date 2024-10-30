@@ -122,6 +122,9 @@ function install_i3wm {
     acpi
     arandr
     autorandr
+    bluez
+    bluez-utils
+    blueman
     dmenu
     dunst
     galculator
@@ -137,12 +140,16 @@ function install_i3wm {
     jq
     lightdm
     lightdm-slick-greeter
+    lightdm-settings
     nwg-look
     mpv
+    iw
+    wpa_supplicant
     network-manager-applet
     neofetch
     nitrogen
     numlockx
+    openssh
     picom
     playerctl
     polybar
@@ -163,6 +170,7 @@ function install_i3wm {
     zip
     ttf-jetbrains-mono-nerd
     ttf-sourcecodepro-nerd
+    vlc
   )
   echo
 
@@ -172,12 +180,17 @@ function install_i3wm {
     echo_print "Installing $app"
 
     # Install app
-    sudo pacman -S "$app" --noconfirm
+    sudo pacman -S "$app" --noconfirm --needed
 
     # The $? get result of last command
     check_return_code $? "$app"
 
   done
+
+  sudo systemctl enable bluetooth
+
+  # nvidia drivers
+  sudo pacman -S xf86-video-nouveau nvidia libva-mesa-driver
 
 }
 
@@ -196,7 +209,7 @@ function install_zsh {
     echo_print "Installing $app"
 
     # Install app
-    sudo pacman -S "$app" --noconfirm
+    sudo pacman -S "$app" --noconfirm --needed
 
     # The $? get result of last command
     check_return_code $? "$app"
@@ -224,12 +237,14 @@ function install_packages {
     "btop"
     "curl"
     "eza"
+    "gzip"
     "lazygit"
     "net-tools"
     "p7zip"
     "pass"
     "pwgen"
     "unrar"
+    "tar"
     "wget"
 
     # Programming

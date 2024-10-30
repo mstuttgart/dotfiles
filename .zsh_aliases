@@ -68,8 +68,20 @@ alias tmuxa="tmux a -t"
 alias tmuxs="tmux new -s"
 
 # Docker
+# List databases on postgres container
+alias odoodbls="docker exec postgresql psql -U odoo -l"
+
+# docker compose aliases
+alias dcup="docker compose up"
+alias dcdn="docker compose down"
+alias dcb="docker compose build"
+alias dcps="docker compose ps"
+alias dcr="docker compose run"
+alias dcstop="docker compose stop"
+alias dcstart="docker compose start"
+alias dcupb="docker compose up --build"
+alias dclf="docker compose logs -f"
+
 # run odoo bin
 alias odoorun="docker compose run --rm --remove-orphans --service-ports odoo"
 
-# List databases on postgres container
-alias odoodbls="docker exec postgresql psql -U odoo -l"

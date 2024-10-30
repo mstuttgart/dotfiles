@@ -1,2 +1,205 @@
 # .gitignore
-*
+## already tracked
+.zshrc
+.zshenv
+.gitconfig
+
+## compiled dynamic langauages
+*.pyc
+*.zwc
+
+*.log
+
+*.idea
+*.iml
+*.code-workspace
+
+# You may want to customise this file depending on your Operating System
+# and the editor that you use.
+#
+# We recommend that you use a Global Gitignore for files that are not related
+# to the project. (https://help.github.com/articles/ignoring-files/#create-a-global-gitignore)
+
+# OS
+#
+# Ref: https://github.com/github/gitignore/blob/master/Global/macOS.gitignore
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r
+Icon
+
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Ref: https://github.com/github/gitignore/blob/master/Global/Windows.gitignore
+# Windows thumbnail cache files
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Dump file
+*.stackdump
+
+# Folder config file
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares
+$RECYCLE.BIN/
+
+# Windows Installer files
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts
+*.lnk
+
+# Ref: https://github.com/github/gitignore/blob/master/Global/Linux.gitignore
+*~
+
+# temporary files which can be created if a process still has a handle open of a deleted file
+.fuse_hidden*
+
+# KDE directory preferences
+.directory
+
+# Linux trash folder which might appear on any partition or disk
+.Trash-*
+
+# .nfs files are created when an open file is removed but is still being accessed
+.nfs*
+
+# Archives
+# https://github.com/github/gitignore/blob/master/Global/Archives.gitignore
+# It's better to unpack these files and commit the raw source because
+# git has its own built in compression methods.
+*.7z
+*.jar
+*.rar
+*.zip
+*.gz
+*.gzip
+*.tgz
+*.bzip
+*.bzip2
+*.bz2
+*.xz
+*.lzma
+*.cab
+*.xar
+*.zst
+
+# Packing-only formats
+*.iso
+*.tar
+
+# Package management formats
+*.dmg
+*.xpi
+*.gem
+*.egg
+*.deb
+*.rpm
+*.msi
+*.msm
+*.msp
+*.txz
+
+# Editors
+#
+# Ref: https://github.com/github/gitignore/blob/master/Global
+# Ref: https://github.com/github/gitignore/blob/master/Global/JetBrains.gitignore
+# Ref: https://github.com/github/gitignore/blob/master/Global/VisualStudioCode.gitignore
+.idea
+
+*.swp
+
+# Homedir
+Videos/
+Pictures/
+Downloads/
+IdeaProjects/
+Templates/
+Dropbox/
+Desktop/
+Documents/
+.cache/
+caches/
+.zoom/
+.zi/
+.vscode-oss/
+.vim/
+.thunderbird/
+.sylpheed-2.0/
+.steam*
+.ssh/
+.pki/
+.pkg-cache/
+.spamassassin/
+.phoronix-test-suite/
+.parallel/
+.nvm/
+.npm/
+.node/
+.mozilla/
+.minikube/
+.m2/repository/
+*history*
+.kde4/
+.jdks/
+.java/
+.hyper_plugins/
+.gradle/
+.gnupg/
+.electron-gyp/
+.dropbox*/
+.claws-mail/
+.cargo/
+.asdf/
+.adobe-reader*/
+
+## .config abusers
+.config/opera/
+.config/evolution/
+.config/discord/
+.config/hexchat/
+.config/zconvey/
+.config/pulse/
+.config/gtk-*/
+.config/ranger/
+.config/ibus/
+.config/chromium/
+.config/BraveSoftware/
+.config/filezilla/
+.config/akonadi/
+.config/Slack/
+.config/Signal/
+.config/Microsoft/
+.config/JetBrains/
+.config/Hyper/
+.config/FontBase/
+.config/Code - OSS/
+.config/Bitwarden/
