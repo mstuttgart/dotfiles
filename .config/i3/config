@@ -3,7 +3,7 @@ set $super Mod4
 
 # set default apps
 set $TERM --no-startup-id alacritty
-set $BROWSER --no-startup-id brave
+set $BROWSER --no-startup-id firefox
 set $FILE_MANAGER thunar
 
 # set font
@@ -19,13 +19,16 @@ exec --no-startup-id sleep 2 && nitrogen --restore
 exec_always --no-startup-id picom -b
 
 # Add support to external monitor
-exec autorandr -c
+# exec autorandr -c
 
 # Desktop notifications
 exec --no-startup-id dunst --config "$HOME/.config/dunst/dunstrc"
 
 # num lock activated
 exec --no-startup-id numlockx option
+
+# disable sleep
+exec --no-startup-id xset s off -dpms
 
 # disable capslock
 exec --no-startup-id setxkbmap -option ctrl:nocaps

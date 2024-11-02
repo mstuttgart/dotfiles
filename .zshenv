@@ -14,8 +14,8 @@ export TERMINAL="alacritty"
 export BROWSER="firefox"
 
 # export TERM="xterm-kitty"
-export TERM="alacritty"
-# export TERM="xterm-256color"
+# export TERM="alacritty"
+export TERM="xterm-256color"
 # export TERM="wezterm"
 
 # others applications
@@ -32,4 +32,7 @@ fi
 
 # Append .local/bin to path
 export PATH="$XDG_BIN_HOME:$PATH"
+
+# starship config file
+export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 

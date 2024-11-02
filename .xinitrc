@@ -9,7 +9,7 @@ numlockx on
 setxkbmap -layout pl -option caps:escape
 
 # change keyboard layout to pt-BR
-setxkbmap -model abnt2 -layout br
+#setxkbmap -model abnt2 -layout br
 
 # disable suspend
 xset s off -dpms
