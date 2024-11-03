@@ -28,10 +28,13 @@ exec --no-startup-id dunst --config "$HOME/.config/dunst/dunstrc"
 exec --no-startup-id numlockx option
 
 # disable sleep
-exec --no-startup-id xset s off -dpms
+#exec --no-startup-id xset s off -dpms
+
+# set keyboard layout pt-BR
+#exec --no-startup-id setxkbmap -model abnt2 -layout br
 
 # disable capslock
-exec --no-startup-id setxkbmap -option ctrl:nocaps
+exec --no-startup-id setxkbmap -option ctrl:nocaps -model abnt2 -layout br
 
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Natural Scrolling Enabled" 1
 exec xinput set-prop "SYNA7DB5:01 06CB:CD41 Touchpad" "libinput Disable While Typing Enabled" 1
@@ -43,8 +46,8 @@ bindsym $super+Shift+w exec $BROWSER --incognito
 bindsym $super+f exec $FILE_MANAGER;
 bindsym $super+t exec teams-for-linux;
 
-bindsym $super+F7 exec "$HOME/.screenlayout/monitor.sh"
-bindsym $super+F8 exec "$HOME/.screenlayout/notebook.sh"
+# bindsym $super+F7 exec "$HOME/.screenlayout/monitor.sh"
+# bindsym $super+F8 exec "$HOME/.screenlayout/notebook.sh"
 
 # start dmenu (a program launcher)
 # bindsym $super+d exec "rofi -modi drun,run -show drun"
