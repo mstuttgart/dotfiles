@@ -1,0 +1,19 @@
+session_name: odoo
+start_directory: ~/Workspace/multidadosti-erp/odoo
+
+windows:
+  # Emptiness will simply open a blank pane, if no shell_command_before.
+  # All these are equivalent
+  - window_name: nvim
+    panes:
+      - cls
+
+  # an empty string will be treated as a carriage return
+  - window_name: server
+    panes:
+      - cls
+
+  # a pane can have other options but still be blank
+  - window_name: git
+    panes:
+      - cls
