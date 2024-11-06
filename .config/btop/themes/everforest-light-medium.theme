@@ -4,7 +4,7 @@
 # Use "start", "mid" and "end" for three color gradient
 
 # Main background, empty for terminal default, need to be empty if you want transparent background
-theme[main_bg]="#efebd4"
+theme[main_bg]="#fdf6e3"
 
 # Main text color
 theme[main_fg]="#5c6a72"
@@ -28,7 +28,7 @@ theme[inactive_fg]="#9DA9A0"
 theme[graph_text]="#5c6a72"
 
 # Misc colors for processes box including mini cpu graphs, details memory graph and details status text
-theme[proc_misc]="#93B259"
+theme[proc_misc]="#8da101"
 
 # Cpu box outline color
 theme[cpu_box]="#4F585E"
@@ -46,37 +46,37 @@ theme[proc_box]="#4F585E"
 theme[div_line]="#4F585E"
 
 # Temperature graph colors
-theme[temp_start]="#93B259"
+theme[temp_start]="#8da101"
 theme[temp_mid]="#dfa000"
 theme[temp_end]="#f85552"
 
 # CPU graph colors
-theme[cpu_start]="#93B259"
+theme[cpu_start]="#8da101"
 theme[cpu_mid]="#dfa000"
 theme[cpu_end]="#f85552"
 
 # Mem/Disk free meter
 theme[free_start]="#f85552"
 theme[free_mid]="#dfa000"
-theme[free_end]="#93B259"
+theme[free_end]="#8da101"
 
 # Mem/Disk cached meter
 theme[cached_start]="#3994c5"
 theme[cached_mid]="#35a77c"
-theme[cached_end]="#93B259"
+theme[cached_end]="#8da101"
 
 # Mem/Disk available meter
 theme[available_start]="#f85552"
 theme[available_mid]="#dfa000"
-theme[available_end]="#93B259"
+theme[available_end]="#8da101"
 
 # Mem/Disk used meter
-theme[used_start]="#93B259"
+theme[used_start]="#8da101"
 theme[used_mid]="#dfa000"
 theme[used_end]="#f85552"
 
 # Download graph colors
-theme[download_start]="#93B259"
+theme[download_start]="#8da101"
 theme[download_mid]="#35a77c"
 theme[download_end]="#3994c5"
 
@@ -86,7 +86,7 @@ theme[upload_mid]="#e66868"
 theme[upload_end]="#df69ba"
 
 # Process box color gradient for threads, mem and cpu usage
-theme[process_start]="#93B259"
+theme[process_start]="#8da101"
 theme[process_mid]="#df69ba"
 theme[process_end]="#f85552"
 
