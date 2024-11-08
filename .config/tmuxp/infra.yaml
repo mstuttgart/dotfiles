@@ -1,0 +1,16 @@
+session_name: infra
+windows:
+- focus: 'true'
+  layout: b545,191x42,0,0,8
+  options: {}
+  panes:
+  - pane
+  start_directory: /home/michell/Workspace/multidadosti-erp/infra
+  window_name: zsh
+- layout: b546,191x42,0,0,9
+  options: {}
+  panes:
+  - focus: 'true'
+    shell_command: zsh
+  start_directory: /home/michell/Workspace/multidadosti-erp/infra
+  window_name: zsh
