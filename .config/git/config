@@ -79,7 +79,7 @@
     alias = !git config -l | grep alias
 
 [core]
-    editor = nvim
+  editor = nvim
     pager = cat
 
 [color "branch"]

@@ -83,5 +83,6 @@ alias dcupb="docker compose up --build"
 alias dclf="docker compose logs -f"
 
 # run odoo bin
-alias odoorun="docker compose run --rm --remove-orphans --service-ports odoo"
+# alias odoorun="docker compose run --rm --remove-orphans --service-ports odoo"
+
 
