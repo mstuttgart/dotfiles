@@ -1,0 +1,17 @@
+#!/bin/bash
+#
+# Show Github PR link in terminal
+#
+
+if [ "$(git rev-parse --is-inside-work-tree 2>/dev/null)" ]; then
+
+	branch_name="$(git rev-parse --abbrev-ref HEAD)"
+
+	repo_url="$(git remote get-url --push origin | sed -Ee 's#(git@|git://)#https://#' -e 's@com:@com/@' -e 's%\.git$%%' -e 's%\.git$%%' | awk '/github/')"
+
+	# Print Pull Request create link
+	echo "$repo_url/compare/$branch_name?expand=1"
+
+else
+	echo "Not is a git repository"
+fi
