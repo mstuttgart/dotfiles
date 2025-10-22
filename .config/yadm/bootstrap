@@ -325,8 +325,13 @@ function install_packages {
     "gpick"
     "meld"
     "poedit"
-    "spotify-client"
     "transmission-gtk"
+
+    # hardware
+    "cpu-x"
+    "stress-ngstree"
+    "stressapptest"
+
   )
 
   echo_info "Install packages"
