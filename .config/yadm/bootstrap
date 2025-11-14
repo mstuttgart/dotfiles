@@ -326,11 +326,13 @@ function install_packages {
     "meld"
     "poedit"
     "transmission-gtk"
+    "steam-installer"
 
     # hardware
     "cpu-x"
     "stress-ngstree"
     "stressapptest"
+    "hardinfo"
 
   )
 
