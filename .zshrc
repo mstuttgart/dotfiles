@@ -37,7 +37,7 @@ zplug "zplug/zplug", hook-build:"zplug --self-manage"
 
 # plguins from oh-my-zsh
 zplug "plugins/git", from:oh-my-zsh
-zplug "plugins/asdf", from:oh-my-zsh
+#zplug "plugins/asdf", from:oh-my-zsh
 zplug "plugins/fzf", from:oh-my-zsh
 
 # install others plugs 
@@ -48,7 +48,6 @@ zplug "agkozak/zsh-z"
 zplug "hlissner/zsh-autopair"
 zplug "mafredri/zsh-async", from:github
 # zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
-
 
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
@@ -68,11 +67,18 @@ if [ -f "$HOME/.zsh_aliases" ]; then
   . "$HOME/.zsh_aliases"
 fi
 
+# Configure asdf
+export PATH="${ASDF_DATA_DIR:-$HOME/.asdf}/shims:$PATH"
 
-# Fiz thunar file manager not update gtk theme
-if [[ -f "$HOME/.profile" ]]; then
-  . "$HOME/.profile"
-fi
+# append completions to fpath
+fpath=(${ASDF_DATA_DIR:-$HOME/.asdf}/completions $fpath)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# initialise completions with ZSH's compinit
+autoload -Uz compinit && compinit
 
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
