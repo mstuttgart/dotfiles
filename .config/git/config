@@ -75,6 +75,9 @@
     # Open .gitconfig in your default editor.
     conf = config --global -e
 
+    # Delete submodules
+    rmsub = "!f() { git submodule deinit -f -- $1 && git rm -f $1 && rm -rf '.git/modules/$1'; }; f"
+
     # list all git alias
     alias = !git config -l | grep alias
 
