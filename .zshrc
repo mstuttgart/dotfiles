@@ -83,3 +83,6 @@ autoload -Uz compinit && compinit
 export STARSHIP_CONFIG="$HOME/.config/starship/starship.toml"
 eval "$(starship init zsh)"
 
+
+# opencode
+export PATH=/home/michell/.opencode/bin:$PATH
