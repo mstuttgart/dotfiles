@@ -63,7 +63,7 @@ yadm clone https://github.com/mstuttgart/dotfiles.git --no-bootstrap
 ```sh
 # reset tracked files to the main branch on origin
 yadm reset --hard origin/main
-``
+``` 
 
 4. Run the bootstrap to install tools and apply settings (this script is provided by the repo):
 
