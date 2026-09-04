@@ -16,7 +16,6 @@ Key components
 
 - OS: Linux Mint 22 Cinnamon
 - Shell: zsh
-  - pure — minimal, fast prompt
   - zplug — zsh plugin manager
   - zsh-syntax-highlighting — syntax highlighting
   - zsh-autosuggestions — inline suggestions
@@ -25,7 +24,7 @@ Key components
   - asdf, fzf, virtualenvwrapper (via Oh-My-Zsh plugins)
 - Terminal: Alacritty
   - tig, bat, fzf, eza, btop (recommended CLI tools)
-- Editor: Neovim (my config lives in https://github.com/mstuttgart/nvim)
+- Editor: Neovim and VSCode -- (my config lives in https://github.com/mstuttgart/nvim)
 
 ## Table of contents
 
@@ -62,18 +61,11 @@ yadm clone https://github.com/mstuttgart/dotfiles.git --no-bootstrap
 3. If you have existing dotfiles that conflict, you can reset to this branch (this will overwrite tracked files):
 
 ```sh
-# reset tracked files to the linux-mint-22 branch on origin
-yadm reset --hard origin/linux-mint-22
-```
+# reset tracked files to the main branch on origin
+yadm reset --hard origin/main
+``
 
-4. Install or update external configs (example: Neovim config):
-
-```sh
-# clone Neovim configuration into ~/.config/nvim
-git clone git@github.com:mstuttgart/nvim.git ~/.config/nvim
-```
-
-5. Run the bootstrap to install tools and apply settings (this script is provided by the repo):
+4. Run the bootstrap to install tools and apply settings (this script is provided by the repo):
 
 ```sh
 yadm bootstrap
