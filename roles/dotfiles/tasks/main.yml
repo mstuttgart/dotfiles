@@ -1,0 +1,76 @@
+---
+# =============================================================================
+# DOTFILES ROLE - Symlink configuration files from roles
+# =============================================================================
+#
+# This role handles:
+# - Creating symlinks for configuration files maintained in each role's files/
+# - Each role manages its own configuration files in roles/*/files/
+#
+# Example structure:
+#   roles/dev_tools/files/.config/alacritty/alacritty.yml
+#   roles/shell/files/.zshrc
+#   roles/shell/files/.config/zsh/...
+#
+# =============================================================================
+
+- name: Create required base directories
+  file:
+    path: "{{ ansible_env.HOME }}/{{ item }}"
+    state: directory
+    mode: '0755'
+  loop:
+    - .config
+    - .local/share
+    - .local/bin
+  tags:
+    - dotfiles
+
+- name: Find all role configuration files
+  find:
+    paths: "{{ playbook_dir }}/roles"
+    patterns: "^.*files$"
+    file_type: directory
+    recurse: true
+  register: roles_files_dirs
+  tags:
+    - dotfiles
+
+- name: Create symlinks for all configuration files from roles
+  block:
+    - name: Collect all dotfiles from roles/*/files/
+      shell: |
+        for role_dir in {{ playbook_dir }}/roles/*/files; do
+          [ -d "$role_dir" ] && find "$role_dir" -type f
+        done
+      register: all_dotfiles_list
+      changed_when: false
+      tags:
+        - dotfiles
+
+    - name: Create symlinks for configuration files
+      file:
+        src: "{{ item }}"
+        dest: "{{ ansible_env.HOME }}/{{ item | relpath(playbook_dir + '/roles') | regex_replace('^[^/]+/files/', '') }}"
+        state: link
+        force: yes
+      loop: "{{ all_dotfiles_list.stdout_lines }}"
+      when: all_dotfiles_list.stdout_lines | length > 0
+      tags:
+        - dotfiles
+
+  tags:
+    - dotfiles
+
+- name: Display dotfiles role completion
+  debug:
+    msg: |
+      ✔ Dotfiles role completed successfully
+      
+      Configuration files linked from roles/*/files/:
+      {% for file in all_dotfiles_list.stdout_lines %}
+      - {{ file | relpath(playbook_dir + '/roles') }}
+      {% endfor %}
+  tags:
+    - dotfiles
+

@@ -1,0 +1,60 @@
+---
+# =============================================================================
+# DEV_TOOLS ROLE - Development tools and utilities
+# =============================================================================
+#
+# This role handles:
+# - Terminal emulator
+# - Git visualization tools
+# - Code utilities
+# - CLI productivity tools
+#
+# =============================================================================
+
+- name: Install terminal emulator
+  apt:
+    name: alacritty
+    state: present
+  tags:
+    - dev_tools
+    - terminal
+
+- name: Install Git visualization and tools
+  apt:
+    name:
+      - tig
+      - meld
+    state: present
+  tags:
+    - dev_tools
+    - git
+
+- name: Install text processing and productivity tools
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - jq             # JSON processor
+    - fzf            # Fuzzy finder
+    - fd-find        # Fast file finder
+    - ripgrep        # Fast text search
+  tags:
+    - dev_tools
+    - utilities
+
+- name: Create symlink for fd-find (fd-find -> fd)
+  file:
+    src: /usr/bin/fdfind
+    dest: /usr/local/bin/fd
+    state: link
+    force: yes
+  ignore_errors: yes
+  tags:
+    - dev_tools
+    - utilities
+
+- name: Display dev_tools role completion
+  debug:
+    msg: "✔ Dev Tools role completed successfully"
+  tags:
+    - dev_tools

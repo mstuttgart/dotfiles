@@ -1,0 +1,94 @@
+---
+# =============================================================================
+# MAIN ANSIBLE PLAYBOOK
+# =============================================================================
+#
+# This playbook orchestrates the entire system provisioning using roles
+# organized by application type and system component.
+#
+# Usage:
+#   ansible-playbook playbook.yml --ask-become-pass
+#
+# =============================================================================
+
+- name: Configure Development Environment with Ansible
+  hosts: localhost
+  connection: local
+  become: false
+  
+  vars:
+    # System-wide variables
+    user: "{{ ansible_user_id }}"
+    home: "{{ ansible_env.HOME }}"
+    dotfiles_dir: "{{ playbook_dir }}/dotfiles"
+  
+  pre_tasks:
+    - name: Display system information
+      debug:
+        msg: |
+          ============================================
+          System Information
+          ============================================
+          User: {{ ansible_user_id }}
+          Home: {{ ansible_env.HOME }}
+          OS: {{ ansible_distribution }} {{ ansible_distribution_version }}
+          Kernel: {{ ansible_kernel }}
+          ============================================
+      tags: always
+    
+    - name: Check sudo access
+      command: sudo -l
+      changed_when: false
+      tags: always
+  
+  roles:
+    # System-level configurations
+    - role: system
+      tags: system
+      become: true
+    
+    # Shell configuration (ZSH)
+    - role: shell
+      tags: shell
+    
+    # Docker installation and configuration
+    - role: docker
+      tags: docker
+      become: true
+    
+    # Development tools
+    - role: dev_tools
+      tags: dev_tools
+      become: true
+    
+    # Desktop applications
+    - role: desktop
+      tags: desktop
+      become: true
+    
+    # Font installation
+    - role: fonts
+      tags: fonts
+    
+    # Dotfiles linking
+    - role: dotfiles
+      tags: dotfiles
+  
+  post_tasks:
+    - name: Display completion message
+      debug:
+        msg: |
+          ============================================
+          Bootstrap Completed Successfully! ✔
+          ============================================
+          
+          Next steps:
+          1. Review any warnings above
+          2. Logout and login to apply shell changes
+          3. Reboot if Docker was installed
+          4. Configure terminal emulator with chosen fonts
+          
+          For more information, see:
+          {{ playbook_dir }}/README.md
+          ============================================
+      tags: always

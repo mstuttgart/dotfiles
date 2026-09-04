@@ -1,0 +1,59 @@
+---
+# =============================================================================
+# SHELL ROLE - ZSH configuration
+# =============================================================================
+#
+# This role handles:
+# - ZSH installation
+# - zplug plugin manager installation
+# - Default shell configuration
+#
+# =============================================================================
+
+- name: Install ZSH
+  become: true
+  apt:
+    name:
+      - zsh
+      - curl
+    state: present
+  tags:
+    - shell
+
+- name: Check if zplug is installed
+  stat:
+    path: "{{ ansible_env.HOME }}/.zplug"
+  register: zplug_dir
+  tags:
+    - shell
+    - zplug
+
+- name: Install zplug plugin manager
+  shell: |
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh | zsh
+  when: not zplug_dir.stat.exists
+  tags:
+    - shell
+    - zplug
+
+- name: Check current default shell
+  command: "getent passwd {{ ansible_user_id }} | cut -d: -f7"
+  register: current_shell
+  changed_when: false
+  tags:
+    - shell
+
+- name: Change default shell to ZSH
+  become: true
+  user:
+    name: "{{ ansible_user_id }}"
+    shell: /bin/zsh
+  when: current_shell.stdout != "/bin/zsh"
+  tags:
+    - shell
+
+- name: Display shell role completion
+  debug:
+    msg: "✔ Shell role completed successfully"
+  tags:
+    - shell

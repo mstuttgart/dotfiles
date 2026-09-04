@@ -1,0 +1,31 @@
+# Alacritty Configuration
+# This file should be placed at: roles/dev_tools/files/.config/alacritty/alacritty.yml
+
+# See https://github.com/alacritty/alacritty/blob/master/alacritty.yml for the full config.
+
+env:
+  TERM: alacritty
+
+window:
+  dimensions:
+    columns: 120
+    lines: 40
+  padding:
+    x: 10
+    y: 10
+  opacity: 0.95
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style: Regular
+  size: 12.0
+
+colors:
+  primary:
+    background: '#1e1e1e'
+    foreground: '#d4d4d4'
+
+bell:
+  animation: EaseOutExpo
+  duration: 0

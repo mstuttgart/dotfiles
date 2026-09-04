@@ -1,0 +1,63 @@
+---
+# =============================================================================
+# FONTS ROLE - Nerd Fonts installation
+# =============================================================================
+#
+# This role handles:
+# - Cloning Nerd Fonts repository
+# - Installing JetBrainsMono and SourceCodePro fonts
+# - Updating font cache
+#
+# =============================================================================
+
+- name: Create fonts directory
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/fonts"
+    state: directory
+    mode: '0755'
+  tags:
+    - fonts
+
+- name: Check if Nerd Fonts repository exists
+  stat:
+    path: /tmp/nerd-fonts
+  register: nerd_fonts_dir
+  tags:
+    - fonts
+
+- name: Clone Nerd Fonts repository
+  git:
+    repo: https://github.com/ryanoasis/nerd-fonts.git
+    dest: /tmp/nerd-fonts
+    depth: 1
+  when: not nerd_fonts_dir.stat.exists
+  tags:
+    - fonts
+
+- name: Install JetBrainsMono Nerd Font
+  shell: |
+    cd /tmp/nerd-fonts
+    ./install.sh -q JetBrainsMono
+  ignore_errors: yes
+  tags:
+    - fonts
+
+- name: Install SourceCodePro Nerd Font
+  shell: |
+    cd /tmp/nerd-fonts
+    ./install.sh -q SourceCodePro
+  ignore_errors: yes
+  tags:
+    - fonts
+
+- name: Update font cache
+  shell: fc-cache -f -v
+  ignore_errors: yes
+  tags:
+    - fonts
+
+- name: Display fonts role completion
+  debug:
+    msg: "✔ Fonts role completed successfully"
+  tags:
+    - fonts

@@ -1,0 +1,62 @@
+---
+# =============================================================================
+# DESKTOP ROLE - Desktop applications
+# =============================================================================
+#
+# This role handles:
+# - Desktop GUI applications
+# - File managers
+# - Productivity tools
+# - Flatpak applications
+#
+# =============================================================================
+
+- name: Install desktop applications (APT)
+  apt:
+    name: "{{ item }}"
+    state: present
+  loop:
+    - filezilla          # FTP/SFTP client
+    - firefox            # Web browser
+    - flameshot          # Screenshot tool
+    - foliate            # E-book viewer
+    - font-manager       # Font management
+    - gimp               # Image editor
+    - gpick              # Color picker
+    - lxappearance       # Theme manager
+    - transmission-gtk   # BitTorrent client
+  ignore_errors: true
+  tags:
+    - desktop
+    - applications
+
+- name: Install flatpak
+  apt:
+    name: flatpak
+    state: present
+  tags:
+    - desktop
+    - flatpak
+
+- name: Add Flathub repository
+  shell: flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+  ignore_errors: true
+  tags:
+    - desktop
+    - flatpak
+
+- name: Install Flatpak applications
+  shell: flatpak install -y flathub "{{ item }}"
+  loop:
+    - com.github.IsmaelMartinez.teams_for_linux
+    - com.getpostman.Postman
+  ignore_errors: true
+  tags:
+    - desktop
+    - flatpak
+
+- name: Display desktop role completion
+  debug:
+    msg: "✔ Desktop role completed successfully"
+  tags:
+    - desktop

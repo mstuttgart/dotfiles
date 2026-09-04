@@ -1,0 +1,11 @@
+#!/bin/bash
+# Example script to be placed at: roles/system/files/.local/bin/update-system
+
+# Simple system update script
+
+echo "Updating system packages..."
+sudo apt update
+sudo apt upgrade -y
+sudo apt autoremove -y
+
+echo "✔ System update completed!"

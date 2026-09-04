@@ -1,0 +1,48 @@
+# Docker compose example
+# This file should be placed at: roles/docker/files/.local/share/docker-compose.yml
+
+version: '3.8'
+
+services:
+  # Example: PostgreSQL database
+  postgres:
+    image: postgres:latest
+    container_name: postgres_dev
+    environment:
+      POSTGRES_USER: devuser
+      POSTGRES_PASSWORD: devpass
+      POSTGRES_DB: devdb
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - dev_network
+
+  # Example: Redis cache
+  redis:
+    image: redis:latest
+    container_name: redis_dev
+    ports:
+      - "6379:6379"
+    networks:
+      - dev_network
+
+  # Example: Adminer for database management
+  adminer:
+    image: adminer:latest
+    container_name: adminer_dev
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    networks:
+      - dev_network
+
+volumes:
+  postgres_data:
+    driver: local
+
+networks:
+  dev_network:
+    driver: bridge

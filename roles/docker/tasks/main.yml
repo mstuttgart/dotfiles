@@ -1,0 +1,97 @@
+---
+# =============================================================================
+# DOCKER ROLE - Docker installation and configuration
+# =============================================================================
+#
+# This role handles:
+# - Docker CE installation
+# - Docker plugins (compose, buildx)
+# - User group configuration
+# - Service enablement
+#
+# =============================================================================
+
+- name: Check if Docker is installed
+  command: docker --version
+  register: docker_installed
+  changed_when: false
+  failed_when: false
+  tags:
+    - docker
+
+- name: Install Docker prerequisites
+  apt:
+    name:
+      - ca-certificates
+      - curl
+    state: present
+  tags:
+    - docker
+
+- name: Create Docker GPG keyring directory
+  file:
+    path: /etc/apt/keyrings
+    state: directory
+    mode: '0755'
+  when: docker_installed.rc != 0
+  tags:
+    - docker
+
+- name: Add Docker GPG key
+  shell: |
+    curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+    chmod a+r /etc/apt/keyrings/docker.asc
+  when: docker_installed.rc != 0
+  tags:
+    - docker
+
+- name: Add Docker repository
+  shell: |
+    echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu \
+      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+      tee /etc/apt/sources.list.d/docker.list > /dev/null
+  when: docker_installed.rc != 0
+  tags:
+    - docker
+
+- name: Update package cache
+  apt:
+    update_cache: yes
+  when: docker_installed.rc != 0
+  tags:
+    - docker
+
+- name: Install Docker packages
+  apt:
+    name:
+      - docker-ce
+      - docker-ce-cli
+      - containerd.io
+      - docker-buildx-plugin
+      - docker-compose-plugin
+    state: present
+  when: docker_installed.rc != 0
+  tags:
+    - docker
+
+- name: Add user to docker group
+  user:
+    name: "{{ ansible_user_id }}"
+    groups: docker
+    append: yes
+  tags:
+    - docker
+
+- name: Enable Docker service
+  systemd:
+    name: docker
+    enabled: yes
+    state: started
+  tags:
+    - docker
+
+- name: Display docker role completion
+  debug:
+    msg: "✔ Docker role completed successfully"
+  tags:
+    - docker
